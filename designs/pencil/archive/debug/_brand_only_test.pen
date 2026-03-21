@@ -1,0 +1,1243 @@
+{
+  "version": "2.8",
+  "variables": {
+    "--brand-blue": {
+      "type": "color",
+      "value": "#0B4EA2"
+    },
+    "--brand-blue-deep": {
+      "type": "color",
+      "value": "#083A79"
+    },
+    "--brand-gold": {
+      "type": "color",
+      "value": "#F4C21D"
+    },
+    "--brand-gold-soft": {
+      "type": "color",
+      "value": "#F9D455"
+    },
+    "--brand-ink": {
+      "type": "color",
+      "value": "#0E1116"
+    },
+    "--brand-neutral-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D9D9DD"
+        },
+        {
+          "value": "#E8DDC8"
+        }
+      ]
+    },
+    "--color-action-inverse": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-action-neutral": {
+      "type": "color",
+      "value": "$--brand-gold"
+    },
+    "--color-action-primary": {
+      "type": "color",
+      "value": "$--brand-blue"
+    },
+    "--color-bg-inverse": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-bg-page": {
+      "type": "color",
+      "value": "$--brand-neutral-bg"
+    },
+    "--color-bg-placeholder": {
+      "type": "color",
+      "value": "#CFCFD3"
+    },
+    "--color-bg-sidebar": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-bg-surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-border-dark": {
+      "type": "color",
+      "value": "$--brand-blue"
+    },
+    "--color-border-light": {
+      "type": "color",
+      "value": "#D7DEE8"
+    },
+    "--color-status-negative": {
+      "type": "color",
+      "value": "#A12626"
+    },
+    "--color-status-neutral": {
+      "type": "color",
+      "value": "#6A7485"
+    },
+    "--color-status-positive": {
+      "type": "color",
+      "value": "#2C7A4B"
+    },
+    "--color-text-muted": {
+      "type": "color",
+      "value": "#8E96A3"
+    },
+    "--color-text-on-dark": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-text-primary": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-text-secondary": {
+      "type": "color",
+      "value": "#3E4F69"
+    },
+    "--color-text-tertiary": {
+      "type": "color",
+      "value": "#6A7485"
+    },
+    "--duration-base": {
+      "type": "number",
+      "value": 200
+    },
+    "--duration-fast": {
+      "type": "number",
+      "value": 120
+    },
+    "--duration-slow": {
+      "type": "number",
+      "value": 320
+    },
+    "--easing-emphasized": {
+      "type": "string",
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    },
+    "--easing-standard": {
+      "type": "string",
+      "value": "cubic-bezier(0.2, 0, 0, 1)"
+    },
+    "--font-body": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Source Sans 3"
+        },
+        {
+          "value": "Mulish"
+        }
+      ]
+    },
+    "--font-display": {
+      "type": "string",
+      "value": "Merriweather"
+    },
+    "--font-mono": {
+      "type": "string",
+      "value": [
+        {
+          "value": "ui-monospace"
+        },
+        {
+          "value": "Source Code Pro"
+        }
+      ]
+    },
+    "--lh-body": {
+      "type": "number",
+      "value": 1.6
+    },
+    "--lh-tight": {
+      "type": "number",
+      "value": 1
+    },
+    "--radius-avatar": {
+      "type": "number",
+      "value": 20
+    },
+    "--radius-card": {
+      "type": "number",
+      "value": 12
+    },
+    "--radius-none": {
+      "type": "number",
+      "value": 0
+    },
+    "--radius-pill": {
+      "type": "number",
+      "value": 999
+    },
+    "--shadow-focus": {
+      "type": "string",
+      "value": "0 0 0 3px rgba(244,194,29,0.35)"
+    },
+    "--shadow-none": {
+      "type": "string",
+      "value": "none"
+    },
+    "--shadow-soft": {
+      "type": "string",
+      "value": "0 8px 24px rgba(8,58,121,0.08)"
+    },
+    "--space-10": {
+      "type": "number",
+      "value": 10
+    },
+    "--space-12": {
+      "type": "number",
+      "value": 12
+    },
+    "--space-14": {
+      "type": "number",
+      "value": 14
+    },
+    "--space-16": {
+      "type": "number",
+      "value": 16
+    },
+    "--space-2": {
+      "type": "number",
+      "value": 2
+    },
+    "--space-20": {
+      "type": "number",
+      "value": 20
+    },
+    "--space-24": {
+      "type": "number",
+      "value": 24
+    },
+    "--space-28": {
+      "type": "number",
+      "value": 28
+    },
+    "--space-32": {
+      "type": "number",
+      "value": 32
+    },
+    "--space-4": {
+      "type": "number",
+      "value": 4
+    },
+    "--space-48": {
+      "type": "number",
+      "value": 48
+    },
+    "--space-52": {
+      "type": "number",
+      "value": 52
+    },
+    "--space-56": {
+      "type": "number",
+      "value": 56
+    },
+    "--space-6": {
+      "type": "number",
+      "value": 6
+    },
+    "--space-8": {
+      "type": "number",
+      "value": 8
+    },
+    "--stroke-1": {
+      "type": "number",
+      "value": 1
+    },
+    "--stroke-2": {
+      "type": "number",
+      "value": 2
+    },
+    "--theme-name": {
+      "type": "string",
+      "value": "signovernoise-brand-foundation-v1"
+    },
+    "--type-body-lg": {
+      "type": "number",
+      "value": 16
+    },
+    "--type-body-md": {
+      "type": "number",
+      "value": 14
+    },
+    "--type-display-lg": {
+      "type": "number",
+      "value": 44
+    },
+    "--type-display-xl": {
+      "type": "number",
+      "value": 64
+    },
+    "--type-heading-lg": {
+      "type": "number",
+      "value": 32
+    },
+    "--type-heading-md": {
+      "type": "number",
+      "value": 24
+    },
+    "--type-label": {
+      "type": "number",
+      "value": 12
+    },
+    "--type-title": {
+      "type": "number",
+      "value": 20
+    },
+    "--weight-medium": {
+      "type": "string",
+      "value": "500"
+    },
+    "--weight-regular": {
+      "type": "string",
+      "value": "400"
+    }
+  },
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": -192,
+      "y": 3,
+      "name": "Signal Over Noise Brand Board",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "padding": [
+        24,
+        32,
+        40,
+        32
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "uu86r",
+          "name": "headerA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "padding": [
+            12,
+            0,
+            16,
+            0
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "0SP87",
+              "name": "headerLeftA",
+              "fill": "$--color-text-primary",
+              "content": "SIGNAL OVER NOISE",
+              "fontFamily": "Source Code Pro",
+              "fontSize": 12,
+              "fontWeight": "500",
+              "letterSpacing": 1.5
+            },
+            {
+              "type": "text",
+              "id": "xGws9",
+              "name": "headerRightA",
+              "fill": "$--color-text-secondary",
+              "content": "VISUAL BRAND BOARD / V1",
+              "fontFamily": "Source Code Pro",
+              "fontSize": 12,
+              "fontWeight": "500",
+              "letterSpacing": 1.5
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Iyqe9",
+          "name": "heroA",
+          "width": "fill_container",
+          "height": 360,
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "children": [
+            {
+              "type": "frame",
+              "id": "eWp0u",
+              "name": "heroLeftA",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                40,
+                32,
+                40,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uEZZL",
+                  "name": "heroEyebrowA",
+                  "fill": "$--brand-blue",
+                  "content": "EDITORIAL / CIVIC / HIGH-CONTRAST",
+                  "fontFamily": "Source Code Pro",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 1.5
+                },
+                {
+                  "type": "text",
+                  "id": "hu0aQ",
+                  "name": "heroTitleA",
+                  "fill": "$--brand-blue-deep",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Signal Over Noise",
+                  "lineHeight": 1.02,
+                  "fontFamily": "Merriweather",
+                  "fontSize": 68,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "kSXDi",
+                  "name": "heroBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "A visual system built on institutional trust, sharp editorial hierarchy, and a warm gold accent that keeps the mark from feeling cold.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Mulish",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "De9B5",
+                  "name": "chipRowA",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NP2eT",
+                      "name": "chipOneA",
+                      "fill": "$--brand-blue-deep",
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "waHXu",
+                          "name": "chipOneTextA",
+                          "fill": "$--color-text-on-dark",
+                          "content": "authoritative",
+                          "fontFamily": "Mulish",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "65ZO7",
+                      "name": "chipTwoA",
+                      "fill": "$--brand-gold",
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JPxAH",
+                          "name": "chipTwoTextA",
+                          "fill": "$--brand-blue-deep",
+                          "content": "clear",
+                          "fontFamily": "Mulish",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3IoJN",
+                      "name": "chipThreeA",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--brand-blue"
+                      },
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VU4Yi",
+                          "name": "chipThreeTextA",
+                          "fill": "$--brand-blue-deep",
+                          "content": "human",
+                          "fontFamily": "Mulish",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QzsL2",
+              "name": "heroRightA",
+              "width": 520,
+              "height": "fill_container",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./img/signal-over-noise-wordmark.png",
+                "mode": "fill"
+              },
+              "stroke": {
+                "thickness": {
+                  "left": 1
+                },
+                "fill": "$--color-border-light"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GUqhk",
+          "name": "rowOneA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "children": [
+            {
+              "type": "frame",
+              "id": "HRqae",
+              "name": "logoPanelA",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": {
+                  "right": 1
+                },
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                28,
+                24,
+                28,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bVLWH",
+                  "name": "logoHeadB",
+                  "fill": "$--brand-blue-deep",
+                  "content": "Logo system",
+                  "fontFamily": "Merriweather",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "kjdze",
+                  "name": "logoSubB",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Primary lockups and symbols stay centered in calm white fields so the blue and gold marks read with maximum clarity.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Mulish",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "OnaA5",
+                  "name": "logoGridB",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RiF6a",
+                      "name": "logoTileOneB",
+                      "width": "fill_container",
+                      "height": 228,
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "0BfFt",
+                          "name": "logoImgOneB",
+                          "width": "fill_container",
+                          "height": 156,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./img/signal-over-noise-wordmark.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "UOg3h",
+                          "name": "logoLabelOneB",
+                          "fill": "$--color-text-secondary",
+                          "content": "Wordmark / dramatic use",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "caPHe",
+                      "name": "logoTileTwoB",
+                      "width": "fill_container",
+                      "height": 228,
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "HNGnm",
+                          "name": "logoImgTwoB",
+                          "width": "fill_container",
+                          "height": 156,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./img/signal-over-noise-logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "MFJ4w",
+                          "name": "logoLabelTwoB",
+                          "fill": "$--color-text-secondary",
+                          "content": "Lectern lockup / primary mark",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jN774",
+                      "name": "logoTileThreeB",
+                      "width": "fill_container",
+                      "height": 228,
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "pXQKY",
+                          "name": "logoImgThreeB",
+                          "width": "fill_container",
+                          "height": 156,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./img/signal-over-noise-square-logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "5QCop",
+                          "name": "logoLabelThreeB",
+                          "fill": "$--color-text-secondary",
+                          "content": "Square monogram / favicon",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HZ62q",
+              "name": "colorPanelA",
+              "width": 500,
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                28,
+                0,
+                28,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XSBpu",
+                  "name": "colorHeadB",
+                  "fill": "$--brand-blue-deep",
+                  "content": "Color system",
+                  "fontFamily": "Merriweather",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "XZrOm",
+                  "name": "colorSubC",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Blue carries trust and structure. Gold is used sparingly as the attention signal. Neutral fills keep the system grounded.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Mulish",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "I4fJT",
+                  "name": "colorGridC",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MOSUl",
+                      "name": "swatchColOneC",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ibD8s",
+                          "name": "swatchBoxOneC",
+                          "width": "fill_container",
+                          "height": 108,
+                          "fill": "$--brand-blue"
+                        },
+                        {
+                          "type": "text",
+                          "id": "1cTOZ",
+                          "name": "swatchTextOneC",
+                          "fill": "$--color-text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Brand blue\n#0B4EA2",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Mulish",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1NuJt",
+                      "name": "swatchColTwoC",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "pVEKM",
+                          "name": "swatchBoxTwoC",
+                          "width": "fill_container",
+                          "height": 108,
+                          "fill": "$--brand-blue-deep"
+                        },
+                        {
+                          "type": "text",
+                          "id": "sfpCK",
+                          "name": "swatchTextTwoC",
+                          "fill": "$--color-text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Deep blue\n#083A79",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Mulish",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zbCfh",
+                      "name": "swatchColThreeC",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "XfpOU",
+                          "name": "swatchBoxThreeC",
+                          "width": "fill_container",
+                          "height": 108,
+                          "fill": "$--brand-gold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GZPXP",
+                          "name": "swatchTextThreeC",
+                          "fill": "$--color-text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Brand gold\n#F4C21D",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Mulish",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SkwNZ",
+                      "name": "swatchColFourC",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "LfrvE",
+                          "name": "swatchBoxFourC",
+                          "width": "fill_container",
+                          "height": 108,
+                          "fill": "$--brand-gold-soft"
+                        },
+                        {
+                          "type": "text",
+                          "id": "cglJn",
+                          "name": "swatchTextFourC",
+                          "fill": "$--color-text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Soft gold\n#F9D455",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Mulish",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pMDv6",
+                      "name": "swatchColFiveC",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "px09x",
+                          "name": "swatchBoxFiveC",
+                          "width": "fill_container",
+                          "height": 108,
+                          "fill": "$--brand-ink"
+                        },
+                        {
+                          "type": "text",
+                          "id": "zb2QV",
+                          "name": "swatchTextFiveC",
+                          "fill": "$--color-text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Brand ink\n#0E1116",
+                          "lineHeight": 1.45,
+                          "fontFamily": "Mulish",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "mY5Ct",
+          "name": "rowTwoA",
+          "width": "fill_container",
+          "children": [
+            {
+              "type": "frame",
+              "id": "JF23E",
+              "name": "typePanelA",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": {
+                  "right": 1
+                },
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                28,
+                24,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lzIak",
+                  "name": "typeHeadB",
+                  "fill": "$--brand-blue-deep",
+                  "content": "Typography",
+                  "fontFamily": "Merriweather",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "9qSM5",
+                  "name": "typeSubD",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The system works because the serif carries authority while the sans keeps the supporting copy direct and readable.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Mulish",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "PHVb2",
+                  "name": "typeStackD",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "iltBn",
+                      "name": "displayCardD",
+                      "width": "fill_container",
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 18,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6a8bs",
+                          "name": "displayLabelD",
+                          "fill": "$--brand-blue",
+                          "content": "HEADING / MERRIWEATHER",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "AQqLA",
+                          "name": "displaySampleD",
+                          "fill": "$--brand-blue-deep",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Signal rises when the hierarchy is unmistakable.",
+                          "lineHeight": 1.15,
+                          "fontFamily": "Merriweather",
+                          "fontSize": 38,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vCkKL",
+                      "name": "bodyCardD",
+                      "width": "fill_container",
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 18,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fOs2p",
+                          "name": "bodyLabelD",
+                          "fill": "$--brand-blue",
+                          "content": "BODY / MULISH",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "KDvQ4",
+                          "name": "bodySampleD",
+                          "fill": "$--color-text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Use the body style for explanations, captions, and UI support copy. It should feel clean, neutral, and never compete with the headline.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Mulish",
+                          "fontSize": 17,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Wd0wV",
+                      "name": "utilityCardD",
+                      "width": "fill_container",
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 18,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1TCdJ",
+                          "name": "utilityLabelD",
+                          "fill": "$--brand-blue",
+                          "content": "MONO / SOURCE CODE PRO",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "FIjEz",
+                          "name": "utilitySampleD",
+                          "fill": "$--color-text-primary",
+                          "content": "SECTION LABELS / CTA COPY / SMALL META",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 1.4
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gMUsp",
+              "name": "directionPanelA",
+              "width": 500,
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                28,
+                0,
+                0,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vEdco",
+                  "name": "directionHeadB",
+                  "fill": "$--brand-blue-deep",
+                  "content": "Application cues",
+                  "fontFamily": "Merriweather",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "YwjSK",
+                  "name": "directionSubD",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The brand should feel like an editorial podium: sharp framing, generous whitespace, and a single gold move when attention matters.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Mulish",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "XxllD",
+                  "name": "principleCardD",
+                  "width": "fill_container",
+                  "fill": "$--color-bg-surface",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$--color-border-light"
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 18,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BXI6h",
+                      "name": "principleLabelD",
+                      "fill": "$--brand-blue",
+                      "content": "GUIDING PRINCIPLES",
+                      "fontFamily": "Source Code Pro",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "WTBqH",
+                      "name": "principleBodyD",
+                      "fill": "$--color-text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "1. Favor ruled lines over soft chrome.\n2. Keep blue dominant and gold selective.\n3. Scale headlines aggressively before adding decoration.\n4. Let imagery feel institutional, not playful.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Mulish",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dSRyx",
+                  "name": "sampleCardD",
+                  "width": "fill_container",
+                  "fill": "$--brand-blue-deep",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bcVdm",
+                      "name": "sampleLabelD",
+                      "fill": "$--brand-gold-soft",
+                      "content": "SAMPLE CALL TO ACTION",
+                      "fontFamily": "Source Code Pro",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "f697R",
+                      "name": "sampleTitleD",
+                      "fill": "$--color-text-on-dark",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Bring the room to attention.",
+                      "lineHeight": 1.15,
+                      "fontFamily": "Merriweather",
+                      "fontSize": 34,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SYTUG",
+                      "name": "sampleButtonD",
+                      "fill": "$--brand-gold",
+                      "padding": [
+                        10,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4CCup",
+                          "name": "sampleButtonTextD",
+                          "fill": "$--brand-blue-deep",
+                          "content": "Request the keynote",
+                          "fontFamily": "Source Code Pro",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

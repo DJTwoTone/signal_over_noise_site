@@ -1,0 +1,889 @@
+{
+  "version": "2.8",
+  "variables": {
+    "--brand-blue": {
+      "type": "color",
+      "value": "#0B4EA2"
+    },
+    "--brand-blue-deep": {
+      "type": "color",
+      "value": "#083A79"
+    },
+    "--brand-gold": {
+      "type": "color",
+      "value": "#F4C21D"
+    },
+    "--brand-gold-soft": {
+      "type": "color",
+      "value": "#F9D455"
+    },
+    "--brand-ink": {
+      "type": "color",
+      "value": "#0E1116"
+    },
+    "--brand-neutral-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D9D9DD"
+        },
+        {
+          "value": "#E8DDC8"
+        }
+      ]
+    },
+    "--color-action-inverse": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-action-neutral": {
+      "type": "color",
+      "value": "$--brand-gold"
+    },
+    "--color-action-primary": {
+      "type": "color",
+      "value": "$--brand-blue"
+    },
+    "--color-bg-inverse": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-bg-page": {
+      "type": "color",
+      "value": "$--brand-neutral-bg"
+    },
+    "--color-bg-placeholder": {
+      "type": "color",
+      "value": "#CFCFD3"
+    },
+    "--color-bg-sidebar": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-bg-surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-border-dark": {
+      "type": "color",
+      "value": "$--brand-blue"
+    },
+    "--color-border-light": {
+      "type": "color",
+      "value": "#D7DEE8"
+    },
+    "--color-status-negative": {
+      "type": "color",
+      "value": "#A12626"
+    },
+    "--color-status-neutral": {
+      "type": "color",
+      "value": "#6A7485"
+    },
+    "--color-status-positive": {
+      "type": "color",
+      "value": "#2C7A4B"
+    },
+    "--color-text-muted": {
+      "type": "color",
+      "value": "#8E96A3"
+    },
+    "--color-text-on-dark": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-text-primary": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-text-secondary": {
+      "type": "color",
+      "value": "#3E4F69"
+    },
+    "--color-text-tertiary": {
+      "type": "color",
+      "value": "#6A7485"
+    },
+    "--duration-base": {
+      "type": "number",
+      "value": 200
+    },
+    "--duration-fast": {
+      "type": "number",
+      "value": 120
+    },
+    "--duration-slow": {
+      "type": "number",
+      "value": 320
+    },
+    "--easing-emphasized": {
+      "type": "string",
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    },
+    "--easing-standard": {
+      "type": "string",
+      "value": "cubic-bezier(0.2, 0, 0, 1)"
+    },
+    "--font-body": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Source Sans 3"
+        },
+        {
+          "value": "Mulish"
+        }
+      ]
+    },
+    "--font-display": {
+      "type": "string",
+      "value": "Merriweather"
+    },
+    "--font-mono": {
+      "type": "string",
+      "value": [
+        {
+          "value": "ui-monospace"
+        },
+        {
+          "value": "Source Code Pro"
+        }
+      ]
+    },
+    "--lh-body": {
+      "type": "number",
+      "value": 1.6
+    },
+    "--lh-tight": {
+      "type": "number",
+      "value": 1
+    },
+    "--radius-avatar": {
+      "type": "number",
+      "value": 20
+    },
+    "--radius-card": {
+      "type": "number",
+      "value": 12
+    },
+    "--radius-none": {
+      "type": "number",
+      "value": 0
+    },
+    "--radius-pill": {
+      "type": "number",
+      "value": 999
+    },
+    "--shadow-focus": {
+      "type": "string",
+      "value": "0 0 0 3px rgba(244,194,29,0.35)"
+    },
+    "--shadow-none": {
+      "type": "string",
+      "value": "none"
+    },
+    "--shadow-soft": {
+      "type": "string",
+      "value": "0 8px 24px rgba(8,58,121,0.08)"
+    },
+    "--space-10": {
+      "type": "number",
+      "value": 10
+    },
+    "--space-12": {
+      "type": "number",
+      "value": 12
+    },
+    "--space-14": {
+      "type": "number",
+      "value": 14
+    },
+    "--space-16": {
+      "type": "number",
+      "value": 16
+    },
+    "--space-2": {
+      "type": "number",
+      "value": 2
+    },
+    "--space-20": {
+      "type": "number",
+      "value": 20
+    },
+    "--space-24": {
+      "type": "number",
+      "value": 24
+    },
+    "--space-28": {
+      "type": "number",
+      "value": 28
+    },
+    "--space-32": {
+      "type": "number",
+      "value": 32
+    },
+    "--space-4": {
+      "type": "number",
+      "value": 4
+    },
+    "--space-48": {
+      "type": "number",
+      "value": 48
+    },
+    "--space-52": {
+      "type": "number",
+      "value": 52
+    },
+    "--space-56": {
+      "type": "number",
+      "value": 56
+    },
+    "--space-6": {
+      "type": "number",
+      "value": 6
+    },
+    "--space-8": {
+      "type": "number",
+      "value": 8
+    },
+    "--stroke-1": {
+      "type": "number",
+      "value": 1
+    },
+    "--stroke-2": {
+      "type": "number",
+      "value": 2
+    },
+    "--theme-name": {
+      "type": "string",
+      "value": "signovernoise-brand-foundation-v1"
+    },
+    "--type-body-lg": {
+      "type": "number",
+      "value": 16
+    },
+    "--type-body-md": {
+      "type": "number",
+      "value": 14
+    },
+    "--type-display-lg": {
+      "type": "number",
+      "value": 44
+    },
+    "--type-display-xl": {
+      "type": "number",
+      "value": 64
+    },
+    "--type-heading-lg": {
+      "type": "number",
+      "value": 32
+    },
+    "--type-heading-md": {
+      "type": "number",
+      "value": 24
+    },
+    "--type-label": {
+      "type": "number",
+      "value": 12
+    },
+    "--type-title": {
+      "type": "number",
+      "value": 20
+    },
+    "--weight-medium": {
+      "type": "string",
+      "value": "500"
+    },
+    "--weight-regular": {
+      "type": "string",
+      "value": "400"
+    }
+  },
+  "children": [
+    {
+      "type": "frame",
+      "id": "PEczi",
+      "x": 3400,
+      "y": 40,
+      "name": "Home / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "KlffT",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "homeHeaderA"
+        },
+        {
+          "id": "EwGuC",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "name": "homeHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "EDITORIAL PRESENTATION SUPPORT / ENGLISH + MULTILINGUAL SETTINGS"
+            },
+            "BHFES": {
+              "content": "Make the next presentation clearer, sharper, and more credible."
+            },
+            "toqcb": {
+              "content": "Signal over Noise helps professionals presenting in English and multilingual settings strengthen the message, refine the slides, rehearse the delivery, and prepare for high-stakes moments."
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "oJZkg",
+              "width": 440,
+              "height": "fill_container",
+              "fill": "$--brand-blue-deep",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vXJAR",
+                  "width": "fill_container",
+                  "height": 120,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./img/signal-over-noise-wordmark.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "VXO6d",
+                  "fill": "$--brand-gold-soft",
+                  "content": "DIAGNOSTIC-FIRST MAIN SITE",
+                  "fontFamily": "Source Code Pro",
+                  "fontSize": "$--type-label",
+                  "fontWeight": "$--weight-medium",
+                  "letterSpacing": 1.4
+                },
+                {
+                  "type": "text",
+                  "id": "EWYpk",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Homepage routing stays broad and uncluttered: visitors can request a tailored review first, then move into packages, process, and proof as needed.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "Adodf",
+          "type": "ref",
+          "ref": "lJAIQ",
+          "name": "homeTrustA"
+        },
+        {
+          "type": "frame",
+          "id": "BlsdM",
+          "name": "Audience Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "wn1T1",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "audienceIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "WHO THIS IS FOR"
+                },
+                "8L99a": {
+                  "content": "Support for experts and teams presenting across international and mixed-language contexts."
+                },
+                "QHJpK": {
+                  "content": "The audience is framed respectfully: capable professionals working through presentation stakes, clarity, and structure in English and multilingual settings."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "HencO",
+              "name": "audienceRowA",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GbaCI",
+                  "name": "audienceBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Signal over Noise is for founders, academics, operators, and teams who need sharper structure, cleaner decks, stronger rehearsal, and more confidence when the presentation actually matters.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-lg",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "U7gpx",
+                  "name": "audienceCardA",
+                  "width": 420,
+                  "fill": "$--color-bg-surface",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$--color-border-light"
+                  },
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NwH34",
+                      "name": "audienceCardTitleA",
+                      "fill": "$--color-text-primary",
+                      "content": "Common v1 audience contexts",
+                      "lineHeight": 1.08,
+                      "fontFamily": "Merriweather",
+                      "fontSize": "$--type-title",
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZoraV",
+                      "name": "audienceCardBodyA",
+                      "fill": "$--color-text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Conference talks, internal updates, investor moments, research presentations, cross-border meetings, and workshop follow-up support.",
+                      "lineHeight": "$--lh-body",
+                      "fontFamily": "Mulish",
+                      "fontSize": "$--type-body-md",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cslhE",
+          "name": "How It Helps Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "TWxQF",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "howIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "HOW SIGNAL OVER NOISE HELPS"
+                },
+                "8L99a": {
+                  "content": "Choose the kind of presentation support that fits the real problem."
+                },
+                "QHJpK": {
+                  "content": "Visitors should be able to self-identify by need, not jargon: message, deck, rehearsal, sprint support, coaching, or team training."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "lm1gl",
+              "name": "pathRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "8dywf",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "pathOneA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Clarify the message"
+                    },
+                    "sDFLe": {
+                      "content": "Strengthen structure, emphasis, and story so the presentation lands quickly and confidently."
+                    },
+                    "vJslq": {
+                      "content": "Best for narrative cleanup and sharper strategic framing."
+                    }
+                  }
+                },
+                {
+                  "id": "IHWz3",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "pathTwoA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Improve the deck"
+                    },
+                    "sDFLe": {
+                      "content": "Refine visual hierarchy, slide flow, and signal-to-noise ratio so the deck supports the message instead of fighting it."
+                    },
+                    "vJslq": {
+                      "content": "Best for slide review, cleanup, and executive-facing polish."
+                    }
+                  }
+                },
+                {
+                  "id": "9kiVJ",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "pathThreeA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Rehearse the delivery"
+                    },
+                    "sDFLe": {
+                      "content": "Build timing, emphasis, transitions, and speaking confidence before the high-stakes presentation itself."
+                    },
+                    "vJslq": {
+                      "content": "Best for rehearsal, delivery coaching, and final readiness."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ilodQ",
+          "name": "Process Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "GeOib",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "processIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "HOW IT WORKS"
+                },
+                "8L99a": {
+                  "content": "A structured path from first review to delivery-ready presentation."
+                },
+                "QHJpK": {
+                  "content": "The process should reduce uncertainty and show what happens after someone requests help."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "LPZRm",
+              "name": "processRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "zoyXv",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processOneA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "01"
+                    },
+                    "W5p5m": {
+                      "content": "Start with the diagnostic"
+                    },
+                    "6UR6s": {
+                      "content": "Review the current presentation and identify the highest-leverage issue first."
+                    }
+                  }
+                },
+                {
+                  "id": "sly0O",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processTwoA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "02"
+                    },
+                    "W5p5m": {
+                      "content": "Get the recommendation"
+                    },
+                    "6UR6s": {
+                      "content": "Choose the right level of support: refinement, rehearsal, sprint, coaching, or training."
+                    }
+                  }
+                },
+                {
+                  "id": "cavpq",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processThreeA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "03"
+                    },
+                    "W5p5m": {
+                      "content": "Refine and rehearse"
+                    },
+                    "6UR6s": {
+                      "content": "Improve the message, sharpen the slides, and practice the delivery where needed."
+                    }
+                  }
+                },
+                {
+                  "id": "LpozD",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processFourA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "04"
+                    },
+                    "W5p5m": {
+                      "content": "Present with more confidence"
+                    },
+                    "6UR6s": {
+                      "content": "Move into the presentation with stronger structure, clearer visuals, and a better plan."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uEWU0",
+          "name": "Proof Teaser Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "SFjdD",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "proofIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PROOF AND CREDIBILITY"
+                },
+                "8L99a": {
+                  "content": "Show real artifacts and real process, not inflated claims."
+                },
+                "QHJpK": {
+                  "content": "Use founder credibility, sample review work, and before/after examples where approved."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "bKagO",
+              "name": "proofRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "Ey85h",
+                  "type": "ref",
+                  "ref": "1OtQj",
+                  "name": "proofCardA",
+                  "descendants": {
+                    "LYtgE": {
+                      "content": "Sample review teaser"
+                    },
+                    "1QlEb": {
+                      "content": "Preview the diagnostic with a real annotated review mockup once the approved artifact is ready."
+                    },
+                    "HzQqv": {
+                      "content": "Placeholder until sample markup is available."
+                    }
+                  }
+                },
+                {
+                  "id": "oNRsx",
+                  "type": "ref",
+                  "ref": "LyQ2B",
+                  "name": "comparisonCardA",
+                  "descendants": {
+                    "hlkST": {
+                      "content": "Before and after preview"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "p2grZ",
+          "name": "Package Preview Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "yWliR",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "packageIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "FEATURED OFFERS"
+                },
+                "8L99a": {
+                  "content": "Start with the diagnostic, then move into the level of support you actually need."
+                },
+                "QHJpK": {
+                  "content": "Homepage package preview should route, not overwhelm. Keep pricing flexible and the path easy to understand."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "I5Qp4",
+              "name": "packageRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "fy14I",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packageOneA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Diagnostic"
+                    },
+                    "YeCCW": {
+                      "content": "A tailored review with consult follow-up to identify the strongest next step."
+                    }
+                  }
+                },
+                {
+                  "id": "mRTVG",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packageTwoA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Sprint"
+                    },
+                    "YeCCW": {
+                      "content": "Focused short-term support for a high-stakes presentation that needs rapid improvement."
+                    },
+                    "afc1R": {
+                      "content": "Pricing language placeholder / custom scope"
+                    }
+                  }
+                },
+                {
+                  "id": "qmFFP",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packageThreeA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Coaching"
+                    },
+                    "YeCCW": {
+                      "content": "Ongoing support for professionals building stronger presentation habits over time."
+                    },
+                    "afc1R": {
+                      "content": "Coaching format placeholder / diagnostic recommended first"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "IvVrn",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "homeCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Request the free diagnostic and see what your next presentation needs."
+            },
+            "0qyRm": {
+              "content": "You will get a tailored review path, a clear next-step recommendation, and no pressure to commit to a large package immediately."
+            }
+          }
+        },
+        {
+          "id": "iaQmH",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "homeFooterA"
+        }
+      ]
+    }
+  ]
+}

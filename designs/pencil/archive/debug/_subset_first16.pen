@@ -1,0 +1,4996 @@
+{
+  "version": "2.8",
+  "variables": {
+    "--brand-blue": {
+      "type": "color",
+      "value": "#0B4EA2"
+    },
+    "--brand-blue-deep": {
+      "type": "color",
+      "value": "#083A79"
+    },
+    "--brand-gold": {
+      "type": "color",
+      "value": "#F4C21D"
+    },
+    "--brand-gold-soft": {
+      "type": "color",
+      "value": "#F9D455"
+    },
+    "--brand-ink": {
+      "type": "color",
+      "value": "#0E1116"
+    },
+    "--brand-neutral-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D9D9DD"
+        },
+        {
+          "value": "#E8DDC8"
+        }
+      ]
+    },
+    "--color-action-inverse": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-action-neutral": {
+      "type": "color",
+      "value": "$--brand-gold"
+    },
+    "--color-action-primary": {
+      "type": "color",
+      "value": "$--brand-blue"
+    },
+    "--color-bg-inverse": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-bg-page": {
+      "type": "color",
+      "value": "$--brand-neutral-bg"
+    },
+    "--color-bg-placeholder": {
+      "type": "color",
+      "value": "#CFCFD3"
+    },
+    "--color-bg-sidebar": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-bg-surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-border-dark": {
+      "type": "color",
+      "value": "$--brand-blue"
+    },
+    "--color-border-light": {
+      "type": "color",
+      "value": "#D7DEE8"
+    },
+    "--color-status-negative": {
+      "type": "color",
+      "value": "#A12626"
+    },
+    "--color-status-neutral": {
+      "type": "color",
+      "value": "#6A7485"
+    },
+    "--color-status-positive": {
+      "type": "color",
+      "value": "#2C7A4B"
+    },
+    "--color-text-muted": {
+      "type": "color",
+      "value": "#8E96A3"
+    },
+    "--color-text-on-dark": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--color-text-primary": {
+      "type": "color",
+      "value": "$--brand-blue-deep"
+    },
+    "--color-text-secondary": {
+      "type": "color",
+      "value": "#3E4F69"
+    },
+    "--color-text-tertiary": {
+      "type": "color",
+      "value": "#6A7485"
+    },
+    "--duration-base": {
+      "type": "number",
+      "value": 200
+    },
+    "--duration-fast": {
+      "type": "number",
+      "value": 120
+    },
+    "--duration-slow": {
+      "type": "number",
+      "value": 320
+    },
+    "--easing-emphasized": {
+      "type": "string",
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+    },
+    "--easing-standard": {
+      "type": "string",
+      "value": "cubic-bezier(0.2, 0, 0, 1)"
+    },
+    "--font-body": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Source Sans 3"
+        },
+        {
+          "value": "Mulish"
+        }
+      ]
+    },
+    "--font-display": {
+      "type": "string",
+      "value": "Merriweather"
+    },
+    "--font-mono": {
+      "type": "string",
+      "value": [
+        {
+          "value": "ui-monospace"
+        },
+        {
+          "value": "Source Code Pro"
+        }
+      ]
+    },
+    "--lh-body": {
+      "type": "number",
+      "value": 1.6
+    },
+    "--lh-tight": {
+      "type": "number",
+      "value": 1
+    },
+    "--radius-avatar": {
+      "type": "number",
+      "value": 20
+    },
+    "--radius-card": {
+      "type": "number",
+      "value": 12
+    },
+    "--radius-none": {
+      "type": "number",
+      "value": 0
+    },
+    "--radius-pill": {
+      "type": "number",
+      "value": 999
+    },
+    "--shadow-focus": {
+      "type": "string",
+      "value": "0 0 0 3px rgba(244,194,29,0.35)"
+    },
+    "--shadow-none": {
+      "type": "string",
+      "value": "none"
+    },
+    "--shadow-soft": {
+      "type": "string",
+      "value": "0 8px 24px rgba(8,58,121,0.08)"
+    },
+    "--space-10": {
+      "type": "number",
+      "value": 10
+    },
+    "--space-12": {
+      "type": "number",
+      "value": 12
+    },
+    "--space-14": {
+      "type": "number",
+      "value": 14
+    },
+    "--space-16": {
+      "type": "number",
+      "value": 16
+    },
+    "--space-2": {
+      "type": "number",
+      "value": 2
+    },
+    "--space-20": {
+      "type": "number",
+      "value": 20
+    },
+    "--space-24": {
+      "type": "number",
+      "value": 24
+    },
+    "--space-28": {
+      "type": "number",
+      "value": 28
+    },
+    "--space-32": {
+      "type": "number",
+      "value": 32
+    },
+    "--space-4": {
+      "type": "number",
+      "value": 4
+    },
+    "--space-48": {
+      "type": "number",
+      "value": 48
+    },
+    "--space-52": {
+      "type": "number",
+      "value": 52
+    },
+    "--space-56": {
+      "type": "number",
+      "value": 56
+    },
+    "--space-6": {
+      "type": "number",
+      "value": 6
+    },
+    "--space-8": {
+      "type": "number",
+      "value": 8
+    },
+    "--stroke-1": {
+      "type": "number",
+      "value": 1
+    },
+    "--stroke-2": {
+      "type": "number",
+      "value": 2
+    },
+    "--theme-name": {
+      "type": "string",
+      "value": "signovernoise-brand-foundation-v1"
+    },
+    "--type-body-lg": {
+      "type": "number",
+      "value": 16
+    },
+    "--type-body-md": {
+      "type": "number",
+      "value": 14
+    },
+    "--type-display-lg": {
+      "type": "number",
+      "value": 44
+    },
+    "--type-display-xl": {
+      "type": "number",
+      "value": 64
+    },
+    "--type-heading-lg": {
+      "type": "number",
+      "value": 32
+    },
+    "--type-heading-md": {
+      "type": "number",
+      "value": 24
+    },
+    "--type-label": {
+      "type": "number",
+      "value": 12
+    },
+    "--type-title": {
+      "type": "number",
+      "value": 20
+    },
+    "--weight-medium": {
+      "type": "string",
+      "value": "500"
+    },
+    "--weight-regular": {
+      "type": "string",
+      "value": "400"
+    }
+  },
+  "children": [
+    {
+      "type": "frame",
+      "id": "FPKXW",
+      "x": 1600,
+      "y": 40,
+      "name": "Website System",
+      "width": 1700,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+        24,
+        24,
+        40,
+        24
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "vVsFR",
+          "name": "sheetTitleA",
+          "fill": "$--brand-blue",
+          "content": "Website system / v1",
+          "fontFamily": "Source Code Pro",
+          "fontSize": "$--type-label",
+          "fontWeight": "$--weight-medium",
+          "letterSpacing": 1.4
+        },
+        {
+          "type": "text",
+          "id": "SPNt8",
+          "name": "sheetBodyA",
+          "fill": "$--color-text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 760,
+          "content": "Reusable parts for the Signal over Noise marketing site. Components stay editorial, blue-led, and easy to update for v1 launch.",
+          "lineHeight": "$--lh-body",
+          "fontFamily": "Mulish",
+          "fontSize": "$--type-body-md",
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "1EeZt",
+          "name": "Button Row",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "pEDYi",
+              "name": "Button / Primary",
+              "reusable": true,
+              "fill": "$--color-action-primary",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-action-primary"
+              },
+              "gap": 8,
+              "padding": [
+                14,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mZI2V",
+                  "name": "buttonPrimaryLabelA",
+                  "fill": "$--color-action-inverse",
+                  "content": "Request a Free Presentation Diagnostic",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BhWD3",
+              "name": "Button / Secondary",
+              "reusable": true,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-dark"
+              },
+              "gap": 8,
+              "padding": [
+                14,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0KKHx",
+                  "name": "buttonSecondaryLabelA",
+                  "fill": "$--color-text-primary",
+                  "content": "Get the Signal over Noise Presenter Toolkit",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xx3xg",
+          "name": "Section Intro",
+          "reusable": true,
+          "width": 640,
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "oMPZN",
+              "name": "sectionIntroEyebrowA",
+              "fill": "$--brand-blue",
+              "content": "HOW SIGNAL OVER NOISE HELPS",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "$--weight-medium",
+              "letterSpacing": 1.4
+            },
+            {
+              "type": "text",
+              "id": "8L99a",
+              "name": "sectionIntroTitleA",
+              "fill": "$--color-text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Clarity, structure, slides, and delivery for high-stakes presentations.",
+              "lineHeight": 1.05,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-heading-lg",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "QHJpK",
+              "name": "sectionIntroBodyA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Signal over Noise supports experts and teams presenting in English and multilingual settings through tailored diagnostics, refinements, and rehearsal support.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-lg",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lJAIQ",
+          "name": "Trust Strip",
+          "reusable": true,
+          "width": 1440,
+          "stroke": {
+            "thickness": {
+              "top": 1,
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "gap": 20,
+          "padding": [
+            18,
+            0
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "XU9bI",
+              "name": "trustTextOneA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 420,
+              "content": "Tailored diagnostics and presentation support for professionals facing high-stakes communication moments.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "wBC1F",
+              "name": "trustTextTwoA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 420,
+              "content": "Message structure, slide refinement, rehearsal, and coaching aligned to multilingual and mixed-language contexts.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "z9r6V",
+              "name": "trustTextThreeA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 420,
+              "content": "Real process clarity and real artifacts in place of invented testimonials or generic claims.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eHu8p",
+          "name": "Final CTA Band",
+          "reusable": true,
+          "width": 1440,
+          "fill": "$--brand-blue-deep",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 28,
+          "children": [
+            {
+              "type": "text",
+              "id": "3UwZb",
+              "name": "finalCtaEyebrowA",
+              "fill": "$--brand-gold-soft",
+              "content": "NEXT STEP",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "$--weight-medium",
+              "letterSpacing": 1.4
+            },
+            {
+              "type": "text",
+              "id": "VxWjC",
+              "name": "finalCtaTitleA",
+              "fill": "$--color-text-on-dark",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Bring the next presentation in with more structure, sharper slides, and stronger delivery.",
+              "lineHeight": 1.05,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-heading-lg",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "0qyRm",
+              "name": "finalCtaBodyA",
+              "fill": "#D7DEE8",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Request the free diagnostic to get a tailored review and a short consult follow-up. No large package commitment required upfront.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-lg",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "PMgeu",
+              "name": "finalCtaRowA",
+              "gap": 12,
+              "children": [
+                {
+                  "id": "iG6nI",
+                  "type": "ref",
+                  "ref": "pEDYi",
+                  "name": "finalCtaPrimaryA"
+                },
+                {
+                  "id": "CbzNj",
+                  "type": "ref",
+                  "ref": "BhWD3",
+                  "name": "finalCtaSecondaryA",
+                  "x": 309
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GWS9M",
+          "name": "Header / Desktop",
+          "reusable": true,
+          "width": 1440,
+          "fill": "$--color-bg-page",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "padding": [
+            18,
+            32
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "5KfkF",
+              "name": "headerBrandA",
+              "fill": "$--color-text-primary",
+              "content": "Signal over Noise",
+              "lineHeight": 1,
+              "fontFamily": "Merriweather",
+              "fontSize": 28,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Bu5dS",
+              "name": "headerNavWrapA",
+              "gap": 20,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "LmLjL",
+                  "name": "headerNavOneA",
+                  "fill": "$--color-text-primary",
+                  "content": "Home",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                },
+                {
+                  "type": "text",
+                  "id": "pvest",
+                  "name": "headerNavTwoA",
+                  "fill": "$--color-text-primary",
+                  "content": "Services",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                },
+                {
+                  "type": "text",
+                  "id": "STl6a",
+                  "name": "headerNavThreeA",
+                  "fill": "$--color-text-primary",
+                  "content": "Process",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                },
+                {
+                  "type": "text",
+                  "id": "dIEAI",
+                  "name": "headerNavFourA",
+                  "fill": "$--color-text-primary",
+                  "content": "Proof",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                },
+                {
+                  "type": "text",
+                  "id": "7yfKM",
+                  "name": "headerNavFiveA",
+                  "fill": "$--color-text-primary",
+                  "content": "Packages",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                },
+                {
+                  "type": "text",
+                  "id": "6FqOJ",
+                  "name": "headerNavSixA",
+                  "fill": "$--color-text-primary",
+                  "content": "Workshops",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "$--weight-medium"
+                },
+                {
+                  "id": "OSHH3",
+                  "type": "ref",
+                  "ref": "pEDYi",
+                  "name": "headerCtaA",
+                  "x": 439
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "m6a9x",
+          "name": "Footer / Desktop",
+          "reusable": true,
+          "width": 1440,
+          "fill": "$--brand-blue-deep",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            28,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "4WiFU",
+              "name": "footerTopA",
+              "width": "fill_container",
+              "gap": 24,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lroAi",
+                  "name": "footerBrandA",
+                  "fill": "$--color-text-on-dark",
+                  "content": "Signal over Noise",
+                  "lineHeight": 1,
+                  "fontFamily": "Merriweather",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "D5OJ2",
+                  "name": "footerNavA",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "Home  /  Services  /  Process  /  Proof  /  Packages  /  Workshops  /  Privacy",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "id": "6MALa",
+              "name": "footerRuleA",
+              "width": "fill_container",
+              "height": 1,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#436391"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "dMVH1",
+              "name": "footerBottomA",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "jF6sV",
+                  "name": "footerMetaA",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": 760,
+                  "content": "Premium editorial presentation support for professionals presenting in English and multilingual settings.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "lYit8",
+                  "name": "footerLegalA",
+                  "fill": "$--brand-gold-soft",
+                  "textGrowth": "fixed-width",
+                  "width": 360,
+                  "content": "Privacy policy / placeholder workshop inquiry link / analytics ID pending",
+                  "fontFamily": "Source Code Pro",
+                  "fontSize": "$--type-label",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qlOOp",
+          "name": "Pathway Card",
+          "reusable": true,
+          "width": 320,
+          "fill": "$--color-bg-surface",
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "Nef5j",
+              "name": "pathwayEyebrowA",
+              "fill": "$--brand-blue",
+              "content": "PATHWAY",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "$--weight-medium",
+              "letterSpacing": 1.4
+            },
+            {
+              "type": "text",
+              "id": "V0FaA",
+              "name": "pathwayTitleA",
+              "fill": "$--color-text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Clarify the message",
+              "lineHeight": 1.08,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-title",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "sDFLe",
+              "name": "pathwayBodyA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Work on structure, emphasis, and story so the audience understands the point quickly and clearly.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "vJslq",
+              "name": "pathwayLinkA",
+              "fill": "$--brand-blue-deep",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Best for presentation strategy, narrative cleanup, and high-stakes framing.",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "8S92b",
+          "name": "Package Card",
+          "reusable": true,
+          "width": 340,
+          "fill": "$--color-bg-surface",
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "HMaYu",
+              "name": "packageEyebrowA",
+              "fill": "$--brand-blue",
+              "content": "PACKAGE",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "$--weight-medium",
+              "letterSpacing": 1.4
+            },
+            {
+              "type": "text",
+              "id": "2vTpy",
+              "name": "packageTitleA",
+              "fill": "$--color-text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Presentation Diagnostic",
+              "lineHeight": 1.08,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-title",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "YeCCW",
+              "name": "packageBodyA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "A tailored review of your script, slides, or recorded delivery with short consult follow-up and a practical recommendation for next steps.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "afc1R",
+              "name": "packageMetaA",
+              "fill": "$--brand-gold",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Free in v1 / turnaround placeholder / no rigid pricing grid yet",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Qjx6S",
+          "name": "Process Step",
+          "reusable": true,
+          "width": 300,
+          "fill": "$--color-bg-surface",
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "3riMK",
+              "name": "processNumberA",
+              "fill": "$--brand-gold",
+              "content": "01",
+              "fontFamily": "Source Code Pro",
+              "fontSize": 18,
+              "fontWeight": "$--weight-medium"
+            },
+            {
+              "type": "text",
+              "id": "W5p5m",
+              "name": "processTitleA",
+              "fill": "$--color-text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Start with the diagnostic",
+              "lineHeight": 1.08,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-title",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "6UR6s",
+              "name": "processBodyA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Review the current presentation, identify what is getting in the way, and clarify the most useful next step.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3hNUX",
+          "name": "Founder Card",
+          "reusable": true,
+          "width": 320,
+          "fill": "$--color-bg-surface",
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "B5HpV",
+              "name": "Headshot Placeholder",
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$--color-bg-placeholder",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              }
+            },
+            {
+              "type": "text",
+              "id": "UnCc1",
+              "name": "founderNameA",
+              "fill": "$--color-text-primary",
+              "content": "Benjamin W. Slater",
+              "lineHeight": 1.08,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-title",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "bSR1O",
+              "name": "founderRoleA",
+              "fill": "$--brand-blue",
+              "content": "Founder / Placeholder bio summary",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "W5btN",
+              "name": "founderBodyA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Teaching, directing, and presentation-shaping experience presented as credible process support rather than inflated personal branding.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9ZL6F",
+          "name": "Hero / Editorial",
+          "reusable": true,
+          "width": 1440,
+          "fill": "$--color-bg-page",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "gap": 32,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "8dOtx",
+              "name": "heroLeftA",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GPQrh",
+                  "name": "heroEyebrowA",
+                  "fill": "$--brand-blue",
+                  "content": "PRESENTATION SUPPORT / ENGLISH + MULTILINGUAL SETTINGS",
+                  "fontFamily": "Source Code Pro",
+                  "fontSize": "$--type-label",
+                  "fontWeight": "$--weight-medium",
+                  "letterSpacing": 1.4
+                },
+                {
+                  "type": "text",
+                  "id": "BHFES",
+                  "name": "heroTitleA",
+                  "fill": "$--color-text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Clearer presentations for professionals presenting in English and multilingual settings.",
+                  "lineHeight": 1.02,
+                  "fontFamily": "Merriweather",
+                  "fontSize": 56,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "toqcb",
+                  "name": "heroBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Signal over Noise helps experts and teams sharpen the message, improve the deck, rehearse the delivery, and prepare for high-stakes moments without language shame or generic coaching fluff.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-lg",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "nRaHy",
+                  "name": "heroCtaRowA",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "id": "LwyyX",
+                      "type": "ref",
+                      "ref": "pEDYi",
+                      "name": "heroPrimaryA"
+                    },
+                    {
+                      "id": "DmoHd",
+                      "type": "ref",
+                      "ref": "BhWD3",
+                      "name": "heroSecondaryA",
+                      "x": 309
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ON1jM",
+              "name": "Hero Visual Placeholder",
+              "width": 440,
+              "height": 320,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1OtQj",
+          "name": "Proof Artifact",
+          "reusable": true,
+          "width": 420,
+          "fill": "$--color-bg-surface",
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Qe3j1",
+              "name": "Artifact Placeholder",
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$--color-bg-placeholder",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              }
+            },
+            {
+              "type": "text",
+              "id": "LYtgE",
+              "name": "proofTitleA",
+              "fill": "$--color-text-primary",
+              "content": "Sample review mockup",
+              "lineHeight": 1.08,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-title",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "1QlEb",
+              "name": "proofBodyA",
+              "fill": "$--color-text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Use a real artifact here: annotated slide review, script markup, or delivery notes. Keep the proof concrete and clearly labeled.",
+              "lineHeight": "$--lh-body",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "HzQqv",
+              "name": "proofNoteA",
+              "fill": "$--brand-gold",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Placeholder until approved sample is ready.",
+              "fontFamily": "Source Code Pro",
+              "fontSize": "$--type-label",
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LyQ2B",
+          "name": "Before After Comparison",
+          "reusable": true,
+          "width": 760,
+          "fill": "$--color-bg-surface",
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "hlkST",
+              "name": "comparisonTitleA",
+              "fill": "$--color-text-primary",
+              "content": "Before and after slide comparison",
+              "lineHeight": 1.08,
+              "fontFamily": "Merriweather",
+              "fontSize": "$--type-title",
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Kt9oQ",
+              "name": "comparisonRowA",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iROFM",
+                  "name": "comparisonBeforeA",
+                  "width": "fill_container",
+                  "fill": "$--color-bg-page",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$--color-border-light"
+                  },
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nFR7S",
+                      "name": "comparisonBeforeLabelA",
+                      "fill": "$--brand-blue",
+                      "content": "BEFORE / placeholder",
+                      "fontFamily": "Source Code Pro",
+                      "fontSize": "$--type-label",
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ByG4d",
+                      "name": "comparisonBeforeVisualA",
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$--color-bg-placeholder",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "D4Maf",
+                  "name": "comparisonAfterA",
+                  "width": "fill_container",
+                  "fill": "$--color-bg-page",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$--color-border-light"
+                  },
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IPqEY",
+                      "name": "comparisonAfterLabelA",
+                      "fill": "$--brand-gold",
+                      "content": "AFTER / placeholder",
+                      "fontFamily": "Source Code Pro",
+                      "fontSize": "$--type-label",
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4fPer",
+                      "name": "comparisonAfterVisualA",
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$--color-bg-placeholder",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yKhPO",
+          "name": "Form Field",
+          "reusable": true,
+          "width": 320,
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "mAmTU",
+              "name": "fieldLabelA",
+              "fill": "$--color-text-primary",
+              "content": "First name",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "$--weight-medium"
+            },
+            {
+              "type": "frame",
+              "id": "RzOSS",
+              "name": "fieldInputA",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "padding": [
+                0,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VQn5L",
+                  "name": "fieldPlaceholderA",
+                  "fill": "$--color-text-muted",
+                  "content": "Placeholder input",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lpzkR",
+          "name": "Textarea Field",
+          "reusable": true,
+          "width": 320,
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "1Ia4e",
+              "name": "textareaLabelA",
+              "fill": "$--color-text-primary",
+              "content": "Biggest challenge",
+              "fontFamily": "Mulish",
+              "fontSize": "$--type-body-md",
+              "fontWeight": "$--weight-medium"
+            },
+            {
+              "type": "frame",
+              "id": "6GAOB",
+              "name": "textareaInputA",
+              "width": "fill_container",
+              "height": 120,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SDFRG",
+                  "name": "textareaPlaceholderA",
+                  "fill": "$--color-text-muted",
+                  "content": "Placeholder text area",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "PEczi",
+      "x": 3400,
+      "y": 40,
+      "name": "Home / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "KlffT",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "homeHeaderA"
+        },
+        {
+          "id": "EwGuC",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "name": "homeHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "EDITORIAL PRESENTATION SUPPORT / ENGLISH + MULTILINGUAL SETTINGS"
+            },
+            "BHFES": {
+              "content": "Make the next presentation clearer, sharper, and more credible."
+            },
+            "toqcb": {
+              "content": "Signal over Noise helps professionals presenting in English and multilingual settings strengthen the message, refine the slides, rehearse the delivery, and prepare for high-stakes moments."
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "oJZkg",
+              "width": 440,
+              "height": "fill_container",
+              "fill": "$--brand-blue-deep",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vXJAR",
+                  "width": "fill_container",
+                  "height": 120,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./img/signal-over-noise-wordmark.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "VXO6d",
+                  "fill": "$--brand-gold-soft",
+                  "content": "DIAGNOSTIC-FIRST MAIN SITE",
+                  "fontFamily": "Source Code Pro",
+                  "fontSize": "$--type-label",
+                  "fontWeight": "$--weight-medium",
+                  "letterSpacing": 1.4
+                },
+                {
+                  "type": "text",
+                  "id": "EWYpk",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Homepage routing stays broad and uncluttered: visitors can request a tailored review first, then move into packages, process, and proof as needed.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "Adodf",
+          "type": "ref",
+          "ref": "lJAIQ",
+          "name": "homeTrustA"
+        },
+        {
+          "type": "frame",
+          "id": "BlsdM",
+          "name": "Audience Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "wn1T1",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "audienceIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "WHO THIS IS FOR"
+                },
+                "8L99a": {
+                  "content": "Support for experts and teams presenting across international and mixed-language contexts."
+                },
+                "QHJpK": {
+                  "content": "The audience is framed respectfully: capable professionals working through presentation stakes, clarity, and structure in English and multilingual settings."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "HencO",
+              "name": "audienceRowA",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GbaCI",
+                  "name": "audienceBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Signal over Noise is for founders, academics, operators, and teams who need sharper structure, cleaner decks, stronger rehearsal, and more confidence when the presentation actually matters.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-lg",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "U7gpx",
+                  "name": "audienceCardA",
+                  "width": 420,
+                  "fill": "$--color-bg-surface",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$--color-border-light"
+                  },
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NwH34",
+                      "name": "audienceCardTitleA",
+                      "fill": "$--color-text-primary",
+                      "content": "Common v1 audience contexts",
+                      "lineHeight": 1.08,
+                      "fontFamily": "Merriweather",
+                      "fontSize": "$--type-title",
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZoraV",
+                      "name": "audienceCardBodyA",
+                      "fill": "$--color-text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Conference talks, internal updates, investor moments, research presentations, cross-border meetings, and workshop follow-up support.",
+                      "lineHeight": "$--lh-body",
+                      "fontFamily": "Mulish",
+                      "fontSize": "$--type-body-md",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cslhE",
+          "name": "How It Helps Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "TWxQF",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "howIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "HOW SIGNAL OVER NOISE HELPS"
+                },
+                "8L99a": {
+                  "content": "Choose the kind of presentation support that fits the real problem."
+                },
+                "QHJpK": {
+                  "content": "Visitors should be able to self-identify by need, not jargon: message, deck, rehearsal, sprint support, coaching, or team training."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "lm1gl",
+              "name": "pathRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "8dywf",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "pathOneA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Clarify the message"
+                    },
+                    "sDFLe": {
+                      "content": "Strengthen structure, emphasis, and story so the presentation lands quickly and confidently."
+                    },
+                    "vJslq": {
+                      "content": "Best for narrative cleanup and sharper strategic framing."
+                    }
+                  }
+                },
+                {
+                  "id": "IHWz3",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "pathTwoA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Improve the deck"
+                    },
+                    "sDFLe": {
+                      "content": "Refine visual hierarchy, slide flow, and signal-to-noise ratio so the deck supports the message instead of fighting it."
+                    },
+                    "vJslq": {
+                      "content": "Best for slide review, cleanup, and executive-facing polish."
+                    }
+                  }
+                },
+                {
+                  "id": "9kiVJ",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "pathThreeA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Rehearse the delivery"
+                    },
+                    "sDFLe": {
+                      "content": "Build timing, emphasis, transitions, and speaking confidence before the high-stakes presentation itself."
+                    },
+                    "vJslq": {
+                      "content": "Best for rehearsal, delivery coaching, and final readiness."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ilodQ",
+          "name": "Process Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "GeOib",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "processIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "HOW IT WORKS"
+                },
+                "8L99a": {
+                  "content": "A structured path from first review to delivery-ready presentation."
+                },
+                "QHJpK": {
+                  "content": "The process should reduce uncertainty and show what happens after someone requests help."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "LPZRm",
+              "name": "processRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "zoyXv",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processOneA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "01"
+                    },
+                    "W5p5m": {
+                      "content": "Start with the diagnostic"
+                    },
+                    "6UR6s": {
+                      "content": "Review the current presentation and identify the highest-leverage issue first."
+                    }
+                  }
+                },
+                {
+                  "id": "sly0O",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processTwoA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "02"
+                    },
+                    "W5p5m": {
+                      "content": "Get the recommendation"
+                    },
+                    "6UR6s": {
+                      "content": "Choose the right level of support: refinement, rehearsal, sprint, coaching, or training."
+                    }
+                  }
+                },
+                {
+                  "id": "cavpq",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processThreeA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "03"
+                    },
+                    "W5p5m": {
+                      "content": "Refine and rehearse"
+                    },
+                    "6UR6s": {
+                      "content": "Improve the message, sharpen the slides, and practice the delivery where needed."
+                    }
+                  }
+                },
+                {
+                  "id": "LpozD",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processFourA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "04"
+                    },
+                    "W5p5m": {
+                      "content": "Present with more confidence"
+                    },
+                    "6UR6s": {
+                      "content": "Move into the presentation with stronger structure, clearer visuals, and a better plan."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uEWU0",
+          "name": "Proof Teaser Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "SFjdD",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "proofIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PROOF AND CREDIBILITY"
+                },
+                "8L99a": {
+                  "content": "Show real artifacts and real process, not inflated claims."
+                },
+                "QHJpK": {
+                  "content": "Use founder credibility, sample review work, and before/after examples where approved."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "bKagO",
+              "name": "proofRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "Ey85h",
+                  "type": "ref",
+                  "ref": "1OtQj",
+                  "name": "proofCardA",
+                  "descendants": {
+                    "LYtgE": {
+                      "content": "Sample review teaser"
+                    },
+                    "1QlEb": {
+                      "content": "Preview the diagnostic with a real annotated review mockup once the approved artifact is ready."
+                    },
+                    "HzQqv": {
+                      "content": "Placeholder until sample markup is available."
+                    }
+                  }
+                },
+                {
+                  "id": "oNRsx",
+                  "type": "ref",
+                  "ref": "LyQ2B",
+                  "name": "comparisonCardA",
+                  "descendants": {
+                    "hlkST": {
+                      "content": "Before and after preview"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "p2grZ",
+          "name": "Package Preview Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "yWliR",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "packageIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "FEATURED OFFERS"
+                },
+                "8L99a": {
+                  "content": "Start with the diagnostic, then move into the level of support you actually need."
+                },
+                "QHJpK": {
+                  "content": "Homepage package preview should route, not overwhelm. Keep pricing flexible and the path easy to understand."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "I5Qp4",
+              "name": "packageRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "fy14I",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packageOneA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Diagnostic"
+                    },
+                    "YeCCW": {
+                      "content": "A tailored review with consult follow-up to identify the strongest next step."
+                    }
+                  }
+                },
+                {
+                  "id": "mRTVG",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packageTwoA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Sprint"
+                    },
+                    "YeCCW": {
+                      "content": "Focused short-term support for a high-stakes presentation that needs rapid improvement."
+                    },
+                    "afc1R": {
+                      "content": "Pricing language placeholder / custom scope"
+                    }
+                  }
+                },
+                {
+                  "id": "qmFFP",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packageThreeA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Coaching"
+                    },
+                    "YeCCW": {
+                      "content": "Ongoing support for professionals building stronger presentation habits over time."
+                    },
+                    "afc1R": {
+                      "content": "Coaching format placeholder / diagnostic recommended first"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "IvVrn",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "homeCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Request the free diagnostic and see what your next presentation needs."
+            },
+            "0qyRm": {
+              "content": "You will get a tailored review path, a clear next-step recommendation, and no pressure to commit to a large package immediately."
+            }
+          }
+        },
+        {
+          "id": "iaQmH",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "homeFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OOXDE",
+      "x": 4880,
+      "y": 40,
+      "name": "Home / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "Ficwl",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "homeMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "id": "6hCDP",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "width": 390,
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            20
+          ],
+          "name": "homeMHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "PRESENTATION SUPPORT / ENGLISH + MULTILINGUAL SETTINGS"
+            },
+            "BHFES": {
+              "content": "Make the next presentation clearer, sharper, and more credible."
+            },
+            "toqcb": {
+              "content": "Start with the free diagnostic, then move into refinement, rehearsal, or coaching as needed."
+            },
+            "nRaHy": {
+              "layout": "vertical",
+              "gap": 10
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "wOXTk",
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$--brand-blue-deep",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bosZQ",
+                  "fill": "$--color-text-on-dark",
+                  "content": "Signal over Noise",
+                  "lineHeight": 1.04,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-heading-md",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "yJTi2",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Diagnostic-first homepage with the toolkit available as the lighter secondary path.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "YHdcg",
+          "type": "ref",
+          "ref": "xx3xg",
+          "width": "fill_container",
+          "name": "homeMAudienceA",
+          "descendants": {
+            "oMPZN": {
+              "content": "WHO THIS IS FOR"
+            },
+            "8L99a": {
+              "content": "Professionals and teams presenting in English and multilingual settings."
+            },
+            "QHJpK": {
+              "content": "High-stakes communication support without language shame, with structure, slide clarity, and rehearsal at the center."
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "LLJJu",
+          "name": "homeMHowSecA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "ErxyA",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "homeMHowIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "HOW SIGNAL OVER NOISE HELPS"
+                },
+                "8L99a": {
+                  "content": "Choose support by need."
+                },
+                "QHJpK": {
+                  "content": "Message, deck, rehearsal, sprint, coaching, or team training."
+                }
+              }
+            },
+            {
+              "id": "9Dc5X",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "homeMPathOneA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Clarify the message"
+                },
+                "sDFLe": {
+                  "content": "Strengthen story, emphasis, and structure."
+                }
+              }
+            },
+            {
+              "id": "DlUBI",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "homeMPathTwoA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Improve the deck"
+                },
+                "sDFLe": {
+                  "content": "Refine hierarchy, flow, and slide clarity."
+                }
+              }
+            },
+            {
+              "id": "erzda",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "homeMPathThreeA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Rehearse the delivery"
+                },
+                "sDFLe": {
+                  "content": "Build timing, transitions, and confidence."
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bOD5Y",
+          "name": "homeMProcessSecA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            8,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "RwjGt",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "homeMProcessIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "HOW IT WORKS"
+                },
+                "8L99a": {
+                  "content": "From diagnostic to delivery-ready presentation."
+                },
+                "QHJpK": {
+                  "content": "Review, recommendation, refinement, and presentation readiness."
+                }
+              }
+            },
+            {
+              "id": "cXxgS",
+              "type": "ref",
+              "ref": "Qjx6S",
+              "width": "fill_container",
+              "name": "homeMProcessOneA",
+              "descendants": {
+                "3riMK": {
+                  "content": "01"
+                },
+                "W5p5m": {
+                  "content": "Start with the diagnostic"
+                }
+              }
+            },
+            {
+              "id": "9smZL",
+              "type": "ref",
+              "ref": "Qjx6S",
+              "width": "fill_container",
+              "name": "homeMProcessTwoA",
+              "descendants": {
+                "3riMK": {
+                  "content": "02"
+                },
+                "W5p5m": {
+                  "content": "Get the recommendation"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "nFlQy",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "homeMCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Request the free diagnostic."
+            },
+            "0qyRm": {
+              "content": "Bring the next presentation in with more clarity and a stronger plan."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "1NTzu",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "homeMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "SFWM9",
+      "x": 5330,
+      "y": 40,
+      "name": "Scan / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "MU2Zn",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "scanHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "id": "CanFv",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "name": "scanHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "WORKSHOP FOLLOW-UP / TOOLKIT FIRST"
+            },
+            "BHFES": {
+              "content": "Get the Signal over Noise Presenter Toolkit."
+            },
+            "toqcb": {
+              "content": "Claim the worksheet, slide checklist, and rehearsal plan used to carry the workshop into real presentation work. Start here, then move to the diagnostic if you want tailored feedback."
+            },
+            "LwyyX/mZI2V": {
+              "content": "Get the Toolkit"
+            },
+            "DmoHd/0KKHx": {
+              "content": "Request Diagnostic"
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "dqwya",
+              "width": 440,
+              "height": "fill_container",
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "A4a3H",
+                  "fill": "$--color-text-primary",
+                  "content": "Get the toolkit",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "n8IIs",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Light email capture for workshop follow-up. Mobile-first. Redirects to /thanks after submit.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "LDZkO",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "KdLiB",
+                      "fill": "$--color-text-primary",
+                      "content": "First name",
+                      "fontFamily": "Mulish",
+                      "fontSize": "$--type-body-md",
+                      "fontWeight": "$--weight-medium"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "V1CvL",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "padding": [
+                        0,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "AgV6I",
+                          "fill": "$--color-text-muted",
+                          "content": "Enter first name",
+                          "fontFamily": "Mulish",
+                          "fontSize": "$--type-body-md",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2SnEz",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DnXwh",
+                      "fill": "$--color-text-primary",
+                      "content": "Email",
+                      "fontFamily": "Mulish",
+                      "fontSize": "$--type-body-md",
+                      "fontWeight": "$--weight-medium"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vdvNQ",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "padding": [
+                        0,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9yIOi",
+                          "fill": "$--color-text-muted",
+                          "content": "name@example.com",
+                          "fontFamily": "Mulish",
+                          "fontSize": "$--type-body-md",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I42SM",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7TlVb",
+                      "fill": "$--color-text-primary",
+                      "content": "Biggest presentation challenge (optional)",
+                      "fontFamily": "Mulish",
+                      "fontSize": "$--type-body-md",
+                      "fontWeight": "$--weight-medium"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1Eq5I",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$--color-bg-surface",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$--color-border-light"
+                      },
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "daSeR",
+                          "fill": "$--color-text-muted",
+                          "content": "Context placeholder",
+                          "fontFamily": "Mulish",
+                          "fontSize": "$--type-body-md",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PzYiW",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "id": "mNpa4",
+                      "type": "ref",
+                      "ref": "pEDYi",
+                      "descendants": {
+                        "mZI2V": {
+                          "content": "Get the Toolkit"
+                        }
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "TesOQ",
+                      "fill": "$--brand-blue",
+                      "content": "Inline success state then redirect to /thanks",
+                      "fontFamily": "Source Code Pro",
+                      "fontSize": "$--type-label",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "LSQhy",
+          "name": "Toolkit Contents Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "sWnNR",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "scanToolkitIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "WHAT'S INSIDE"
+                },
+                "8L99a": {
+                  "content": "Three practical tools to help the next presentation go better."
+                },
+                "QHJpK": {
+                  "content": "Keep this page focused on useful follow-up value rather than broad site explanation."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "ATYq0",
+              "name": "scanToolkitRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "i6VNn",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "scanToolkitOneA",
+                  "descendants": {
+                    "Nef5j": {
+                      "content": "TOOLKIT"
+                    },
+                    "V0FaA": {
+                      "content": "Script Development Worksheet"
+                    },
+                    "sDFLe": {
+                      "content": "Use it to structure the talk, sharpen the main point, and remove avoidable noise."
+                    },
+                    "vJslq": {
+                      "content": "Workshop asset / immediate follow-up value"
+                    }
+                  }
+                },
+                {
+                  "id": "iTrQT",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "scanToolkitTwoA",
+                  "descendants": {
+                    "Nef5j": {
+                      "content": "TOOLKIT"
+                    },
+                    "V0FaA": {
+                      "content": "Slide Review Checklist"
+                    },
+                    "sDFLe": {
+                      "content": "Check hierarchy, pacing, density, and slide-to-script alignment before the presentation."
+                    },
+                    "vJslq": {
+                      "content": "Workshop asset / deck cleanup"
+                    }
+                  }
+                },
+                {
+                  "id": "kJ41t",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "scanToolkitThreeA",
+                  "descendants": {
+                    "Nef5j": {
+                      "content": "TOOLKIT"
+                    },
+                    "V0FaA": {
+                      "content": "Presentation Rehearsal Plan"
+                    },
+                    "sDFLe": {
+                      "content": "Translate preparation into deliberate rehearsal rather than last-minute improvisation."
+                    },
+                    "vJslq": {
+                      "content": "Workshop asset / delivery readiness"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NgYb8",
+          "name": "Why It Matters Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "dsOd8",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "scanWhyIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "WHY THIS MATTERS"
+                },
+                "8L99a": {
+                  "content": "Carry the workshop into the presentation that actually matters."
+                },
+                "QHJpK": {
+                  "content": "The toolkit is useful on its own, but tailored feedback is available if the stakes are higher or the presentation is already in motion."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "BtQlA",
+              "name": "scanBridgeA",
+              "width": 720,
+              "fill": "$--brand-blue-deep",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "LlpIa",
+                  "name": "scanBridgeTitleA",
+                  "fill": "$--color-text-on-dark",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Need tailored feedback on the actual presentation?",
+                  "lineHeight": 1.06,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-heading-md",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "JIvfr",
+                  "name": "scanBridgeBodyA",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The free diagnostic reviews your script, slides, or recorded delivery and points you toward the next best step.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-lg",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0Ls05",
+          "type": "ref",
+          "ref": "lJAIQ",
+          "name": "scanTrustA",
+          "descendants": {
+            "XU9bI": {
+              "content": "Light founder credibility belongs here, not a full proof stack."
+            },
+            "wBC1F": {
+              "content": "Use teaching, directing, and presentation-shaping credibility with no fabricated endorsements."
+            },
+            "z9r6V": {
+              "content": "Tailored diagnostic stays secondary on /scan but remains visible."
+            }
+          }
+        },
+        {
+          "id": "Xktb5",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "scanFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "rXLPi",
+      "x": 6810,
+      "y": 40,
+      "name": "Scan / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "cNxxd",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "scanMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "id": "AZKbP",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "width": 390,
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            20
+          ],
+          "name": "scanMHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "WORKSHOP FOLLOW-UP / TOOLKIT FIRST"
+            },
+            "BHFES": {
+              "content": "Get the Signal over Noise Presenter Toolkit."
+            },
+            "toqcb": {
+              "content": "Claim the workshop follow-up toolkit, then request the diagnostic if you want tailored feedback."
+            },
+            "nRaHy": {
+              "layout": "vertical",
+              "gap": 10
+            },
+            "LwyyX/mZI2V": {
+              "content": "Get the Toolkit"
+            },
+            "DmoHd/0KKHx": {
+              "content": "Diagnostic"
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "Q2hp2",
+              "width": "fill_container",
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "h4HWN",
+                  "fill": "$--color-text-primary",
+                  "content": "Toolkit form",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "7kebk",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "First name, email, and optional challenge field. Redirect to /thanks after submit.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                },
+                {
+                  "id": "rqXyH",
+                  "type": "ref",
+                  "ref": "pEDYi",
+                  "descendants": {
+                    "mZI2V": {
+                      "content": "Get the Toolkit"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "m3J3B",
+          "name": "scanMToolkitA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "i4tmd",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "scanMToolkitIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "WHAT'S INSIDE"
+                },
+                "8L99a": {
+                  "content": "Three practical workshop follow-up tools."
+                },
+                "QHJpK": {
+                  "content": "Script worksheet, slide checklist, and rehearsal plan."
+                }
+              }
+            },
+            {
+              "id": "ls2OG",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "scanMToolkitOneA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Script Development Worksheet"
+                },
+                "sDFLe": {
+                  "content": "Structure the talk and sharpen the main point."
+                }
+              }
+            },
+            {
+              "id": "s52oz",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "scanMToolkitTwoA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Slide Review Checklist"
+                },
+                "sDFLe": {
+                  "content": "Clean up hierarchy, pacing, and density."
+                }
+              }
+            },
+            {
+              "id": "7Y8ZA",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "scanMToolkitThreeA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Presentation Rehearsal Plan"
+                },
+                "sDFLe": {
+                  "content": "Turn preparation into deliberate rehearsal."
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "mhcHL",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "scanMBridgeA",
+          "descendants": {
+            "3UwZb": {
+              "content": "TAILORED FEEDBACK"
+            },
+            "VxWjC": {
+              "content": "Need feedback on the actual presentation?"
+            },
+            "0qyRm": {
+              "content": "Request the free diagnostic after you claim the toolkit."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "XY7yX",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "scanMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "bCZh9",
+      "x": 7260,
+      "y": 40,
+      "name": "Thanks / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "59eH1",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "thanksHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "id": "ISKco",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "name": "thanksHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "TOOLKIT REQUEST CONFIRMED"
+            },
+            "BHFES": {
+              "content": "Check your inbox, then request the free presentation diagnostic."
+            },
+            "toqcb": {
+              "content": "The toolkit is on its way. If you want feedback on a real script, deck, or delivery recording, the diagnostic is the next step."
+            },
+            "LwyyX/mZI2V": {
+              "content": "Request Diagnostic"
+            },
+            "DmoHd": {
+              "enabled": false
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "Uxevb",
+              "width": 440,
+              "height": "fill_container",
+              "fill": "$--brand-blue-deep",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "zSJVK",
+                  "fill": "$--color-text-on-dark",
+                  "content": "What happens next",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "fHIEW",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "1. Check your inbox for the toolkit. 2. Review the three assets. 3. If the stakes are high, request the diagnostic for tailored feedback.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "jvSdG",
+                  "fill": "$--brand-gold-soft",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Diagnostic turnaround language placeholder / booking handoff placeholder",
+                  "fontFamily": "Source Code Pro",
+                  "fontSize": "$--type-label",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "kgsrx",
+          "name": "Diagnostic Offer Section",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "ebyQd",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "thanksDiagIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "FREE PRESENTATION DIAGNOSTIC"
+                },
+                "8L99a": {
+                  "content": "A useful tailored review, not a bait-and-switch."
+                },
+                "QHJpK": {
+                  "content": "Explain clearly that the diagnostic includes review notes and a short consult follow-up before any deeper engagement is suggested."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "Pno3a",
+              "name": "thanksDiagRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "RI18N",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "thanksDiagOneA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "What it includes"
+                    },
+                    "YeCCW": {
+                      "content": "A short PDF-style review plus consult follow-up focused on the presentation in front of you."
+                    },
+                    "afc1R": {
+                      "content": "Free in v1 / consult handoff after request"
+                    }
+                  }
+                },
+                {
+                  "id": "0XKMs",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "thanksDiagTwoA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Review types"
+                    },
+                    "YeCCW": {
+                      "content": "Choose a slide deck diagnostic, script diagnostic, or video performance diagnostic based on what you need reviewed."
+                    },
+                    "afc1R": {
+                      "content": "Diagnostic type is chosen in the request flow"
+                    }
+                  }
+                },
+                {
+                  "id": "AANZm",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "thanksDiagThreeA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "What happens after"
+                    },
+                    "YeCCW": {
+                      "content": "You receive a recommendation for refinement, rehearsal, sprint support, coaching, or no further help if that is the honest answer."
+                    },
+                    "afc1R": {
+                      "content": "No big package commitment required upfront"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0u2Lr",
+          "type": "ref",
+          "ref": "lJAIQ",
+          "name": "thanksTrustA",
+          "descendants": {
+            "XU9bI": {
+              "content": "Trust stays light here: enough reassurance to act, without turning the page into a full proof narrative."
+            },
+            "wBC1F": {
+              "content": "Use real founder credibility and process transparency only."
+            },
+            "z9r6V": {
+              "content": "Keep the path simple: request diagnostic, then move into booking or next-step guidance."
+            }
+          }
+        },
+        {
+          "id": "kL1Ud",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "thanksCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Request your free presentation diagnostic."
+            },
+            "0qyRm": {
+              "content": "Bring a script, slide deck, or recorded delivery sample and get a tailored recommendation for the strongest next step."
+            },
+            "CbzNj": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "id": "4YBSh",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "thanksFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "j6udj",
+      "x": 8740,
+      "y": 40,
+      "name": "Thanks / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "o2hqa",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "thanksMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "id": "FVv8M",
+          "type": "ref",
+          "ref": "9ZL6F",
+          "width": 390,
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            20
+          ],
+          "name": "thanksMHeroA",
+          "descendants": {
+            "GPQrh": {
+              "content": "TOOLKIT REQUEST CONFIRMED"
+            },
+            "BHFES": {
+              "content": "Check your inbox, then request the free diagnostic."
+            },
+            "toqcb": {
+              "content": "The toolkit is on its way. If the presentation is already live or high-stakes, the diagnostic is the next step."
+            },
+            "nRaHy": {
+              "layout": "vertical",
+              "gap": 10
+            },
+            "LwyyX/mZI2V": {
+              "content": "Request Diagnostic"
+            },
+            "DmoHd": {
+              "enabled": false
+            },
+            "ON1jM": {
+              "type": "frame",
+              "id": "tOu7N",
+              "width": "fill_container",
+              "fill": "$--brand-blue-deep",
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YEvoi",
+                  "fill": "$--color-text-on-dark",
+                  "content": "Next steps",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "IyZ8A",
+                  "fill": "#D7DEE8",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Check the inbox, review the toolkit, then submit the diagnostic request if you want tailored feedback.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "20CV5",
+          "name": "thanksMSectionA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "To7TV",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "thanksMIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "FREE PRESENTATION DIAGNOSTIC"
+                },
+                "8L99a": {
+                  "content": "A useful tailored review, not a sales trick."
+                },
+                "QHJpK": {
+                  "content": "Bring a deck, script, or recorded delivery sample and get a clear recommendation for the next step."
+                }
+              }
+            },
+            {
+              "id": "OhrSx",
+              "type": "ref",
+              "ref": "8S92b",
+              "width": "fill_container",
+              "name": "thanksMCardOneA",
+              "descendants": {
+                "2vTpy": {
+                  "content": "What it includes"
+                },
+                "YeCCW": {
+                  "content": "Review notes plus a short consult follow-up."
+                }
+              }
+            },
+            {
+              "id": "YCYVp",
+              "type": "ref",
+              "ref": "8S92b",
+              "width": "fill_container",
+              "name": "thanksMCardTwoA",
+              "descendants": {
+                "2vTpy": {
+                  "content": "Review types"
+                },
+                "YeCCW": {
+                  "content": "Slide deck, script, or video performance diagnostic."
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "zwvW4",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "thanksMCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Request your free presentation diagnostic."
+            },
+            "0qyRm": {
+              "content": "Bring the presentation you are actually working on and get a tailored next-step recommendation."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "FSUQT",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "thanksMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "AVnmh",
+      "x": 3400,
+      "y": 3500,
+      "name": "Services / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "kQFVh",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "servicesHeaderA"
+        },
+        {
+          "type": "frame",
+          "id": "Ne5HO",
+          "name": "servicesIntroA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "VHAMS",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "servicesIntroCopyA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "SERVICES"
+                },
+                "8L99a": {
+                  "content": "Find the kind of presentation help that matches the actual problem."
+                },
+                "QHJpK": {
+                  "content": "Clarify the message, improve the deck, rehearse the delivery, prepare for a high-stakes moment, build long-term skill, or train the team."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "MPzji",
+              "name": "servicesRowOneA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "ZvaOr",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "servicesCardOneA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Clarify the message"
+                    },
+                    "sDFLe": {
+                      "content": "Message refinement, structure, narrative cleanup."
+                    },
+                    "vJslq": {
+                      "content": "Best for strategy and story."
+                    }
+                  }
+                },
+                {
+                  "id": "mY0eA",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "servicesCardTwoA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Improve the deck"
+                    },
+                    "sDFLe": {
+                      "content": "Slide refinement, hierarchy cleanup, visual flow."
+                    },
+                    "vJslq": {
+                      "content": "Best for deck support."
+                    }
+                  }
+                },
+                {
+                  "id": "WbzsL",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "servicesCardThreeA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Rehearse the delivery"
+                    },
+                    "sDFLe": {
+                      "content": "Timing, emphasis, transitions, and confidence."
+                    },
+                    "vJslq": {
+                      "content": "Best for final readiness."
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "J1bJB",
+              "name": "servicesRowTwoA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "U9WNQ",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "servicesCardFourA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "High-stakes presentation"
+                    },
+                    "sDFLe": {
+                      "content": "Presentation sprint support for important near-term moments."
+                    },
+                    "vJslq": {
+                      "content": "Best for urgency."
+                    }
+                  }
+                },
+                {
+                  "id": "gsrY8",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "servicesCardFiveA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Build long-term skill"
+                    },
+                    "sDFLe": {
+                      "content": "Presentation coaching for stronger habits over time."
+                    },
+                    "vJslq": {
+                      "content": "Best for ongoing growth."
+                    }
+                  }
+                },
+                {
+                  "id": "nHOLf",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "servicesCardSixA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Train the team"
+                    },
+                    "sDFLe": {
+                      "content": "Custom workshops and team training support."
+                    },
+                    "vJslq": {
+                      "content": "Best for group learning."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "YMN3T",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "servicesCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Not sure which path fits? Start with the free diagnostic."
+            }
+          }
+        },
+        {
+          "id": "M4bjQ",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "servicesFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "lSbXM",
+      "x": 4880,
+      "y": 3500,
+      "name": "Services / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "Ta83O",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "servicesMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "Psnnq",
+          "name": "servicesMSectionA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            32,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "hQFBt",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "servicesMIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "SERVICES"
+                },
+                "8L99a": {
+                  "content": "Choose help by need."
+                },
+                "QHJpK": {
+                  "content": "Message, deck, rehearsal, sprint, coaching, or team training."
+                }
+              }
+            },
+            {
+              "id": "lQ8Gc",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "servicesMCardOneA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Clarify the message"
+                }
+              }
+            },
+            {
+              "id": "yTkww",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "servicesMCardTwoA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Improve the deck"
+                }
+              }
+            },
+            {
+              "id": "Kp9V5",
+              "type": "ref",
+              "ref": "qlOOp",
+              "width": "fill_container",
+              "name": "servicesMCardThreeA",
+              "descendants": {
+                "V0FaA": {
+                  "content": "Rehearse the delivery"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "vwALb",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "servicesMCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Start with the free diagnostic."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "cTfuI",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "servicesMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "IIZDT",
+      "x": 5330,
+      "y": 3500,
+      "name": "Process / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "IXNda",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "processHeaderA"
+        },
+        {
+          "type": "frame",
+          "id": "ZmXjJ",
+          "name": "processSectionA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "KNXZz",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "processIntroCopyA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PROCESS"
+                },
+                "8L99a": {
+                  "content": "A structured, professional path from first review to presentation-ready work."
+                },
+                "QHJpK": {
+                  "content": "Use process clarity to reduce uncertainty and explain what happens after the diagnostic."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "7zFYk",
+              "name": "processRowOneA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "gtpN0",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processCardOneA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "01"
+                    },
+                    "W5p5m": {
+                      "content": "Diagnostic"
+                    }
+                  }
+                },
+                {
+                  "id": "H95Po",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processCardTwoA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "02"
+                    },
+                    "W5p5m": {
+                      "content": "Recommendation"
+                    }
+                  }
+                },
+                {
+                  "id": "p12lM",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processCardThreeA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "03"
+                    },
+                    "W5p5m": {
+                      "content": "Refinement and rehearsal"
+                    }
+                  }
+                },
+                {
+                  "id": "GE9Dw",
+                  "type": "ref",
+                  "ref": "Qjx6S",
+                  "name": "processCardFourA",
+                  "descendants": {
+                    "3riMK": {
+                      "content": "04"
+                    },
+                    "W5p5m": {
+                      "content": "Delivery-ready presentation"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NxvqI",
+              "name": "processPrepA",
+              "width": 720,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aTnE8",
+                  "name": "processPrepTitleA",
+                  "fill": "$--color-text-primary",
+                  "content": "Preparation expectations",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "esgbj",
+                  "name": "processPrepBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Bring the current presentation materials, presentation date, working context, and biggest challenge so the review can be practical rather than generic.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2M78J",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "processCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Start with the diagnostic and get a clear recommendation."
+            }
+          }
+        },
+        {
+          "id": "83qZT",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "processFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "8tfVy",
+      "x": 6810,
+      "y": 3500,
+      "name": "Process / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "IJ6wA",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "processMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "Qkuac",
+          "name": "processMSectionA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            32,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "5Qcp3",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "processMIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PROCESS"
+                },
+                "8L99a": {
+                  "content": "How Signal over Noise works."
+                },
+                "QHJpK": {
+                  "content": "Diagnostic, recommendation, refinement, rehearsal, and presentation readiness."
+                }
+              }
+            },
+            {
+              "id": "MLYWK",
+              "type": "ref",
+              "ref": "Qjx6S",
+              "width": "fill_container",
+              "name": "processMCardOneA",
+              "descendants": {
+                "3riMK": {
+                  "content": "01"
+                },
+                "W5p5m": {
+                  "content": "Diagnostic"
+                }
+              }
+            },
+            {
+              "id": "UhEht",
+              "type": "ref",
+              "ref": "Qjx6S",
+              "width": "fill_container",
+              "name": "processMCardTwoA",
+              "descendants": {
+                "3riMK": {
+                  "content": "02"
+                },
+                "W5p5m": {
+                  "content": "Recommendation"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "WkH2M",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "processMCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Start with the diagnostic."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "g696g",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "processMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "jJenH",
+      "x": 7260,
+      "y": 3500,
+      "name": "Packages / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "sOSld",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "packagesHeaderA"
+        },
+        {
+          "type": "frame",
+          "id": "ClQx5",
+          "name": "packagesSectionA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "iOjF9",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "packagesIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PACKAGES"
+                },
+                "8L99a": {
+                  "content": "Make the offer feel buyable without forcing rigid pricing too early."
+                },
+                "QHJpK": {
+                  "content": "Use named offers, best-for guidance, and flexible pricing language where final scope is still evolving."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "GcaEQ",
+              "name": "packagesRowOneA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "7wf3Y",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packagesCardOneA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Diagnostic"
+                    }
+                  }
+                },
+                {
+                  "id": "WuCNU",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packagesCardTwoA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Message Refinement"
+                    },
+                    "YeCCW": {
+                      "content": "Clarify structure, narrative, and emphasis so the talk lands faster."
+                    }
+                  }
+                },
+                {
+                  "id": "R9XRn",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packagesCardThreeA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Slide Refinement"
+                    },
+                    "YeCCW": {
+                      "content": "Improve hierarchy, density, and visual flow across the deck."
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "a5i1v",
+              "name": "packagesRowTwoA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "gerCL",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packagesCardFourA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Rehearsal"
+                    }
+                  }
+                },
+                {
+                  "id": "Kv0vh",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packagesCardFiveA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Sprint"
+                    }
+                  }
+                },
+                {
+                  "id": "YwX1R",
+                  "type": "ref",
+                  "ref": "8S92b",
+                  "name": "packagesCardSixA",
+                  "descendants": {
+                    "2vTpy": {
+                      "content": "Presentation Coaching"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EWmd1",
+              "name": "packagesPricingA",
+              "width": 720,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "7NCst",
+                  "name": "packagesPricingTitleA",
+                  "fill": "$--color-text-primary",
+                  "content": "Pricing approach",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "hoB1Q",
+                  "name": "packagesPricingBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Use clear placeholder pricing language in v1. Keep final scope flexible and route uncertain visitors into the diagnostic first.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "yB9z8",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "packagesCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Start with the diagnostic, then move into the right package."
+            }
+          }
+        },
+        {
+          "id": "eGA0g",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "packagesFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fkkvT",
+      "x": 8740,
+      "y": 3500,
+      "name": "Packages / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "Y0845",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "packagesMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "w3ket",
+          "name": "packagesMSectionA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            32,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "v1BPJ",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "packagesMIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PACKAGES"
+                },
+                "8L99a": {
+                  "content": "Named offers, flexible scope."
+                },
+                "QHJpK": {
+                  "content": "Diagnostic, refinement, rehearsal, sprint, coaching, and training."
+                }
+              }
+            },
+            {
+              "id": "skRVr",
+              "type": "ref",
+              "ref": "8S92b",
+              "width": "fill_container",
+              "name": "packagesMCardOneA",
+              "descendants": {
+                "2vTpy": {
+                  "content": "Presentation Diagnostic"
+                }
+              }
+            },
+            {
+              "id": "ULXOQ",
+              "type": "ref",
+              "ref": "8S92b",
+              "width": "fill_container",
+              "name": "packagesMCardTwoA",
+              "descendants": {
+                "2vTpy": {
+                  "content": "Presentation Sprint"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "2cK2C",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "packagesMCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Start with the diagnostic."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "CAUMe",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "packagesMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "IyjmJ",
+      "x": 3400,
+      "y": 6960,
+      "name": "Proof / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "bY2a9",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "proofHeaderA"
+        },
+        {
+          "type": "frame",
+          "id": "KWFfC",
+          "name": "proofSectionA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "aRkh6",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "proofIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PROOF"
+                },
+                "8L99a": {
+                  "content": "Build trust with founder credibility, real artifacts, and method transparency."
+                },
+                "QHJpK": {
+                  "content": "No fabricated testimonials, outcomes, or endorsements. Use what is approved and clearly marked placeholders where needed."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "LwtH4",
+              "name": "proofFounderRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "CibRq",
+                  "type": "ref",
+                  "ref": "3hNUX",
+                  "name": "proofFounderOneA",
+                  "descendants": {
+                    "UnCc1": {
+                      "content": "Benjamin W. Slater"
+                    },
+                    "bSR1O": {
+                      "content": "Founder / bio placeholder"
+                    }
+                  }
+                },
+                {
+                  "id": "4UGCr",
+                  "type": "ref",
+                  "ref": "3hNUX",
+                  "name": "proofFounderTwoA",
+                  "descendants": {
+                    "UnCc1": {
+                      "content": "Andrew Musgrave"
+                    },
+                    "bSR1O": {
+                      "content": "Founder / bio placeholder"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "3NZIn",
+              "name": "proofArtifactRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "5NpA5",
+                  "type": "ref",
+                  "ref": "1OtQj",
+                  "name": "proofArtifactA",
+                  "descendants": {
+                    "LYtgE": {
+                      "content": "Sample review mockup"
+                    }
+                  }
+                },
+                {
+                  "id": "ry1JN",
+                  "type": "ref",
+                  "ref": "LyQ2B",
+                  "name": "proofComparisonA",
+                  "descendants": {
+                    "hlkST": {
+                      "content": "Before and after slide examples"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Phjuz",
+              "name": "proofMethodA",
+              "width": 720,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "C0wjz",
+                  "name": "proofMethodTitleA",
+                  "fill": "$--color-text-primary",
+                  "content": "Method as proof",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "3h1iT",
+                  "name": "proofMethodBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Process transparency stands in for missing testimonials in v1: review the material, diagnose the issue, recommend the right path, then refine or rehearse where needed.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fqdZ7",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "proofCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Bring the actual presentation into the diagnostic."
+            }
+          }
+        },
+        {
+          "id": "iMyb6",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "proofFooterA"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "FNOtU",
+      "x": 4880,
+      "y": 6960,
+      "name": "Proof / Mobile",
+      "width": 390,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "UT8Ak",
+          "type": "ref",
+          "ref": "GWS9M",
+          "width": 390,
+          "name": "proofMHeaderA",
+          "descendants": {
+            "LmLjL": {
+              "enabled": false
+            },
+            "pvest": {
+              "enabled": false
+            },
+            "STl6a": {
+              "enabled": false
+            },
+            "dIEAI": {
+              "enabled": false
+            },
+            "7yfKM": {
+              "enabled": false
+            },
+            "6FqOJ": {
+              "enabled": false
+            },
+            "OSHH3/mZI2V": {
+              "content": "Diagnostic"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "PYIIk",
+          "name": "proofMSectionA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            32,
+            20,
+            24,
+            20
+          ],
+          "children": [
+            {
+              "id": "mJzAN",
+              "type": "ref",
+              "ref": "xx3xg",
+              "width": "fill_container",
+              "name": "proofMIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "PROOF"
+                },
+                "8L99a": {
+                  "content": "Founder credibility and real artifacts."
+                },
+                "QHJpK": {
+                  "content": "Use approved references only and keep placeholders obvious."
+                }
+              }
+            },
+            {
+              "id": "lYd6y",
+              "type": "ref",
+              "ref": "3hNUX",
+              "width": "fill_container",
+              "name": "proofMFounderA",
+              "descendants": {
+                "UnCc1": {
+                  "content": "Benjamin W. Slater"
+                }
+              }
+            },
+            {
+              "id": "h0D7Q",
+              "type": "ref",
+              "ref": "1OtQj",
+              "width": "fill_container",
+              "name": "proofMArtifactA"
+            }
+          ]
+        },
+        {
+          "id": "sRNpN",
+          "type": "ref",
+          "ref": "eHu8p",
+          "width": 390,
+          "name": "proofMCtaA",
+          "descendants": {
+            "VxWjC": {
+              "content": "Start with the diagnostic."
+            },
+            "PMgeu": {
+              "layout": "vertical",
+              "gap": 10
+            }
+          }
+        },
+        {
+          "id": "1F0xQ",
+          "type": "ref",
+          "ref": "m6a9x",
+          "width": 390,
+          "name": "proofMFooterA",
+          "descendants": {
+            "4WiFU": {
+              "layout": "vertical",
+              "gap": 12
+            },
+            "D5OJ2": {
+              "width": "fill_container"
+            },
+            "dMVH1": {
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "start"
+            },
+            "jF6sV": {
+              "width": "fill_container"
+            },
+            "lYit8": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "NxwJv",
+      "x": 5330,
+      "y": 6960,
+      "name": "Workshops / Desktop",
+      "width": 1440,
+      "fill": "$--color-bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "7w9hJ",
+          "type": "ref",
+          "ref": "GWS9M",
+          "name": "workshopsHeaderA"
+        },
+        {
+          "type": "frame",
+          "id": "pSxRp",
+          "name": "workshopsSectionA",
+          "width": "fill_container",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--color-border-light"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            56,
+            32
+          ],
+          "children": [
+            {
+              "id": "JS1wg",
+              "type": "ref",
+              "ref": "xx3xg",
+              "name": "workshopsIntroA",
+              "descendants": {
+                "oMPZN": {
+                  "content": "WORKSHOPS"
+                },
+                "8L99a": {
+                  "content": "Current or near-future training support for teams and cohorts."
+                },
+                "QHJpK": {
+                  "content": "Use workshops to reinforce script, slides, and delivery themes and invite custom team training inquiries."
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "JEP72",
+              "name": "workshopsRowA",
+              "width": "fill_container",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "8Dfez",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "workshopsCardOneA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Script and structure"
+                    },
+                    "sDFLe": {
+                      "content": "Help teams clarify the point and shape stronger narrative flow."
+                    }
+                  }
+                },
+                {
+                  "id": "h604i",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "workshopsCardTwoA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Slides and visual hierarchy"
+                    },
+                    "sDFLe": {
+                      "content": "Teach how to reduce noise and make the deck work harder."
+                    }
+                  }
+                },
+                {
+                  "id": "Cpbgn",
+                  "type": "ref",
+                  "ref": "qlOOp",
+                  "name": "workshopsCardThreeA",
+                  "descendants": {
+                    "V0FaA": {
+                      "content": "Delivery and rehearsal"
+                    },
+                    "sDFLe": {
+                      "content": "Build confidence, pacing, and live presentation readiness."
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UxzD8",
+              "name": "workshopsFormatsA",
+              "width": 720,
+              "fill": "$--color-bg-surface",
+              "stroke": {
+                "thickness": 1,
+                "fill": "$--color-border-light"
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "rBfhX",
+                  "name": "workshopsFormatsTitleA",
+                  "fill": "$--color-text-primary",
+                  "content": "Delivery formats",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Merriweather",
+                  "fontSize": "$--type-title",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "UdUnm",
+                  "name": "workshopsFormatsBodyA",
+                  "fill": "$--color-text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Offer live, remote, or custom-format workshops for professional groups presenting in English and multilingual settings. Final format copy can remain a placeholder in v1.",
+                  "lineHeight": "$--lh-body",
+                  "fontFamily": "Mulish",
+                  "fontSize": "$--type-body-md",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AtsNN",
+          "type": "ref",
+          "ref": "eHu8p",
+          "name": "workshopsCtaA",
+          "descendants": {
+            "3UwZb": {
+              "content": "CUSTOM INQUIRY"
+            },
+            "VxWjC": {
+              "content": "Contact us about custom workshops and team training."
+            },
+            "iG6nI/mZI2V": {
+              "content": "Contact for Workshops"
+            },
+            "CbzNj": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "id": "QoLv0",
+          "type": "ref",
+          "ref": "m6a9x",
+          "name": "workshopsFooterA"
+        }
+      ]
+    }
+  ]
+}
