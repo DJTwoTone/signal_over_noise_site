@@ -128,7 +128,7 @@ function renderFooter() {
             ${createBrandMarkup("footer-brand__mark")}
           </a>
           <div class="site-footer__minimal-meta">
-            <p class="site-footer__meta">Presentation follow-up for workshop attendees.</p>
+            <p class="site-footer__meta">Presentation follow-up resources for workshop attendees.</p>
             <a class="site-footer__privacy" href="${pathTo("privacy/")}">Privacy</a>
           </div>
         </div>
@@ -154,7 +154,7 @@ function renderFooter() {
         <div class="site-footer__rule" role="presentation"></div>
         <div class="site-footer__bottom">
           <p class="site-footer__meta">Presentation support for professionals presenting in English and multilingual settings.</p>
-          <p class="site-footer__legal">Diagnostic-first support with artifacts, process clarity, and selective founder-led proof.</p>
+          <p class="site-footer__legal">Founder-led presentation support built around real materials, clear review, and practical next steps.</p>
         </div>
       </div>
     </footer>
