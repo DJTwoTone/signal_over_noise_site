@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <script src="../assets/site.js" defer></script>
   </head>
-  <body data-site-root="../" data-page="scan">
+  <body data-site-root="../" data-page="scan" data-origin-page="/scan" data-source-context="workshop-qr" data-chrome="minimal">
     <div data-site-header></div>
     <main class="page">
       <section class="section">
         <div class="shell hero-grid">
-          <div class="section__stack">
+          <div class="hero-copy-column">
             <p class="eyebrow">Workshop Follow-Up / Toolkit First</p>
             <h1 class="hero-title">Get the Signal over Noise Presenter Toolkit.</h1>
-            <p class="section-copy">Claim the worksheet, slide checklist, and rehearsal plan used to carry the workshop into real presentation work. Start here, then move to the diagnostic if you want tailored feedback.</p>
+            <p class="hero-copy">Claim the worksheet, slide checklist, and rehearsal plan used to carry the workshop into real presentation work. Start here. If you want tailored feedback on a live presentation, the diagnostic is the next step after this.</p>
             <div class="button-row">
               <a class="button button--primary" href="#toolkit-form">Get the Toolkit</a>
-              <a class="button button--secondary" href="../diagnostic/">Request a Free Presentation Diagnostic</a>
+              <a class="button button--secondary" data-diagnostic-link href="../diagnostic/">Request a Free Presentation Diagnostic</a>
             </div>
           </div>
-          <form class="panel" id="toolkit-form" data-toolkit-form>
+          <form class="panel panel--deep" id="toolkit-form" data-toolkit-form>
             <h2 class="card-title">Get the Signal over Noise Presenter Toolkit</h2>
-            <p class="meta-copy">Light email capture for workshop follow-up. Mobile-friendly and routed to <code>/thanks</code> after submit.</p>
+            <p class="meta-copy">Share the details below and the toolkit request will move into the workshop follow-up flow.</p>
             <label class="field">
               <span class="field-label">First name</span>
               <input class="field-input" type="text" name="firstName" placeholder="Enter first name" required>
@@ -37,63 +37,62 @@
               <span class="field-label">Biggest presentation challenge (optional)</span>
               <textarea class="field-textarea" name="challenge" placeholder="Share the main presentation challenge"></textarea>
             </label>
+            <input type="hidden" name="source" value="workshop-qr">
+            <input type="hidden" name="originPage" value="/scan">
             <div class="form-actions">
               <button class="button button--primary" type="submit">Get the Signal over Noise Presenter Toolkit</button>
-              <p class="mono-note">Redirects to /thanks after submit</p>
+              <p class="mono-note mono-note--gold">Toolkit first. Diagnostic available after this step for tailored review.</p>
             </div>
           </form>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--muted">
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">What&apos;s Inside</p>
             <h2 class="section-title">Three practical tools to help the next presentation go better.</h2>
-            <p class="section-copy">Keep this page focused on useful follow-up value rather than broad site explanation.</p>
+            <p class="section-copy">The toolkit content should feel practical and immediately usable, not like a mini-homepage.</p>
           </div>
-          <div class="three-up">
-            <article class="card">
-              <p class="eyebrow">Toolkit</p>
+          <div class="toolkit-grid">
+            <article class="toolkit-item">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5"></path><path d="M10 13h6"></path><path d="M10 17h6"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Toolkit Asset</p>
               <h3 class="card-title">Script Development Worksheet</h3>
-              <p class="card-copy">Use it to structure the talk, sharpen the main point, and remove avoidable noise.</p>
-              <p class="mono-note">Workshop asset / immediate follow-up value</p>
+              <p class="card-copy">Use it to structure the talk, sharpen the main point, and remove avoidable noise before rehearsal begins.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow">Toolkit</p>
+            <article class="toolkit-item">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M9 11l2 2 4-4"></path><path d="M7 4h10"></path><rect x="5" y="4" width="14" height="16" rx="2"></rect></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Toolkit Asset</p>
               <h3 class="card-title">Slide Review Checklist</h3>
-              <p class="card-copy">Check hierarchy, pacing, density, and slide-to-script alignment before the presentation.</p>
-              <p class="mono-note">Workshop asset / deck cleanup</p>
+              <p class="card-copy">Check hierarchy, pacing, density, and slide-to-script alignment before the presentation starts feeling overloaded.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow">Toolkit</p>
+            <article class="toolkit-item">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Toolkit Asset</p>
               <h3 class="card-title">Presentation Rehearsal Plan</h3>
               <p class="card-copy">Translate preparation into deliberate rehearsal rather than last-minute improvisation.</p>
-              <p class="mono-note">Workshop asset / delivery readiness</p>
             </article>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <div class="shell section__stack">
-          <div class="section__intro">
-            <p class="eyebrow">Why This Matters</p>
-            <h2 class="section-title">Carry the workshop into the presentation that actually matters.</h2>
-            <p class="section-copy">The toolkit is useful on its own, but tailored feedback is available if the stakes are higher or the presentation is already in motion.</p>
+        <div class="shell">
+          <div class="utility-band">
+            <p class="eyebrow">Next Step If the Stakes Are Higher</p>
+            <h2 class="card-title">Need tailored feedback on the actual presentation?</h2>
+            <p class="card-copy">The toolkit stands on its own. If the presentation is already live or especially important, the diagnostic reviews the script, slides, or recorded delivery and points you toward the next best step.</p>
+            <div class="button-row">
+              <a class="button button--secondary" data-diagnostic-link href="../diagnostic/">Request a Free Presentation Diagnostic</a>
+            </div>
           </div>
-          <div class="panel panel--accent notice-card">
-            <h3 class="band-title">Need tailored feedback on the actual presentation?</h3>
-            <p class="band-copy">The free diagnostic reviews your script, slides, or recorded delivery and points you toward the next best step.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--compact">
-        <div class="shell trust-strip">
-          <p class="meta-copy">Light founder credibility belongs here, not a full proof stack.</p>
-          <p class="meta-copy">Use teaching, directing, and presentation-shaping credibility with no fabricated endorsements.</p>
-          <p class="meta-copy">Tailored diagnostic stays secondary on <code>/scan</code> but remains visible.</p>
         </div>
       </section>
     </main>

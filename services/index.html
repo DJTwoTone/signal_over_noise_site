@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <script src="../assets/site.js" defer></script>
   </head>
-  <body data-site-root="../" data-page="services">
+  <body data-site-root="../" data-page="services" data-origin-page="/services" data-source-context="main-site">
     <div data-site-header></div>
     <main class="page">
       <section class="section">
@@ -16,44 +16,117 @@
           <div class="section__intro">
             <p class="eyebrow">Services</p>
             <h1 class="section-title">Find the kind of presentation help that matches the actual problem.</h1>
-            <p class="section-copy">Clarify the message, improve the deck, rehearse the delivery, prepare for a high-stakes moment, build long-term skill, or train the team.</p>
+            <p class="section-copy">Services is the main detail page: start with the six support pathways, then see how they map into the concrete offers and the diagnostic-first recommendation flow.</p>
           </div>
-          <div class="three-up">
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+          <div class="pathway-stack">
+            <article class="pathway-section">
+              <p class="eyebrow">Pathway 01</p>
               <h2 class="card-title">Clarify the message</h2>
-              <p class="card-copy">Strengthen structure, emphasis, and story so the audience understands the point quickly and clearly.</p>
-              <p class="mono-note">Best for strategy and story.</p>
+              <p class="card-copy">Use this path when the core point, sequence, or narrative still feels muddy. The goal is sharper structure, cleaner emphasis, and a presentation spine that carries the audience.</p>
+              <div class="pill-row">
+                <span class="pill">Best when the talk lacks a clear through-line</span>
+                <span class="pill">Maps to Message Refinement</span>
+                <span class="pill">Often begins with the diagnostic</span>
+              </div>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+
+            <article class="pathway-section">
+              <p class="eyebrow">Pathway 02</p>
               <h2 class="card-title">Improve the deck</h2>
-              <p class="card-copy">Refine hierarchy, pacing, density, and visual flow so the deck supports the message instead of slowing it down.</p>
-              <p class="mono-note">Best for deck support.</p>
+              <p class="card-copy">Use this path when slide density, visual hierarchy, or pacing is getting in the way. The work focuses on what the deck is doing to support or weaken the message.</p>
+              <div class="pill-row">
+                <span class="pill">Best when the deck feels crowded or uneven</span>
+                <span class="pill">Maps to Slide Refinement</span>
+                <span class="pill">Useful for executive-facing polish</span>
+              </div>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+
+            <article class="pathway-section">
+              <p class="eyebrow">Pathway 03</p>
               <h2 class="card-title">Rehearse the delivery</h2>
-              <p class="card-copy">Build timing, transitions, and confidence so the presentation is ready when the room matters.</p>
-              <p class="mono-note">Best for final readiness.</p>
+              <p class="card-copy">Use this path when the content is close but the delivery still needs pacing, transitions, confidence, or live-room preparation.</p>
+              <div class="pill-row">
+                <span class="pill">Best when timing and delivery are the risk</span>
+                <span class="pill">Maps to Presentation Rehearsal</span>
+                <span class="pill">Especially useful before high-stakes moments</span>
+              </div>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+
+            <article class="pathway-section">
+              <p class="eyebrow">Pathway 04</p>
               <h2 class="card-title">High-stakes presentation</h2>
-              <p class="card-copy">Use sprint support for important near-term moments that need fast, focused improvement.</p>
-              <p class="mono-note">Best for urgency.</p>
+              <p class="card-copy">Use this path when an important presentation is already in motion and needs short, focused support across message, deck, and delivery.</p>
+              <div class="pill-row">
+                <span class="pill">Best for urgent timelines</span>
+                <span class="pill">Maps to Presentation Sprint</span>
+                <span class="pill">Designed for fast, concentrated improvement</span>
+              </div>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+
+            <article class="pathway-section">
+              <p class="eyebrow">Pathway 05</p>
               <h2 class="card-title">Build long-term skill</h2>
-              <p class="card-copy">Develop stronger presentation habits over time through ongoing coaching and targeted practice.</p>
-              <p class="mono-note">Best for ongoing growth.</p>
+              <p class="card-copy">Use this path when the goal is ongoing presentation growth: stronger practice habits, better preparation, and more reliable performance over time.</p>
+              <div class="pill-row">
+                <span class="pill">Best for recurring presentation demands</span>
+                <span class="pill">Maps to Presentation Coaching</span>
+                <span class="pill">Supports sustained improvement rather than one event</span>
+              </div>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+
+            <article class="pathway-section">
+              <p class="eyebrow">Pathway 06</p>
               <h2 class="card-title">Train the team</h2>
-              <p class="card-copy">Use custom workshops and team training to raise presentation quality across a group, not just one speaker.</p>
-              <p class="mono-note">Best for group learning.</p>
+              <p class="card-copy">Use this path when a team needs stronger presentation standards across script, slides, delivery, or rehearsal habits, not just support for one speaker.</p>
+              <div class="pill-row">
+                <span class="pill">Best for shared presentation quality</span>
+                <span class="pill">Maps to Custom Workshops &amp; Team Training</span>
+                <span class="pill">Can include live, remote, or custom formats</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="shell section__stack">
+          <div class="section__intro">
+            <p class="eyebrow">Offer Map</p>
+            <h2 class="section-title">The pathways map into a concrete set of offers.</h2>
+            <p class="section-copy">The diagnostic connects visitors to the right offer instead of forcing a package choice before the problem is understood.</p>
+          </div>
+          <div class="offer-grid">
+            <article class="offer-card">
+              <h3 class="card-title">Free Presentation Diagnostic</h3>
+              <p class="card-copy">The intake-and-review path that clarifies the real issue and points to the best next step.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Presentation Sprint</h3>
+              <p class="card-copy">Short, focused support for a high-stakes presentation that needs near-term improvement.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Presentation Coaching</h3>
+              <p class="card-copy">Ongoing support for professionals building presentation strength over time.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Message Refinement</h3>
+              <p class="card-copy">Support for story, emphasis, sequence, and audience logic.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Slide Refinement</h3>
+              <p class="card-copy">Support for deck cleanup, slide pacing, and visual hierarchy.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Presentation Rehearsal</h3>
+              <p class="card-copy">Support for timing, transitions, and delivery readiness.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Custom Workshops &amp; Team Training</h3>
+              <p class="card-copy">Support for teams who need stronger presentation standards across a group.</p>
+            </article>
+            <article class="offer-card">
+              <h3 class="card-title">Scope and fit</h3>
+              <p class="card-copy">Detailed deliverables and exact scope can stay flexible in v1. The decision that is locked is the diagnostic-first route into the right level of support.</p>
             </article>
           </div>
         </div>
@@ -63,10 +136,10 @@
         <div class="shell cta-band">
           <p class="eyebrow eyebrow--gold">Next Step</p>
           <h2 class="band-title">Not sure which path fits? Start with the free diagnostic.</h2>
-          <p class="band-copy">Request the free diagnostic to get a tailored review and a short consult follow-up. No large package commitment required upfront.</p>
+          <p class="band-copy">Submit the request and we&apos;ll review the presentation context, then reply with the best next step.</p>
           <div class="button-row">
-            <a class="button button--primary" href="../diagnostic/">Request a Free Presentation Diagnostic</a>
-            <a class="button button--secondary" href="../scan/">Get the Signal over Noise Presenter Toolkit</a>
+            <a class="button button--primary" data-diagnostic-link href="../diagnostic/">Request a Free Presentation Diagnostic</a>
+            <a class="button button--secondary" data-workshop-link href="../contact/">Ask About a Workshop</a>
           </div>
         </div>
       </section>

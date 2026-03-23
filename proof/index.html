@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/styles.css">
     <script src="../assets/site.js" defer></script>
   </head>
-  <body data-site-root="../" data-page="proof">
+  <body data-site-root="../" data-page="proof" data-origin-page="/proof" data-source-context="main-site">
     <div data-site-header></div>
     <main class="page">
       <section class="section">
@@ -16,56 +16,117 @@
           <div class="section__intro">
             <p class="eyebrow">Proof</p>
             <h1 class="section-title">Build trust with founder credibility, real artifacts, and method transparency.</h1>
-            <p class="section-copy">Use founder credibility, real artifacts, and method transparency. No fabricated testimonials, outcomes, or endorsements.</p>
+            <p class="section-copy">Proof is the deeper evidence page: artifacts first, founder credibility second, and room reserved for future testimonials or case studies once they are real and approved.</p>
           </div>
-          <div class="founder-grid">
-            <article class="card">
-              <div class="media-frame media-frame--founder media-frame--cover">
-                <img src="../img/B_W_Slater-headshot-created.jpg" alt="Benjamin W. Slater">
-              </div>
-              <h2 class="card-title">Benjamin W. Slater</h2>
-              <p class="eyebrow">Founder / Coach</p>
-              <p class="card-copy">Ben helps professionals shape the message, sharpen the language, strengthen the deck, and build delivery confidence for presentations that actually matter.</p>
-            </article>
-            <article class="card">
-              <div class="media-frame media-frame--founder placeholder-card">
-                <span>Headshot Pending</span>
-              </div>
-              <h2 class="card-title">Andrew Musgrave</h2>
-              <p class="eyebrow">Consultant</p>
-              <p class="card-copy">Andrew focuses on message refinement, storytelling clarity, and public-speaking support, helping clients close the gap between where a presentation is now and where it needs to go.</p>
-            </article>
-          </div>
-          <div class="artifact-grid">
-            <article class="card">
+          <div class="artifact-card card">
+            <p class="eyebrow">Diagnostic Example</p>
+            <div class="split-grid">
               <div class="media-frame media-frame--card">
-                <img src="../img/Sample Signal over Noise Presentation Review &amp; Diagnostics Template - pg1.jpg" alt="Signal over Noise sample review mockup">
+                <img src="../img/Sample Signal over Noise Presentation Review &amp; Diagnostics Template - pg1.jpg" alt="Signal over Noise sample review markup">
               </div>
-              <h2 class="card-title">Sample review mockup</h2>
-              <p class="card-copy">Real review structure: verdict, top fixes, deck spine, and next-step recommendation.</p>
-              <p class="mono-note mono-note--gold">Real review structure</p>
+              <div class="artifact-callout-list">
+                <div class="artifact-callout">
+                  <strong class="card-title">Top fixes are visible at a glance.</strong>
+                  <p class="meta-copy">The review should show what matters first, not bury the lead in generic commentary.</p>
+                </div>
+                <div class="artifact-callout">
+                  <strong class="card-title">Diagnostic labels make the recommendation legible.</strong>
+                  <p class="meta-copy">Message, deck, and delivery are separated cleanly enough to point toward the right next step.</p>
+                </div>
+                <div class="artifact-callout">
+                  <strong class="card-title">Artifact proof earns trust faster.</strong>
+                  <p class="meta-copy">The page leads with the work itself before asking visitors to trust the process.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="shell section__stack">
+          <div class="section__intro">
+            <p class="eyebrow">Before / After Slides</p>
+            <h2 class="section-title">Use the before-and-after comparison to show what improved.</h2>
+            <p class="section-copy">This is supporting proof, not a portfolio gallery. One comparison with a clear takeaway is stronger than a pile of unlabeled slides.</p>
+          </div>
+          <div class="comparison-grid">
+            <div class="comparison-block">
+              <p class="comparison-label">Before</p>
+              <div class="media-frame media-frame--card">
+                <img src="../img/Vela Health - before.jpg" alt="Before presentation slide">
+              </div>
+              <p class="comparison-summary">Dense, lower-clarity framing makes the audience work too hard.</p>
+            </div>
+            <div class="comparison-block">
+              <p class="comparison-label comparison-label--after">After</p>
+              <div class="media-frame media-frame--card">
+                <img src="../img/Vela Health - after.jpg" alt="After presentation slide">
+              </div>
+              <p class="comparison-summary">Cleaner hierarchy and pacing make the main point easier to absorb.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell section__stack">
+          <div class="section__intro">
+            <p class="eyebrow">Founder Credibility</p>
+            <h2 class="section-title">Who&apos;s behind Signal over Noise</h2>
+            <p class="section-copy">This is a credibility module, not a polite about-us section. Ben carries slightly more visual weight as founder while Andrew remains clearly distinct.</p>
+          </div>
+          <div class="founder-spotlight">
+            <article class="founder-card founder-card--lead">
+              <div class="media-frame media-frame--founder media-frame--cover">
+                <img src="../img/B_W_Slater-headshot-created.jpg" alt="Ben Slater">
+              </div>
+              <h3 class="card-title">Ben Slater</h3>
+              <p class="eyebrow">Founder / Coach</p>
+              <p class="card-copy">Ben focuses on message shaping, language, deck refinement, and delivery confidence for presentations that matter.</p>
+              <div class="pill-row">
+                <span class="pill">Message shaping</span>
+                <span class="pill">Language</span>
+                <span class="pill">Deck refinement</span>
+                <span class="pill">Delivery confidence</span>
+              </div>
             </article>
-            <article class="card">
-              <h2 class="card-title">Before and after slide comparison</h2>
-              <div class="comparison-grid">
-                <div class="comparison-block">
-                  <p class="comparison-label">Before</p>
-                  <div class="media-frame media-frame--card">
-                    <img src="../img/Vela Health - before.jpg" alt="Before presentation slide">
-                  </div>
-                </div>
-                <div class="comparison-block">
-                  <p class="comparison-label comparison-label--after">After</p>
-                  <div class="media-frame media-frame--card">
-                    <img src="../img/Vela Health - after.jpg" alt="After presentation slide">
-                  </div>
-                </div>
+            <article class="founder-card">
+              <div class="media-frame media-frame--founder media-frame--cover">
+                <img src="../img/A_Musgrave-headshot-created.png" alt="Andrew Musgrave">
+              </div>
+              <h3 class="card-title">Andrew Musgrave</h3>
+              <p class="eyebrow">Consultant</p>
+              <p class="card-copy">Andrew supports message refinement, storytelling clarity, public-speaking support, and creative clarity.</p>
+              <div class="pill-row">
+                <span class="pill">Message refinement</span>
+                <span class="pill">Storytelling clarity</span>
+                <span class="pill">Public-speaking support</span>
+                <span class="pill">Creative clarity</span>
               </div>
             </article>
           </div>
-          <div class="card notice-card">
-            <h2 class="card-title">Method as proof</h2>
-            <p class="card-copy">Start with the current presentation, identify the real problem, recommend the right level of support, then refine or rehearse only where it will materially help the outcome.</p>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="shell section__stack">
+          <div class="section__intro">
+            <p class="eyebrow">Proof Expansion</p>
+            <h2 class="section-title">Leave room for testimonials and case studies later.</h2>
+            <p class="section-copy">The structure can exist now while keeping artifacts primary and saving deeper social proof for when it is ready.</p>
+          </div>
+          <div class="future-proof-grid">
+            <article class="future-proof-card">
+              <p class="future-proof-card__label">Planned</p>
+              <h3 class="card-title">Approved testimonial</h3>
+              <p class="card-copy">Hold space for a real client quote once it is approved for launch.</p>
+            </article>
+            <article class="future-proof-card">
+              <p class="future-proof-card__label">Planned</p>
+              <h3 class="card-title">Artifact-led case study</h3>
+              <p class="card-copy">Hold space for a deeper artifact-led case study when one is ready to publish.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -74,10 +135,9 @@
         <div class="shell cta-band">
           <p class="eyebrow eyebrow--gold">Next Step</p>
           <h2 class="band-title">Bring the actual presentation into the diagnostic.</h2>
-          <p class="band-copy">Request the free diagnostic to get a tailored review and a short consult follow-up. No large package commitment required upfront.</p>
+          <p class="band-copy">Submit the request and we&apos;ll review the presentation context, then reply with the best next step.</p>
           <div class="button-row">
-            <a class="button button--primary" href="../diagnostic/">Request a Free Presentation Diagnostic</a>
-            <a class="button button--secondary" href="../scan/">Get the Signal over Noise Presenter Toolkit</a>
+            <a class="button button--primary" data-diagnostic-link href="../diagnostic/">Request a Free Presentation Diagnostic</a>
           </div>
         </div>
       </section>

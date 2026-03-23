@@ -2254,23 +2254,24 @@
                         "type": "image",
                         "enabled": true,
                         "url": "../../../img/B_W_Slater-headshot-created.jpg",
-                        "mode": "fill"
-                      }
+                        "mode": "fit"
+                      },
+                      "height": 300
                     },
                     "UnCc1": {
                       "content": "Benjamin W. Slater",
                       "x": 20,
-                      "y": 254
+                      "y": 334
                     },
                     "bSR1O": {
                       "content": "Founder / Coach",
                       "x": 20,
-                      "y": 290
+                      "y": 370
                     },
                     "W5btN": {
                       "width": "fill_container",
                       "x": 20,
-                      "y": 319,
+                      "y": 399,
                       "content": "Ben helps professionals shape the message, sharpen the language, strengthen the deck, and build delivery confidence for presentations that actually matter."
                     }
                   }
@@ -2288,7 +2289,7 @@
                       "id": "KSWCq",
                       "name": "blankAndrewDesktop",
                       "width": "fill_container",
-                      "height": 220,
+                      "height": 300,
                       "fill": "#F2F4F7",
                       "stroke": {
                         "thickness": 1,
@@ -2298,17 +2299,17 @@
                     "UnCc1": {
                       "content": "Andrew Musgrave",
                       "x": 20,
-                      "y": 254
+                      "y": 334
                     },
                     "bSR1O": {
                       "content": "Consultant",
                       "x": 20,
-                      "y": 290
+                      "y": 370
                     },
                     "W5btN": {
                       "width": "fill_container",
                       "x": 20,
-                      "y": 319,
+                      "y": 399,
                       "content": "Andrew focuses on message refinement, storytelling clarity, and public-speaking support, helping clients close the gap between where a presentation is now and where it needs to go."
                     }
                   }
@@ -2451,7 +2452,7 @@
           "ref": "eHu8p",
           "name": "proofCtaA",
           "height": "fit_content",
-          "y": 1369,
+          "y": 1449,
           "descendants": {
             "3UwZb": {
               "x": 28,
@@ -2500,7 +2501,7 @@
           "ref": "m6a9x",
           "name": "proofFooterA",
           "height": "fit_content",
-          "y": 1594,
+          "y": 1674,
           "descendants": {
             "4WiFU": {
               "width": "fill_container",
@@ -2648,23 +2649,24 @@
                     "type": "image",
                     "enabled": true,
                     "url": "../../../img/B_W_Slater-headshot-created.jpg",
-                    "mode": "fill"
-                  }
+                    "mode": "fit"
+                  },
+                  "height": 300
                 },
                 "UnCc1": {
                   "content": "Benjamin W. Slater",
                   "x": 20,
-                  "y": 254
+                  "y": 334
                 },
                 "bSR1O": {
                   "x": 20,
-                  "y": 290,
+                  "y": 370,
                   "content": "Founder / Coach"
                 },
                 "W5btN": {
                   "width": "fill_container",
                   "x": 20,
-                  "y": 319,
+                  "y": 399,
                   "content": "Ben helps professionals shape the message, sharpen the language, strengthen the deck, and build delivery confidence for presentations that actually matter."
                 }
               }
@@ -2677,14 +2679,14 @@
               "name": "proofMFounderTwo",
               "height": "fit_content",
               "x": 20,
-              "y": 672,
+              "y": 752,
               "descendants": {
                 "B5HpV": {
                   "type": "frame",
                   "id": "jMUBj",
                   "name": "blankAndrewMobile",
                   "width": "fill_container",
-                  "height": 220,
+                  "height": 300,
                   "fill": "#F2F4F7",
                   "stroke": {
                     "thickness": 1,
@@ -2694,18 +2696,18 @@
                 "UnCc1": {
                   "content": "Andrew Musgrave",
                   "x": 20,
-                  "y": 254
+                  "y": 334
                 },
                 "bSR1O": {
                   "content": "Consultant",
                   "x": 20,
-                  "y": 290
+                  "y": 370
                 },
                 "W5btN": {
                   "content": "Andrew focuses on message refinement, storytelling clarity, and public-speaking support, helping clients close the gap between where a presentation is now and where it needs to go.",
                   "width": "fill_container",
                   "x": 20,
-                  "y": 319
+                  "y": 399
                 }
               }
             },
@@ -2717,7 +2719,7 @@
               "name": "proofMArtifactA",
               "height": "fit_content",
               "x": 20,
-              "y": 1115,
+              "y": 1275,
               "descendants": {
                 "Qe3j1": {
                   "width": "fill_container",
@@ -2747,7 +2749,7 @@
               "width": "fill_container",
               "name": "proofMCompare",
               "x": 20,
-              "y": 1514,
+              "y": 1674,
               "height": "fit_content",
               "descendants": {
                 "hlkST": {
@@ -2836,7 +2838,7 @@
           "width": 390,
           "name": "proofMCtaA",
           "height": "fit_content",
-          "y": 2151,
+          "y": 2311,
           "descendants": {
             "3UwZb": {
               "x": 28,
@@ -2889,7 +2891,7 @@
           "width": 390,
           "name": "proofMFooterA",
           "height": "fit_content",
-          "y": 2518,
+          "y": 2678,
           "descendants": {
             "4WiFU": {
               "layout": "vertical",

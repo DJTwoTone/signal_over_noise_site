@@ -8,52 +8,80 @@
     <link rel="stylesheet" href="./assets/styles.css">
     <script src="./assets/site.js" defer></script>
   </head>
-  <body data-site-root="./" data-page="home">
+  <body data-site-root="./" data-page="home" data-origin-page="/" data-source-context="main-site">
     <div data-site-header></div>
     <main class="page">
       <section class="section">
         <div class="shell hero-grid">
-          <div class="section__stack">
+          <div class="hero-copy-column">
             <p class="eyebrow">Editorial Presentation Support / English + Multilingual Settings</p>
             <h1 class="hero-title">Make your next presentation clearer, sharper, and more credible.</h1>
-            <p class="section-copy">Signal over Noise helps professionals presenting in English and multilingual settings strengthen the message, refine the slides, rehearse the delivery, and prepare for high-stakes moments.</p>
+            <p class="hero-copy">Signal over Noise helps professionals presenting in English and multilingual settings strengthen the message, refine the slides, rehearse the delivery, and prepare for high-stakes moments.</p>
             <div class="button-row">
-              <a class="button button--primary" href="./diagnostic/">Request a Free Presentation Diagnostic</a>
-              <a class="button button--secondary" href="./scan/">Get the Signal over Noise Presenter Toolkit</a>
+              <a class="button button--primary" data-track="hero_diagnostic_click" data-diagnostic-link href="./diagnostic/">Request a Free Presentation Diagnostic</a>
+              <a class="button button--secondary" data-track="hero_toolkit_click" href="./scan/">Get the Signal over Noise Presenter Toolkit</a>
+            </div>
+            <div class="proof-chip-row">
+              <div class="proof-chip">
+                <span class="proof-chip__label">Sample Diagnostic Markup</span>
+                <span class="proof-chip__text">Real review structure with annotated priorities and recommendation logic.</span>
+              </div>
+              <div class="proof-chip">
+                <span class="proof-chip__label">Before / After Evidence</span>
+                <span class="proof-chip__text">Slide cleanup shown through actual artifact comparison, not generic proof claims.</span>
+              </div>
+              <div class="proof-chip">
+                <span class="proof-chip__label">Founder-Led Review</span>
+                <span class="proof-chip__text">Ben Slater with Andrew Musgrave supporting message, deck, and delivery clarity.</span>
+              </div>
             </div>
           </div>
-          <aside class="panel panel--deep">
-            <p class="eyebrow eyebrow--gold">Diagnostic-First Main Site</p>
-            <h2 class="card-title">Start with a tailored review, then move into the support you actually need.</h2>
-            <p class="meta-copy">Request a diagnostic on your script, slides, or recorded delivery. You&apos;ll get a short review path, a practical next-step recommendation, and a clearer sense of what to fix first.</p>
-            <div class="media-frame media-frame--short">
-              <img src="./img/Sample Signal over Noise Presentation Review &amp; Diagnostics Template - pg1.jpg" alt="Preview of the Signal over Noise sample diagnostic markup">
+          <aside class="hero-visual-shell">
+            <div class="diagnostic-texture" aria-hidden="true">opening stakes unclear
+signal buried on slide 4
+tighten deck spine
+show audience payoff earlier
+recommend rehearsal after deck cleanup</div>
+            <div class="hero-visual-grid">
+              <div class="visual-placeholder visual-placeholder--hero">
+                <div class="visual-placeholder__content">
+                  <span class="visual-placeholder__label">Launch Photo Slot</span>
+                  <h2 class="visual-placeholder__title">Editorial presentation scene reserved for the hero module.</h2>
+                  <p class="visual-placeholder__meta">Swap in the final presentation photo without changing the layout structure.</p>
+                </div>
+              </div>
+              <article class="artifact-card panel panel--deep">
+                <p class="eyebrow eyebrow--gold">Artifact-Led Proof</p>
+                <h2 class="card-title">A diagnostic-first review path, shown with real markup.</h2>
+                <div class="media-frame media-frame--short">
+                  <img src="./img/Sample Signal over Noise Presentation Review &amp; Diagnostics Template - pg1.jpg" alt="Preview of the Signal over Noise sample diagnostic markup">
+                </div>
+                <p class="mono-note mono-note--gold">Sample diagnostic markup with labeled callouts</p>
+              </article>
             </div>
-            <p class="mono-note mono-note--gold">Sample diagnostic markup</p>
           </aside>
         </div>
       </section>
 
-      <section class="section section--compact">
-        <div class="shell trust-strip">
-          <p class="meta-copy">Tailored diagnostics and presentation support for professionals facing high-stakes communication moments.</p>
-          <p class="meta-copy">Message structure, slide refinement, rehearsal, and coaching aligned to multilingual and mixed-language contexts.</p>
-          <p class="meta-copy">Real process clarity and real artifacts in place of invented testimonials or generic claims.</p>
-        </div>
-      </section>
-
-      <section class="section">
+      <section class="section section--muted">
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">Who This Is For</p>
             <h2 class="section-title">Support for experts and teams presenting across international and mixed-language contexts.</h2>
-            <p class="section-copy">The audience is framed respectfully: capable professionals working through presentation stakes, clarity, and structure in English and multilingual settings.</p>
+            <p class="section-copy">Signal over Noise is built for capable professionals working through presentation stakes, clarity, and structure in English and multilingual settings.</p>
           </div>
           <div class="split-grid">
-            <p class="section-copy">Signal over Noise is for founders, academics, operators, and teams who need sharper structure, cleaner decks, stronger rehearsal, and more confidence when the presentation actually matters.</p>
-            <div class="card">
+            <div class="section__stack">
+              <p class="section-copy">This is for founders, academics, operators, and teams who need sharper structure, cleaner decks, stronger rehearsal, and more confidence when the presentation actually matters.</p>
+              <p class="section-copy">The framing stays respectful: professionals presenting in English and multilingual settings, not people reduced to a language deficit.</p>
+            </div>
+            <div class="context-panel">
               <h3 class="card-title">Common presentation contexts</h3>
-              <p class="card-copy">Conference talks, internal updates, investor moments, research presentations, cross-border meetings, and workshop follow-up support.</p>
+              <ul class="list-plain">
+                <li>Conference talks and research presentations where clarity has to land quickly.</li>
+                <li>Internal updates, investor moments, and executive-facing decks with high credibility pressure.</li>
+                <li>Cross-border meetings, mixed-language rooms, and workshop follow-up where message discipline matters.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -63,82 +91,125 @@
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">How Signal over Noise Helps</p>
-            <h2 class="section-title">Choose the kind of presentation support that fits the real problem.</h2>
-            <p class="section-copy">Visitors should be able to self-identify by need, not jargon: message, deck, rehearsal, sprint support, coaching, or team training.</p>
+            <h2 class="section-title">Choose the support path that fits the real presentation problem.</h2>
+            <p class="section-copy">The homepage stays concise: enough to self-identify by need, then move into Services for depth.</p>
           </div>
-          <div class="three-up">
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+          <div class="pathway-preview-grid">
+            <article class="pathway-tile">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h10"></path><path d="M4 17h7"></path><path d="M18 12l2 2 3-3"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Pathway</p>
               <h3 class="card-title">Clarify the message</h3>
-              <p class="card-copy">Strengthen structure, emphasis, and story so the presentation lands quickly and confidently.</p>
-              <p class="mono-note">Best for narrative cleanup and sharper strategic framing.</p>
+              <p class="card-copy">Strengthen structure, emphasis, and narrative so the point lands early and cleanly.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+            <article class="pathway-tile">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Pathway</p>
               <h3 class="card-title">Improve the deck</h3>
-              <p class="card-copy">Refine visual hierarchy, slide flow, and signal-to-noise ratio so the deck supports the message instead of fighting it.</p>
-              <p class="mono-note">Best for slide review, cleanup, and executive-facing polish.</p>
+              <p class="card-copy">Refine hierarchy, pacing, and density so the slides support the message instead of slowing it down.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow">Pathway</p>
+            <article class="pathway-tile">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 4v9"></path><path d="M8 8c0-2.21 1.79-4 4-4s4 1.79 4 4"></path><path d="M6 12a6 6 0 0 0 12 0"></path><path d="M12 18v3"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Pathway</p>
               <h3 class="card-title">Rehearse the delivery</h3>
-              <p class="card-copy">Build timing, emphasis, transitions, and speaking confidence before the high-stakes presentation itself.</p>
-              <p class="mono-note">Best for rehearsal, delivery coaching, and final readiness.</p>
+              <p class="card-copy">Build timing, transitions, emphasis, and live delivery confidence before the room matters.</p>
+            </article>
+            <article class="pathway-tile">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l2.9 5.88L21 10l-4.5 4.38L17.54 21 12 18.27 6.46 21 7.5 14.38 3 10l6.1-.12z"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Pathway</p>
+              <h3 class="card-title">High-stakes presentation</h3>
+              <p class="card-copy">Get focused sprint support when an important presentation needs rapid improvement.</p>
+            </article>
+            <article class="pathway-tile">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"></path><path d="M12 7v5l3 3"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Pathway</p>
+              <h3 class="card-title">Build long-term skill</h3>
+              <p class="card-copy">Use coaching to strengthen presentation habits over time, not just for one event.</p>
+            </article>
+            <article class="pathway-tile">
+              <div class="icon-badge" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <p class="pathway-tile__eyebrow">Pathway</p>
+              <h3 class="card-title">Train the team</h3>
+              <p class="card-copy">Raise presentation quality across a group through workshops and team training.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--muted">
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">How It Works</p>
-            <h2 class="section-title">A structured path from first review to delivery-ready presentation.</h2>
-            <p class="section-copy">The process should reduce uncertainty and show what happens after someone requests help.</p>
+            <h2 class="section-title">A structured path from first request to the right support.</h2>
+            <p class="section-copy">The homepage shows the logic quickly. The full Process page expands the diagnostic flow in detail.</p>
           </div>
-          <div class="four-up">
-            <article class="card">
-              <p class="eyebrow eyebrow--gold-deep">01</p>
-              <h3 class="card-title">Start with the diagnostic</h3>
-              <p class="card-copy">Review the current presentation, identify what is getting in the way, and clarify the highest-leverage next step.</p>
+          <div class="timeline-row">
+            <article class="timeline-step">
+              <p class="timeline-step__index">01 / Request</p>
+              <h3 class="timeline-step__title">Submit the diagnostic request.</h3>
+              <p class="timeline-step__copy">Bring the script, deck, or recorded delivery that needs real review.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow eyebrow--gold-deep">02</p>
-              <h3 class="card-title">Get the recommendation</h3>
-              <p class="card-copy">Choose the right level of support: refinement, rehearsal, sprint, coaching, or no further help if that is the honest answer.</p>
+            <article class="timeline-step">
+              <p class="timeline-step__index">02 / Intake</p>
+              <h3 class="timeline-step__title">Share the presentation context.</h3>
+              <p class="timeline-step__copy">Clarify the audience, stakes, timing, and the problem that feels most urgent.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow eyebrow--gold-deep">03</p>
-              <h3 class="card-title">Refine and rehearse</h3>
-              <p class="card-copy">Improve the message, sharpen the slides, and practice the delivery where needed.</p>
+            <article class="timeline-step">
+              <p class="timeline-step__index">03 / Review</p>
+              <h3 class="timeline-step__title">Get the presentation reviewed.</h3>
+              <p class="timeline-step__copy">Signal over Noise looks at the material itself, not a vague summary of it.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow eyebrow--gold-deep">04</p>
-              <h3 class="card-title">Present with more confidence</h3>
-              <p class="card-copy">Move into the presentation with stronger structure, clearer visuals, and a more credible delivery.</p>
+            <article class="timeline-step">
+              <p class="timeline-step__index">04 / Next Step</p>
+              <h3 class="timeline-step__title">Receive the best next step.</h3>
+              <p class="timeline-step__copy">Move into refinement, rehearsal, sprint support, coaching, or no further support if that is the honest answer.</p>
             </article>
+          </div>
+          <div class="utility-band">
+            <p class="eyebrow">Diagnostic Path</p>
+            <p class="section-copy">Submit the request and we&apos;ll review the presentation context, then reply with the best next step.</p>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="shell section__stack">
-          <div class="section__intro">
-            <p class="eyebrow">Proof and Credibility</p>
-            <h2 class="section-title">Show real artifacts and real process, not inflated claims.</h2>
-            <p class="section-copy">Use founder credibility, sample review work, and before/after examples where approved.</p>
+            <div class="section__intro">
+              <p class="eyebrow">Proof and Credibility</p>
+            <h2 class="section-title">Show evidence in the work itself.</h2>
+            <p class="section-copy">The homepage proof system leads with artifacts and founder credibility rather than inflated claims or invented testimonials.</p>
           </div>
-          <div class="artifact-grid">
-            <article class="card">
+          <div class="two-up">
+            <article class="artifact-card card">
+              <p class="eyebrow">Sample Diagnostic Markup</p>
               <div class="media-frame media-frame--card">
                 <img src="./img/Sample Signal over Noise Presentation Review &amp; Diagnostics Template - pg1.jpg" alt="Annotated sample diagnostic review">
               </div>
-              <h3 class="card-title">Sample diagnostic markup</h3>
-              <p class="card-copy">Preview of review structure: verdict, top fixes, deck spine, and next-step recommendation.</p>
-              <p class="mono-note mono-note--gold">Real review structure</p>
+              <div class="artifact-callout-list">
+                <div class="artifact-callout">
+                  <strong class="card-title">Top fixes called out clearly</strong>
+                  <p class="meta-copy">The review highlights what is blocking the presentation first.</p>
+                </div>
+                <div class="artifact-callout">
+                  <strong class="card-title">Message and deck linked together</strong>
+                  <p class="meta-copy">Structure, slide flow, and delivery preparation stay connected.</p>
+                </div>
+              </div>
+              <p class="mono-note">Real review structure: top fixes, deck logic, and next-step direction.</p>
             </article>
-            <article class="card">
-              <h3 class="card-title">Before and after preview</h3>
+            <article class="artifact-card card">
+              <p class="eyebrow">Before / After Slide Comparison</p>
               <div class="comparison-grid">
                 <div class="comparison-block">
                   <p class="comparison-label">Before</p>
@@ -153,36 +224,70 @@
                   </div>
                 </div>
               </div>
+              <p class="comparison-summary">Improvement label: stronger hierarchy, cleaner pacing, and a clearer audience takeaway.</p>
             </article>
+          </div>
+          <div class="founder-strip">
+            <div class="section__intro">
+              <p class="eyebrow">Founder Credibility Strip</p>
+              <h3 class="section-title">Who&apos;s behind Signal over Noise</h3>
+              <p class="section-copy">Founder credibility belongs in the proof system: specific, human, and tied directly to the work.</p>
+            </div>
+            <div class="founder-strip__people">
+              <article class="founder-inline founder-inline--lead">
+                <div class="founder-inline__top">
+                  <div class="founder-inline__photo">
+                    <img src="./img/B_W_Slater-headshot-created.jpg" alt="Ben Slater">
+                  </div>
+                  <div class="stack-sm">
+                    <h4 class="card-title">Ben Slater</h4>
+                    <p class="eyebrow">Founder / Coach</p>
+                  </div>
+                </div>
+                <p class="card-copy">Ben focuses on message shaping, language, deck refinement, and delivery confidence for high-stakes presentations.</p>
+              </article>
+              <article class="founder-inline">
+                <div class="founder-inline__top">
+                  <div class="founder-inline__photo">
+                    <img src="./img/A_Musgrave-headshot-created.png" alt="Andrew Musgrave">
+                  </div>
+                  <div class="stack-sm">
+                    <h4 class="card-title">Andrew Musgrave</h4>
+                    <p class="eyebrow">Consultant</p>
+                  </div>
+                </div>
+                <p class="card-copy">Andrew supports message refinement, storytelling clarity, public-speaking support, and creative clarity.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--muted">
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">Featured Offers</p>
-            <h2 class="section-title">Start with the diagnostic, then move into the level of support you actually need.</h2>
-            <p class="section-copy">Homepage package preview should route, not overwhelm. Keep pricing flexible and the path easy to understand.</p>
+            <h2 class="section-title">Featured offers should route, not overload.</h2>
+            <p class="section-copy">The homepage keeps the offer layer short: diagnostic first, then the two clearest support paths for urgent work or sustained improvement.</p>
           </div>
-          <div class="three-up">
-            <article class="card">
-              <p class="eyebrow">Package</p>
+          <div class="offer-route-grid">
+            <article class="route-card">
+              <p class="route-card__label">Featured Offer</p>
               <h3 class="card-title">Presentation Diagnostic</h3>
-              <p class="card-copy">A tailored review with consult follow-up to identify the strongest next step.</p>
-              <p class="mono-note mono-note--gold">Best for an initial review and a clear next step.</p>
+              <p class="card-copy">The right place to start when you need clarity on the strongest next step.</p>
+              <p class="mono-note">Best for initial review, recommendation logic, and a clean support handoff.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow">Package</p>
+            <article class="route-card">
+              <p class="route-card__label">Featured Offer</p>
               <h3 class="card-title">Presentation Sprint</h3>
-              <p class="card-copy">Focused short-term support for a high-stakes presentation that needs rapid improvement.</p>
-              <p class="mono-note mono-note--gold">Best for urgent, high-stakes presentation support.</p>
+              <p class="card-copy">Focused short-term support for a presentation that needs fast, high-leverage improvement.</p>
+              <p class="mono-note">Best for urgent, high-stakes presentation support.</p>
             </article>
-            <article class="card">
-              <p class="eyebrow">Package</p>
+            <article class="route-card">
+              <p class="route-card__label">Featured Offer</p>
               <h3 class="card-title">Presentation Coaching</h3>
-              <p class="card-copy">Ongoing support for professionals building stronger presentation habits over time.</p>
-              <p class="mono-note mono-note--gold">Best for ongoing presentation growth and practice.</p>
+              <p class="card-copy">Ongoing support for professionals who want stronger presentation habits over time.</p>
+              <p class="mono-note">Best for ongoing presentation growth and practice.</p>
             </article>
           </div>
         </div>
@@ -191,10 +296,10 @@
       <section class="section section--cta">
         <div class="shell cta-band">
           <p class="eyebrow eyebrow--gold">Next Step</p>
-          <h2 class="band-title">Request the free diagnostic and see what your next presentation needs.</h2>
-          <p class="band-copy">You will get a tailored review path, a clear next-step recommendation, and no pressure to commit to a large package immediately.</p>
+          <h2 class="band-title">Request the free diagnostic and see what your presentation needs next.</h2>
+          <p class="band-copy">Submit the request and we&apos;ll review the presentation context, then reply with the best next step.</p>
           <div class="button-row">
-            <a class="button button--primary" href="./diagnostic/">Request a Free Presentation Diagnostic</a>
+            <a class="button button--primary" data-diagnostic-link href="./diagnostic/">Request a Free Presentation Diagnostic</a>
             <a class="button button--secondary" href="./scan/">Get the Signal over Noise Presenter Toolkit</a>
           </div>
         </div>
