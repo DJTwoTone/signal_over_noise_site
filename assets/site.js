@@ -7,6 +7,12 @@ const NAV_ITEMS = [
 
 const MINIMAL_CHROME_PAGES = new Set(["scan", "thanks"]);
 
+const TALLY_URLS = {
+  toolkit: "https://tally.so/r/aQG1EZ",
+  diagnostic: "https://tally.so/r/7RoLkz",
+  workshop: "https://tally.so/r/gDLqe4",
+};
+
 function getRoot() {
   return document.body.dataset.siteRoot || "./";
 }
@@ -53,6 +59,25 @@ function createWorkshopHref(originPage = getOriginPage(), source = getSourceCont
   return `${pathTo("contact/")}?${params.toString()}`;
 }
 
+function createScanHref(originPage = getOriginPage(), source = getSourceContext()) {
+  const params = new URLSearchParams({
+    source,
+    originPage,
+  });
+
+  return `${pathTo("scan/")}?${params.toString()}`;
+}
+
+function buildTallyUrl(baseUrl, params) {
+  const url = new URL(baseUrl);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value != null && value !== "") {
+      url.searchParams.set(key, value);
+    }
+  });
+  return url.toString();
+}
+
 function renderHeader() {
   const mount = document.querySelector("[data-site-header]");
   if (!mount) {
@@ -87,10 +112,10 @@ function renderHeader() {
         </a>
         <nav class="site-nav" aria-label="Primary">
           <div class="site-nav__links">${navLinks}</div>
-          <a class="button button--primary" data-track="nav_diagnostic_click" data-diagnostic-link href="${createDiagnosticHref()}">Request a Free Presentation Diagnostic</a>
+          <a class="button button--primary" data-track="nav_diagnostic_click" data-track-source="nav" data-diagnostic-link href="${createDiagnosticHref()}">Request a Free Presentation Diagnostic</a>
         </nav>
         <div class="site-header__mobile">
-          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-diagnostic-link href="${createDiagnosticHref()}">Diagnostic</a>
+          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-diagnostic-link href="${createDiagnosticHref()}">Diagnostic</a>
           <button class="button button--ghost button--compact" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">Menu</button>
         </div>
       </div>
@@ -205,6 +230,13 @@ function hydrateRouteLinks() {
       createWorkshopHref(link.dataset.trackOrigin || getOriginPage(), link.dataset.trackSource || getSourceContext()),
     );
   });
+
+  document.querySelectorAll("[data-toolkit-link]").forEach((link) => {
+    link.setAttribute(
+      "href",
+      createScanHref(link.dataset.trackOrigin || getOriginPage(), link.dataset.trackSource || getSourceContext()),
+    );
+  });
 }
 
 function resolvePageContext() {
@@ -215,136 +247,242 @@ function resolvePageContext() {
   };
 }
 
-function hydrateFormContext(form) {
+function mountAllTallyEmbeds() {
+  const configs = {
+    toolkit: { url: TALLY_URLS.toolkit, title: "Signal over Noise Presenter Toolkit" },
+    diagnostic: { url: TALLY_URLS.diagnostic, title: "Free Presentation Diagnostic" },
+    workshop: { url: TALLY_URLS.workshop, title: "Signal over Noise Workshop Inquiry" },
+  };
+
+  const mounts = document.querySelectorAll("[data-tally-mount]");
+  if (!mounts.length) {
+    return;
+  }
+
   const context = resolvePageContext();
-  const sourceField = form.querySelector('input[name="source"]');
-  const originField = form.querySelector('input[name="originPage"]');
 
-  if (sourceField) {
-    sourceField.value = context.source;
-  }
-
-  if (originField) {
-    originField.value = context.originPage;
-  }
-}
-
-function showSuccess(form) {
-  const success = form.querySelector("[data-form-success]");
-  if (!success) {
-    return;
-  }
-
-  success.classList.add("is-visible");
-  success.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
-function handleToolkitForm() {
-  const form = document.querySelector("[data-toolkit-form]");
-  if (!form) {
-    return;
-  }
-
-  hydrateFormContext(form);
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    hydrateFormContext(form);
-
-    const payload = Object.fromEntries(new FormData(form).entries());
-    emitTrack("scan_toolkit_submit", {
-      source: payload.source,
-      originPage: payload.originPage,
-    });
-    sessionStorage.setItem("son-toolkit", JSON.stringify(payload));
-
-    const params = new URLSearchParams({
-      source: payload.source || "workshop-qr",
-      originPage: "/thanks",
-    });
-
-    window.location.href = `${pathTo("thanks/")}?${params.toString()}`;
-  });
-}
-
-function handleDiagnosticForm() {
-  const form = document.querySelector("[data-diagnostic-form]");
-  if (!form) {
-    return;
-  }
-
-  hydrateFormContext(form);
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    hydrateFormContext(form);
-
-    const payload = Object.fromEntries(new FormData(form).entries());
-    sessionStorage.setItem("son-diagnostic", JSON.stringify(payload));
-    emitTrack("diagnostic_submit", {
-      source: payload.source,
-      originPage: payload.originPage,
-      reviewType: payload.reviewType || "",
-    });
-
-    showSuccess(form);
-    form.reset();
-    hydrateFormContext(form);
-  });
-}
-
-function handleContactForm() {
-  const form = document.querySelector("[data-contact-form]");
-  if (!form) {
-    return;
-  }
-
-  hydrateFormContext(form);
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    hydrateFormContext(form);
-
-    const payload = Object.fromEntries(new FormData(form).entries());
-    sessionStorage.setItem("son-contact", JSON.stringify(payload));
-    emitTrack("workshop_inquiry_submit", {
-      source: payload.source,
-      originPage: payload.originPage,
-      focus: payload.focus || "",
-    });
-
-    showSuccess(form);
-    form.reset();
-    hydrateFormContext(form);
-  });
-}
-
-function personalizeThanks() {
-  const target = document.querySelector("[data-toolkit-name]");
-  if (!target) {
-    return;
-  }
-
-  const raw = sessionStorage.getItem("son-toolkit");
-  if (!raw) {
-    return;
-  }
-
-  try {
-    const payload = JSON.parse(raw);
-    if (payload.firstName) {
-      target.textContent = `${payload.firstName}, `;
+  mounts.forEach((mount) => {
+    const key = mount.dataset.tallyMount;
+    const config = configs[key];
+    if (!config) {
+      return;
     }
-  } catch {
-    target.textContent = "";
+
+    const src = buildTallyUrl(config.url, {
+      source: context.source,
+      originPage: context.originPage,
+    });
+
+    const iframe = document.createElement("iframe");
+    iframe.dataset.tallySrc = src;
+    iframe.width = "100%";
+    iframe.height = "500";
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("marginheight", "0");
+    iframe.setAttribute("marginwidth", "0");
+    iframe.setAttribute("loading", "lazy");
+    iframe.title = config.title;
+    iframe.className = "tally-embed";
+    mount.appendChild(iframe);
+  });
+
+  const scriptUrl = "https://tally.so/widgets/embed.js";
+  if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
+    const s = document.createElement("script");
+    s.src = scriptUrl;
+    s.onload = () => {
+      if (window.Tally) {
+        window.Tally.loadEmbeds();
+      }
+    };
+    document.body.appendChild(s);
+  } else if (window.Tally) {
+    window.Tally.loadEmbeds();
   }
+}
+
+function syncComparePosition(compare, value) {
+  compare.style.setProperty("--compare-position", `${value}%`);
+}
+
+function initProofComparisons() {
+  document.querySelectorAll("[data-compare]").forEach((compare) => {
+    const range = compare.querySelector("[data-compare-range]");
+    if (!range) {
+      return;
+    }
+
+    syncComparePosition(compare, range.value || 50);
+    range.addEventListener("input", () => {
+      syncComparePosition(compare, range.value);
+    });
+  });
+}
+
+let proofModalState = null;
+
+function getProofModalFocusableElements(modal) {
+  return Array.from(
+    modal.querySelectorAll(
+      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ).filter((element) => !element.hasAttribute("hidden"));
+}
+
+function closeProofModal() {
+  if (!proofModalState || proofModalState.modal.hidden) {
+    return;
+  }
+
+  proofModalState.modal.hidden = true;
+  proofModalState.iframe.setAttribute("src", "about:blank");
+  document.body.classList.remove("proof-modal-open");
+
+  const trigger = proofModalState.lastTrigger;
+  proofModalState.lastTrigger = null;
+  if (trigger instanceof HTMLElement) {
+    trigger.focus();
+  }
+}
+
+function ensureProofModal() {
+  if (proofModalState) {
+    return proofModalState;
+  }
+
+  const modal = document.createElement("div");
+  modal.className = "proof-modal";
+  modal.dataset.proofModal = "true";
+  modal.hidden = true;
+  modal.innerHTML = `
+    <div class="proof-modal__scrim" data-proof-modal-close></div>
+    <div class="proof-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="proof-modal-title">
+      <div class="proof-modal__header">
+        <div class="stack-sm">
+          <p class="eyebrow">Diagnostic Viewer</p>
+          <h2 class="card-title" id="proof-modal-title"></h2>
+          <p class="proof-modal__copy">Turn pages in the browser viewer, open the file in a separate tab, or download the full PDF directly.</p>
+        </div>
+        <button class="button button--ghost button--compact" type="button" data-proof-modal-close>Close</button>
+      </div>
+      <div class="proof-modal__actions">
+        <a class="button button--secondary" href="#" target="_blank" rel="noopener" data-proof-modal-open>Open in new tab</a>
+        <a class="button button--primary" href="#" download data-proof-modal-download>Download PDF</a>
+      </div>
+      <div class="proof-modal__viewer">
+        <iframe class="proof-modal__iframe" title="Diagnostic PDF viewer" loading="lazy"></iframe>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const title = modal.querySelector("#proof-modal-title");
+  const iframe = modal.querySelector(".proof-modal__iframe");
+  const openLink = modal.querySelector("[data-proof-modal-open]");
+  const downloadLink = modal.querySelector("[data-proof-modal-download]");
+  const closeControls = modal.querySelectorAll("[data-proof-modal-close]");
+
+  closeControls.forEach((control) => {
+    control.addEventListener("click", closeProofModal);
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeProofModal();
+    }
+  });
+
+  modal.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeProofModal();
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    const focusable = getProofModalFocusableElements(modal);
+    if (!focusable.length) {
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  proofModalState = {
+    modal,
+    title,
+    iframe,
+    openLink,
+    downloadLink,
+    lastTrigger: null,
+  };
+
+  return proofModalState;
+}
+
+function openProofModal(src, titleText, trigger) {
+  if (!src) {
+    return;
+  }
+
+  const modalState = ensureProofModal();
+  modalState.lastTrigger = trigger || document.activeElement;
+  modalState.title.textContent = titleText || "Diagnostic sample";
+  modalState.openLink.setAttribute("href", src);
+  modalState.downloadLink.setAttribute("href", src);
+  modalState.iframe.setAttribute("src", `${src}#view=FitH`);
+  modalState.modal.hidden = false;
+  document.body.classList.add("proof-modal-open");
+
+  const focusable = getProofModalFocusableElements(modalState.modal);
+  if (focusable.length) {
+    focusable[0].focus();
+  }
+}
+
+function initProofPdfViewer() {
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-proof-pdf-trigger]");
+    if (!trigger) {
+      return;
+    }
+
+    event.preventDefault();
+    openProofModal(trigger.dataset.pdfSrc, trigger.dataset.pdfTitle, trigger);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    const trigger = event.target.closest("[data-proof-pdf-trigger][role=button]");
+    if (!trigger) {
+      return;
+    }
+
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    openProofModal(trigger.dataset.pdfSrc, trigger.dataset.pdfTitle, trigger);
+  });
 }
 
 renderHeader();
 renderFooter();
 hydrateRouteLinks();
 wireTrackedLinks();
-handleToolkitForm();
-handleDiagnosticForm();
-handleContactForm();
-personalizeThanks();
+mountAllTallyEmbeds();
+initProofComparisons();
+initProofPdfViewer();
