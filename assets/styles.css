@@ -691,7 +691,7 @@ ul {
 }
 
 .tally-embed-container {
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-card);
   background: var(--bg-surface);
@@ -701,7 +701,9 @@ ul {
 .tally-embed {
   display: block;
   width: 100%;
+  min-height: min(900px, calc(100vh - 120px));
   border: 0;
+  border-radius: var(--radius-card);
 }
 
 @media (max-width: 980px) {

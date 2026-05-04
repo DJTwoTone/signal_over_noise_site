@@ -9,10 +9,17 @@ const NAV_ITEMS = [
 const MINIMAL_CHROME_PAGES = new Set(["scan", "thanks"]);
 
 const TALLY_URLS = {
-  toolkit: "https://tally.so/r/aQG1EZ",
-  diagnostic: "https://tally.so/r/7RoLkz",
-  workshop: "https://tally.so/r/gDLqe4",
-  getStarted: "https://tally.so/r/Ek8bV2",
+  toolkit: "https://tally.so/embed/aQG1EZ",
+  diagnostic: "https://tally.so/embed/7RoLkz",
+  workshop: "https://tally.so/embed/gDLqe4",
+  getStarted: "https://tally.so/embed/Ek8bV2",
+};
+
+const TALLY_DEFAULT_HEIGHTS = {
+  toolkit: "720",
+  diagnostic: "900",
+  workshop: "820",
+  getStarted: "900",
 };
 
 function getRoot() {
@@ -280,9 +287,9 @@ function mountAllTallyEmbeds() {
     });
 
     const iframe = document.createElement("iframe");
-    iframe.dataset.tallySrc = src;
+    iframe.src = src;
     iframe.width = "100%";
-    iframe.height = mount.dataset.tallyHeight || "500";
+    iframe.height = mount.dataset.tallyHeight || TALLY_DEFAULT_HEIGHTS[key] || "720";
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("marginheight", "0");
     iframe.setAttribute("marginwidth", "0");
@@ -291,20 +298,6 @@ function mountAllTallyEmbeds() {
     iframe.className = "tally-embed";
     mount.appendChild(iframe);
   });
-
-  const scriptUrl = "https://tally.so/widgets/embed.js";
-  if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
-    const s = document.createElement("script");
-    s.src = scriptUrl;
-    s.onload = () => {
-      if (window.Tally) {
-        window.Tally.loadEmbeds();
-      }
-    };
-    document.body.appendChild(s);
-  } else if (window.Tally) {
-    window.Tally.loadEmbeds();
-  }
 }
 
 function clampComparePosition(value) {

@@ -12,6 +12,11 @@ const mime = {
 
 http.createServer((req, res) => {
   let url = decodeURIComponent(req.url.split('?')[0]);
+  if (url === '/packages' || url === '/packages/') {
+    res.writeHead(301, { Location: '/services/' });
+    res.end();
+    return;
+  }
   let filePath = path.join(root, url === '/' ? 'index.html' : url.endsWith('/') ? url + 'index.html' : url);
   if (!path.extname(filePath) && fs.existsSync(path.join(filePath, 'index.html'))) {
     filePath = path.join(filePath, 'index.html');

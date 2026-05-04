@@ -1,0 +1,70 @@
+[
+  {
+    "key": "diagnostic",
+    "route": "/diagnostic/",
+    "submittedClickReached": true,
+    "initialFrameUrl": "https://tally.so/embed/7RoLkz?source=main-site&originPage=%2Fdiagnostic",
+    "resultText": "Thanks for completing this form! Made with Tally, the simplest way to create forms for free. Create your own form",
+    "finalFrameUrl": "https://tally.so/embed/7RoLkz?source=main-site&originPage=%2Fdiagnostic",
+    "finalPageUrl": "http://localhost:8080/diagnostic/",
+    "hasThanks": true,
+    "hasValidation": false,
+    "consoleErrors": [],
+    "networkErrors": [],
+    "screenshots": [
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/diagnostic-before.png",
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/diagnostic-after.png"
+    ]
+  },
+  {
+    "key": "scan",
+    "route": "/scan/",
+    "submittedClickReached": true,
+    "initialFrameUrl": "https://tally.so/embed/aQG1EZ?source=workshop-qr&originPage=%2Fscan",
+    "resultText": "Thanks for completing this form! Made with Tally, the simplest way to create forms for free. Create your own form",
+    "finalFrameUrl": "https://tally.so/embed/aQG1EZ?source=workshop-qr&originPage=%2Fscan",
+    "finalPageUrl": "http://localhost:8080/scan/",
+    "hasThanks": true,
+    "hasValidation": false,
+    "consoleErrors": [],
+    "networkErrors": [],
+    "screenshots": [
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/scan-before.png",
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/scan-after.png"
+    ]
+  },
+  {
+    "key": "contact",
+    "route": "/contact/",
+    "submittedClickReached": true,
+    "initialFrameUrl": "https://tally.so/embed/gDLqe4?source=workshops-page&originPage=%2Fcontact",
+    "resultText": "Thanks for completing this form! Made with Tally, the simplest way to create forms for free. Create your own form",
+    "finalFrameUrl": "https://tally.so/embed/gDLqe4?source=workshops-page&originPage=%2Fcontact",
+    "finalPageUrl": "http://localhost:8080/contact/",
+    "hasThanks": true,
+    "hasValidation": false,
+    "consoleErrors": [],
+    "networkErrors": [],
+    "screenshots": [
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/contact-before.png",
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/contact-after.png"
+    ]
+  },
+  {
+    "key": "get-started",
+    "route": "/get-started/",
+    "submittedClickReached": true,
+    "initialFrameUrl": "https://tally.so/embed/Ek8bV2?source=get-started-page&originPage=%2Fget-started",
+    "resultText": "Thanks for completing this form! Made with Tally, the simplest way to create forms for free. Create your own form",
+    "finalFrameUrl": "https://tally.so/embed/Ek8bV2?source=get-started-page&originPage=%2Fget-started",
+    "finalPageUrl": "http://localhost:8080/get-started/",
+    "hasThanks": true,
+    "hasValidation": false,
+    "consoleErrors": [],
+    "networkErrors": [],
+    "screenshots": [
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/get-started-before.png",
+      ".qa-screenshots/launch-technical-qa-2026-05-04/forms/get-started-after.png"
+    ]
+  }
+]
