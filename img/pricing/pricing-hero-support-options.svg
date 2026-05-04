@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">Presentation support options visual</title>
+  <desc id="desc">Editorial pricing visual showing diagnostic, individual support, workshops, and partner classes.</desc>
+  <rect width="720" height="430" rx="34" fill="#132033"/>
+  <rect x="34" y="34" width="652" height="362" rx="28" fill="#fbf7f0"/>
+  <path d="M92 126h536M92 230h536M92 334h536" fill="none" stroke="#e2ded0" stroke-width="2"/>
+  <g>
+    <circle cx="120" cy="88" r="20" fill="#f2e5c8"/>
+    <text x="156" y="94" fill="#132033" font-family="Georgia, serif" font-size="28">Choose the smallest useful next step.</text>
+  </g>
+  <g>
+    <rect x="92" y="146" width="136" height="64" rx="18" fill="#132033"/>
+    <text x="160" y="173" text-anchor="middle" fill="#fbf7f0" font-family="Arial, sans-serif" font-size="13">Diagnostic</text>
+    <text x="160" y="192" text-anchor="middle" fill="#f2e5c8" font-family="Arial, sans-serif" font-size="12">Start free</text>
+  </g>
+  <g>
+    <rect x="262" y="146" width="176" height="64" rx="18" fill="#faf8f3" stroke="#c49a45" stroke-width="3"/>
+    <text x="350" y="173" text-anchor="middle" fill="#132033" font-family="Arial, sans-serif" font-size="13">Individual support</text>
+    <text x="350" y="192" text-anchor="middle" fill="#193b64" font-family="Arial, sans-serif" font-size="12">From KRW 180k</text>
+  </g>
+  <g>
+    <rect x="472" y="146" width="156" height="64" rx="18" fill="#faf8f3" stroke="#e2ded0" stroke-width="2"/>
+    <text x="550" y="173" text-anchor="middle" fill="#132033" font-family="Arial, sans-serif" font-size="13">Workshops</text>
+    <text x="550" y="192" text-anchor="middle" fill="#193b64" font-family="Arial, sans-serif" font-size="12">Team quote</text>
+  </g>
+  <g>
+    <rect x="92" y="250" width="536" height="64" rx="18" fill="#f2e5c8"/>
+    <text x="122" y="278" fill="#132033" font-family="Arial, sans-serif" font-size="14">Partner classes stay separate from direct-service pricing.</text>
+    <text x="122" y="298" fill="#193b64" font-family="Arial, sans-serif" font-size="12">Registration and pricing are handled by Mallang Lingo Club.</text>
+  </g>
+</svg>

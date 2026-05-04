@@ -627,6 +627,8 @@ Use placeholders where structure needs to exist now but the final asset or copy 
 ## Setup / todo list
 These can stay out of the visual build if needed, but they must be tracked.
 
+Current canonical tracker: `../TODO.md`. Treat this section as source context, not the active task list.
+
 ### Forms and routing
 - build toolkit Tally form
 - build diagnostic Tally form
@@ -690,4 +692,3 @@ If something is not fully ready:
 - do not let unresolved setup block obvious front-end improvements
 
 This site does not need more broad strategy discovery. It needs disciplined refinement, clearer routing, stronger proof, better rhythm, and launch-minded execution.
-

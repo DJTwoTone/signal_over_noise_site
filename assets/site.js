@@ -1,8 +1,9 @@
 const NAV_ITEMS = [
   { key: "services", label: "Services", href: "services/" },
   { key: "process", label: "Process", href: "process/" },
-  { key: "proof", label: "Proof", href: "proof/" },
+  { key: "proof", label: "See the Work", href: "proof/" },
   { key: "workshops", label: "Workshops", href: "workshops/" },
+  { key: "get-started", label: "Get Started", href: "get-started/" },
 ];
 
 const MINIMAL_CHROME_PAGES = new Set(["scan", "thanks"]);
@@ -11,6 +12,7 @@ const TALLY_URLS = {
   toolkit: "https://tally.so/r/aQG1EZ",
   diagnostic: "https://tally.so/r/7RoLkz",
   workshop: "https://tally.so/r/gDLqe4",
+  getStarted: "https://tally.so/r/Ek8bV2",
 };
 
 function getRoot() {
@@ -37,8 +39,11 @@ function pathTo(path) {
   return `${getRoot()}${path}`;
 }
 
-function createBrandMarkup(className = "site-brand__mark") {
-  return `<img class="${className}" src="${pathTo("img/signal-over-noise-wordmark.svg")}" alt="Signal over Noise">`;
+function createBrandMarkup(className = "site-brand__mark", variant = "full-color") {
+  const markPath = variant === "reversed"
+    ? "img/brand-marks/one-color-horizontal-lockup.svg"
+    : "img/brand-marks/full-color-horizontal-lockup.svg";
+  return `<img class="${className}" src="${pathTo(markPath)}" alt="Signal over Noise">`;
 }
 
 function createDiagnosticHref(originPage = getOriginPage(), source = getSourceContext()) {
@@ -150,7 +155,7 @@ function renderFooter() {
       <footer class="site-footer site-footer--minimal">
         <div class="shell site-footer__inner site-footer__inner--minimal">
           <a class="footer-brand" href="${pathTo("")}" aria-label="Signal over Noise home">
-            ${createBrandMarkup("footer-brand__mark")}
+            ${createBrandMarkup("footer-brand__mark", "reversed")}
           </a>
           <div class="site-footer__minimal-meta">
             <p class="site-footer__meta">Presentation follow-up resources for workshop attendees.</p>
@@ -172,14 +177,14 @@ function renderFooter() {
       <div class="shell site-footer__inner">
         <div class="site-footer__top">
           <a class="footer-brand" href="${pathTo("")}" aria-label="Signal over Noise home">
-            ${createBrandMarkup("footer-brand__mark")}
+            ${createBrandMarkup("footer-brand__mark", "reversed")}
           </a>
           <nav class="footer-nav" aria-label="Footer">${footerLinks}</nav>
         </div>
         <div class="site-footer__rule" role="presentation"></div>
         <div class="site-footer__bottom">
-          <p class="site-footer__meta">Presentation support for professionals presenting in English and multilingual settings.</p>
-          <p class="site-footer__legal">Founder-led presentation support built around real materials, clear review, and practical next steps.</p>
+          <p class="site-footer__meta">Presentation support for clearer messages, sharper decks, and more credible delivery.</p>
+          <p class="site-footer__legal">Diagnostic-first support built around real materials, visible proof, and practical next steps.</p>
         </div>
       </div>
     </footer>
@@ -252,6 +257,7 @@ function mountAllTallyEmbeds() {
     toolkit: { url: TALLY_URLS.toolkit, title: "Signal over Noise Presenter Toolkit" },
     diagnostic: { url: TALLY_URLS.diagnostic, title: "Free Presentation Diagnostic" },
     workshop: { url: TALLY_URLS.workshop, title: "Signal over Noise Workshop Inquiry" },
+    getStarted: { url: TALLY_URLS.getStarted, title: "Signal over Noise Get Started Request" },
   };
 
   const mounts = document.querySelectorAll("[data-tally-mount]");
@@ -276,7 +282,7 @@ function mountAllTallyEmbeds() {
     const iframe = document.createElement("iframe");
     iframe.dataset.tallySrc = src;
     iframe.width = "100%";
-    iframe.height = "500";
+    iframe.height = mount.dataset.tallyHeight || "500";
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("marginheight", "0");
     iframe.setAttribute("marginwidth", "0");
@@ -301,20 +307,80 @@ function mountAllTallyEmbeds() {
   }
 }
 
+function clampComparePosition(value) {
+  const parsedValue = Number.parseFloat(value);
+  if (!Number.isFinite(parsedValue)) {
+    return 50;
+  }
+
+  return Math.min(100, Math.max(0, parsedValue));
+}
+
 function syncComparePosition(compare, value) {
-  compare.style.setProperty("--compare-position", `${value}%`);
+  const position = clampComparePosition(value);
+  const handle = compare.querySelector("[data-compare-handle]");
+
+  compare.style.setProperty("--compare-position", `${position}%`);
+  if (handle) {
+    handle.setAttribute("aria-valuenow", String(Math.round(position)));
+  }
+}
+
+function getComparePosition(compare) {
+  return clampComparePosition(compare.style.getPropertyValue("--compare-position"));
+}
+
+function getComparePositionFromPointer(frame, event) {
+  const rect = frame.getBoundingClientRect();
+  if (!rect.width) {
+    return 50;
+  }
+
+  return ((event.clientX - rect.left) / rect.width) * 100;
 }
 
 function initProofComparisons() {
   document.querySelectorAll("[data-compare]").forEach((compare) => {
-    const range = compare.querySelector("[data-compare-range]");
-    if (!range) {
+    const frame = compare.querySelector("[data-compare-frame]");
+    const handle = compare.querySelector("[data-compare-handle]");
+    if (!frame || !handle) {
       return;
     }
 
-    syncComparePosition(compare, range.value || 50);
-    range.addEventListener("input", () => {
-      syncComparePosition(compare, range.value);
+    syncComparePosition(compare, getComparePosition(compare));
+
+    handle.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      handle.setPointerCapture(event.pointerId);
+      syncComparePosition(compare, getComparePositionFromPointer(frame, event));
+    });
+
+    handle.addEventListener("pointermove", (event) => {
+      if (!handle.hasPointerCapture(event.pointerId)) {
+        return;
+      }
+
+      syncComparePosition(compare, getComparePositionFromPointer(frame, event));
+    });
+
+    handle.addEventListener("keydown", (event) => {
+      const currentPosition = getComparePosition(compare);
+      let nextPosition = currentPosition;
+
+      if (event.key === "ArrowLeft") {
+        nextPosition -= event.shiftKey ? 10 : 2;
+      } else if (event.key === "ArrowRight") {
+        nextPosition += event.shiftKey ? 10 : 2;
+      } else if (event.key === "Home") {
+        nextPosition = 0;
+      } else if (event.key === "End") {
+        nextPosition = 100;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+      syncComparePosition(compare, nextPosition);
     });
   });
 }

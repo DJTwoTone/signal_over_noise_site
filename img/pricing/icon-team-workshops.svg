@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Team workshops icon</title>
+  <desc id="desc">A workshop board with three participant marks.</desc>
+  <rect width="96" height="96" rx="24" fill="#fbf7f0"/>
+  <rect x="20" y="18" width="56" height="36" rx="6" fill="none" stroke="#0b2d53" stroke-width="4"/>
+  <path d="M31 34h20M31 44h30" fill="none" stroke="#193b64" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="29" cy="69" r="7" fill="#f2e5c8" stroke="#c49a45" stroke-width="4"/>
+  <circle cx="48" cy="69" r="7" fill="#f2e5c8" stroke="#c49a45" stroke-width="4"/>
+  <circle cx="67" cy="69" r="7" fill="#f2e5c8" stroke="#c49a45" stroke-width="4"/>
+</svg>

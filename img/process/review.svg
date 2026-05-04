@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Presentation review illustration</title>
+  <desc id="desc">A presentation slide being examined and marked up for clarity.</desc>
+  <rect width="320" height="180" rx="22" fill="#fffdfa"/>
+  <rect x="58" y="39" width="140" height="92" rx="13" fill="#f3f6fa" stroke="#c9d4e1" stroke-width="2"/>
+  <rect x="78" y="59" width="82" height="10" rx="5" fill="#193b63" opacity=".32"/>
+  <rect x="78" y="83" width="50" height="34" rx="8" fill="#dca84b" opacity=".45"/>
+  <path d="M143 113c14-30 30-49 50-59" fill="none" stroke="#d86f2b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M175 63c17-9 35-5 44 10 11 17 5 39-13 50-18 11-41 7-52-10-9-15-4-34 10-45" fill="none" stroke="#193b63" stroke-width="8" stroke-linecap="round"/>
+  <path d="m208 119 38 34" stroke="#193b63" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="188" cy="94" r="35" fill="none" stroke="#fffdfa" stroke-width="3" opacity=".72"/>
+  <path d="M220 48h34M226 66h42M232 84h26" stroke="#dca84b" stroke-width="5" stroke-linecap="round" opacity=".72"/>
+</svg>

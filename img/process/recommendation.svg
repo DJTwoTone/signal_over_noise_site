@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Recommendation illustration</title>
+  <desc id="desc">A clear next step selected after the diagnostic review.</desc>
+  <rect width="320" height="180" rx="22" fill="#fffdfa"/>
+  <path d="M54 123c30-48 58-64 90-52 23 9 34 29 60 24 27-5 42-31 67-42" fill="none" stroke="#193b63" stroke-width="4" stroke-linecap="round" opacity=".28"/>
+  <circle cx="68" cy="122" r="9" fill="#dca84b"/>
+  <circle cx="142" cy="71" r="9" fill="#dca84b"/>
+  <circle cx="268" cy="53" r="9" fill="#193b63"/>
+  <rect x="86" y="42" width="128" height="92" rx="16" fill="#f3f6fa" stroke="#c9d4e1" stroke-width="2"/>
+  <path d="M112 70h68M112 92h45M112 114h56" stroke="#193b63" stroke-width="7" stroke-linecap="round" opacity=".3"/>
+  <circle cx="218" cy="109" r="34" fill="#193b63"/>
+  <path d="m202 109 11 12 25-29" fill="none" stroke="#fffdfa" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M232 70c10 4 18 11 24 21" fill="none" stroke="#dca84b" stroke-width="5" stroke-linecap="round"/>
+</svg>

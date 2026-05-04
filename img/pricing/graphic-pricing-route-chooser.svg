@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 260" role="img" aria-labelledby="title desc">
+  <title id="title">Pricing route chooser graphic</title>
+  <desc id="desc">Three calm route cards connected by a gold line.</desc>
+  <rect width="540" height="260" rx="28" fill="#faf8f3"/>
+  <path d="M90 132h360" fill="none" stroke="#c49a45" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 15"/>
+  <g>
+    <rect x="40" y="62" width="130" height="140" rx="22" fill="#fbf7f0" stroke="#e2ded0" stroke-width="2"/>
+    <circle cx="105" cy="104" r="24" fill="#f2e5c8"/>
+    <path d="M94 104h22M105 93v22" stroke="#0b2d53" stroke-width="5" stroke-linecap="round"/>
+    <text x="105" y="158" text-anchor="middle" fill="#132033" font-family="Georgia, serif" font-size="20">Start free</text>
+  </g>
+  <g>
+    <rect x="205" y="40" width="130" height="184" rx="22" fill="#132033" stroke="#193b64" stroke-width="2"/>
+    <circle cx="270" cy="96" r="26" fill="#f2e5c8"/>
+    <path d="M258 99h24M270 87v24" stroke="#c49a45" stroke-width="5" stroke-linecap="round"/>
+    <text x="270" y="160" text-anchor="middle" fill="#fbf7f0" font-family="Georgia, serif" font-size="21">Get started</text>
+    <text x="270" y="187" text-anchor="middle" fill="#f2e5c8" font-family="Arial, sans-serif" font-size="13">paid support</text>
+  </g>
+  <g>
+    <rect x="370" y="62" width="130" height="140" rx="22" fill="#fbf7f0" stroke="#e2ded0" stroke-width="2"/>
+    <circle cx="435" cy="104" r="24" fill="#f2e5c8"/>
+    <path d="M423 105h24M435 93v24" stroke="#0b2d53" stroke-width="5" stroke-linecap="round"/>
+    <text x="435" y="158" text-anchor="middle" fill="#132033" font-family="Georgia, serif" font-size="19">Mallang</text>
+  </g>
+</svg>

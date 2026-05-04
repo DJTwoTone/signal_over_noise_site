@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Individual presentation support icon</title>
+  <desc id="desc">A presentation document with a gold focus mark.</desc>
+  <rect width="96" height="96" rx="24" fill="#fbf7f0"/>
+  <rect x="23" y="18" width="42" height="58" rx="6" fill="none" stroke="#0b2d53" stroke-width="4"/>
+  <path d="M33 33h22M33 45h18M33 57h14" fill="none" stroke="#193b64" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="66" cy="62" r="12" fill="#f2e5c8" stroke="#c49a45" stroke-width="4"/>
+  <path d="m61 62 4 4 8-10" fill="none" stroke="#0b2d53" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

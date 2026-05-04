@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Request materials illustration</title>
+  <desc id="desc">Presentation documents being sent into the diagnostic process.</desc>
+  <rect width="320" height="180" rx="22" fill="#fffdfa"/>
+  <path d="M36 132c42-40 73-56 108-46 36 10 59 17 101-20 14-12 27-20 39-24" fill="none" stroke="#dca84b" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+  <rect x="58" y="40" width="120" height="88" rx="12" fill="#f3f6fa" stroke="#c9d4e1" stroke-width="2"/>
+  <rect x="78" y="62" width="80" height="8" rx="4" fill="#193b63" opacity=".28"/>
+  <rect x="78" y="82" width="58" height="7" rx="3.5" fill="#193b63" opacity=".2"/>
+  <rect x="78" y="101" width="68" height="7" rx="3.5" fill="#dca84b" opacity=".55"/>
+  <path d="M197 83h48" fill="none" stroke="#193b63" stroke-width="6" stroke-linecap="round"/>
+  <path d="m229 63 28 20-28 20" fill="none" stroke="#193b63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="236" y="38" width="36" height="86" rx="12" fill="#193b63" opacity=".12"/>
+  <circle cx="254" cy="105" r="5" fill="#193b63" opacity=".5"/>
+</svg>

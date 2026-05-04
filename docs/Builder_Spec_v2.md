@@ -433,6 +433,8 @@ Do not force awkward keyword stuffing.
 - No fabricated proof appears anywhere
 
 ## QA / Pre-Launch Checklist
+Current canonical tracker: `../TODO.md`. Treat this checklist as source context, not the active task list.
+
 - Test all nav links
 - Test `/scan` form submission
 - Test redirect to `/thanks`

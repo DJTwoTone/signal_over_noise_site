@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Partner classes icon</title>
+  <desc id="desc">Two connected presentation cards.</desc>
+  <rect width="96" height="96" rx="24" fill="#fbf7f0"/>
+  <rect x="20" y="24" width="30" height="34" rx="6" fill="none" stroke="#0b2d53" stroke-width="4"/>
+  <rect x="46" y="38" width="30" height="34" rx="6" fill="none" stroke="#193b64" stroke-width="4"/>
+  <path d="M35 64v7h20" fill="none" stroke="#c49a45" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M29 36h12M29 46h9M55 50h12M55 60h9" fill="none" stroke="#193b64" stroke-width="4" stroke-linecap="round"/>
+</svg>
