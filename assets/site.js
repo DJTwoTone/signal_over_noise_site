@@ -1,9 +1,9 @@
 const NAV_ITEMS = [
   { key: "services", label: "Services", href: "services/" },
   { key: "process", label: "Process", href: "process/" },
-  { key: "proof", label: "See the Work", href: "proof/" },
+  { key: "proof", label: "View Sample Work", href: "proof/" },
   { key: "workshops", label: "Workshops", href: "workshops/" },
-  { key: "get-started", label: "Get Started", href: "get-started/" },
+  { key: "get-started", label: "Request Paid Support", href: "get-started/" },
 ];
 
 const MINIMAL_CHROME_PAGES = new Set(["scan", "thanks"]);
@@ -21,6 +21,39 @@ const TALLY_DEFAULT_HEIGHTS = {
   workshop: "820",
   getStarted: "900",
 };
+
+const TALLY_ROUTE_CONTEXTS = {
+  toolkit: {
+    source_page: "/scan",
+    route_type: "toolkit",
+    offer_context: "workshop_followup",
+    page_variant: "desktop_v1_launch",
+    workshop_followup: "true",
+  },
+  diagnostic: {
+    source_page: "/diagnostic",
+    route_type: "free_diagnostic",
+    offer_context: "diagnostic_first",
+    page_variant: "desktop_v1_launch",
+    workshop_followup: "false",
+  },
+  workshop: {
+    source_page: "/contact",
+    route_type: "workshop_inquiry",
+    offer_context: "workshop_route",
+    page_variant: "desktop_v1_launch",
+    workshop_followup: "false",
+  },
+  getStarted: {
+    source_page: "/get-started",
+    route_type: "paid_support",
+    offer_context: "paid_support_route",
+    page_variant: "desktop_v1_launch",
+    workshop_followup: "false",
+  },
+};
+
+const UTM_PARAM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
 function getRoot() {
   return document.body.dataset.siteRoot || "./";
@@ -53,40 +86,72 @@ function createBrandMarkup(className = "site-brand__mark", variant = "full-color
   return `<img class="${className}" src="${pathTo(markPath)}" alt="Signal over Noise">`;
 }
 
-function createDiagnosticHref(originPage = getOriginPage(), source = getSourceContext()) {
-  const params = new URLSearchParams({
-    source,
-    originPage,
-  });
-
-  return `${pathTo("diagnostic/")}?${params.toString()}`;
-}
-
-function createWorkshopHref(originPage = getOriginPage(), source = getSourceContext()) {
-  const params = new URLSearchParams({
-    source,
-    originPage,
-  });
-
-  return `${pathTo("contact/")}?${params.toString()}`;
-}
-
-function createScanHref(originPage = getOriginPage(), source = getSourceContext()) {
-  const params = new URLSearchParams({
-    source,
-    originPage,
-  });
-
-  return `${pathTo("scan/")}?${params.toString()}`;
-}
-
-function buildTallyUrl(baseUrl, params) {
-  const url = new URL(baseUrl);
+function withRouteParams(routePath, params) {
+  const query = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {
     if (value != null && value !== "") {
+      query.set(key, String(value));
+    }
+  });
+
+  const queryString = query.toString();
+  return `${pathTo(routePath)}${queryString ? `?${queryString}` : ""}`;
+}
+
+function createFormRouteHref(routePath, options = {}) {
+  const params = new URLSearchParams({
+    source: options.source || getSourceContext(),
+    originPage: options.originPage || getOriginPage(),
+  });
+
+  if (options.ctaClicked) {
+    params.set("cta_clicked", options.ctaClicked);
+  }
+
+  return withRouteParams(routePath, Object.fromEntries(params.entries()));
+}
+
+function createDiagnosticHref(options = {}) {
+  return createFormRouteHref("diagnostic/", options);
+}
+
+function createWorkshopHref(options = {}) {
+  return createFormRouteHref("contact/", options);
+}
+
+function createScanHref(options = {}) {
+  return createFormRouteHref("scan/", options);
+}
+
+function createGetStartedHref(options = {}) {
+  return createFormRouteHref("get-started/", options);
+}
+
+function getLinkCtaClicked(link, fallback) {
+  return link.dataset.ctaClicked || link.dataset.track || link.dataset.trackSource || fallback;
+}
+
+function buildTallyUrl(baseUrl, routeContext) {
+  const url = new URL(baseUrl);
+  const currentParams = new URLSearchParams(window.location.search);
+
+  UTM_PARAM_KEYS.forEach((key) => {
+    const value = currentParams.get(key);
+    if (value) {
       url.searchParams.set(key, value);
     }
   });
+
+  Object.entries(routeContext).forEach(([key, value]) => {
+    if (value != null && value !== "") {
+      url.searchParams.set(key, String(value));
+    }
+  });
+
+  if (document.referrer) {
+    url.searchParams.set("referring_page", document.referrer);
+  }
+
   return url.toString();
 }
 
@@ -113,7 +178,10 @@ function renderHeader() {
   const currentPage = getPageKey();
   const navLinks = NAV_ITEMS.map((item) => {
     const current = item.key === currentPage ? ' aria-current="page"' : "";
-    return `<a class="site-nav__link" href="${pathTo(item.href)}"${current}>${item.label}</a>`;
+    const href = item.key === "get-started"
+      ? createGetStartedHref({ source: "nav", ctaClicked: "nav_get_started" })
+      : pathTo(item.href);
+    return `<a class="site-nav__link" href="${href}"${current}>${item.label}</a>`;
   }).join("");
 
   mount.innerHTML = `
@@ -124,10 +192,10 @@ function renderHeader() {
         </a>
         <nav class="site-nav" aria-label="Primary">
           <div class="site-nav__links">${navLinks}</div>
-          <a class="button button--primary" data-track="nav_diagnostic_click" data-track-source="nav" data-diagnostic-link href="${createDiagnosticHref()}">Request a Free Presentation Diagnostic</a>
+          <a class="button button--primary" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "nav_diagnostic" })}">Request a Free Presentation Diagnostic</a>
         </nav>
         <div class="site-header__mobile">
-          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-diagnostic-link href="${createDiagnosticHref()}">Diagnostic</a>
+          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="mobile_nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "mobile_nav_diagnostic" })}">Diagnostic</a>
           <button class="button button--ghost button--compact" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">Menu</button>
         </div>
       </div>
@@ -190,8 +258,8 @@ function renderFooter() {
         </div>
         <div class="site-footer__rule" role="presentation"></div>
         <div class="site-footer__bottom">
-          <p class="site-footer__meta">Presentation support for clearer messages, sharper decks, and more credible delivery.</p>
-          <p class="site-footer__legal">Diagnostic-first support built around real materials, visible proof, and practical next steps.</p>
+          <p class="site-footer__meta">Real presentations. Real feedback. Clear next steps.</p>
+          <p class="site-footer__legal">Diagnose. Refine. Rehearse.</p>
         </div>
       </div>
     </footer>
@@ -232,21 +300,44 @@ function hydrateRouteLinks() {
   document.querySelectorAll("[data-diagnostic-link]").forEach((link) => {
     link.setAttribute(
       "href",
-      createDiagnosticHref(link.dataset.trackOrigin || getOriginPage(), link.dataset.trackSource || getSourceContext()),
+      createDiagnosticHref({
+        originPage: link.dataset.trackOrigin || getOriginPage(),
+        source: link.dataset.trackSource || getSourceContext(),
+        ctaClicked: getLinkCtaClicked(link, "diagnostic_cta"),
+      }),
     );
   });
 
   document.querySelectorAll("[data-workshop-link]").forEach((link) => {
     link.setAttribute(
       "href",
-      createWorkshopHref(link.dataset.trackOrigin || getOriginPage(), link.dataset.trackSource || getSourceContext()),
+      createWorkshopHref({
+        originPage: link.dataset.trackOrigin || getOriginPage(),
+        source: link.dataset.trackSource || getSourceContext(),
+        ctaClicked: getLinkCtaClicked(link, "workshop_cta"),
+      }),
     );
   });
 
   document.querySelectorAll("[data-toolkit-link]").forEach((link) => {
     link.setAttribute(
       "href",
-      createScanHref(link.dataset.trackOrigin || getOriginPage(), link.dataset.trackSource || getSourceContext()),
+      createScanHref({
+        originPage: link.dataset.trackOrigin || getOriginPage(),
+        source: link.dataset.trackSource || getSourceContext(),
+        ctaClicked: getLinkCtaClicked(link, "toolkit_cta"),
+      }),
+    );
+  });
+
+  document.querySelectorAll("[data-get-started-link]").forEach((link) => {
+    link.setAttribute(
+      "href",
+      createGetStartedHref({
+        originPage: link.dataset.trackOrigin || getOriginPage(),
+        source: link.dataset.trackSource || getSourceContext(),
+        ctaClicked: getLinkCtaClicked(link, "paid_support_cta"),
+      }),
     );
   });
 }
@@ -256,6 +347,7 @@ function resolvePageContext() {
   return {
     source: params.get("source") || getSourceContext(),
     originPage: params.get("originPage") || getOriginPage(),
+    ctaClicked: params.get("cta_clicked") || "direct_route",
   };
 }
 
@@ -281,9 +373,12 @@ function mountAllTallyEmbeds() {
       return;
     }
 
+    const routeContext = TALLY_ROUTE_CONTEXTS[key] || {};
     const src = buildTallyUrl(config.url, {
       source: context.source,
       originPage: context.originPage,
+      cta_clicked: context.ctaClicked,
+      ...routeContext,
     });
 
     const iframe = document.createElement("iframe");
