@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://localhost:8080",
-  "generatedAt": "2026-05-05T02:19:36.777Z",
+  "generatedAt": "2026-05-05T05:30:51.927Z",
   "outDir": ".qa-screenshots\\forms-routing-qa-2026-05-05",
   "forms": [
     {
@@ -41,7 +41,7 @@
         "originPage": 1
       },
       "paramIssues": [],
-      "fieldsText": "Free Presentation Diagnostic The free diagnostic gives 3–5 specific fixes and a recommended next step. It is not a full rewrite, full deck redesign, or rehearsal plan. Name * Email * What are you sending? * What are you sending? A Slide deck B Script / speaking notes C Short delivery video D More than one of these E Not sure Upload or link the current script, deck, or short delivery sample. A rough version is fine. The diagnostic works best with real material. Click to choose a file or drag here Size limit: 10 MB What's your presentation about? * Who is the audience? * When is it due or when will you present? * Biggest Concern * Permission / privacy acknowledgment * Permission / privacy acknowledgment I understand that Signal over Noise will use the material I submit only to review my request and prepare diagnostic feedback. Submit Made with Tally",
+      "fieldsText": "Free Presentation Diagnostic The free diagnostic gives you 3–5 specific fixes and a recommended next step. It is not a full rewrite, full deck redesign, complete audit, or rehearsal plan. If paid support is the right next step, we’ll say that clearly and separately. Name * Email * What are you sending? * What are you sending? A Slide deck B Script / speaking notes C Short delivery video D More than one of these E Not sure Upload or link the current script, deck, or short delivery sample. A rough version is fine. The diagnostic works best with real material. Click to choose a file or drag here Size limit: 10 MB What's your presentation about? * Who is the audience? * When is it due or when will you present? * Biggest Concern * Permission / privacy acknowledgment * Permission / privacy acknowledgment I understand that Signal over Noise will use the material I submit only to review my request and prepare diagnostic feedback. Submit Made with Tally",
       "fieldsFilled": true,
       "submitReached": true,
       "confirmationText": "Thanks. We received your diagnostic request. We’ll review the material and context you submitted, then reply with 3–5 specific fixes and a recommended next step. What happens next 1. We look at the real script, deck, or delivery sample you sent. 2. We identify the highest-value clarity issues. 3. We send focused feedback and the best next step. While you wait, you can review sample work to see how we think. https://signal-over-noise.coach/proof Real presentations. Real feedback. Clear next steps Made with Tally",
@@ -98,9 +98,7 @@
       "confirmationText": "Thanks. The Presenter Toolkit is on its way. Use it on one real presentation first: one message, one slide, or one short rehearsal section. Start here: 1. Clarify the main point. 2. Check whether the slide supports that point. 3. Practice the section out loud once. If you want tailored feedback after that, request the Free Presentation Diagnostic. [Request a Free Presentation Diagnostic](https://signal-over-noise.coach/diagnostic) Real presentations. Real feedback. Clear next steps. Made with Tally",
       "confirmationVisible": true,
       "finalPageUrl": "http://localhost:8080/scan/?utm_source=qa&utm_medium=test&utm_campaign=hidden_field_check&utm_content=form_route&utm_term=forms_routing&cta_clicked=qa_test",
-      "consoleErrors": [
-        "error: Failed to load resource: the server responded with a status of 429 ()"
-      ],
+      "consoleErrors": [],
       "requestFailures": [],
       "screenshots": {
         "before": ".qa-screenshots\\forms-routing-qa-2026-05-05\\scan-before.png",
