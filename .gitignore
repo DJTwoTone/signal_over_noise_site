@@ -1,0 +1,10 @@
+dist/
+node_modules/
+
+# Local QA output
+.qa-screenshots/
+test-results/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
