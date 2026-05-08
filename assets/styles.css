@@ -384,6 +384,11 @@ ul {
   gap: 32px;
 }
 
+.toolkit-hero {
+  display: grid;
+  gap: clamp(28px, 4vw, 46px);
+}
+
 .split-grid {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   align-items: start;
@@ -956,6 +961,10 @@ body {
 
 .hero-grid {
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: clamp(28px, 4vw, 46px);
+}
+
+.toolkit-hero {
   gap: clamp(28px, 4vw, 46px);
 }
 

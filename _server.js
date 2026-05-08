@@ -12,6 +12,11 @@ const mime = {
 
 http.createServer((req, res) => {
   let url = decodeURIComponent(req.url.split('?')[0]);
+  if (url === '/scan' || url === '/scan/') {
+    res.writeHead(301, { Location: '/toolkit/' });
+    res.end();
+    return;
+  }
   if (url === '/packages' || url === '/packages/') {
     res.writeHead(301, { Location: '/services/' });
     res.end();

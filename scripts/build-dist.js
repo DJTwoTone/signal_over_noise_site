@@ -15,7 +15,7 @@ const publicEntries = [
   "privacy",
   "process",
   "proof",
-  "scan",
+  "toolkit",
   "services",
   "thanks",
   "workshops",

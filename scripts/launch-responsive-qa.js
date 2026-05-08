@@ -19,7 +19,7 @@ const ROUTES = [
   { key: "proof", path: "/proof/" },
   { key: "workshops", path: "/workshops/" },
   { key: "diagnostic", path: "/diagnostic/" },
-  { key: "scan", path: "/scan/" },
+  { key: "toolkit", path: "/toolkit/" },
   { key: "thanks", path: "/thanks/" },
   { key: "get-started", path: "/get-started/" },
   { key: "contact", path: "/contact/" },
@@ -27,7 +27,7 @@ const ROUTES = [
   { key: "packages", path: "/packages/" },
 ];
 
-const FORM_ROUTES = new Set(["diagnostic", "scan", "contact", "get-started"]);
+const FORM_ROUTES = new Set(["diagnostic", "toolkit", "contact", "get-started"]);
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });

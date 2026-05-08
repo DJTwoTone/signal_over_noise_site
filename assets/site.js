@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   { key: "get-started", label: "Request Paid Support", href: "get-started/" },
 ];
 
-const MINIMAL_CHROME_PAGES = new Set(["scan", "thanks"]);
+const MINIMAL_CHROME_PAGES = new Set(["toolkit", "thanks"]);
 
 const TALLY_URLS = {
   toolkit: "https://tally.so/embed/aQG1EZ",
@@ -24,7 +24,7 @@ const TALLY_DEFAULT_HEIGHTS = {
 
 const TALLY_ROUTE_CONTEXTS = {
   toolkit: {
-    source_page: "/scan",
+    source_page: "/toolkit",
     route_type: "toolkit",
     offer_context: "workshop_followup",
     page_variant: "desktop_v1_launch",
@@ -119,8 +119,8 @@ function createWorkshopHref(options = {}) {
   return createFormRouteHref("contact/", options);
 }
 
-function createScanHref(options = {}) {
-  return createFormRouteHref("scan/", options);
+function createToolkitHref(options = {}) {
+  return createFormRouteHref("toolkit/", options);
 }
 
 function createGetStartedHref(options = {}) {
@@ -322,7 +322,7 @@ function hydrateRouteLinks() {
   document.querySelectorAll("[data-toolkit-link]").forEach((link) => {
     link.setAttribute(
       "href",
-      createScanHref({
+      createToolkitHref({
         originPage: link.dataset.trackOrigin || getOriginPage(),
         source: link.dataset.trackSource || getSourceContext(),
         ctaClicked: getLinkCtaClicked(link, "toolkit_cta"),

@@ -46,12 +46,12 @@ const FORM_ROUTES = [
     ],
   },
   {
-    key: "scan",
-    path: "/scan/",
+    key: "toolkit",
+    path: "/toolkit/",
     mount: "toolkit",
     tallyUrl: "https://tally.so/embed/aQG1EZ",
     expected: {
-      source_page: "/scan",
+      source_page: "/toolkit",
       route_type: "toolkit",
       offer_context: "workshop_followup",
       workshop_followup: "true",
@@ -112,7 +112,7 @@ const CTA_ROUTES = [
   { selector: "[data-diagnostic-link]", expectedPath: "/diagnostic/" },
   { selector: "[data-get-started-link]", expectedPath: "/get-started/" },
   { selector: "[data-workshop-link]", expectedPath: "/contact/" },
-  { selector: "[data-toolkit-link]", expectedPath: "/scan/" },
+  { selector: "[data-toolkit-link]", expectedPath: "/toolkit/" },
 ];
 
 const CTA_PAGES = ["/", "/services/", "/process/", "/proof/", "/workshops/", "/thanks/", "/privacy/"];
@@ -283,7 +283,7 @@ async function fillRouteSpecificChoices(frame, key) {
     actions.push(await checkPrivacyAcknowledgment(frame));
   }
 
-  if (key === "scan") {
+  if (key === "toolkit") {
     actions.push(await selectComboboxOption(frame, "What are your biggest presentation challenges?", "Preparing for a real presentation"));
   }
 
