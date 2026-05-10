@@ -10,6 +10,7 @@ const publicEntries = [
   "img",
   "contact",
   "diagnostic",
+  "downloads",
   "get-started",
   "packages",
   "privacy",
