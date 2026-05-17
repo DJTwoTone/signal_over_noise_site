@@ -82,7 +82,10 @@
                 decoding="async"
               >
             </picture>
-            <figcaption class="comic-insert__caption">Send one slide, one section, or the full deck. Start with the part that feels stuck.</figcaption>
+            <figcaption class="comic-insert__caption">
+              <span>Send one slide, one section, or the full deck. Start with the part that feels stuck.</span>
+              <a class="button button--secondary button--compact" data-cta-clicked="home_process_comic_diagnostic" data-diagnostic-link href="./diagnostic/">Request a Free Presentation Diagnostic</a>
+            </figcaption>
           </figure>
           <div class="pathway-preview-grid">
             <article class="pathway-tile">
@@ -209,61 +212,39 @@
             <p class="eyebrow">How It Works</p>
             <h2 class="section-title">A clear path from first request to the right recommendation.</h2>
           </div>
-          <div class="timeline-row">
-            <article class="timeline-step">
-              <p class="timeline-step__index">01 / Start</p>
-              <h3 class="timeline-step__title">Request the diagnostic</h3>
-              <p class="timeline-step__copy">Share the script, deck, or recorded delivery that needs review.</p>
-            </article>
-            <article class="timeline-step">
-              <p class="timeline-step__index">02 / Context</p>
-              <h3 class="timeline-step__title">Add the presentation context</h3>
-              <p class="timeline-step__copy">Tell us who the audience is, why the presentation matters, when it happens, and where the friction is.</p>
-            </article>
-            <article class="timeline-step">
-              <p class="timeline-step__index">03 / Review</p>
-              <h3 class="timeline-step__title">We review the presentation</h3>
-              <p class="timeline-step__copy">The review starts with the real material, not a vague summary.</p>
-            </article>
-            <article class="timeline-step">
-              <p class="timeline-step__index">04 / Recommendation</p>
-              <h3 class="timeline-step__title">Get the right next step</h3>
-              <p class="timeline-step__copy">You&apos;ll get a clear recommendation: refinement, rehearsal, sprint support, coaching, or a lighter next step if that is the honest answer.</p>
-            </article>
-          </div>
-          <div class="diagnostic-path-graphic" role="group" aria-label="Diagnostic path from request to recommendation">
-            <div class="diagnostic-path-graphic__step">
-              <img src="./img/son-home-process-01-request.webp" alt="" loading="lazy" aria-hidden="true">
-              <div>
-                <span>01</span>
-                <strong>Request</strong>
-                <p>Send the material.</p>
+          <div class="process-step-grid">
+            <article class="process-step-card">
+              <img class="process-step-card__image" src="./img/son-home-process-01-request.webp" alt="" loading="lazy" aria-hidden="true">
+              <div class="process-step-card__body">
+                <p class="process-step-card__index">01 / Start</p>
+                <h3 class="process-step-card__title">Request the diagnostic</h3>
+                <p class="process-step-card__copy">Share the script, deck, or recorded delivery that needs review.</p>
               </div>
-            </div>
-            <div class="diagnostic-path-graphic__step">
-              <img src="./img/son-home-process-02-review.webp" alt="" loading="lazy" aria-hidden="true">
-              <div>
-                <span>02</span>
-                <strong>Context</strong>
-                <p>Name the audience, stakes, and timing.</p>
+            </article>
+            <article class="process-step-card">
+              <img class="process-step-card__image" src="./img/son-home-process-02-review.webp" alt="" loading="lazy" aria-hidden="true">
+              <div class="process-step-card__body">
+                <p class="process-step-card__index">02 / Context</p>
+                <h3 class="process-step-card__title">Add the presentation context</h3>
+                <p class="process-step-card__copy">Tell us who the audience is, why the presentation matters, when it happens, and where the friction is.</p>
               </div>
-            </div>
-            <div class="diagnostic-path-graphic__step">
-              <img src="./img/son-home-process-03-fix.webp" alt="" loading="lazy" aria-hidden="true">
-              <div>
-                <span>03</span>
-                <strong>Review</strong>
-                <p>Find what blocks clarity.</p>
+            </article>
+            <article class="process-step-card">
+              <img class="process-step-card__image" src="./img/son-home-process-03-fix.webp" alt="" loading="lazy" aria-hidden="true">
+              <div class="process-step-card__body">
+                <p class="process-step-card__index">03 / Review</p>
+                <h3 class="process-step-card__title">We review the presentation</h3>
+                <p class="process-step-card__copy">The review starts with the real material, not a vague summary.</p>
               </div>
-            </div>
-            <div class="diagnostic-path-graphic__step">
-              <img src="./img/son-home-process-04-recommendation.webp" alt="" loading="lazy" aria-hidden="true">
-              <div>
-                <span>04</span>
-                <strong>Recommendation</strong>
-                <p>Choose the best next step.</p>
+            </article>
+            <article class="process-step-card">
+              <img class="process-step-card__image" src="./img/son-home-process-04-recommendation.webp" alt="" loading="lazy" aria-hidden="true">
+              <div class="process-step-card__body">
+                <p class="process-step-card__index">04 / Recommendation</p>
+                <h3 class="process-step-card__title">Get the right next step</h3>
+                <p class="process-step-card__copy">You&apos;ll get a clear recommendation: refinement, rehearsal, sprint support, coaching, or a lighter next step if that is the honest answer.</p>
               </div>
-            </div>
+            </article>
           </div>
           <figure class="comic-insert comic-insert--large comic-insert--process">
             <picture>
@@ -283,8 +264,8 @@
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">Proof and Credibility</p>
-            <h2 class="section-title">View sample work, then decide.</h2>
-            <p class="section-copy">Start with real artifacts and the people behind the work. No inflated claims, no padded proof.</p>
+            <h2 class="section-title">See the slide changes and diagnostic markup before you decide.</h2>
+            <p class="section-copy">This section shows a before-and-after slide comparison, a sample diagnostic preview, and the people behind the work.</p>
           </div>
           <figure class="comic-insert comic-insert--proof">
             <picture>
@@ -400,24 +381,30 @@
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">Services</p>
-            <h2 class="section-title">Support for individuals, teams, and partner classes.</h2>
-            <p class="section-copy">Get focused help for a specific presentation, practical training for your team, or partner-hosted business communication classes through a local school.</p>
+            <h2 class="section-title">Choose the presentation support route that fits the real problem.</h2>
+            <p class="section-copy">Start free if the problem is unclear, request paid help for a real presentation, ask about team workshops, or use the Mallang partner route for scheduled classes.</p>
           </div>
           <div class="offer-route-grid">
             <article class="route-card">
-              <p class="route-card__label">Service Lane</p>
+              <p class="route-card__label">Start Free</p>
+              <h3 class="card-title">Free Presentation Diagnostic</h3>
+              <p class="card-copy">Best when the problem is unclear. Send current material and get specific fixes plus a recommended next step.</p>
+              <a class="text-link" data-cta-clicked="home_service_card_diagnostic" data-diagnostic-link href="./diagnostic/">Request a Free Diagnostic</a>
+            </article>
+            <article class="route-card">
+              <p class="route-card__label">Direct Support</p>
               <h3 class="card-title">Individual Presentation Support</h3>
               <p class="card-copy">Focused help for a real presentation, pitch, meeting, lecture, script, deck, or rehearsal need.</p>
               <a class="text-link" data-cta-clicked="home_service_card_paid_support" data-get-started-link href="./get-started/">Request Paid Support</a>
             </article>
             <article class="route-card">
-              <p class="route-card__label">Service Lane</p>
+              <p class="route-card__label">Teams</p>
               <h3 class="card-title">Team Workshops</h3>
               <p class="card-copy">Practical training for groups that need clearer messages, better slides, and shared rehearsal habits.</p>
               <a class="text-link" data-cta-clicked="home_service_card_workshop" data-workshop-link href="./contact/">Ask About a Workshop</a>
             </article>
             <article class="route-card">
-              <p class="route-card__label">Service Lane</p>
+              <p class="route-card__label">Partner Route</p>
               <h3 class="card-title">Partner Classes</h3>
               <p class="card-copy">School-hosted 1:1 business communication and presentation practice for learners who prefer a partner program.</p>
               <a class="text-link" href="https://litt.ly/mallang_lingo_club" target="_blank" rel="noopener">View Mallang Class Details</a>

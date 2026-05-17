@@ -1,9 +1,8 @@
 const NAV_ITEMS = [
   { key: "services", label: "Services", href: "services/" },
   { key: "process", label: "Process", href: "process/" },
-  { key: "proof", label: "View Sample Work", href: "proof/" },
+  { key: "proof", label: "Sample Work", href: "proof/" },
   { key: "workshops", label: "Workshops", href: "workshops/" },
-  { key: "get-started", label: "Request Paid Support", href: "get-started/" },
 ];
 
 const MINIMAL_CHROME_PAGES = new Set(["toolkit", "thanks"]);
@@ -192,11 +191,15 @@ function renderHeader() {
         </a>
         <nav class="site-nav" aria-label="Primary">
           <div class="site-nav__links">${navLinks}</div>
-          <a class="button button--primary" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "nav_diagnostic" })}">Request a Free Presentation Diagnostic</a>
+          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "nav_diagnostic" })}">Free Diagnostic</a>
         </nav>
         <div class="site-header__mobile">
           <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="mobile_nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "mobile_nav_diagnostic" })}">Diagnostic</a>
-          <button class="button button--ghost button--compact" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">Menu</button>
+          <button class="button button--ghost button--compact menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
         </div>
       </div>
       <div class="shell">
