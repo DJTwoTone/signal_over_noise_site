@@ -4,5 +4,10 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-dist.js"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.11.3",
+    "pa11y": "^9.1.1",
+    "pa11y-ci": "^4.1.1"
   }
 }

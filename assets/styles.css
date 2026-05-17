@@ -3215,3 +3215,32 @@ body.proof-modal-open {
     border-radius: 22px;
   }
 }
+
+/* Skip link - WCAG 2.4.1 Bypass Blocks */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--brand-blue);
+  color: var(--text-on-dark);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  z-index: 1000;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+}
+
+/* Motion preferences - WCAG 2.5.4 Motion Actuation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
