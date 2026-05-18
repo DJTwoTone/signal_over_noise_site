@@ -1169,6 +1169,41 @@ body {
   padding: clamp(20px, 3vw, 28px);
 }
 
+.hero-form-shell,
+.hero-note-shell,
+.hero-route-shell {
+  display: grid;
+  align-self: stretch;
+  gap: 16px;
+}
+
+.hero-form-shell__intro,
+.hero-route-summary {
+  display: grid;
+  gap: 8px;
+}
+
+.hero-form-shell .tally-embed-container {
+  min-width: 0;
+}
+
+.hero-note-shell.panel--deep {
+  color: var(--text-on-dark);
+  background: rgba(19, 32, 51, 0.96);
+}
+
+.hero-note-shell.panel--deep .card-title {
+  color: var(--text-on-dark);
+}
+
+.hero-note-shell .notice-card {
+  box-shadow: none;
+}
+
+.hero-route-shell .pricing-hero-visual {
+  box-shadow: none;
+}
+
 .hero-visual-grid {
   position: relative;
   display: grid;
@@ -2409,6 +2444,22 @@ body.proof-modal-open {
   gap: 20px;
 }
 
+.process-step-grid--hero {
+  align-self: stretch;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid rgba(11, 45, 83, 0.16);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(250, 248, 243, 0.76), rgba(242, 229, 200, 0.38)),
+    rgba(250, 248, 243, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.process-step-grid--hero .process-step-card {
+  padding: 16px;
+  box-shadow: none;
+}
+
 .process-step-card {
   display: grid;
   align-content: start;
@@ -2828,6 +2879,12 @@ body.proof-modal-open {
 
   .workshop-comic {
     width: 100%;
+  }
+
+  .pathway-tile:nth-child(3n + 1) .comic-insert--small,
+  .pathway-tile:nth-child(3n + 2) .comic-insert--small,
+  .pathway-tile:nth-child(3n) .comic-insert--small {
+    transform-origin: center bottom;
   }
 
   .founder-inline--lead {

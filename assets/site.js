@@ -391,7 +391,7 @@ function mountAllTallyEmbeds() {
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("marginheight", "0");
     iframe.setAttribute("marginwidth", "0");
-    iframe.setAttribute("loading", "lazy");
+    iframe.setAttribute("loading", "eager");
     iframe.title = config.title;
     iframe.className = "tally-embed";
     mount.appendChild(iframe);
