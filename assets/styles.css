@@ -1040,6 +1040,18 @@ body {
   min-width: 0;
 }
 
+.hero-inline-note {
+  display: grid;
+  gap: 10px;
+  max-width: 48rem;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11, 45, 83, 0.16);
+}
+
+.hero-inline-note .card-title {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+}
+
 .proof-chip {
   display: flex;
   flex-direction: column;
@@ -3377,10 +3389,17 @@ body.proof-modal-open {
 }
 
 .pricing-intro-grid,
-.get-started-grid,
 .get-started-form-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(320px, 0.64fr);
+  align-items: start;
+  gap: clamp(24px, 5vw, 56px);
+}
+
+.get-started-grid,
+.get-started-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: start;
   gap: clamp(24px, 5vw, 56px);
 }
