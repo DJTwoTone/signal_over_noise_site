@@ -354,6 +354,10 @@ function resolvePageContext() {
   };
 }
 
+function createTallyDirectUrl(embedUrl) {
+  return embedUrl.replace("/embed/", "/r/");
+}
+
 function mountAllTallyEmbeds() {
   const configs = {
     toolkit: { url: TALLY_URLS.toolkit, title: "Signal over Noise Presenter Toolkit" },
@@ -395,6 +399,18 @@ function mountAllTallyEmbeds() {
     iframe.title = config.title;
     iframe.className = "tally-embed";
     mount.appendChild(iframe);
+
+    const fallback = document.createElement("p");
+    fallback.className = "tally-embed-fallback";
+
+    const fallbackLink = document.createElement("a");
+    fallbackLink.href = createTallyDirectUrl(src);
+    fallbackLink.target = "_blank";
+    fallbackLink.rel = "noopener";
+    fallbackLink.textContent = "Open the form directly";
+
+    fallback.append("Having trouble seeing the form? ", fallbackLink, ".");
+    mount.appendChild(fallback);
   });
 }
 
@@ -414,6 +430,35 @@ function syncComparePosition(compare, value) {
   compare.style.setProperty("--compare-position", `${position}%`);
   if (handle) {
     handle.setAttribute("aria-valuenow", String(Math.round(position)));
+  }
+  syncCompareLabelVisibility(compare);
+}
+
+function syncCompareLabelVisibility(compare) {
+  const handle = compare.querySelector("[data-compare-handle]");
+  const labels = compare.querySelectorAll(".proof-compare__labels span");
+  if (!handle || labels.length < 2) {
+    compare.removeAttribute("data-compare-label-overlap");
+    return;
+  }
+
+  const handleRect = handle.getBoundingClientRect();
+  const dividerX = handleRect.left + handleRect.width / 2;
+  const overlaps = [];
+
+  labels.forEach((label, index) => {
+    const labelRect = label.getBoundingClientRect();
+    const isOverlapping = dividerX >= labelRect.left && dividerX <= labelRect.right;
+
+    if (isOverlapping) {
+      overlaps.push(index === 0 ? "before" : "after");
+    }
+  });
+
+  if (overlaps.length) {
+    compare.setAttribute("data-compare-label-overlap", overlaps.join(" "));
+  } else {
+    compare.removeAttribute("data-compare-label-overlap");
   }
 }
 
