@@ -236,7 +236,7 @@ function renderFooter() {
             ${createBrandMarkup("footer-brand__mark", "reversed")}
           </a>
           <div class="site-footer__minimal-meta">
-            <p class="site-footer__meta">Presentation follow-up resources for workshop attendees.</p>
+            <p class="site-footer__meta">Workshop follow-up tools for real presentation prep.</p>
             <a class="site-footer__privacy" href="${pathTo("privacy/")}">Privacy</a>
           </div>
         </div>
