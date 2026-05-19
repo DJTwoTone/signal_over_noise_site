@@ -54,6 +54,229 @@ const TALLY_ROUTE_CONTEXTS = {
 
 const UTM_PARAM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
+const I18N_CONFIG = {
+  enabled: false,
+  showSwitcher: true,
+  defaultLanguage: "en",
+  supportedLanguages: ["en", "ko"],
+  koreanPrefix: "/ko/",
+  storageKey: "son-preferred-language",
+};
+
+const UI_COPY = {
+  en: {
+    nav: {
+      services: "Services",
+      process: "Process",
+      proof: "Sample Work",
+      workshops: "Workshops",
+      privacy: "Privacy",
+      freeDiagnostic: "Free Diagnostic",
+      diagnosticShort: "Diagnostic",
+      menu: "Menu",
+      primaryLabel: "Primary",
+      mobileLabel: "Mobile",
+      languageSoon: "Language selector (coming soon)",
+      language: "Language selector",
+    },
+    brandHome: "Signal over Noise home",
+    minimalContext: "Workshop follow-up",
+    minimalFooterMeta: "Workshop follow-up tools for real presentation prep.",
+    footerMeta: "Real presentations. Real feedback. Clear next steps.",
+    footerLegal: "Diagnose. Refine. Rehearse.",
+    tally: {
+      toolkitTitle: "Signal over Noise Presenter Toolkit",
+      diagnosticTitle: "Free Presentation Diagnostic",
+      workshopTitle: "Signal over Noise Workshop Inquiry",
+      getStartedTitle: "Signal over Noise Get Started Request",
+      fallbackPrefix: "Having trouble seeing the form? ",
+      fallbackLink: "Open the form directly",
+    },
+    modal: {
+      eyebrow: "Diagnostic Viewer",
+      copy: "Turn pages in the browser viewer, open the file in a separate tab, or download the full PDF directly.",
+      close: "Close",
+      openInNewTab: "Open in new tab",
+      downloadPdf: "Download PDF",
+      iframeTitle: "Diagnostic PDF viewer",
+      defaultTitle: "Diagnostic sample",
+    },
+  },
+  ko: {
+    nav: {
+      services: "서비스",
+      process: "프로세스",
+      proof: "샘플 작업",
+      workshops: "워크숍",
+      privacy: "개인정보처리방침",
+      freeDiagnostic: "무료 진단",
+      diagnosticShort: "진단",
+      menu: "메뉴",
+      primaryLabel: "주요",
+      mobileLabel: "모바일",
+      languageSoon: "언어 선택기 (준비 중)",
+      language: "언어 선택기",
+    },
+    brandHome: "Signal over Noise 홈",
+    minimalContext: "워크숍 후속 지원",
+    minimalFooterMeta: "실전 발표 준비를 위한 워크숍 후속 도구입니다.",
+    footerMeta: "실전 발표. 실전 피드백. 명확한 다음 단계.",
+    footerLegal: "진단. 개선. 리허설.",
+    tally: {
+      toolkitTitle: "Signal over Noise 발표자 툴킷",
+      diagnosticTitle: "무료 프레젠테이션 진단",
+      workshopTitle: "Signal over Noise 워크숍 문의",
+      getStartedTitle: "Signal over Noise 유료 지원 요청",
+      fallbackPrefix: "폼이 보이지 않나요? ",
+      fallbackLink: "직접 열기",
+    },
+    modal: {
+      eyebrow: "진단 뷰어",
+      copy: "브라우저 뷰어에서 페이지를 넘기거나, 새 탭에서 열거나, PDF 전체를 바로 다운로드할 수 있습니다.",
+      close: "닫기",
+      openInNewTab: "새 탭에서 열기",
+      downloadPdf: "PDF 다운로드",
+      iframeTitle: "진단 PDF 뷰어",
+      defaultTitle: "진단 샘플",
+    },
+  },
+};
+
+function normalizePathname(pathname) {
+  if (!pathname || pathname === "/") {
+    return "/";
+  }
+
+  const normalized = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return normalized.endsWith("/") ? normalized : `${normalized}/`;
+}
+
+function isKoreanPath(pathname = window.location.pathname) {
+  const normalized = normalizePathname(pathname);
+  return normalized === "/ko/" || normalized.startsWith("/ko/");
+}
+
+function getCurrentLanguage() {
+  return isKoreanPath() ? "ko" : "en";
+}
+
+function getCopy() {
+  return UI_COPY[getCurrentLanguage()];
+}
+
+function getEnglishPathname(pathname = window.location.pathname) {
+  const normalized = normalizePathname(pathname);
+  if (!isKoreanPath(normalized)) {
+    return normalized;
+  }
+
+  const withoutPrefix = normalized.replace(/^\/ko\/?/, "");
+  return withoutPrefix ? `/${withoutPrefix}` : "/";
+}
+
+function createLocalizedPathname(targetLanguage, pathname = window.location.pathname) {
+  const englishPath = getEnglishPathname(pathname);
+  if (targetLanguage === "ko") {
+    if (englishPath === "/") {
+      return "/ko/";
+    }
+    return `/ko${englishPath}`;
+  }
+  return englishPath;
+}
+
+function getPreferredLanguage() {
+  try {
+    const stored = window.localStorage.getItem(I18N_CONFIG.storageKey);
+    if (stored && I18N_CONFIG.supportedLanguages.includes(stored)) {
+      return stored;
+    }
+  } catch (_) {
+    // Ignore storage issues in privacy-restricted contexts.
+  }
+
+  const languageCandidates = [
+    ...(navigator.languages || []),
+    navigator.language || "",
+  ].filter(Boolean);
+
+  const hasKorean = languageCandidates.some((code) => code.toLowerCase().startsWith("ko"));
+  return hasKorean ? "ko" : I18N_CONFIG.defaultLanguage;
+}
+
+function persistPreferredLanguage(language) {
+  if (!I18N_CONFIG.supportedLanguages.includes(language)) {
+    return;
+  }
+
+  try {
+    window.localStorage.setItem(I18N_CONFIG.storageKey, language);
+  } catch (_) {
+    // Ignore storage failures.
+  }
+}
+
+function maybeApplyLanguageRedirect() {
+  if (!I18N_CONFIG.enabled) {
+    return false;
+  }
+
+  const preferredLanguage = getPreferredLanguage();
+  const targetPathname = createLocalizedPathname(preferredLanguage);
+  const currentPathname = normalizePathname(window.location.pathname);
+
+  if (normalizePathname(targetPathname) === currentPathname) {
+    return false;
+  }
+
+  const nextUrl = `${targetPathname}${window.location.search}${window.location.hash}`;
+  window.location.replace(nextUrl);
+  return true;
+}
+
+function createLanguageSwitcherMarkup(options = {}) {
+  if (!I18N_CONFIG.showSwitcher) {
+    return "";
+  }
+
+  const compact = options.compact ? " site-lang-switcher--compact" : "";
+  const currentLanguage = isKoreanPath() ? "ko" : "en";
+  const copy = getCopy();
+
+  if (!I18N_CONFIG.enabled) {
+    return `
+      <div class="site-lang-switcher${compact}" aria-label="${copy.nav.languageSoon}">
+        <span class="site-nav__link" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</span>
+        <span class="site-lang-switcher__separator" aria-hidden="true">/</span>
+        <span class="site-nav__link" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</span>
+      </div>
+    `;
+  }
+
+  const enHref = createLocalizedPathname("en");
+  const koHref = createLocalizedPathname("ko");
+
+  return `
+    <div class="site-lang-switcher${compact}" aria-label="${copy.nav.language}">
+      <a class="site-nav__link" href="${enHref}" data-language-switch="en" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</a>
+      <span class="site-lang-switcher__separator" aria-hidden="true">/</span>
+      <a class="site-nav__link" href="${koHref}" data-language-switch="ko" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</a>
+    </div>
+  `;
+}
+
+function wireLanguageSwitcher() {
+  if (!I18N_CONFIG.enabled) {
+    return;
+  }
+
+  document.querySelectorAll("[data-language-switch]").forEach((link) => {
+    link.addEventListener("click", () => {
+      persistPreferredLanguage(link.dataset.languageSwitch || I18N_CONFIG.defaultLanguage);
+    });
+  });
+}
+
 function getRoot() {
   return document.body.dataset.siteRoot || "./";
 }
@@ -160,14 +383,18 @@ function renderHeader() {
     return;
   }
 
+  const copy = getCopy();
+  const desktopLanguageSwitcher = createLanguageSwitcherMarkup();
+  const mobileLanguageSwitcher = createLanguageSwitcherMarkup({ compact: true });
+
   if (useMinimalChrome()) {
     mount.innerHTML = `
       <header class="site-header site-header--minimal">
         <div class="shell site-header__inner">
-          <a class="site-brand" href="${pathTo("")}" aria-label="Signal over Noise home">
+          <a class="site-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
             ${createBrandMarkup()}
           </a>
-          <p class="site-header__context">Workshop follow-up</p>
+          <p class="site-header__context">${copy.minimalContext}</p>
         </div>
       </header>
     `;
@@ -180,22 +407,23 @@ function renderHeader() {
     const href = item.key === "get-started"
       ? createGetStartedHref({ source: "nav", ctaClicked: "nav_get_started" })
       : pathTo(item.href);
-    return `<a class="site-nav__link" href="${href}"${current}>${item.label}</a>`;
+    return `<a class="site-nav__link" href="${href}"${current}>${copy.nav[item.key] || item.label}</a>`;
   }).join("");
 
   mount.innerHTML = `
     <header class="site-header">
       <div class="shell site-header__inner">
-        <a class="site-brand" href="${pathTo("")}" aria-label="Signal over Noise home">
+        <a class="site-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
           ${createBrandMarkup()}
         </a>
-        <nav class="site-nav" aria-label="Primary">
+        <nav class="site-nav" aria-label="${copy.nav.primaryLabel}">
           <div class="site-nav__links">${navLinks}</div>
-          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "nav_diagnostic" })}">Free Diagnostic</a>
+          ${desktopLanguageSwitcher}
+          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "nav_diagnostic" })}">${copy.nav.freeDiagnostic}</a>
         </nav>
         <div class="site-header__mobile">
-          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="mobile_nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "mobile_nav_diagnostic" })}">Diagnostic</a>
-          <button class="button button--ghost button--compact menu-toggle" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+          <a class="button button--primary button--compact" data-track="nav_diagnostic_click" data-track-source="nav" data-cta-clicked="mobile_nav_diagnostic" data-diagnostic-link href="${createDiagnosticHref({ source: "nav", ctaClicked: "mobile_nav_diagnostic" })}">${copy.nav.diagnosticShort}</a>
+          <button class="button button--ghost button--compact menu-toggle" type="button" data-menu-toggle aria-label="${copy.nav.menu}" aria-expanded="false" aria-controls="site-menu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -203,8 +431,9 @@ function renderHeader() {
         </div>
       </div>
       <div class="shell">
-        <nav class="site-menu-panel" id="site-menu" aria-label="Mobile">
-          <div class="site-menu-panel__links">${navLinks}<a class="site-nav__link" href="${pathTo("privacy/")}">Privacy</a></div>
+        <nav class="site-menu-panel" id="site-menu" aria-label="${copy.nav.mobileLabel}">
+          <div class="site-menu-panel__links">${navLinks}<a class="site-nav__link" href="${pathTo("privacy/")}">${copy.nav.privacy}</a></div>
+          ${mobileLanguageSwitcher}
         </nav>
       </div>
     </header>
@@ -228,16 +457,18 @@ function renderFooter() {
     return;
   }
 
+  const copy = getCopy();
+
   if (useMinimalChrome()) {
     mount.innerHTML = `
       <footer class="site-footer site-footer--minimal">
         <div class="shell site-footer__inner site-footer__inner--minimal">
-          <a class="footer-brand" href="${pathTo("")}" aria-label="Signal over Noise home">
+          <a class="footer-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
             ${createBrandMarkup("footer-brand__mark", "reversed")}
           </a>
           <div class="site-footer__minimal-meta">
-            <p class="site-footer__meta">Workshop follow-up tools for real presentation prep.</p>
-            <a class="site-footer__privacy" href="${pathTo("privacy/")}">Privacy</a>
+            <p class="site-footer__meta">${copy.minimalFooterMeta}</p>
+            <a class="site-footer__privacy" href="${pathTo("privacy/")}">${copy.nav.privacy}</a>
           </div>
         </div>
       </footer>
@@ -246,23 +477,23 @@ function renderFooter() {
   }
 
   const footerLinks = [
-    ...NAV_ITEMS.map((item) => `<a href="${pathTo(item.href)}">${item.label}</a>`),
-    `<a href="${pathTo("privacy/")}">Privacy</a>`,
+    ...NAV_ITEMS.map((item) => `<a href="${pathTo(item.href)}">${copy.nav[item.key] || item.label}</a>`),
+    `<a href="${pathTo("privacy/")}">${copy.nav.privacy}</a>`,
   ].join("");
 
   mount.innerHTML = `
     <footer class="site-footer">
       <div class="shell site-footer__inner">
         <div class="site-footer__top">
-          <a class="footer-brand" href="${pathTo("")}" aria-label="Signal over Noise home">
+          <a class="footer-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
             ${createBrandMarkup("footer-brand__mark", "reversed")}
           </a>
           <nav class="footer-nav" aria-label="Footer">${footerLinks}</nav>
         </div>
         <div class="site-footer__rule" role="presentation"></div>
         <div class="site-footer__bottom">
-          <p class="site-footer__meta">Real presentations. Real feedback. Clear next steps.</p>
-          <p class="site-footer__legal">Diagnose. Refine. Rehearse.</p>
+          <p class="site-footer__meta">${copy.footerMeta}</p>
+          <p class="site-footer__legal">${copy.footerLegal}</p>
         </div>
       </div>
     </footer>
@@ -359,11 +590,12 @@ function createTallyDirectUrl(embedUrl) {
 }
 
 function mountAllTallyEmbeds() {
+  const copy = getCopy();
   const configs = {
-    toolkit: { url: TALLY_URLS.toolkit, title: "Signal over Noise Presenter Toolkit" },
-    diagnostic: { url: TALLY_URLS.diagnostic, title: "Free Presentation Diagnostic" },
-    workshop: { url: TALLY_URLS.workshop, title: "Signal over Noise Workshop Inquiry" },
-    getStarted: { url: TALLY_URLS.getStarted, title: "Signal over Noise Get Started Request" },
+    toolkit: { url: TALLY_URLS.toolkit, title: copy.tally.toolkitTitle },
+    diagnostic: { url: TALLY_URLS.diagnostic, title: copy.tally.diagnosticTitle },
+    workshop: { url: TALLY_URLS.workshop, title: copy.tally.workshopTitle },
+    getStarted: { url: TALLY_URLS.getStarted, title: copy.tally.getStartedTitle },
   };
 
   const mounts = document.querySelectorAll("[data-tally-mount]");
@@ -407,9 +639,9 @@ function mountAllTallyEmbeds() {
     fallbackLink.href = createTallyDirectUrl(src);
     fallbackLink.target = "_blank";
     fallbackLink.rel = "noopener";
-    fallbackLink.textContent = "Open the form directly";
+    fallbackLink.textContent = copy.tally.fallbackLink;
 
-    fallback.append("Having trouble seeing the form? ", fallbackLink, ".");
+    fallback.append(copy.tally.fallbackPrefix, fallbackLink, ".");
     mount.appendChild(fallback);
   });
 }
@@ -552,6 +784,7 @@ function ensureProofModal() {
     return proofModalState;
   }
 
+  const copy = getCopy();
   const modal = document.createElement("div");
   modal.className = "proof-modal";
   modal.dataset.proofModal = "true";
@@ -561,18 +794,18 @@ function ensureProofModal() {
     <div class="proof-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="proof-modal-title">
       <div class="proof-modal__header">
         <div class="stack-sm">
-          <p class="eyebrow">Diagnostic Viewer</p>
+          <p class="eyebrow">${copy.modal.eyebrow}</p>
           <h2 class="card-title" id="proof-modal-title"></h2>
-          <p class="proof-modal__copy">Turn pages in the browser viewer, open the file in a separate tab, or download the full PDF directly.</p>
+          <p class="proof-modal__copy">${copy.modal.copy}</p>
         </div>
-        <button class="button button--ghost button--compact" type="button" data-proof-modal-close>Close</button>
+        <button class="button button--ghost button--compact" type="button" data-proof-modal-close>${copy.modal.close}</button>
       </div>
       <div class="proof-modal__actions">
-        <a class="button button--secondary" href="#" target="_blank" rel="noopener" data-proof-modal-open>Open in new tab</a>
-        <a class="button button--primary" href="#" download data-proof-modal-download>Download PDF</a>
+        <a class="button button--secondary" href="#" target="_blank" rel="noopener" data-proof-modal-open>${copy.modal.openInNewTab}</a>
+        <a class="button button--primary" href="#" download data-proof-modal-download>${copy.modal.downloadPdf}</a>
       </div>
       <div class="proof-modal__viewer">
-        <iframe class="proof-modal__iframe" title="Diagnostic PDF viewer" loading="lazy"></iframe>
+        <iframe class="proof-modal__iframe" title="${copy.modal.iframeTitle}" loading="lazy"></iframe>
       </div>
     </div>
   `;
@@ -641,8 +874,9 @@ function openProofModal(src, titleText, trigger) {
   }
 
   const modalState = ensureProofModal();
+  const copy = getCopy();
   modalState.lastTrigger = trigger || document.activeElement;
-  modalState.title.textContent = titleText || "Diagnostic sample";
+  modalState.title.textContent = titleText || copy.modal.defaultTitle;
   modalState.openLink.setAttribute("href", src);
   modalState.downloadLink.setAttribute("href", src);
   modalState.iframe.setAttribute("src", `${src}#view=FitH`);
@@ -681,10 +915,13 @@ function initProofPdfViewer() {
   });
 }
 
-renderHeader();
-renderFooter();
-hydrateRouteLinks();
-wireTrackedLinks();
-mountAllTallyEmbeds();
-initProofComparisons();
-initProofPdfViewer();
+if (!maybeApplyLanguageRedirect()) {
+  renderHeader();
+  renderFooter();
+  hydrateRouteLinks();
+  wireTrackedLinks();
+  mountAllTallyEmbeds();
+  initProofComparisons();
+  initProofPdfViewer();
+  wireLanguageSwitcher();
+}

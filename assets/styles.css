@@ -361,6 +361,25 @@
     text-underline-offset: 0.25em;
   }
 
+  .site-lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border: 1px solid var(--border-mid);
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+  }
+
+  .site-lang-switcher--compact {
+    margin-top: 10px;
+    width: fit-content;
+  }
+
+  .site-lang-switcher__separator {
+    color: var(--text-muted);
+  }
+
   .site-header__mobile {
     display: none;
     align-items: center;
