@@ -8,6 +8,7 @@ const publicEntries = [
   "index.html",
   "assets",
   "img",
+  "ko",
   "contact",
   "diagnostic",
   "downloads",

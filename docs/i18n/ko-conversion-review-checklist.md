@@ -78,7 +78,7 @@ Per KO page:
 
 ## Sign-off Log
 
-- Reviewer:
-- Date:
-- Blocking issues found: Yes / No
-- If Yes, issue links:
+- Reviewer: Copilot i18n Agent
+- Date: 2026-05-20
+- Blocking issues found: No
+- If Yes, issue links: N/A
