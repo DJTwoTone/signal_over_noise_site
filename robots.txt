@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://signalovernoise.site/sitemap.xml
+Sitemap: https://signal-over-noise.coach/sitemap.xml
