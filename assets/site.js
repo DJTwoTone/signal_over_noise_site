@@ -298,13 +298,16 @@ function useMinimalChrome() {
 }
 
 function pathTo(path) {
+  if (path.startsWith("/")) {
+    return path;
+  }
   return `${getRoot()}${path}`;
 }
 
 function createBrandMarkup(className = "site-brand__mark", variant = "full-color") {
   const markPath = variant === "reversed"
-    ? "img/brand-marks/one-color-horizontal-lockup.svg"
-    : "img/brand-marks/full-color-horizontal-lockup.svg";
+     ? "/img/brand-marks/one-color-horizontal-lockup.svg"
+     : "/img/brand-marks/full-color-horizontal-lockup.svg";
   return `<img class="${className}" src="${pathTo(markPath)}" alt="Signal over Noise">`;
 }
 
