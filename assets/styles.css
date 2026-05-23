@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Mulish:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Mulish:wght@400;500;700&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap");
 
 @layer reset, tokens, base, components, utilities, overrides;
 
@@ -35,6 +35,13 @@
     --section-padding: clamp(42px, 7vw, 88px);
     --section-gap: clamp(22px, 3vw, 32px);
     --transition-base: 200ms cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  html:lang(ko) {
+    --font-display: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --font-mono: "Nanum Gothic Coding", "Noto Sans KR", ui-monospace, monospace;
+    --lh-body: 1.7;
   }
 }
 
@@ -164,6 +171,15 @@
     color: var(--text-primary);
     font-family: var(--font-display);
     font-weight: 400;
+  }
+
+  html:lang(ko) .hero-title,
+  html:lang(ko) .section-title,
+  html:lang(ko) .card-title,
+  html:lang(ko) .footer-brand,
+  html:lang(ko) .site-brand,
+  html:lang(ko) .band-title {
+    font-weight: 700;
   }
 
   .hero-title {
