@@ -121,19 +121,6 @@
   </url>
 
   <url>
-    <loc>https://signal-over-noise.coach/thanks/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/thanks/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://signal-over-noise.coach/ko/thanks/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/thanks/" />
-  </url>
-  <url>
-    <loc>https://signal-over-noise.coach/ko/thanks/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/thanks/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://signal-over-noise.coach/ko/thanks/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/thanks/" />
-  </url>
-
-  <url>
     <loc>https://signal-over-noise.coach/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/privacy/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://signal-over-noise.coach/ko/privacy/" />

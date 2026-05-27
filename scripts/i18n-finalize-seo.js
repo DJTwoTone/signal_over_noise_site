@@ -15,12 +15,18 @@ const PAGES = [
   "privacy/index.html",
 ];
 
+const SITE_URL = "https://signal-over-noise.coach";
+
 function routeFor(relPath) {
   if (relPath === "index.html") {
     return "/";
   }
 
   return `/${path.dirname(relPath).replace(/\\/g, "/")}/`;
+}
+
+function absoluteUrl(route) {
+  return `${SITE_URL}${route}`;
 }
 
 function koRouteFor(enRoute) {
@@ -89,16 +95,18 @@ function main() {
   PAGES.forEach((relPath) => {
     const enRoute = routeFor(relPath);
     const koRoute = koRouteFor(enRoute);
+    const enHref = absoluteUrl(enRoute);
+    const koHref = absoluteUrl(koRoute);
 
     const enPath = path.join(root, relPath);
     const koPath = path.join(root, "ko", relPath);
 
     if (fs.existsSync(enPath)) {
-      ensureSeoLinks(enPath, enRoute, enRoute, koRoute);
+      ensureSeoLinks(enPath, enHref, enHref, koHref);
     }
 
     if (fs.existsSync(koPath)) {
-      ensureSeoLinks(koPath, koRoute, enRoute, koRoute);
+      ensureSeoLinks(koPath, koHref, enHref, koHref);
     }
   });
 

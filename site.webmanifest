@@ -1,0 +1,14 @@
+{
+  "name": "Signal over Noise",
+  "short_name": "Signal over Noise",
+  "icons": [
+    {
+      "src": "/img/signal-over-noise-square-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0b2d53",
+  "background_color": "#fbf7f0",
+  "display": "minimal-ui"
+}
