@@ -14,10 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>서비스 | Signal over Noise</title>
     <meta name="description" content="개인 지원, 팀 워크숍, 말랑 파트너 클래스까지 한눈에 비교할 수 있는 프레젠테이션 지원 및 가격 안내입니다.">
-    <link rel="canonical" href="/ko/services/">
-    <link rel="alternate" hreflang="en" href="/services/">
-    <link rel="alternate" hreflang="ko" href="/ko/services/">
-    <link rel="alternate" hreflang="x-default" href="/services/">
+    <link rel="canonical" href="https://signal-over-noise.coach/ko/services/">
+    <link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/services/">
+    <link rel="alternate" hreflang="ko" href="https://signal-over-noise.coach/ko/services/">
+    <link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/services/">
     <link rel="icon" href="../../img/brand-marks/favicon-rounded-square.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/styles.css">
     <script src="../../assets/site.js" defer></script>
@@ -37,20 +37,43 @@
               <a class="button button--secondary" data-cta-clicked="services_hero_diagnostic" data-diagnostic-link href="../diagnostic/">아직 확신이 없다면 무료 진단으로 시작하세요</a>
             </div>
           </div>
-          <aside class="hero-visual-shell hero-route-shell" aria-label="지원 경로 미리보기">
-            <figure class="pricing-hero-visual">
-              <img src="../../img/pricing/pricing-hero-support-options.svg" alt="진단, 개별 지원, 워크숍, 파트너 수업을 다양한 지원 경로로 보여주는 가격 책정 시각적 자료입니다.">
-            </figure>
-            <div class="hero-route-summary">
-              <p class="eyebrow">더 작게 시작하세요</p>
-              <h2 class="card-title">실제 프레젠테이션 문제에 대한 지원을 연결하세요.</h2>
-              <p class="card-copy">진단, 개별 지원, 워크숍 및 파트너 수업이 별도로 유지되므로 다음 단계를 더 쉽게 선택할 수 있습니다.</p>
+          <aside class="hero-visual-shell hero-route-shell services-route-panel" aria-labelledby="services-route-panel-title">
+            <div class="services-route-panel__intro">
+              <p class="eyebrow">경로 선택</p>
+              <h2 class="card-title" id="services-route-panel-title">실제 프레젠테이션 문제에 맞는 지원을 선택하세요.</h2>
+              <p class="card-copy">상황부터 확인한 다음 가장 작고 유용한 다음 단계를 고르세요. 진단, 개별 지원, 워크숍, 파트너 클래스는 선택을 쉽게 하기 위해 분리되어 있습니다.</p>
+            </div>
+            <div class="services-route-grid">
+              <article class="services-route-card">
+                <p class="services-route-card__label">아직 확실하지 않나요?</p>
+                <h3 class="card-title">무료 진단부터 시작하세요.</h3>
+                <p class="card-copy">문제가 불분명하고 3~5개의 구체적인 수정 포인트와 다음 단계 추천이 필요할 때 적합합니다.</p>
+                <a href="#free-diagnostic-route" class="button button--secondary">진단 경로 보기</a>
+              </article>
+              <article class="services-route-card">
+                <p class="services-route-card__label">유료 도움이 필요한가요?</p>
+                <h3 class="card-title">개별 프레젠테이션 지원을 요청하세요.</h3>
+                <p class="card-copy">실제 발표, 스크립트, 덱, 리허설, 코칭, 긴급 스프린트에 도움이 필요하다는 것을 이미 알 때 적합합니다.</p>
+                <a href="#individual-presentation-support" class="button button--primary">개별 지원 보기</a>
+              </article>
+              <article class="services-route-card">
+                <p class="services-route-card__label">팀 교육이 필요한가요?</p>
+                <h3 class="card-title">워크숍을 문의하세요.</h3>
+                <p class="card-copy">공유된 발표 기준과 실제 리허설 습관이 필요한 팀, 코호트, 프로그램에 적합합니다.</p>
+                <a href="#team-workshops" class="button button--secondary">워크숍 보기</a>
+              </article>
+              <article class="services-route-card">
+                <p class="services-route-card__label">파트너 클래스인가요?</p>
+                <h3 class="card-title">Mallang을 통해 참여하세요.</h3>
+                <p class="card-copy">지역 학원 파트너를 통해 정기적인 비즈니스 커뮤니케이션과 발표 연습을 원하는 학습자에게 적합합니다.</p>
+                <a href="#partner-classes" class="button button--secondary">파트너 경로 보기</a>
+              </article>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="section section--muted">
+      <section class="section section--muted" id="decision-guide">
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">결정 가이드</p>
@@ -58,28 +81,28 @@
             <p class="section-copy">요점은 메뉴에서 가장 큰 것을 사지 않는 것입니다. 소재, 마감일, 이해관계, 팀에 맞는 것을 선택하는 것이 포인트입니다.</p>
           </div>
           <div class="service-decision-grid">
-            <article class="service-decision-card service-decision-card--featured">
+            <article class="service-decision-card service-decision-card--featured" id="individual-presentation-support">
               <img class="pricing-card-icon" src="../../img/pricing/icon-individual-presentation-support.svg" alt="" aria-hidden="true">
               <p class="eyebrow eyebrow--gold">유료 지원을 받을 준비가 되셨나요?</p>
               <h3 class="card-title">유료 프레젠테이션 지원을 요청하세요.</h3>
               <p class="card-copy">실제 프레젠테이션, 대본, 데크, 리허설, 코칭 또는 긴급 스프린트에 대한 도움이 필요하다는 것을 이미 알고 있을 때 가장 좋습니다.</p>
               <a class="button button--primary" data-cta-clicked="services_decision_paid_support" data-get-started-link href="../get-started/">유료 지원 요청</a>
             </article>
-            <article class="service-decision-card">
+            <article class="service-decision-card" id="free-diagnostic-route">
               <img class="pricing-card-icon" src="../../img/icons/icon-message.svg" alt="" aria-hidden="true">
               <p class="eyebrow">확실하지 않나요?</p>
               <h3 class="card-title">무료 진단부터 시작해 보세요.</h3>
               <p class="card-copy">문제가 불분명할 때 가장 좋습니다. 현재 자료를 보내고 3~5개의 특정 수정 사항과 권장되는 다음 단계를 받으세요.</p>
               <a class="button button--secondary" data-cta-clicked="services_decision_diagnostic" data-diagnostic-link href="../diagnostic/">무료 진단 요청</a>
             </article>
-            <article class="service-decision-card">
+            <article class="service-decision-card" id="team-workshops">
               <img class="pricing-card-icon" src="../../img/pricing/icon-team-workshops.svg" alt="" aria-hidden="true">
               <p class="eyebrow">팀을 훈련시키나요?</p>
               <h3 class="card-title">워크숍에 대해 문의하세요.</h3>
               <p class="card-copy">공유 프레젠테이션 표준과 실제 리허설 습관이 필요한 팀, 코호트 또는 프로그램에 가장 적합합니다.</p>
               <a class="button button--secondary" data-cta-clicked="services_decision_workshop" data-workshop-link href="../contact/">워크숍 문의하기</a>
             </article>
-            <article class="service-decision-card">
+            <article class="service-decision-card" id="partner-classes">
               <img class="pricing-card-icon" src="../../img/pricing/icon-partner-classes.svg" alt="" aria-hidden="true">
               <p class="eyebrow">파트너 클래스?</p>
               <h3 class="card-title">말랑을 통해 가입하세요.</h3>
@@ -190,25 +213,45 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="pricing-and-scope-faq">
         <div class="shell section__stack">
           <div class="section__intro">
-            <p class="eyebrow">가격 FAQ</p>
-            <h2 class="section-title">몇 가지 실용적인 가격 관련 질문입니다.</h2>
+            <p class="eyebrow">가격 및 범위 FAQ</p>
+            <h2 class="section-title">실용적인 가격과 범위 관련 질문입니다.</h2>
           </div>
           <div class="faq-grid">
-            <article class="faq-card">
-              <h3 class="card-title">비용은 얼마입니까?</h3>
+            <details class="faq-card faq-details">
+              <summary>비용은 얼마인가요?</summary>
               <p class="card-copy">대부분의 직접 고객은 ₩150,000 집중 코칭/리뷰 세션 또는 ₩375,000부터 시작하는 프레젠테이션 스프린트로 시작합니다. 스크립트·슬라이드·덱 작업은 분량, 난이도, 마감일에 따라 견적이 달라집니다. 팀 워크숍은 ₩1,000,000부터, 파트너 프로그램은 Mallang Lingo Club 기준으로 별도 책정됩니다.</p>
-            </article>
-            <article class="faq-card">
-              <h3 class="card-title">왜 무료 진단부터 시작해야 할까요?</h3>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>왜 무료 진단부터 시작해야 하나요?</summary>
               <p class="card-copy">잘못된 지원을 선택하면 시간과 비용이 크게 낭비됩니다. 진단은 실제 문제가 메시지, 스크립트, 슬라이드, 전달, 일정, 팀 맥락 중 어디에 있는지 빠르게 식별하고, 가장 작은 유효 다음 단계를 제안합니다.</p>
-            </article>
-            <article class="faq-card">
-              <h3 class="card-title">파트너 수업의 가격은 직접 코칭과 동일합니까?</h3>
-              <p class="card-copy">아니요. 파트너 수업과 직접 코칭은 다양한 문제를 해결합니다. 파트너 수업은 Mallang Lingo Club에서 주최하고 관리합니다. 직접 코칭은 더욱 집중적이고 유연하며 특정 프레젠테이션이나 의사소통 문제를 중심으로 구축되었습니다.</p>
-            </article>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>무료 진단을 건너뛰고 유료 지원을 요청해야 하는 경우는 언제인가요?</summary>
+              <p class="card-copy">이미 도움이 필요하다는 것을 알고 있거나, 발표의 중요도가 높거나, 마감이 가까우면 유료 지원을 요청하세요. 무료 진단은 문제가 아직 불분명할 때 가장 적합합니다.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>가격은 무엇에 따라 달라지나요?</summary>
+              <p class="card-copy">범위, 긴급성, 자료 길이, 슬라이드 수, 재작성 분량, 리허설 필요 여부, 개인 작업인지 팀 작업인지에 따라 달라집니다.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>전체 덱 제작이나 스크립트 재작성도 하나요?</summary>
+              <p class="card-copy">필요한 범위라면 가능합니다. 무료 진단에서 그 필요를 확인할 수는 있지만, 전체 제작과 재작성은 유료 지원에 해당합니다.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>마감이 가까워도 도와줄 수 있나요?</summary>
+              <p class="card-copy">대체로 가능합니다. 다만 범위를 더 작게 잡아야 할 수 있습니다. 촉박한 마감에서는 전체 재구축보다 집중 수정이 더 현실적인 경우가 많습니다.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>스크립트와 슬라이드를 함께 다루나요?</summary>
+              <p class="card-copy">네. 보통 그게 핵심입니다. 프레젠테이션은 메시지, 덱, 전달을 따로 다룰 때 자주 무너집니다.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>파트너 클래스 가격은 직접 코칭과 동일한가요?</summary>
+              <p class="card-copy">아니요. 파트너 클래스의 가격 책정과 운영은 Mallang Lingo Club에서 담당합니다. 직접 코칭은 특정 프레젠테이션이나 커뮤니케이션 문제를 중심으로 더 집중적이고 유연하게 진행됩니다.</p>
+            </details>
           </div>
         </div>
       </section>

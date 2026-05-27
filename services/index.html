@@ -14,10 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Services | Signal over Noise</title>
     <meta name="description" content="Presentation support and pricing for individuals, teams, and Mallang partner classes.">
-    <link rel="canonical" href="/services/">
-    <link rel="alternate" hreflang="en" href="/services/">
-    <link rel="alternate" hreflang="ko" href="/ko/services/">
-    <link rel="alternate" hreflang="x-default" href="/services/">
+    <link rel="canonical" href="https://signal-over-noise.coach/services/">
+    <link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/services/">
+    <link rel="alternate" hreflang="ko" href="https://signal-over-noise.coach/ko/services/">
+    <link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/services/">
     <link rel="icon" href="../img/brand-marks/favicon-rounded-square.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../assets/styles.css">
     <script src="../assets/site.js" defer></script>
@@ -37,20 +37,43 @@
               <a class="button button--secondary" data-cta-clicked="services_hero_diagnostic" data-diagnostic-link href="../diagnostic/">Not sure? Start Free</a>
             </div>
           </div>
-          <aside class="hero-visual-shell hero-route-shell" aria-label="Support route preview">
-            <figure class="pricing-hero-visual">
-              <img src="../img/pricing/pricing-hero-support-options.svg" alt="Pricing visual showing diagnostic, individual support, workshops, and partner classes as different support routes.">
-            </figure>
-            <div class="hero-route-summary">
-              <p class="eyebrow">Start smaller</p>
-              <h2 class="card-title">Match the support to the real presentation problem.</h2>
-              <p class="card-copy">Diagnostic, individual support, workshops, and partner classes stay separate so the next step is easier to choose.</p>
+          <aside class="hero-visual-shell hero-route-shell services-route-panel" aria-labelledby="services-route-panel-title">
+            <div class="services-route-panel__intro">
+              <p class="eyebrow">Choose the route</p>
+              <h2 class="card-title" id="services-route-panel-title">Match the support to the real presentation problem.</h2>
+              <p class="card-copy">Start with the situation, then choose the smallest useful next step. Diagnostic, individual support, workshops, and partner classes stay separate so the choice is easier.</p>
+            </div>
+            <div class="services-route-grid">
+              <article class="services-route-card">
+                <p class="services-route-card__label">Not sure yet?</p>
+                <h3 class="card-title">Start with the free diagnostic.</h3>
+                <p class="card-copy">Best when the problem is unclear and you need 3-5 specific fixes plus a recommended next step.</p>
+                <a href="#free-diagnostic-route" class="button button--secondary">See diagnostic route</a>
+              </article>
+              <article class="services-route-card">
+                <p class="services-route-card__label">Ready for paid help?</p>
+                <h3 class="card-title">Request individual presentation support.</h3>
+                <p class="card-copy">Best when you already know you want help with a real presentation, script, deck, rehearsal, coaching, or urgent sprint.</p>
+                <a href="#individual-presentation-support" class="button button--primary">See individual support</a>
+              </article>
+              <article class="services-route-card">
+                <p class="services-route-card__label">Training a team?</p>
+                <h3 class="card-title">Ask about a workshop.</h3>
+                <p class="card-copy">Best for teams, cohorts, or programs that need shared presentation standards and practical rehearsal habits.</p>
+                <a href="#team-workshops" class="button button--secondary">See workshops</a>
+              </article>
+              <article class="services-route-card">
+                <p class="services-route-card__label">Partner class?</p>
+                <h3 class="card-title">Join through Mallang.</h3>
+                <p class="card-copy">Best for learners who want scheduled business communication and presentation practice through a local school partner.</p>
+                <a href="#partner-classes" class="button button--secondary">See partner route</a>
+              </article>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="section section--muted">
+      <section class="section section--muted" id="decision-guide">
         <div class="shell section__stack">
           <div class="section__intro">
             <p class="eyebrow">Decision Guide</p>
@@ -58,28 +81,28 @@
             <p class="section-copy">The point is not to buy the biggest thing on the menu. The point is to choose what fits the material, deadline, stakes, and team.</p>
           </div>
           <div class="service-decision-grid">
-            <article class="service-decision-card service-decision-card--featured">
+            <article class="service-decision-card service-decision-card--featured" id="individual-presentation-support">
               <img class="pricing-card-icon" src="../img/pricing/icon-individual-presentation-support.svg" alt="" aria-hidden="true">
               <p class="eyebrow eyebrow--gold">Ready for paid help?</p>
               <h3 class="card-title">Request paid presentation support.</h3>
               <p class="card-copy">Best when you already know you want help with a real presentation, script, deck, rehearsal, coaching, or urgent sprint.</p>
               <a class="button button--primary" data-cta-clicked="services_decision_paid_support" data-get-started-link href="../get-started/">Request Paid Support</a>
             </article>
-            <article class="service-decision-card">
+            <article class="service-decision-card" id="free-diagnostic-route">
               <img class="pricing-card-icon" src="../img/icons/icon-message.svg" alt="" aria-hidden="true">
               <p class="eyebrow">Not sure?</p>
               <h3 class="card-title">Start with the free diagnostic.</h3>
               <p class="card-copy">Best when the problem is unclear. Send current material and get 3-5 specific fixes plus a recommended next step.</p>
               <a class="button button--secondary" data-cta-clicked="services_decision_diagnostic" data-diagnostic-link href="../diagnostic/">Request a Free Diagnostic</a>
             </article>
-            <article class="service-decision-card">
+            <article class="service-decision-card" id="team-workshops">
               <img class="pricing-card-icon" src="../img/pricing/icon-team-workshops.svg" alt="" aria-hidden="true">
               <p class="eyebrow">Training a team?</p>
               <h3 class="card-title">Ask about a workshop.</h3>
               <p class="card-copy">Best for teams, cohorts, or programs that need shared presentation standards and practical rehearsal habits.</p>
               <a class="button button--secondary" data-cta-clicked="services_decision_workshop" data-workshop-link href="../contact/">Ask About a Workshop</a>
             </article>
-            <article class="service-decision-card">
+            <article class="service-decision-card" id="partner-classes">
               <img class="pricing-card-icon" src="../img/pricing/icon-partner-classes.svg" alt="" aria-hidden="true">
               <p class="eyebrow">Partner class?</p>
               <h3 class="card-title">Join through Mallang.</h3>
@@ -190,25 +213,45 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="pricing-and-scope-faq">
         <div class="shell section__stack">
           <div class="section__intro">
-            <p class="eyebrow">Pricing FAQ</p>
-            <h2 class="section-title">A few practical pricing questions.</h2>
+            <p class="eyebrow">Pricing and Scope FAQ</p>
+            <h2 class="section-title">A few practical pricing and scope questions.</h2>
           </div>
           <div class="faq-grid">
-            <article class="faq-card">
-              <h3 class="card-title">How much does it cost?</h3>
+            <details class="faq-card faq-details">
+              <summary>How much does it cost?</summary>
               <p class="card-copy">Most direct clients start with either a focused coaching/review session at &#8361;150,000 or a Presentation Sprint from &#8361;375,000. Script, slide, and deck work are priced by scope because length, complexity, and deadline matter. Team workshops start at &#8361;1,000,000. Partner-hosted programs are priced separately by Mallang Lingo Club.</p>
-            </article>
-            <article class="faq-card">
-              <h3 class="card-title">Why start with the free diagnostic?</h3>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>Why start with the free diagnostic?</summary>
               <p class="card-copy">Because buying the wrong kind of help is annoying and expensive. The diagnostic helps identify whether the real issue is the message, script, slides, delivery, timeline, or team context. From there, we recommend the smallest useful next step.</p>
-            </article>
-            <article class="faq-card">
-              <h3 class="card-title">Are partner classes priced the same as direct coaching?</h3>
-              <p class="card-copy">No. Partner classes and direct coaching solve different problems. Partner classes are hosted and administered by Mallang Lingo Club. Direct coaching is more focused, more flexible, and built around a specific presentation or communication challenge.</p>
-            </article>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>When should I skip the free diagnostic and request paid support?</summary>
+              <p class="card-copy">Request paid support when you already know you need help, the presentation is important, or the deadline is close. The free diagnostic is best when the problem is unclear.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>What changes the price?</summary>
+              <p class="card-copy">Scope, urgency, material length, number of slides, amount of rewriting, rehearsal needs, and whether the work is for one person or a team.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>Do you do full deck builds or script rewrites?</summary>
+              <p class="card-copy">Yes, when the scope calls for it. The free diagnostic may identify that need, but full builds and rewrites are paid support.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>Can you help if my deadline is close?</summary>
+              <p class="card-copy">Usually, yes, but the scope may need to be smaller. A tight deadline is often better for focused fixes than a full rebuild.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>Do you work on scripts and slides together?</summary>
+              <p class="card-copy">Yes. That is often the point. A presentation usually breaks when the message, deck, and delivery are treated as separate problems.</p>
+            </details>
+            <details class="faq-card faq-details">
+              <summary>Are partner classes priced the same as direct coaching?</summary>
+              <p class="card-copy">No. Partner classes are priced and administered by Mallang Lingo Club. Direct coaching is more focused, more flexible, and built around a specific presentation or communication challenge.</p>
+            </details>
           </div>
         </div>
       </section>
