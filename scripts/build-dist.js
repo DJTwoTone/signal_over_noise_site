@@ -28,6 +28,7 @@ const optionalRootFiles = [
   "_headers",
   "_redirects",
   "favicon.ico",
+  "site.webmanifest",
   "robots.txt",
   "sitemap.xml",
 ];

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-dist.js"
+    "build": "node scripts/build-dist.js",
+    "finalize:heads": "node scripts/finalize-head-metadata.mjs",
+    "check:search": "node scripts/check-search-readiness.mjs"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.11.3",
