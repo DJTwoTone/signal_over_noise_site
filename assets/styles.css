@@ -72,6 +72,10 @@
     scroll-behavior: smooth;
   }
 
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
   body {
     margin: 0;
     overflow-x: clip;
@@ -1239,6 +1243,54 @@
 
   .hero-route-shell .pricing-hero-visual {
     box-shadow: none;
+  }
+
+  .services-route-panel {
+    display: grid;
+    gap: 18px;
+  }
+
+  .services-route-panel__intro {
+    display: grid;
+    gap: 8px;
+  }
+
+  .services-route-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .services-route-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid rgba(11, 45, 83, 0.14);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .services-route-card__label {
+    color: var(--brand-gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .services-route-card .card-title {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+  }
+
+  .services-route-card .card-copy {
+    font-size: 0.92rem;
+  }
+
+  .services-route-card .button {
+    width: fit-content;
+    margin-top: auto;
   }
 
   .hero-visual-grid {
@@ -3490,6 +3542,52 @@
     background: rgba(255, 255, 255, 0.72);
   }
 
+  .faq-details {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .faq-details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-details summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: var(--brand-gold);
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .faq-details[open] summary::after {
+    content: "-";
+  }
+
+  .faq-details summary:focus-visible {
+    outline: 3px solid rgba(196, 154, 69, 0.5);
+    outline-offset: -3px;
+  }
+
+  .faq-details .card-copy {
+    padding: 0 18px 18px;
+  }
+
   .route-option-card--featured {
     background: var(--brand-blue-deep);
     color: var(--text-on-dark);
@@ -3613,6 +3711,7 @@
     .get-started-form-grid,
     .route-chooser__intro,
     .route-chooser-grid,
+    .services-route-grid,
     .faq-grid {
       grid-template-columns: 1fr;
     }
@@ -3622,6 +3721,7 @@
     .service-card-actions,
     .pricing-card .button,
     .pricing-card__actions,
+    .services-route-card .button,
     .route-option-card .button {
       width: 100%;
     }
@@ -3630,6 +3730,7 @@
     .service-card-actions .text-link,
     .pricing-card__actions .button,
     .pricing-card__actions .text-link,
+    .services-route-card .button,
     .route-option-card .button {
       width: 100%;
     }
