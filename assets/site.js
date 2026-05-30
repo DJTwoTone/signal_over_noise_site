@@ -55,7 +55,7 @@ const TALLY_ROUTE_CONTEXTS = {
 const UTM_PARAM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
 const I18N_CONFIG = {
-  enabled: false,
+  enabled: true,
   showSwitcher: true,
   defaultLanguage: "en",
   supportedLanguages: ["en", "ko"],
