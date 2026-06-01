@@ -21,6 +21,7 @@ const publicEntries = [
   "services",
   "thanks",
   "thanks-diagnostic",
+  "thanks-get-started",
   "thanks-toolkit",
   "thanks-workshop",
   "workshops",
