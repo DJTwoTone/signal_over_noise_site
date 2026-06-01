@@ -14,9 +14,12 @@ const importantRoutes = [
   { route: "/contact/", file: "contact/index.html", required: true },
   { route: "/get-started/", file: "get-started/index.html", required: true },
   { route: "/thanks/", file: "thanks/index.html", required: true },
-  { route: "/thanks-diagnostic/", file: "thanks-diagnostic/index.html", required: false },
-  { route: "/thanks-toolkit/", file: "thanks-toolkit/index.html", required: false },
-  { route: "/thanks-workshop/", file: "thanks-workshop/index.html", required: false },
+  { route: "/thanks-diagnostic/", file: "thanks-diagnostic/index.html", required: true },
+  { route: "/thanks-toolkit/", file: "thanks-toolkit/index.html", required: true },
+  { route: "/thanks-workshop/", file: "thanks-workshop/index.html", required: true },
+  { route: "/ko/thanks-diagnostic/", file: "ko/thanks-diagnostic/index.html", required: true },
+  { route: "/ko/thanks-toolkit/", file: "ko/thanks-toolkit/index.html", required: true },
+  { route: "/ko/thanks-workshop/", file: "ko/thanks-workshop/index.html", required: true },
 ];
 
 const routeFiles = [
@@ -29,6 +32,9 @@ const routeFiles = [
   "contact/index.html",
   "get-started/index.html",
   "thanks/index.html",
+  "thanks-diagnostic/index.html",
+  "thanks-toolkit/index.html",
+  "thanks-workshop/index.html",
   "privacy/index.html",
   "process/index.html",
   "packages/index.html",
@@ -41,6 +47,9 @@ const routeFiles = [
   "ko/contact/index.html",
   "ko/get-started/index.html",
   "ko/thanks/index.html",
+  "ko/thanks-diagnostic/index.html",
+  "ko/thanks-toolkit/index.html",
+  "ko/thanks-workshop/index.html",
   "ko/privacy/index.html",
   "ko/process/index.html",
   "ko/packages/index.html",
@@ -51,6 +60,12 @@ const noindexRoutes = new Set([
   "ko/packages/index.html",
   "thanks/index.html",
   "ko/thanks/index.html",
+  "thanks-diagnostic/index.html",
+  "thanks-toolkit/index.html",
+  "thanks-workshop/index.html",
+  "ko/thanks-diagnostic/index.html",
+  "ko/thanks-toolkit/index.html",
+  "ko/thanks-workshop/index.html",
 ]);
 
 const canonicalTargets = new Map([
