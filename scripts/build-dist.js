@@ -20,6 +20,9 @@ const publicEntries = [
   "toolkit",
   "services",
   "thanks",
+  "thanks-diagnostic",
+  "thanks-toolkit",
+  "thanks-workshop",
   "workshops",
 ];
 
