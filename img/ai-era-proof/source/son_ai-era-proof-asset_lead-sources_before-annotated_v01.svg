@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img">
+  <defs>
+    <style>
+
+    @font-face {
+      font-family: "Merriweather";
+      src: local("Merriweather");
+    }
+    @font-face {
+      font-family: "Mulish";
+      src: local("Mulish");
+    }
+
+      text { font-family: "Mulish", "Source Sans 3", Arial, sans-serif; }
+      .title { font-family: "Merriweather", Georgia, serif; font-size: 74px; font-weight: 700; fill: #0b2d53; }
+      .subtitle { font-size: 31px; fill: #6f7785; }
+      .chart-label { font-size: 28px; font-weight: 700; fill: #193b64; }
+      .axis-label { font-size: 29px; font-weight: 700; }
+      .value-label { font-size: 29px; font-weight: 800; fill: #132033; }
+      .panel-title { font-family: "Merriweather", Georgia, serif; font-size: 42px; font-weight: 700; fill: #132033; }
+      .bullet { font-size: 27px; fill: #193b64; }
+      .footer { font-size: 22px; fill: #6f7785; }
+      .pin { font-size: 24px; font-weight: 900; fill: white; }
+      .pin-label { font-size: 25px; font-weight: 900; fill: #132033; }
+    </style>
+    <linearGradient id="cornerGlow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f2e5c8" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#e7eef5" stop-opacity="0.25"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b2d53"/>
+    </marker>
+  </defs>
+  <rect width="1920" height="1080" fill="#fbf7f0"/>
+  <circle cx="1715" cy="115" r="180" fill="url(#cornerGlow)"/>
+  <g opacity="0.28" fill="#0b2d53">
+    <circle cx="1600" cy="58" r="6"/><circle cx="1642" cy="58" r="6"/><circle cx="1684" cy="58" r="6"/><circle cx="1726" cy="58" r="6"/><circle cx="1768" cy="58" r="6"/><circle cx="1600" cy="100" r="6"/><circle cx="1642" cy="100" r="6"/><circle cx="1684" cy="100" r="6"/><circle cx="1726" cy="100" r="6"/><circle cx="1768" cy="100" r="6"/><circle cx="1600" cy="142" r="6"/><circle cx="1642" cy="142" r="6"/><circle cx="1684" cy="142" r="6"/><circle cx="1726" cy="142" r="6"/><circle cx="1768" cy="142" r="6"/><circle cx="1600" cy="184" r="6"/><circle cx="1642" cy="184" r="6"/><circle cx="1684" cy="184" r="6"/><circle cx="1726" cy="184" r="6"/><circle cx="1768" cy="184" r="6"/><circle cx="1600" cy="226" r="6"/><circle cx="1642" cy="226" r="6"/><circle cx="1684" cy="226" r="6"/><circle cx="1726" cy="226" r="6"/><circle cx="1768" cy="226" r="6"/>
+  </g>
+  <text x="110" y="138" class="title">Lead Source Performance</text>
+  <text x="113" y="191" class="subtitle">Q1 2026 Marketing Review</text>
+  <text x="116" y="292" class="chart-label">Qualified-lead conversion rate</text>
+
+        <text x="116" y="373" class="axis-label" fill="#193b64">Email</text>
+        <rect x="366" y="345" width="248" height="44" rx="16" fill="#6e9fcf" />
+        <text x="636" y="373" class="value-label">6%</text>
+
+        <text x="116" y="465" class="axis-label" fill="#193b64">Organic search</text>
+        <rect x="366" y="437" width="372" height="44" rx="16" fill="#c49a45" />
+        <text x="760" y="465" class="value-label">9%</text>
+
+        <text x="116" y="557" class="axis-label" fill="#193b64">Paid social</text>
+        <rect x="366" y="529" width="207" height="44" rx="16" fill="#9b7bd7" />
+        <text x="595" y="557" class="value-label">5%</text>
+
+        <text x="116" y="649" class="axis-label" fill="#193b64">Partners</text>
+        <rect x="366" y="621" width="331" height="44" rx="16" fill="#62a878" />
+        <text x="719" y="649" class="value-label">8%</text>
+
+        <text x="116" y="741" class="axis-label" fill="#193b64">Referrals</text>
+        <rect x="366" y="713" width="620" height="44" rx="16" fill="#dd8b5c" />
+        <text x="1008" y="741" class="value-label">15%</text>
+
+        <text x="116" y="833" class="axis-label" fill="#193b64">Webinars</text>
+        <rect x="366" y="805" width="413" height="44" rx="16" fill="#4fb4c8" />
+        <text x="801" y="833" class="value-label">10%</text>
+
+  <rect x="1265" y="286" width="510" height="575" rx="34" fill="#e7eef5" stroke="#e2ded0" stroke-width="3"/>
+  <text x="1320" y="370" class="panel-title">Key Takeaways</text>
+  <text x="1320" y="448" class="bullet">Referrals continue to</text>
+  <text x="1320" y="489" class="bullet">perform well.</text>
+  <text x="1320" y="566" class="bullet">Webinar leads show</text>
+  <text x="1320" y="607" class="bullet">promising results.</text>
+  <text x="1320" y="684" class="bullet">Paid social remains an</text>
+  <text x="1320" y="725" class="bullet">important acquisition channel.</text>
+  <text x="1320" y="802" class="bullet">Our channel mix creates</text>
+  <text x="1320" y="843" class="bullet">multiple opportunities for growth.</text>
+  <line x1="110" y1="972" x2="1810" y2="972" stroke="#e2ded0" stroke-width="3"/>
+  <text x="110" y="1019" class="footer">Source: Illustrative sample data, Q1 2026</text>
+
+    <g>
+
+    <line x1="110" y1="245" x2="265" y2="128" stroke="#0b2d53" stroke-width="5" marker-end="url(#arrow)"/>
+    <circle cx="110" cy="245" r="27" fill="#0b2d53"/>
+    <text x="110" y="254" text-anchor="middle" class="pin">1</text>
+    <rect x="152" y="218" width="364" height="54" rx="18" fill="white" stroke="#e2ded0" stroke-width="3"/>
+    <text x="175" y="254" class="pin-label">The title hides the point.</text>
+
+
+    <line x1="690" y1="300" x2="665" y2="492" stroke="#0b2d53" stroke-width="5" marker-end="url(#arrow)"/>
+    <circle cx="690" cy="300" r="27" fill="#0b2d53"/>
+    <text x="690" y="309" text-anchor="middle" class="pin">2</text>
+    <rect x="732" y="273" width="330" height="54" rx="18" fill="white" stroke="#e2ded0" stroke-width="3"/>
+    <text x="755" y="309" class="pin-label">Everything is shouting.</text>
+
+
+    <line x1="108" y1="870" x2="205" y2="714" stroke="#0b2d53" stroke-width="5" marker-end="url(#arrow)"/>
+    <circle cx="108" cy="870" r="27" fill="#0b2d53"/>
+    <text x="108" y="879" text-anchor="middle" class="pin">3</text>
+    <rect x="150" y="843" width="476" height="54" rx="18" fill="white" stroke="#e2ded0" stroke-width="3"/>
+    <text x="173" y="879" class="pin-label">The chart is tidy, not analytical.</text>
+
+
+    <line x1="1190" y1="238" x2="1398" y2="520" stroke="#0b2d53" stroke-width="5" marker-end="url(#arrow)"/>
+    <circle cx="1190" cy="238" r="27" fill="#0b2d53"/>
+    <text x="1190" y="247" text-anchor="middle" class="pin">4</text>
+    <rect x="1232" y="211" width="350" height="54" rx="18" fill="white" stroke="#e2ded0" stroke-width="3"/>
+    <text x="1255" y="247" class="pin-label">More words, less clarity.</text>
+
+      <path d="M1038 529 C1110 560 1112 704 1037 806" fill="none" stroke="#0b2d53" stroke-width="7"/>
+
+    <line x1="770" y1="884" x2="1038" y2="806" stroke="#0b2d53" stroke-width="5" marker-end="url(#arrow)"/>
+    <circle cx="770" cy="884" r="27" fill="#0b2d53"/>
+    <text x="770" y="893" text-anchor="middle" class="pin">5</text>
+    <rect x="812" y="857" width="434" height="54" rx="18" fill="white" stroke="#e2ded0" stroke-width="3"/>
+    <text x="835" y="893" class="pin-label">The audience is doing the math.</text>
+
+    </g>
+
+</svg>

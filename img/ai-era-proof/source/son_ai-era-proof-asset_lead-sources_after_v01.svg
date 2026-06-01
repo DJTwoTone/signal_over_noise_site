@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img">
+  <defs>
+    <style>
+
+    @font-face {
+      font-family: "Merriweather";
+      src: local("Merriweather");
+    }
+    @font-face {
+      font-family: "Mulish";
+      src: local("Mulish");
+    }
+
+      text { font-family: "Mulish", "Source Sans 3", Arial, sans-serif; }
+      .title { font-family: "Merriweather", Georgia, serif; font-size: 58px; font-weight: 700; fill: #132033; }
+      .subtitle { font-size: 31px; fill: #6f7785; }
+      .axis-label { font-size: 31px; font-weight: 800; }
+      .value-label { font-size: 31px; font-weight: 900; fill: #132033; }
+      .callout { font-size: 35px; font-weight: 900; fill: #132033; }
+      .implication { font-size: 32px; font-weight: 700; fill: #193b64; }
+      .footer { font-size: 22px; fill: #6f7785; }
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="#fbf7f0"/>
+  <text x="110" y="126" class="title">Referrals convert 3× more qualified leads</text>
+  <text x="110" y="194" class="title">than paid social.</text>
+  <text x="113" y="248" class="subtitle">Qualified-lead conversion rate by source, Q1 2026</text>
+  <rect x="104" y="296" width="1398" height="562" rx="28" fill="#faf8f3" stroke="#e2ded0" stroke-width="3"/>
+
+        <text x="150" y="378" class="axis-label" fill="#132033">Referrals</text>
+        <rect x="400" y="350" width="900" height="40" rx="16" fill="#c49a45" />
+        <text x="1322" y="378" class="value-label">15%</text>
+
+        <text x="150" y="453" class="axis-label" fill="#193b64">Webinars</text>
+        <rect x="400" y="425" width="600" height="40" rx="16" fill="#cfd9e3" />
+        <text x="1022" y="453" class="value-label">10%</text>
+
+        <text x="150" y="528" class="axis-label" fill="#193b64">Organic search</text>
+        <rect x="400" y="500" width="540" height="40" rx="16" fill="#cfd9e3" />
+        <text x="962" y="528" class="value-label">9%</text>
+
+        <text x="150" y="603" class="axis-label" fill="#193b64">Partners</text>
+        <rect x="400" y="575" width="480" height="40" rx="16" fill="#cfd9e3" />
+        <text x="902" y="603" class="value-label">8%</text>
+
+        <text x="150" y="678" class="axis-label" fill="#193b64">Email</text>
+        <rect x="400" y="650" width="360" height="40" rx="16" fill="#cfd9e3" />
+        <text x="782" y="678" class="value-label">6%</text>
+
+        <text x="150" y="753" class="axis-label" fill="#193b64">Paid social</text>
+        <rect x="400" y="725" width="300" height="40" rx="16" fill="#cfd9e3" />
+        <text x="722" y="753" class="value-label">5%</text>
+
+  <path d="M1168 333 C1250 430 1250 675 1168 753" fill="none" stroke="#c49a45" stroke-width="8"/>
+  <circle cx="1277" cy="543" r="76" fill="#f2e5c8" stroke="#c49a45" stroke-width="5"/>
+  <text x="1277" y="557" text-anchor="middle" class="callout">3×</text>
+  <text x="1368" y="512" class="implication">Referrals are the</text>
+  <text x="1368" y="555" class="implication">clearest signal.</text>
+  <rect x="110" y="884" width="1585" height="86" rx="24" fill="#e7eef5" opacity="0.78"/>
+  <text x="145" y="939" class="implication">The strongest next question is whether referral volume can grow without reducing lead quality.</text>
+  <line x1="110" y1="1004" x2="1810" y2="1004" stroke="#e2ded0" stroke-width="3"/>
+  <text x="110" y="1046" class="footer">Source: Illustrative sample data, Q1 2026</text>
+</svg>
