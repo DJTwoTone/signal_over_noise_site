@@ -246,9 +246,8 @@ function createLanguageSwitcherMarkup(options = {}) {
   if (!I18N_CONFIG.enabled) {
     return `
       <div class="site-lang-switcher${compact}" aria-label="${copy.nav.languageSoon}">
-        <span class="site-nav__link" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</span>
-        <span class="site-lang-switcher__separator" aria-hidden="true">/</span>
-        <span class="site-nav__link" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</span>
+        <span class="site-nav__link site-lang-switcher__option" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</span>
+        <span class="site-nav__link site-lang-switcher__option" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</span>
       </div>
     `;
   }
@@ -258,9 +257,8 @@ function createLanguageSwitcherMarkup(options = {}) {
 
   return `
     <div class="site-lang-switcher${compact}" aria-label="${copy.nav.language}">
-      <a class="site-nav__link" href="${enHref}" data-language-switch="en" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</a>
-      <span class="site-lang-switcher__separator" aria-hidden="true">/</span>
-      <a class="site-nav__link" href="${koHref}" data-language-switch="ko" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</a>
+      <a class="site-nav__link site-lang-switcher__option" href="${enHref}" data-language-switch="en" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</a>
+      <a class="site-nav__link site-lang-switcher__option" href="${koHref}" data-language-switch="ko" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</a>
     </div>
   `;
 }
@@ -407,7 +405,7 @@ function renderHeader() {
   const currentPage = getPageKey();
   const navLinks = NAV_ITEMS.map((item) => {
     const current = item.key === currentPage ? ' aria-current="page"' : "";
-    const href = item.key === "get-started"
+    const href = item.href === "get-started/"
       ? createGetStartedHref({ source: "nav", ctaClicked: "nav_get_started" })
       : pathTo(item.href);
     return `<a class="site-nav__link" href="${href}"${current}>${copy.nav[item.key] || item.label}</a>`;
@@ -446,11 +444,33 @@ function renderHeader() {
   const panel = mount.querySelector(".site-menu-panel");
 
   if (toggle && panel) {
+    const closeMobileMenu = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      panel.classList.remove("is-open");
+    };
+
     toggle.addEventListener("click", () => {
       const nextState = toggle.getAttribute("aria-expanded") !== "true";
       toggle.setAttribute("aria-expanded", String(nextState));
       panel.classList.toggle("is-open", nextState);
     });
+
+    if (typeof window !== "undefined" && typeof window.matchMedia === "function") {
+      const desktopNav = window.matchMedia("(min-width: 981px)");
+      const syncMobileMenu = (event) => {
+        if (event.matches) {
+          closeMobileMenu();
+        }
+      };
+
+      syncMobileMenu(desktopNav);
+
+      if (typeof desktopNav.addEventListener === "function") {
+        desktopNav.addEventListener("change", syncMobileMenu);
+      } else if (typeof desktopNav.addListener === "function") {
+        desktopNav.addListener(syncMobileMenu);
+      }
+    }
   }
 }
 
