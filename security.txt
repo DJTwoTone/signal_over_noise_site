@@ -1,0 +1,5 @@
+Contact: mailto:hello@signal-over-noise.coach
+Preferred-Languages: en, ko
+Canonical: https://signal-over-noise.coach/.well-known/security.txt
+Policy: https://signal-over-noise.coach/privacy/
+Expires: 2027-06-25T00:00:00Z

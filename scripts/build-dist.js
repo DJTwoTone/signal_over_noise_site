@@ -28,10 +28,12 @@ const publicEntries = [
 ];
 
 const optionalRootFiles = [
+  ".well-known",
   "404.html",
   "_headers",
   "_redirects",
   "favicon.ico",
+  "security.txt",
   "site.webmanifest",
   "robots.txt",
   "sitemap.xml",
