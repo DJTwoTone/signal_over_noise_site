@@ -481,6 +481,7 @@ function renderFooter() {
   }
 
   const copy = getCopy();
+  const footerCopyright = `© ${new Date().getFullYear()} Signal over Noise. All rights reserved.`;
 
   if (useMinimalChrome()) {
     mount.innerHTML = `
@@ -490,7 +491,10 @@ function renderFooter() {
             ${createBrandMarkup("footer-brand__mark", "reversed")}
           </a>
           <div class="site-footer__minimal-meta">
-            <p class="site-footer__meta">${copy.minimalFooterMeta}</p>
+            <div class="site-footer__copy-stack">
+              <p class="site-footer__meta">${copy.minimalFooterMeta}</p>
+              <p class="site-footer__copyright">${footerCopyright}</p>
+            </div>
             <a class="site-footer__privacy" href="${pathTo("privacy/")}">${copy.nav.privacy}</a>
           </div>
         </div>
@@ -516,6 +520,7 @@ function renderFooter() {
         <div class="site-footer__rule" role="presentation"></div>
         <div class="site-footer__bottom">
           <p class="site-footer__meta">${copy.footerMeta}</p>
+          <p class="site-footer__copyright">${footerCopyright}</p>
           <p class="site-footer__legal">${copy.footerLegal}</p>
         </div>
       </div>

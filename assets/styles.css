@@ -525,6 +525,12 @@
     max-width: none;
   }
 
+  .preview-about-audience {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
   .three-up {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1045,6 +1051,12 @@
     font-size: var(--fs-text-sm);
   }
 
+  .site-footer__copyright {
+    color: rgba(251, 247, 240, 0.7);
+    font-size: var(--fs-kicker);
+    text-align: center;
+  }
+
   .site-footer__rule {
     height: 1px;
     background: var(--border-mid);
@@ -1054,6 +1066,17 @@
     color: var(--brand-gold-soft);
     font-family: var(--font-mono);
     font-size: var(--fs-kicker);
+    text-align: right;
+  }
+
+  .site-footer__meta,
+  .site-footer__copyright,
+  .site-footer__legal {
+    flex: 1 1 0;
+  }
+
+  .site-footer__meta {
+    text-align: left;
   }
 
 
@@ -3561,6 +3584,7 @@
 
   .footer-nav a,
   .site-footer__meta,
+  .site-footer__copyright,
   .site-footer__privacy {
     color: rgba(251, 247, 240, 0.8);
   }
@@ -3572,6 +3596,7 @@
 
   .footer-nav a,
   .site-footer__meta,
+  .site-footer__copyright,
   .site-footer__privacy {
     color: rgba(251, 247, 240, 0.9);
   }
