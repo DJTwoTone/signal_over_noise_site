@@ -85,6 +85,15 @@ function formatBytes(bytes) {
   return `${value.toFixed(unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
 }
 
+function minifyCss(css) {
+  return css
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\s*([{}:;,>+~])\s*/g, "$1")
+    .replace(/;}/g, "}")
+    .trim();
+}
+
 fs.rmSync(outputDir, { recursive: true, force: true });
 fs.mkdirSync(outputDir, { recursive: true });
 
@@ -104,6 +113,12 @@ for (const file of optionalRootFiles) {
   if (fs.existsSync(source)) {
     copyRecursive(source, path.join(outputDir, file));
   }
+}
+
+const distStylesPath = path.join(outputDir, "assets", "styles.css");
+if (fs.existsSync(distStylesPath)) {
+  const sourceCss = fs.readFileSync(distStylesPath, "utf8");
+  fs.writeFileSync(distStylesPath, minifyCss(sourceCss));
 }
 
 const files = listFiles(outputDir);

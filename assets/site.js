@@ -302,11 +302,13 @@ function pathTo(path) {
   return `${getRoot()}${path}`;
 }
 
-function createBrandMarkup(className = "site-brand__mark", variant = "full-color") {
+function createBrandMarkup(className = "site-brand__mark", variant = "full-color", options = {}) {
   const markPath = variant === "reversed"
      ? "/img/brand-marks/one-color-horizontal-lockup.svg"
      : "/img/brand-marks/full-color-horizontal-lockup.svg";
-  return `<img class="${className}" src="${pathTo(markPath)}" alt="Signal over Noise">`;
+  const loading = options.loading ? ` loading="${options.loading}"` : "";
+  const fetchPriority = options.fetchPriority ? ` fetchpriority="${options.fetchPriority}"` : "";
+  return `<img class="${className}" src="${pathTo(markPath)}" alt="Signal over Noise" width="1081" height="551" decoding="async"${loading}${fetchPriority}>`;
 }
 
 function withRouteParams(routePath, params) {
@@ -393,7 +395,7 @@ function renderHeader() {
       <header class="site-header site-header--minimal">
         <div class="shell site-header__inner">
           <a class="site-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
-            ${createBrandMarkup()}
+            ${createBrandMarkup("site-brand__mark", "full-color", { fetchPriority: "high" })}
           </a>
           <p class="site-header__context">${copy.minimalContext}</p>
         </div>
@@ -415,7 +417,7 @@ function renderHeader() {
     <header class="site-header">
       <div class="shell site-header__inner">
         <a class="site-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
-          ${createBrandMarkup()}
+          ${createBrandMarkup("site-brand__mark", "full-color", { fetchPriority: "high" })}
         </a>
         <nav class="site-nav" aria-label="${copy.nav.primaryLabel}">
           <div class="site-nav__links">${navLinks}</div>
@@ -488,7 +490,7 @@ function renderFooter() {
       <footer class="site-footer site-footer--minimal">
         <div class="shell site-footer__inner site-footer__inner--minimal">
           <a class="footer-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
-            ${createBrandMarkup("footer-brand__mark", "reversed")}
+            ${createBrandMarkup("footer-brand__mark", "reversed", { loading: "lazy" })}
           </a>
           <div class="site-footer__minimal-meta">
             <div class="site-footer__copy-stack">
@@ -513,7 +515,7 @@ function renderFooter() {
       <div class="shell site-footer__inner">
         <div class="site-footer__top">
           <a class="footer-brand" href="${pathTo("")}" aria-label="${copy.brandHome}">
-            ${createBrandMarkup("footer-brand__mark", "reversed")}
+            ${createBrandMarkup("footer-brand__mark", "reversed", { loading: "lazy" })}
           </a>
           <nav class="footer-nav" aria-label="Footer">${footerLinks}</nav>
         </div>
