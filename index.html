@@ -2,13 +2,31 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWSJGBW70Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.addEventListener('load', function() {
+        var loadAnalytics = function() {
+          if (window.__sonAnalyticsLoaded) {
+            return;
+          }
 
-      gtag('config', 'G-VWSJGBW70Y');
+          window.__sonAnalyticsLoaded = true;
+          gtag('js', new Date());
+          gtag('config', 'G-VWSJGBW70Y');
+
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VWSJGBW70Y';
+          document.head.appendChild(script);
+        };
+
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 3000 });
+        } else {
+          window.setTimeout(loadAnalytics, 2500);
+        }
+      });
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +53,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="./img/hero-copy-background.webp" as="image" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Mulish:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Mulish:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css">
     <script src="./assets/site.js" defer></script>
   </head>
