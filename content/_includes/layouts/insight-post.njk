@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} | The Insight Desk | Signal over Noise</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="robots" content="{{ 'noindex, nofollow' if draft else 'index, follow' }}">
+    <link rel="canonical" href="https://signal-over-noise.coach{{ page.url }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://signal-over-noise.coach{{ page.url }}">
+    {% if ogImage %}<meta property="og:image" content="https://signal-over-noise.coach{{ ogImage.src }}">
+    <meta property="og:image:alt" content="{{ ogImage.alt }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    {% if ogImage %}<meta name="twitter:image" content="https://signal-over-noise.coach{{ ogImage.src }}">{% endif %}
+    <meta name="theme-color" content="#0b2d53">
+    <link rel="icon" href="/img/brand-marks/favicon-rounded-square.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Mulish:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/site.js" defer></script>
+    <script type="application/ld+json">{{ {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "datePublished": date | isoDate,
+      "dateModified": (updated or date) | isoDate,
+      "mainEntityOfPage": "https://signal-over-noise.coach" + page.url,
+      "image": "https://signal-over-noise.coach" + ogImage.src
+    } | json | safe }}</script>
+  </head>
+  <body data-site-root="../../" data-page="insights" data-origin-page="{{ page.url }}" data-source-context="insight-article">
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <div data-site-header></div>
+    <main id="main" class="page">
+      <article class="insight-article">
+        <header class="section insight-article__header">
+          <div class="shell section__stack">
+            <p class="eyebrow">The Insight Desk</p>
+            <p class="insight-article__category">{{ category }}</p>
+            <h1 class="hero-title">{{ title }}</h1>
+            <p class="insight-article__dek">{{ description }}</p>
+            <p class="insight-meta"><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>
+          </div>
+        </header>
+        {% if heroImage %}
+          <figure class="shell insight-article__hero">
+            <img src="{{ heroImage.src }}" alt="{{ heroImage.alt }}" width="1600" height="900" fetchpriority="high" decoding="async">
+            {% if heroImage.caption %}<figcaption>{{ heroImage.caption }}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
+        <div class="section insight-article__content">
+          <div class="shell">
+            <div class="insight-article__body">{{ content | stripLeadingHeading | replace('href="/free-presentation-diagnostic/"', 'href="/diagnostic/"') | safe }}</div>
+            {% if primaryCTA %}
+              <aside class="cta-band insight-article__cta" aria-label="Next step">
+                <p class="eyebrow eyebrow--gold-deep">A useful next step</p>
+                <h2 class="section-title">Get clear on what needs fixing first.</h2>
+                <a class="button button--primary" data-track="insight_diagnostic_click" data-track-source="insight-article" data-cta-clicked="insight_article_primary" data-diagnostic-link href="/diagnostic/">{{ primaryCTA.label }}</a>
+              </aside>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+    </main>
+    <div data-site-footer></div>
+  </body>
+</html>

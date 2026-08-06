@@ -1,8 +1,21 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { spawnSync } = require("node:child_process");
 
 const root = path.resolve(__dirname, "..");
 const outputDir = path.join(root, "dist");
+const insightsBuild = spawnSync(process.execPath, [path.join(root, "scripts", "build-insights.js")], {
+  cwd: root,
+  stdio: "inherit",
+});
+
+if (insightsBuild.error) {
+  throw insightsBuild.error;
+}
+
+if (insightsBuild.status !== 0) {
+  process.exit(insightsBuild.status || 1);
+}
 
 const publicEntries = [
   "index.html",
@@ -106,6 +119,18 @@ for (const entry of publicEntries) {
 
   copyRecursive(source, path.join(outputDir, entry));
 }
+
+const insightsSource = path.join(root, ".insights-build", "insights");
+if (!fs.existsSync(insightsSource)) {
+  throw new Error("Insights build did not create the expected /insights/ output.");
+}
+copyRecursive(insightsSource, path.join(outputDir, "insights"));
+
+const insightsSitemapSource = path.join(root, ".insights-build", "insights-sitemap.xml");
+if (!fs.existsSync(insightsSitemapSource)) {
+  throw new Error("Insights build did not create its sitemap output.");
+}
+copyRecursive(insightsSitemapSource, path.join(outputDir, "insights-sitemap.xml"));
 
 for (const file of optionalRootFiles) {
   const source = path.join(root, file);

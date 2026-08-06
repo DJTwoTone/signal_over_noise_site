@@ -1,4 +1,6 @@
 dist/
+.insights-build/
+.codex-temp/
 node_modules/
 
 # Local QA output

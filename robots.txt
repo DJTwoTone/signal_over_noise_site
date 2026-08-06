@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://signal-over-noise.coach/sitemap.xml
+Sitemap: https://signal-over-noise.coach/insights-sitemap.xml

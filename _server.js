@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname);
+const insightsBuildRoot = path.join(root, '.insights-build');
+const port = Number(process.env.PORT || 8080);
 
 const mime = {
   html: 'text/html', css: 'text/css', js: 'application/javascript',
@@ -22,7 +24,10 @@ http.createServer((req, res) => {
     res.end();
     return;
   }
-  let filePath = path.join(root, url === '/' ? 'index.html' : url.endsWith('/') ? url + 'index.html' : url);
+  const requestPath = url === '/' ? 'index.html' : url.endsWith('/') ? url + 'index.html' : url;
+  let filePath = (url === '/insights' || url.startsWith('/insights/'))
+    ? path.join(insightsBuildRoot, requestPath)
+    : path.join(root, requestPath);
   if (!path.extname(filePath) && fs.existsSync(path.join(filePath, 'index.html'))) {
     filePath = path.join(filePath, 'index.html');
   }
@@ -33,4 +38,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': type });
     res.end(data);
   });
-}).listen(8080, () => console.log('Server running at http://localhost:8080'));
+}).listen(port, () => console.log(`Server running at http://localhost:${port}`));

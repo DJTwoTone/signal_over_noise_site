@@ -1,0 +1,15 @@
+---
+permalink: /insights-sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://signal-over-noise.coach/insights/</loc>
+  </url>
+  {% for post in collections.insights %}
+  <url>
+    <loc>https://signal-over-noise.coach{{ post.url }}</loc>
+    <lastmod>{{ (post.data.updated or post.data.date) | isoDate }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>

@@ -3,6 +3,7 @@ const NAV_ITEMS = [
   { key: "process", label: "Process", href: "process/" },
   { key: "proof", label: "Sample Work", href: "proof/" },
   { key: "workshops", label: "Workshops", href: "workshops/" },
+  { key: "insights", label: "Insights", href: "insights/" },
 ];
 
 const MINIMAL_CHROME_PAGES = new Set(["toolkit", "thanks"]);
@@ -70,6 +71,7 @@ const UI_COPY = {
       process: "Process",
       proof: "Sample Work",
       workshops: "Workshops",
+      insights: "Insights",
       privacy: "Privacy",
       freeDiagnostic: "Free Diagnostic",
       diagnosticShort: "Diagnostic",
@@ -108,6 +110,7 @@ const UI_COPY = {
       process: "프로세스",
       proof: "샘플 작업",
       workshops: "워크숍",
+      insights: "Insights",
       privacy: "개인정보처리방침",
       freeDiagnostic: "무료 진단",
       diagnosticShort: "진단",
@@ -221,6 +224,10 @@ function maybeApplyLanguageRedirect() {
     return false;
   }
 
+  if (getEnglishPathname().startsWith("/insights/")) {
+    return false;
+  }
+
   const preferredLanguage = getPreferredLanguage();
   const targetPathname = createLocalizedPathname(preferredLanguage);
   const currentPathname = normalizePathname(window.location.pathname);
@@ -243,9 +250,17 @@ function createLanguageSwitcherMarkup(options = {}) {
   const currentLanguage = isKoreanPath() ? "ko" : "en";
   const copy = getCopy();
 
+  if (getEnglishPathname().startsWith("/insights/")) {
+    return `
+      <div class="site-lang-switcher${compact}" role="group" aria-label="${copy.nav.language}">
+        <span class="site-nav__link site-lang-switcher__option site-lang-switcher__option--active">EN</span>
+      </div>
+    `;
+  }
+
   if (!I18N_CONFIG.enabled) {
     return `
-      <div class="site-lang-switcher${compact}" aria-label="${copy.nav.languageSoon}">
+      <div class="site-lang-switcher${compact}" role="group" aria-label="${copy.nav.languageSoon}">
         <span class="site-nav__link site-lang-switcher__option" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</span>
         <span class="site-nav__link site-lang-switcher__option" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</span>
       </div>
@@ -256,7 +271,7 @@ function createLanguageSwitcherMarkup(options = {}) {
   const koHref = createLocalizedPathname("ko");
 
   return `
-    <div class="site-lang-switcher${compact}" aria-label="${copy.nav.language}">
+    <div class="site-lang-switcher${compact}" role="group" aria-label="${copy.nav.language}">
       <a class="site-nav__link site-lang-switcher__option" href="${enHref}" data-language-switch="en" aria-current="${currentLanguage === "en" ? "page" : "false"}">EN</a>
       <a class="site-nav__link site-lang-switcher__option" href="${koHref}" data-language-switch="ko" aria-current="${currentLanguage === "ko" ? "page" : "false"}">KO</a>
     </div>

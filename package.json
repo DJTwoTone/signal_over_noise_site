@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-dist.js",
+    "build:insights": "node scripts/build-insights.js",
+    "preview:insights": "node scripts/preview-insights.js",
+    "check:pa11y": "node scripts/run-pa11y.js",
     "finalize:heads": "node scripts/finalize-head-metadata.mjs",
     "check:search": "node scripts/check-search-readiness.mjs",
     "check:i18n-routing": "node scripts/i18n-routing-qa.js"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "pa11y": "^9.1.1",
     "playwright": "^1.60.0"
   }
