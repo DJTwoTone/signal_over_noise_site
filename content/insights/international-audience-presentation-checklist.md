@@ -65,7 +65,7 @@ answerVisibility:
 
 primaryCTA:
   label: "Get a Free Presentation Diagnostic"
-  url: "/free-presentation-diagnostic/"
+  url: "/diagnostic/"
   type: "diagnostic"
 
 proofNeeded:

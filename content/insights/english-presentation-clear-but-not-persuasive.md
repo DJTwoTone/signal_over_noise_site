@@ -64,7 +64,7 @@ answerVisibility:
 
 primaryCTA:
   label: "Get a Free Presentation Diagnostic"
-  url: "/free-presentation-diagnostic/"
+  url: "/diagnostic/"
   type: "diagnostic"
 
 proofNeeded:
@@ -388,7 +388,7 @@ That is the difference between a presentation that sounds understandable and one
 
 ## Next step
 
-If your English presentation sounds clear but still is not landing, start with the [Free Presentation Diagnostic](/free-presentation-diagnostic/). Send one piece of real material: your deck, script, outline, or a short practice video.
+If your English presentation sounds clear but still is not landing, start with the [Free Presentation Diagnostic](/diagnostic/). Send one piece of real material: your deck, script, outline, or a short practice video.
 
 You will get practical expert feedback on what is blocking clarity, credibility, or persuasion, and the next useful fix.
 

@@ -62,7 +62,7 @@ answerVisibility:
 
 primaryCTA:
   label: "Get a Free Presentation Diagnostic"
-  url: "/free-presentation-diagnostic/"
+  url: "/diagnostic/"
   type: "diagnostic"
 
 secondaryCTA:
@@ -364,4 +364,4 @@ No guessing. No generic advice. No pretending the template solved the problem.
 
 Just real presentation material, reviewed for the room it actually has to face.
 
-[Get a Free Presentation Diagnostic](/free-presentation-diagnostic/)
+[Get a Free Presentation Diagnostic](/diagnostic/)

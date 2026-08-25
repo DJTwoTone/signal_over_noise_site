@@ -57,7 +57,7 @@
         {% endif %}
         <div class="section insight-article__content">
           <div class="shell">
-            <div class="insight-article__body">{{ content | stripLeadingHeading | replace('href="/free-presentation-diagnostic/"', 'href="/diagnostic/"') | safe }}</div>
+            <div class="insight-article__body">{{ content | stripLeadingHeading | safe }}</div>
             {% if primaryCTA %}
               <aside class="cta-band insight-article__cta" aria-label="Next step">
                 <p class="eyebrow eyebrow--gold-deep">A useful next step</p>

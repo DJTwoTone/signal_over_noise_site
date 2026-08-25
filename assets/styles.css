@@ -819,6 +819,15 @@
     box-shadow: 0 14px 32px rgba(11, 45, 83, 0.06);
   }
 
+  .section-stage--light .eyebrow--gold-deep {
+    color: var(--brand-blue-deep);
+  }
+
+  .section-stage--light .section-title,
+  .section-stage--light .section-copy {
+    color: var(--text-primary);
+  }
+
   .section-stage--light::before {
     inset: 20px 26px auto auto;
     width: min(28%, 220px);

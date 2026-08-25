@@ -61,7 +61,7 @@ answerVisibility:
 
 primaryCTA:
   label: "Get a Free Presentation Diagnostic"
-  url: "/free-presentation-diagnostic/"
+  url: "/diagnostic/"
   type: "diagnostic"
 
 secondaryCTA:
@@ -237,6 +237,6 @@ That order is usually faster, too. There is no prize for perfecting a paragraph 
 
 ## Get a second set of eyes on the real problem
 
-If you are not sure whether the issue is the script, the deck, the message, or the audience fit, start with a [Free Presentation Diagnostic](/free-presentation-diagnostic/). Send a deck, script, or short practice video for practical expert feedback and a recommended next step.
+If you are not sure whether the issue is the script, the deck, the message, or the audience fit, start with a [Free Presentation Diagnostic](/diagnostic/). Send a deck, script, or short practice video for practical expert feedback and a recommended next step.
 
 If you want to see what that kind of review can look like, you can also [see sample work](/proof/).
