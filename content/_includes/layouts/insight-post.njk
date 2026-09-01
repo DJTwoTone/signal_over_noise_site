@@ -57,12 +57,16 @@
         {% endif %}
         <div class="section insight-article__content">
           <div class="shell">
-            <div class="insight-article__body">{{ content | stripLeadingHeading | safe }}</div>
+            {% set insightBody = content | stripLeadingHeading %}
+            {% if series %}
+              {% set insightBody = insightBody | injectSeriesNav(series.slug, slug, collections.insights) %}
+            {% endif %}
+            <div class="insight-article__body">{{ insightBody | safe }}</div>
             {% if primaryCTA %}
               <aside class="cta-band insight-article__cta" aria-label="Next step">
                 <p class="eyebrow eyebrow--gold-deep">A useful next step</p>
                 <h2 class="section-title">Get clear on what needs fixing first.</h2>
-                <a class="button button--primary" data-track="insight_diagnostic_click" data-track-source="insight-article" data-cta-clicked="insight_article_primary" data-diagnostic-link href="/diagnostic/">{{ primaryCTA.label }}</a>
+                <a class="button button--primary" data-track="insight_diagnostic_click" data-track-source="insight-article" data-cta-clicked="insight_article_primary" data-diagnostic-link href="{{ primaryCTA.url or '/diagnostic/' }}">{{ primaryCTA.label }}</a>
               </aside>
             {% endif %}
           </div>
