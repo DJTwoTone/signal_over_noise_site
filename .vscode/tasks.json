@@ -118,6 +118,45 @@
 				"add",
 				"-A"
 			]
+		},
+		{
+			"label": "publish-all-commit-message",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"commit",
+				"-m",
+				"Publish all current site changes"
+			]
+		},
+		{
+			"label": "publish-all-push",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"push",
+				"origin",
+				"main"
+			]
+		},
+		{
+			"label": "publish-postcheck-status",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				"--branch"
+			]
+		},
+		{
+			"label": "publish-followup-tasksjson",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				".vscode/tasks.json"
+			]
 		}
 	]
 }
