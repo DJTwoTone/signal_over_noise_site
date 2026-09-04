@@ -1,0 +1,123 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "regen-part2-assets",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/regen-part2-assets.js"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "install-sharp-devdep",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"install",
+				"-D",
+				"sharp"
+			]
+		},
+		{
+			"label": "install-sharp-devdep-cmd",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"-D",
+				"sharp"
+			]
+		},
+		{
+			"label": "regen-part2-assets",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/regen-part2-assets.js"
+			]
+		},
+		{
+			"label": "test-build-insights",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"build:insights"
+			]
+		},
+		{
+			"label": "test-check-search",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"check:search"
+			]
+		},
+		{
+			"label": "test-check-i18n-routing",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"check:i18n-routing"
+			]
+		},
+		{
+			"label": "test-check-pa11y",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"check:pa11y"
+			]
+		},
+		{
+			"label": "test-check-part2-pa11y",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/check-part2-pa11y.js"
+			]
+		},
+		{
+			"label": "test-check-part2-pa11y",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/check-part2-pa11y.js"
+			]
+		},
+		{
+			"label": "publish-preflight-git",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				"--branch"
+			]
+		},
+		{
+			"label": "publish-all-status",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				"--branch"
+			]
+		},
+		{
+			"label": "publish-all-commit",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"-A"
+			]
+		}
+	]
+}

@@ -3,7 +3,7 @@ title: "Turn Abstract Nouns Back Into Actions"
 description: "Professional written English often hides actions inside abstract nouns. Learn how to turn report-style language into presentation language that is easier to hear and understand."
 date: 2026-09-01
 updated:
-draft: false
+draft: true
 slug: turn-abstract-nouns-back-into-actions
 
 tags:
@@ -41,7 +41,7 @@ secondaryKeywords:
 
 primaryCTA:
   label: "Request a Free Presentation Diagnostic"
-  url: "/diagnostic/"
+  url: "/free-presentation-diagnostic/"
   type: "diagnostic"
 
 proofNeeded:
@@ -57,10 +57,7 @@ heroImage:
   caption:
   promptId: "son-report-series-part-1-hero-v1"
 
-ogImage:
-  src: "/assets/images/insights/turn-abstract-nouns-back-into-actions/og.webp"
-  alt: "Signal over Noise social preview image for an article titled Turn Abstract Nouns Back Into Actions."
-  promptId: "son-report-series-part-1-og-v1"
+ogImage: "/assets/images/insights/turn-abstract-nouns-back-into-actions/og.webp"
 
 imagePlan:
   count: 4
@@ -69,18 +66,6 @@ imagePlan:
     - og
     - inline-hidden-action
     - inline-report-to-presentation
-  inline:
-    - src: "/assets/images/insights/turn-abstract-nouns-back-into-actions/inline-hidden-action.webp"
-      placement: "After the introduction to hidden actions / nominalization, before Example 1"
-      alt: "A marked-up report beside notes separating a dense statement into the actor, action, and result."
-    - src: "/assets/images/insights/turn-abstract-nouns-back-into-actions/inline-report-to-presentation.webp"
-      placement: "After Example 3, before The pattern to look for"
-      alt: "A three-stage workspace showing dense report language becoming clearer written language and then presentation-ready language."
-
-structuredData:
-  type: "BlogPosting"
-  includeArticleSchema: true
-  includeFAQSchema: false
 ---
 
 Here is a perfectly respectable sentence:
@@ -102,8 +87,6 @@ You can figure it out. But that is the problem: **you have to figure it out.**
 A reader can stop, look back, and unpack a complicated sentence. A presentation audience normally hears the sentence once, while also looking at your slides, thinking about your last point, taking notes, and wondering whether the coffee machine outside is still working.
 
 Presentation language has to survive that environment.
-
-> **Short answer:** If an important action is hidden inside an abstract noun, turn it back into a verb and make the actor clear. Presentation language is easier to follow when listeners can hear who did what and what changed.
 
 One useful place to start is with the verbs.
 
@@ -371,4 +354,16 @@ You have probably seen phrases like:
 
 Yes. That sort of thing.
 
+**Part 2: Unpack Dense Noun Stacks** comes next on September 4.
+
 <!-- SERIES_PREV_NEXT: Render Previous / Next navigation here from central series data. Future parts must show as upcoming, not dead links. -->
+
+## Not sure whether the language is the real problem?
+
+A presentation can be grammatically correct and still be difficult to hear, deliver, or follow.
+
+Sometimes the wording needs work. Sometimes the real problem is the message, the slides, the delivery, or a combination of them.
+
+The **Free Presentation Diagnostic** starts with the actual presentation material so you can get specific feedback on what needs attention first.
+
+[Request a Free Presentation Diagnostic](/free-presentation-diagnostic/)
