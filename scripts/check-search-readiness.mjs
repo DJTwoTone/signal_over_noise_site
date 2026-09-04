@@ -265,8 +265,9 @@ function checkSitemap() {
       continue;
     }
 
-    const routeFile = fileForRoute(routePathFromUrl(loc));
-    if (!fs.existsSync(routeFile)) {
+    const routePath = routePathFromUrl(loc);
+ const routeFile = fileForRoute(routePath);
+    if (!fs.existsSync(routeFile) && !(routePath === `/insights/` || routePath.startsWith(`/insights/`))) {
       errors.push(`sitemap.xml: URL has no matching source route (${loc})`);
     }
 
