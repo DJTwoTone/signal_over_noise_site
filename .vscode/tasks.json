@@ -157,6 +157,64 @@
 				"add",
 				".vscode/tasks.json"
 			]
+		},
+		{
+			"label": "publish-followup-commit",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"commit",
+				"-m",
+				"Update VS Code task definitions"
+			]
+		},
+		{
+			"label": "publish-followup-push",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"push",
+				"origin",
+				"main"
+			]
+		},
+		{
+			"label": "publish-final-status",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				"--branch"
+			]
+		},
+		{
+			"label": "publish-finalize-leftover",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"-A",
+				"&&",
+				"git",
+				"commit",
+				"-m",
+				"Finalize remaining local changes",
+				"&&",
+				"git",
+				"push",
+				"origin",
+				"main"
+			]
+		},
+		{
+			"label": "publish-leftover-add",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"-A"
+			]
 		}
 	]
 }
