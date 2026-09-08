@@ -414,7 +414,7 @@ It is to make the thinking easier to follow.
 
 1. [Turn Abstract Nouns Back Into Actions](/insights/turn-abstract-nouns-back-into-actions/) — Part 1
 2. **Unpack Dense Noun Stacks — Part 2, you are here**
-3. **Make the Actor Obvious — Part 3, upcoming**
+3. [Make the Actor Obvious](/insights/make-the-actor-obvious/) — Part 3
 4. **Repeat Key Words When Clarity Matters — Part 4, upcoming**
 5. **Build Recovery Points Into Spoken Language — Part 5, upcoming**
 
