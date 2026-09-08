@@ -107,7 +107,7 @@ For this repo, use this sequence:
 
 ```bash
 npm install
-npm run build:insights
+npm run sync:sitemaps
 node _server.js
 ```
 
@@ -124,6 +124,12 @@ npm run check:pa11y
 npm run check:search
 npm run build
 ```
+
+Sitemap automation rule for this repo:
+
+- Always run `npm run sync:sitemaps` after adding or editing any file in `content/insights/`.
+- The command rebuilds insights, refreshes `sitemap.xml` from `.insights-build/insights-sitemap.xml`, and prevents stale insight URLs from lingering in the root sitemap.
+- Run this before `npm run check:search` and before committing.
 
 ### 5. Audit for SEO, accessibility, and performance
 
