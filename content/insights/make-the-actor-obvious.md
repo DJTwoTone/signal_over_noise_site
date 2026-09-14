@@ -70,7 +70,7 @@ answerVisibility:
 
 primaryCTA:
   label: "Request a Free Presentation Diagnostic"
-  url: "/free-presentation-diagnostic/"
+  url: "/diagnostic/"
   type: "diagnostic"
 
 proofNeeded:
@@ -137,7 +137,7 @@ This article is part of a five-part series on making spoken English easier for a
 1. [Turn Abstract Nouns Back Into Actions](/insights/turn-abstract-nouns-back-into-actions/)
 2. [Unpack Dense Noun Stacks](/insights/unpack-dense-noun-stacks/)
 3. **Make the Actor Obvious**
-4. **Repeat Key Words When Clarity Matters** — upcoming
+4. [Repeat Key Words When Clarity Matters](/insights/repeat-key-words-when-clarity-matters/)
 5. **Build Recovery Points Into Spoken Language** — upcoming
 
 ---
@@ -508,7 +508,7 @@ In Part 4, we will look at why repeating an important word can make a presentati
 
 **Current:** Part 3 — Make the Actor Obvious
 
-**Next:** Part 4 — Repeat Key Words When Clarity Matters *(upcoming)*
+**Next:** [Part 4 — Repeat Key Words When Clarity Matters](/insights/repeat-key-words-when-clarity-matters/)
 
 ---
 
@@ -518,4 +518,4 @@ If you are not sure what is actually weakening your presentation, start with the
 
 Send a deck, script, or short practice video for practical expert feedback and a recommended next step.
 
-[Request a Free Presentation Diagnostic](/free-presentation-diagnostic/)
+[Request a Free Presentation Diagnostic](/diagnostic/)
