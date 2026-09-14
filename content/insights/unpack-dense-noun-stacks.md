@@ -63,7 +63,7 @@ answerVisibility:
 
 primaryCTA:
   label: "Request a Free Presentation Diagnostic"
-  url: "/free-presentation-diagnostic/"
+  url: "/diagnostic/"
   type: "diagnostic"
 
 proofNeeded:
@@ -414,8 +414,8 @@ It is to make the thinking easier to follow.
 
 1. [Turn Abstract Nouns Back Into Actions](/insights/turn-abstract-nouns-back-into-actions/) — Part 1
 2. **Unpack Dense Noun Stacks — Part 2, you are here**
-3. **Make the Actor Obvious — Part 3, upcoming**
-4. **Repeat Key Words When Clarity Matters — Part 4, upcoming**
+3. [Make the Actor Obvious](/insights/make-the-actor-obvious/) — Part 3
+4. [Repeat Key Words When Clarity Matters](/insights/repeat-key-words-when-clarity-matters/) — Part 4
 5. **Build Recovery Points Into Spoken Language — Part 5, upcoming**
 
 If your presentation started life as a report, proposal, research paper, or AI-generated document and you are not sure which parts will be difficult to follow out loud, send the actual material.
