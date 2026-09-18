@@ -5,8 +5,19 @@ const showDrafts = process.env.INSIGHTS_DRAFTS === "true";
 
 module.exports = function configureInsights(eleventyConfig) {
   eleventyConfig.addGlobalData("insightsPreview", showDrafts);
-  eleventyConfig.addFilter("readableDate", (value) => {
+
+  const toSafeDate = (value) => {
     if (!value) {
+      return null;
+    }
+
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? null : date;
+  };
+
+  eleventyConfig.addFilter("readableDate", (value) => {
+    const date = toSafeDate(value);
+    if (!date) {
       return "";
     }
 
@@ -15,10 +26,11 @@ module.exports = function configureInsights(eleventyConfig) {
       month: "long",
       year: "numeric",
       timeZone: "UTC",
-    }).format(new Date(value));
+    }).format(date);
   });
   eleventyConfig.addFilter("monthDay", (value) => {
-    if (!value) {
+    const date = toSafeDate(value);
+    if (!date) {
       return "";
     }
 
@@ -26,10 +38,13 @@ module.exports = function configureInsights(eleventyConfig) {
       day: "numeric",
       month: "long",
       timeZone: "UTC",
-    }).format(new Date(value));
+    }).format(date);
   });
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
-  eleventyConfig.addFilter("isoDate", (value) => new Date(value).toISOString());
+  eleventyConfig.addFilter("isoDate", (value) => {
+    const date = toSafeDate(value);
+    return date ? date.toISOString() : "";
+  });
   eleventyConfig.addFilter("stripLeadingHeading", (html) => html.replace(/^\s*<h1[^>]*>[\s\S]*?<\/h1>\s*/i, ""));
 
   const escapeHtml = (value) => String(value)

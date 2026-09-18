@@ -4859,8 +4859,28 @@
     line-height: 1.78;
   }
 
+  .insight-article__body img {
+    display: block;
+    width: min(100%, 760px);
+    max-width: 100%;
+    height: auto;
+    margin: 1.8em auto;
+    border: 1px solid rgba(11, 45, 83, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-soft);
+  }
+
   .insight-article__body > * + * {
     margin-top: 1.4em;
+  }
+
+  @media (max-width: 720px) {
+    .insight-article__body img {
+      width: 100%;
+      margin: 1.3em 0;
+      border-radius: 14px;
+    }
   }
 
   .insight-article__body h2,
