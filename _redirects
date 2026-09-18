@@ -1,5 +1,7 @@
 /scan /toolkit/ 301
 /scan/ /toolkit/ 301
 /free-presentation-diagnostic/ /diagnostic/ 301
+/free-diagnostic /diagnostic/ 301
+/free-diagnostic/ /diagnostic/ 301
 /packages /services/ 301
 /packages/ /services/ 301

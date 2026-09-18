@@ -8,6 +8,20 @@ const root = path.resolve(__dirname, "..");
 const port = 8090;
 const baseUrl = `http://localhost:${port}`;
 const routes = [
+  "/",
+  "/about/",
+  "/services/",
+  "/diagnostic/",
+  "/get-started/",
+  "/proof/",
+  "/privacy/",
+  "/ko/",
+  "/ko/about/",
+  "/ko/services/",
+  "/ko/diagnostic/",
+  "/ko/get-started/",
+  "/ko/proof/",
+  "/ko/privacy/",
   "/insights/",
   "/insights/ai-made-presentation-human-review/",
 ];

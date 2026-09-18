@@ -1,8 +1,8 @@
 const NAV_ITEMS = [
-  { key: "services", label: "Services", href: "services/" },
-  { key: "process", label: "Process", href: "process/" },
-  { key: "proof", label: "Sample Work", href: "proof/" },
+  { key: "services", label: "How it works + pricing", href: "services/" },
+  { key: "proof", label: "Results", href: "proof/" },
   { key: "workshops", label: "Workshops", href: "workshops/" },
+  { key: "about", label: "About Ben", href: "about/" },
   { key: "insights", label: "Insights", href: "insights/" },
 ];
 
@@ -67,14 +67,15 @@ const I18N_CONFIG = {
 const UI_COPY = {
   en: {
     nav: {
-      services: "Services",
+      services: "How it works + pricing",
       process: "Process",
-      proof: "Sample Work",
+      proof: "Results",
       workshops: "Workshops",
+      about: "About Ben",
       insights: "Insights",
       privacy: "Privacy",
       freeDiagnostic: "Free Diagnostic",
-      diagnosticShort: "Diagnostic",
+      diagnosticShort: "Free diagnostic",
       menu: "Menu",
       primaryLabel: "Primary",
       mobileLabel: "Mobile",
@@ -106,14 +107,15 @@ const UI_COPY = {
   },
   ko: {
     nav: {
-      services: "서비스",
+      services: "이용 방법 · 가격",
       process: "프로세스",
-      proof: "샘플 작업",
+      proof: "사례",
       workshops: "워크숍",
+      about: "Ben 소개",
       insights: "Insights",
       privacy: "개인정보처리방침",
       freeDiagnostic: "무료 진단",
-      diagnosticShort: "진단",
+      diagnosticShort: "무료 진단",
       menu: "메뉴",
       primaryLabel: "주요",
       mobileLabel: "모바일",
@@ -523,6 +525,7 @@ function renderFooter() {
   const footerLinks = [
     ...NAV_ITEMS.map((item) => `<a href="${pathTo(item.href)}">${copy.nav[item.key] || item.label}</a>`),
     `<a href="${pathTo("privacy/")}">${copy.nav.privacy}</a>`,
+    `<a href="${pathTo("terms/")}">${getCurrentLanguage() === "ko" ? "이용약관" : "Terms"}</a>`,
   ].join("");
 
   mount.innerHTML = `
@@ -662,6 +665,7 @@ function mountAllTallyEmbeds() {
       source: context.source,
       originPage: context.originPage,
       cta_clicked: context.ctaClicked,
+      language: getCurrentLanguage(),
       ...routeContext,
     });
 
@@ -676,6 +680,19 @@ function mountAllTallyEmbeds() {
     iframe.title = config.title;
     iframe.className = "tally-embed";
     mount.appendChild(iframe);
+
+    let started = false;
+    const trackStart = () => {
+      if (started) return;
+      started = true;
+      emitTrack(`${key}_form_started`, {
+        source: context.source,
+        originPage: context.originPage,
+        route_type: routeContext.route_type || key,
+      });
+    };
+    mount.addEventListener("pointerdown", trackStart, { once: true });
+    mount.addEventListener("focusin", trackStart, { once: true });
 
     const fallback = document.createElement("p");
     fallback.className = "tally-embed-fallback";
@@ -960,11 +977,24 @@ function initProofPdfViewer() {
   });
 }
 
+function emitPageConversion() {
+  const eventName = document.body.dataset.conversionEvent;
+  if (!eventName) {
+    return;
+  }
+  emitTrack(eventName, {
+    source: getSourceContext(),
+    originPage: getOriginPage(),
+    route_type: getPageKey(),
+  });
+}
+
 if (!maybeApplyLanguageRedirect()) {
   renderHeader();
   renderFooter();
   hydrateRouteLinks();
   wireTrackedLinks();
+  emitPageConversion();
   mountAllTallyEmbeds();
   initProofComparisons();
   initProofPdfViewer();

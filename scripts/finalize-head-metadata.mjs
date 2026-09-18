@@ -4,6 +4,12 @@ import path from "node:path";
 const SITE_URL = "https://signal-over-noise.coach";
 const SOCIAL_IMAGE = `${SITE_URL}/img/signal-over-noise-square-logo.png`;
 const THEME_COLOR = "#0b2d53";
+const SOCIAL_OVERRIDES = new Map([
+  ["index.html", [`${SITE_URL}/img/proof/ShiftPilot-after-1280.webp`, "An improved presentation slide with a clearer decision path"]],
+  ["services/index.html", [`${SITE_URL}/img/pricing/pricing-hero-support-options.svg`, "Signal over Noise presentation support options"]],
+  ["diagnostic/index.html", [`${SITE_URL}/img/proof/ShiftPilot-diagnostic-preview.png`, "A sample presentation diagnostic with focused recommendations"]],
+  ["proof/index.html", [`${SITE_URL}/img/proof/ShiftPilot-after-1280.webp`, "A clearer, revised investor-pitch slide"]],
+]);
 
 const routeFiles = [
   "index.html",
@@ -82,18 +88,18 @@ function ensureThanksNoindex(html) {
   );
 }
 
-function buildMetadataBlock({ title, description, canonical, rootPrefix }) {
+function buildMetadataBlock({ title, description, canonical, rootPrefix, socialImage, socialImageAlt }) {
   return [
     `    <meta property="og:title" content="${escapeAttr(title)}">`,
     `    <meta property="og:description" content="${escapeAttr(description)}">`,
     `    <meta property="og:type" content="website">`,
     `    <meta property="og:url" content="${escapeAttr(canonical)}">`,
-    `    <meta property="og:image" content="${SOCIAL_IMAGE}">`,
-    `    <meta property="og:image:alt" content="Signal over Noise logo">`,
+    `    <meta property="og:image" content="${socialImage}">`,
+    `    <meta property="og:image:alt" content="${socialImageAlt}">`,
     `    <meta name="twitter:card" content="summary">`,
     `    <meta name="twitter:title" content="${escapeAttr(title)}">`,
     `    <meta name="twitter:description" content="${escapeAttr(description)}">`,
-    `    <meta name="twitter:image" content="${SOCIAL_IMAGE}">`,
+    `    <meta name="twitter:image" content="${socialImage}">`,
     `    <meta name="theme-color" content="${THEME_COLOR}">`,
     `    <link rel="apple-touch-icon" href="${rootPrefix}img/signal-over-noise-square-logo.png">`,
     `    <link rel="manifest" href="${rootPrefix}site.webmanifest">`,
@@ -105,6 +111,7 @@ function updateRoute(filePath) {
   const title = getRequired(html, filePath, /<title>([^<]*)<\/title>/i, "title");
   const description = getRequired(html, filePath, /<meta\s+name="description"\s+content="([^"]*)"/i, "description");
   const canonical = getRequired(html, filePath, /<link\s+rel="canonical"\s+href="([^"]*)"/i, "canonical");
+  const [socialImage, socialImageAlt] = SOCIAL_OVERRIDES.get(filePath) || [SOCIAL_IMAGE, "Signal over Noise logo"];
 
   html = removeGeneratedHeadMetadata(html);
 
@@ -121,6 +128,8 @@ function updateRoute(filePath) {
     description,
     canonical,
     rootPrefix: rootPrefixFor(filePath),
+    socialImage,
+    socialImageAlt,
   });
 
   const insertPoint = /(\s*<(?:meta name="robots"|link rel="alternate" hreflang="x-default")[^\n]*>\r?\n)/;

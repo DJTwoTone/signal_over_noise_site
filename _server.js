@@ -24,6 +24,11 @@ http.createServer((req, res) => {
     res.end();
     return;
   }
+  if (url === '/free-diagnostic' || url === '/free-diagnostic/' || url === '/free-presentation-diagnostic' || url === '/free-presentation-diagnostic/') {
+    res.writeHead(301, { Location: '/diagnostic/' });
+    res.end();
+    return;
+  }
   const requestPath = url === '/' ? 'index.html' : url.endsWith('/') ? url + 'index.html' : url;
   let filePath = (url === '/insights' || url.startsWith('/insights/'))
     ? path.join(insightsBuildRoot, requestPath)

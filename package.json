@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-dist.js",
+    "build": "node scripts/update-usd-prices.mjs && node scripts/build-dist.js",
     "build:insights": "node scripts/build-insights.js",
     "sync:sitemaps": "npm run build:insights && node scripts/sync-root-sitemap.mjs",
     "preview:insights": "node scripts/preview-insights.js",
