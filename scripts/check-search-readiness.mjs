@@ -3,6 +3,12 @@ import path from "node:path";
 
 const SITE_URL = "https://signal-over-noise.coach";
 const SOCIAL_IMAGE = `${SITE_URL}/img/signal-over-noise-square-logo.png`;
+const SOCIAL_OVERRIDES = new Map([
+  ["index.html", [`${SITE_URL}/img/proof/ShiftPilot-after-1280.webp`, "An improved presentation slide with a clearer decision path"]],
+  ["services/index.html", [`${SITE_URL}/img/pricing/pricing-hero-support-options.svg`, "Signal over Noise presentation support options"]],
+  ["diagnostic/index.html", [`${SITE_URL}/img/proof/ShiftPilot-diagnostic-preview.png`, "A sample presentation diagnostic with focused recommendations"]],
+  ["proof/index.html", [`${SITE_URL}/img/proof/ShiftPilot-after-1280.webp`, "A clearer, revised investor-pitch slide"]],
+]);
 
 const importantRoutes = [
   { route: "/", file: "index.html", required: true },
@@ -161,17 +167,18 @@ function checkRouteFile(relPath) {
     errors.push(`${relPath}: deprecated package route has hreflang alternates pointing at /packages/`);
   }
 
+  const [socialImage, socialImageAlt] = SOCIAL_OVERRIDES.get(relPath) || [SOCIAL_IMAGE, "Signal over Noise logo"];
   const socialChecks = [
     ["og:title", ogTitle, title],
     ["og:description", ogDescription, description],
     ["og:type", ogType, "website"],
     ["og:url", ogUrl, canonical],
-    ["og:image", ogImage, SOCIAL_IMAGE],
-    ["og:image:alt", ogImageAlt, "Signal over Noise logo"],
+    ["og:image", ogImage, socialImage],
+    ["og:image:alt", ogImageAlt, socialImageAlt],
     ["twitter:card", twitterCard, "summary"],
     ["twitter:title", twitterTitle, title],
     ["twitter:description", twitterDescription, description],
-    ["twitter:image", twitterImage, SOCIAL_IMAGE],
+    ["twitter:image", twitterImage, socialImage],
   ];
 
   for (const [name, actual, expected] of socialChecks) {
