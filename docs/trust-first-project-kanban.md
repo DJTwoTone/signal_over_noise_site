@@ -98,11 +98,11 @@ Commit status: no commit made; preserve unrelated local changes.
 
 ### X
 
-- [x] Claim X handle: `@signal__noise`.
+- [x] Claim X handle: `@signal____noise`.
 - [x] Set up X professional profile and business description.
 - [x] Create X profile image and banner in the Signal over Noise visual system.
 - [x] Seed the account with relevant presentation, communication, AI, and Korea/startup accounts/topics.
-- [ ] Publish and pin an introduction post that explains Signal over Noise and points to the Free Presentation Diagnostic.
+- [x] Publish and pin an introduction post that explains Signal over Noise and points to the Free Presentation Diagnostic.
 
 ### Meta
 
