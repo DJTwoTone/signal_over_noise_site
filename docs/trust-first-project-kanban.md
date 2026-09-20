@@ -94,6 +94,37 @@ Commit status: no commit made; preserve unrelated local changes.
 - [ ] Complete SEO checks: title/description, canonical, hreflang, social images, schema, sitemap.
 - [ ] Complete attribution QA across homepage, services, diagnostic, proof, workshops, and KO equivalents.
 
+## Stage 7 — Social and distribution
+
+### X
+
+- [x] Claim X handle: `@signal__noise`.
+- [x] Set up X professional profile and business description.
+- [x] Create X profile image and banner in the Signal over Noise visual system.
+- [x] Seed the account with relevant presentation, communication, AI, and Korea/startup accounts/topics.
+- [ ] Publish and pin an introduction post that explains Signal over Noise and points to the Free Presentation Diagnostic.
+
+### Meta
+
+- [ ] Create/claim Instagram account. **Blocked:** Meta registration/setup is currently not working; retry later rather than repeatedly triggering anti-abuse checks.
+- [ ] Create Signal over Noise Facebook Page through Ben’s existing Facebook account.
+- [ ] Connect Facebook and Instagram in Meta Business Suite / Accounts Center once both are available.
+
+### Other channels
+
+- [ ] Create/complete LinkedIn company page.
+- [ ] Create/complete YouTube channel.
+- [ ] Create Bluesky account and evaluate using `signal-over-noise.coach` as the domain-based handle.
+
+### Social system
+
+- [ ] Standardize display name, bio, description, CTA, links, and location rules across platforms.
+- [ ] Standardize reusable profile/avatar, banner, and social-card image assets.
+- [ ] Define the Insights article → social repurposing workflow.
+- [ ] Prepare the first 5–10 launch posts from existing Insights content and diagnostic/proof material.
+- [ ] Establish a lightweight publishing cadence that does not create a content treadmill.
+- [ ] Track only useful signals: posts shipped, repurposed assets, CTA clicks, diagnostic form starts, and diagnostic submits.
+
 ## Verification gates
 
 - [x] `npm run build` passed.
