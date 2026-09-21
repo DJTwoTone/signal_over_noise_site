@@ -819,13 +819,11 @@
     box-shadow: 0 14px 32px rgba(11, 45, 83, 0.06);
   }
 
-  .section-stage--light .eyebrow--gold-deep {
-    color: var(--brand-blue-deep);
-  }
-
-  .section-stage--light .section-title,
-  .section-stage--light .section-copy {
-    color: var(--text-primary);
+  aside.cta-band.section-stage--light .eyebrow,
+  aside.cta-band.section-stage--light .eyebrow--gold-deep,
+  aside.cta-band.section-stage--light h2.section-title,
+  aside.cta-band.section-stage--light p.section-copy {
+    color: #0b2d53 !important;
   }
 
   .section-stage--light::before {
@@ -1295,6 +1293,13 @@
   .band-copy,
   .meta-copy {
     color: var(--text-secondary);
+  }
+
+  main .cta-band.section-stage--light .eyebrow,
+  main .cta-band.section-stage--light .eyebrow--gold-deep,
+  main .cta-band.section-stage--light .section-title,
+  main .cta-band.section-stage--light .section-copy {
+    color: #0b2d53 !important;
   }
 
   .hero-copy {
