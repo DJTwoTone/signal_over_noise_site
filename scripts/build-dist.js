@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
+const { composeHomepageInsightsFile } = require("./compose-homepage-insights");
 
 const root = path.resolve(__dirname, "..");
 const outputDir = path.join(root, "dist");
@@ -127,6 +128,12 @@ if (!fs.existsSync(insightsSource)) {
   throw new Error("Insights build did not create the expected /insights/ output.");
 }
 copyRecursive(insightsSource, path.join(outputDir, "insights"));
+
+const homepageInsightsFragment = path.join(root, ".insights-build", "homepage-insights.html");
+if (!fs.existsSync(homepageInsightsFragment)) {
+  throw new Error("Insights build did not create the homepage Insight Desk fragment.");
+}
+composeHomepageInsightsFile(path.join(outputDir, "index.html"), homepageInsightsFragment);
 
 const insightsSitemapSource = path.join(root, ".insights-build", "insights-sitemap.xml");
 if (!fs.existsSync(insightsSitemapSource)) {

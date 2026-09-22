@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { composeHomepageInsights } = require('./scripts/compose-homepage-insights');
 const root = path.resolve(__dirname);
 const insightsBuildRoot = path.join(root, '.insights-build');
 const port = Number(process.env.PORT || 8080);
@@ -38,8 +39,20 @@ http.createServer((req, res) => {
   }
   const ext = path.extname(filePath).slice(1);
   const type = mime[ext] || 'application/octet-stream';
-  fs.readFile(filePath, (err, data) => {
+  fs.readFile(filePath, url === '/' ? 'utf8' : undefined, (err, data) => {
     if (err) { res.writeHead(404); res.end('Not found'); return; }
+    if (url === '/') {
+      try {
+        const fragment = fs.readFileSync(path.join(insightsBuildRoot, 'homepage-insights.html'), 'utf8');
+        const homepage = composeHomepageInsights(data, fragment);
+        res.writeHead(200, { 'Content-Type': type });
+        res.end(homepage);
+      } catch (composeError) {
+        res.writeHead(500);
+        res.end(composeError.message);
+      }
+      return;
+    }
     res.writeHead(200, { 'Content-Type': type });
     res.end(data);
   });

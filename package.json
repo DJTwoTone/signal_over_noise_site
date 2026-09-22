@@ -8,6 +8,7 @@
     "sync:sitemaps": "npm run build:insights && node scripts/sync-root-sitemap.mjs",
     "preview:insights": "node scripts/preview-insights.js",
     "check:pa11y": "node scripts/run-pa11y.js",
+    "check:homepage-insights": "node scripts/test-homepage-insights-build.js",
     "finalize:heads": "node scripts/finalize-head-metadata.mjs",
     "check:search": "node scripts/check-search-readiness.mjs",
     "check:i18n-routing": "node scripts/i18n-routing-qa.js"
