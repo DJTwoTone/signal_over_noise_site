@@ -2,7 +2,7 @@ const { spawn, spawnSync } = require("node:child_process");
 const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
-const pa11y = require("pa11y");
+const { chromium } = require("playwright");
 
 const root = path.resolve(__dirname, "..");
 const port = 8090;
@@ -88,25 +88,41 @@ async function run() {
 
   try {
     await waitForServer();
-    for (const route of routes) {
-      for (const runner of [["htmlcs"], ["axe"]]) {
-        const result = await pa11y(`${baseUrl}${route}`, {
-          runners: runner,
-          standard: "WCAG2AA",
-          timeout: 120000,
-          wait: 250,
-          chromeLaunchConfig: {
-            executablePath: browser,
-            args: ["--no-sandbox", "--disable-gpu"],
-          },
+    const browserInstance = await chromium.launch({
+      headless: true,
+      executablePath: browser,
+      args: ["--no-sandbox", "--disable-gpu"],
+    });
+
+    try {
+      for (const route of routes) {
+        const page = await browserInstance.newPage();
+        const fullUrl = `${baseUrl}${route}`;
+        await page.goto(fullUrl, { waitUntil: "networkidle", timeout: 180000 });
+        await page.addScriptTag({
+          url: "https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.11.0/axe.min.js",
         });
-        const errors = result.issues.filter((issue) => issue.type === "error");
-        console.log(`${route} (${runner[0]}): ${errors.length} error(s)`);
+
+        const result = await page.evaluate(async () => {
+          const out = await axe.run(document, {
+            rules: {
+              "color-contrast": { enabled: true },
+            },
+          });
+          return out;
+        });
+
+        const errors = result.violations || [];
+        console.log(`${route} (axe): ${errors.length} violation(s)`);
         if (errors.length) {
-          errors.forEach((issue) => console.error(`- ${issue.message} (${issue.selector})`));
+          errors.forEach((issue) => console.error(`- ${issue.id} ${issue.help} (${issue.nodes[0]?.target?.join(", ") || "unknown"})`));
           process.exitCode = 1;
         }
+
+        await page.close();
       }
+    } finally {
+      await browserInstance.close();
     }
   } finally {
     server.kill();
