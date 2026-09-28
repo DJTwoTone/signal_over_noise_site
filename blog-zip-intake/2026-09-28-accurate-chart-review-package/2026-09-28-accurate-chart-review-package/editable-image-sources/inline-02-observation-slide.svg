@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FBF7F0"/>
+  <line x1="64" y1="58" x2="1536" y2="58" stroke="#B69749" stroke-width="3"/>
+  <text x="64" y="48" fill="#9A7B32" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2">DATA SLIDE EXAMPLE</text>
+  <text x="64" y="159" fill="#10243D" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700">Median onboarding time</text>
+  <text x="64" y="235" fill="#10243D" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700">was lower in the follow-up period.</text>
+  <line x1="64" y1="272" x2="1536" y2="272" stroke="#B69749" stroke-width="3"/>
+  <rect x="96" y="314" width="1408" height="490" rx="20" fill="#FFFEFA" stroke="#D9E1E8" stroke-width="2"/>
+  <text x="144" y="376" fill="#263F58" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1.6">MEDIAN ONBOARDING TIME</text>
+  <text x="144" y="414" fill="#5C6F82" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400">The comparison shows a difference, not its cause.</text>
+  <line x1="318" y1="687" x2="1282" y2="687" stroke="#9EADBA" stroke-width="3"/>
+  <rect x="452" y="449" width="220" height="238" rx="7" fill="#B9CADB"/>
+  <rect x="928" y="512" width="220" height="175" rx="7" fill="#365575"/>
+  <text x="562" y="736" text-anchor="middle" fill="#263F58" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1">BASELINE · 4 WEEKS</text>
+  <text x="1038" y="736" text-anchor="middle" fill="#263F58" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1">FOLLOW-UP · 4 WEEKS</text>
+  <line x1="64" y1="840" x2="1536" y2="840" stroke="#D3DBE1" stroke-width="2"/>
+  <text x="64" y="875" fill="#5C6F82" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="1.3">SYNTHETIC EXAMPLE · CONCEPTUAL BARS · NO VALUES SHOWN · NOT CLIENT WORK</text>
+</svg>

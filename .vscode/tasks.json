@@ -215,6 +215,15 @@
 				"add",
 				"-A"
 			]
+		},
+		{
+			"label": "verify-post-push-status",
+			"type": "shell",
+			"command": "git status --short --branch",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
 		}
 	]
 }
