@@ -53,6 +53,7 @@ const optionalRootFiles = [
   "site.webmanifest",
   "robots.txt",
   "sitemap.xml",
+  "naver899050e748fca3cacb41a3dd0ce2bee3.html",
 ];
 
 function copyRecursive(source, destination) {
