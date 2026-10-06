@@ -49,6 +49,58 @@ Each incorporated article includes:
 
 The agent must map any incoming zip package into this same shape. That means raw content should be converted into the repo’s expected front matter and image conventions before publication.
 
+## Multi-platform publishing and syndication requirements
+
+Do not treat the site as a single-platform destination. A blog package often needs to be prepared for publication across multiple discovery and distribution ecosystems, not just the Eleventy site itself. The intake process must preserve the article’s canonical URL, content metadata, and discoverability signals so it can be reused across search engines, feed readers, content hubs, and partner platforms.
+
+Add the following requirements to the intake flow when preparing an article for wider distribution:
+
+- Prepare each article as a canonical, indexable content object with a stable URL, clear publish date, and a unique path under the site.
+- Ensure the page can be surfaced through both the site itself and any feed or sitemap export used for search discovery.
+- Preserve the source article as a raw intake item first, then convert only approved content into the final publishable site structure.
+- Treat RSS and XML sitemap feeds as distribution tools, not as a substitute for the site’s full content model.
+- Keep full article content available in RSS when the platform expects it, but avoid bloating the output with duplicated or non-canonical content.
+- Make sure the canonical domain matches the verified ownership domain for each platform (for example, Naver Webmaster Tools, Google Search Console, or Bing Webmaster Tools).
+- Do not assume a page is ready for broader syndication just because it renders in the site; it must also be ready for feed and crawler discovery.
+
+### Naver-style feed and sitemap rules to incorporate
+
+The following are operational rules from Naver Webmaster-style crawl submission guidance that the blog intake process should honor when preparing an article for publishing or republishing:
+
+- RSS feeds are useful for exposing recent content and should include the full article body for each item, not a summary-only version.
+- Since RSS tends to include full content, it is best used for newer or recent posts rather than for massive article inventories.
+- XML sitemap files are the preferred way to expose the complete set of content URLs because they can include many URLs without embedding article bodies.
+- Submit only URLs under the verified site domain and make sure the content is live and accessible.
+- Keep RSS and sitemap feed sizes within the platform limits; if an article set is large, split it into multiple sitemap files and use a sitemap index.
+- Ensure feed response times are acceptable and avoid delays caused by heavy or slow pages.
+- Include a valid publish/update timestamp where supported so platforms can detect freshness.
+- For large content sets, group URLs by type or section (for example, blog posts, landing pages, category pages) and use a sitemap index if needed.
+
+### Platform distribution checklist for each article
+
+Before finalizing a blog article for external publication, verify:
+
+- The canonical URL matches the final published page and does not redirect unpredictably.
+- The final article is included in the site’s content collection and the primary route resolves correctly.
+- The article metadata includes publication date, summary, title, slug, tags, and category.
+- The article is eligible to be included in any generated RSS feed, sitemap, or platform-specific feed export.
+- The article body is complete and free of placeholder or hidden content intended only for the local site preview.
+- Any platform-specific feed generation is limited to the approved article set and excludes drafts or unpublished content.
+- When content is intended for additional platforms, the article should be structured so it can be republished or reused without losing its source-of-truth metadata.
+
+### Publication packaging pattern
+
+When a blog package is imported, convert raw package material into a publish-ready package that includes:
+
+- final site article file in `content/insights/<slug>.md`
+- image assets in `assets/images/insights/<slug>/`
+- canonical metadata for the article page
+- publish date and update metadata suitable for feed exports
+- title, description, and summary text that can be reused in search and syndication tools
+- URL path and slug that remain stable across the site and any feed-generated URLs
+
+This allows the same approved content package to support the site, RSS feeds, XML sitemaps, and downstream distribution without requiring the raw package to be republished directly.
+
 ## Required Workflow
 
 ### 1. Intake and triage
