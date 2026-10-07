@@ -11,6 +11,7 @@
     "check:homepage-insights": "node scripts/test-homepage-insights-build.js",
     "finalize:heads": "node scripts/finalize-head-metadata.mjs",
     "check:search": "node scripts/check-search-readiness.mjs",
+    "report:indexing-safety": "node scripts/report-indexing-safety.mjs",
     "check:i18n-routing": "node scripts/i18n-routing-qa.js"
   },
   "devDependencies": {
