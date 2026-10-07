@@ -309,6 +309,70 @@ function checkCanonicalConfusion() {
   }
 }
 
+function listHtmlFiles(dir) {
+  const htmlFiles = [];
+
+  if (!fs.existsSync(dir)) {
+    return htmlFiles;
+  }
+
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      htmlFiles.push(...listHtmlFiles(fullPath));
+      continue;
+    }
+
+    if (entry.isFile() && entry.name.toLowerCase().endsWith(".html")) {
+      htmlFiles.push(fullPath);
+    }
+  }
+
+  return htmlFiles;
+}
+
+function checkInsightsTemplateSafety() {
+  const insightsIndexTemplatePath = "content/insights-index.njk";
+  const insightsIndexTemplate = readIfExists(insightsIndexTemplatePath);
+
+  if (!insightsIndexTemplate) {
+    errors.push(`${insightsIndexTemplatePath}: missing insights index template`);
+    return;
+  }
+
+  if (/noindex/i.test(insightsIndexTemplate)) {
+    errors.push(`${insightsIndexTemplatePath}: contains noindex directive`);
+  }
+}
+
+function checkGeneratedInsightsNoindex() {
+  const buildTargets = [
+    ".insights-build/insights",
+    "dist/insights",
+  ];
+
+  for (const buildTarget of buildTargets) {
+    if (!fs.existsSync(buildTarget)) {
+      continue;
+    }
+
+    const htmlFiles = listHtmlFiles(buildTarget);
+    for (const htmlFile of htmlFiles) {
+      const html = fs.readFileSync(htmlFile, "utf8");
+      const robots = getTagContent(html, /<meta\s+name="robots"\s+content="([^"]+)"/i);
+
+      if (!robots) {
+        warnings.push(`${htmlFile}: missing meta robots tag`);
+        continue;
+      }
+
+      if (/noindex/i.test(robots)) {
+        errors.push(`${htmlFile}: unexpected noindex directive (${robots})`);
+      }
+    }
+  }
+}
+
 function report() {
   if (warnings.length > 0) {
     console.log("Warnings:");
@@ -337,4 +401,6 @@ checkImportantRoutes();
 checkRobots();
 checkSitemap();
 checkCanonicalConfusion();
+checkInsightsTemplateSafety();
+checkGeneratedInsightsNoindex();
 report();
