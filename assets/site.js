@@ -54,6 +54,9 @@ const TALLY_ROUTE_CONTEXTS = {
 };
 
 const UTM_PARAM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+const INTERNAL_TRACKING_PARAMS = ["source", "originPage", "cta_clicked"];
+const ROUTE_CONTEXT_STORAGE_KEY = "son-route-context-v1";
+const ROUTE_CONTEXT_MAX_AGE_MS = 30 * 60 * 1000;
 
 const I18N_CONFIG = {
   enabled: true,
@@ -328,29 +331,8 @@ function createBrandMarkup(className = "site-brand__mark", variant = "full-color
   return `<img class="${className}" src="${pathTo(markPath)}" alt="Signal over Noise" width="1081" height="551" decoding="async"${loading}${fetchPriority}>`;
 }
 
-function withRouteParams(routePath, params) {
-  const query = new URLSearchParams();
-  Object.entries(params).forEach(([key, value]) => {
-    if (value != null && value !== "") {
-      query.set(key, String(value));
-    }
-  });
-
-  const queryString = query.toString();
-  return `${pathTo(routePath)}${queryString ? `?${queryString}` : ""}`;
-}
-
 function createFormRouteHref(routePath, options = {}) {
-  const params = new URLSearchParams({
-    source: options.source || getSourceContext(),
-    originPage: options.originPage || getOriginPage(),
-  });
-
-  if (options.ctaClicked) {
-    params.set("cta_clicked", options.ctaClicked);
-  }
-
-  return withRouteParams(routePath, Object.fromEntries(params.entries()));
+  return pathTo(routePath);
 }
 
 function createDiagnosticHref(options = {}) {
@@ -371,6 +353,77 @@ function createGetStartedHref(options = {}) {
 
 function getLinkCtaClicked(link, fallback) {
   return link.dataset.ctaClicked || link.dataset.track || link.dataset.trackSource || fallback;
+}
+
+function buildRouteContext(options = {}, targetHref = "") {
+  let targetPathname = "";
+  try {
+    targetPathname = normalizePathname(new URL(targetHref, window.location.origin).pathname);
+  } catch (_) {
+    targetPathname = normalizePathname(window.location.pathname);
+  }
+
+  return {
+    source: options.source || getSourceContext(),
+    originPage: options.originPage || getOriginPage(),
+    ctaClicked: options.ctaClicked || "direct_route",
+    targetPathname,
+    savedAt: Date.now(),
+  };
+}
+
+function persistRouteContext(context) {
+  try {
+    window.sessionStorage.setItem(ROUTE_CONTEXT_STORAGE_KEY, JSON.stringify(context));
+  } catch (_) {
+    // Ignore storage failures.
+  }
+}
+
+function readRouteContextFromStorage() {
+  try {
+    const raw = window.sessionStorage.getItem(ROUTE_CONTEXT_STORAGE_KEY);
+    if (!raw) {
+      return null;
+    }
+
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") {
+      return null;
+    }
+
+    if (!parsed.source || !parsed.originPage || !parsed.targetPathname) {
+      return null;
+    }
+
+    if (!Number.isFinite(parsed.savedAt) || Date.now() - parsed.savedAt > ROUTE_CONTEXT_MAX_AGE_MS) {
+      return null;
+    }
+
+    return parsed;
+  } catch (_) {
+    return null;
+  }
+}
+
+function stripInternalTrackingParamsFromUrl() {
+  const url = new URL(window.location.href);
+  let changed = false;
+
+  INTERNAL_TRACKING_PARAMS.forEach((param) => {
+    if (url.searchParams.has(param)) {
+      url.searchParams.delete(param);
+      changed = true;
+    }
+  });
+
+  if (!changed) {
+    return;
+  }
+
+  const nextQuery = url.searchParams.toString();
+  const nextUrl = `${url.pathname}${nextQuery ? `?${nextQuery}` : ""}${url.hash}`;
+  window.history.replaceState({}, "", nextUrl);
 }
 
 function buildTallyUrl(baseUrl, routeContext) {
@@ -580,56 +633,99 @@ function wireTrackedLinks() {
 
 function hydrateRouteLinks() {
   document.querySelectorAll("[data-diagnostic-link]").forEach((link) => {
+    const context = {
+      originPage: link.dataset.trackOrigin || getOriginPage(),
+      source: link.dataset.trackSource || getSourceContext(),
+      ctaClicked: getLinkCtaClicked(link, "diagnostic_cta"),
+    };
+
     link.setAttribute(
       "href",
-      createDiagnosticHref({
-        originPage: link.dataset.trackOrigin || getOriginPage(),
-        source: link.dataset.trackSource || getSourceContext(),
-        ctaClicked: getLinkCtaClicked(link, "diagnostic_cta"),
-      }),
+      createDiagnosticHref(context),
     );
+
+    link.addEventListener("click", () => {
+      persistRouteContext(buildRouteContext(context, link.href));
+    });
   });
 
   document.querySelectorAll("[data-workshop-link]").forEach((link) => {
+    const context = {
+      originPage: link.dataset.trackOrigin || getOriginPage(),
+      source: link.dataset.trackSource || getSourceContext(),
+      ctaClicked: getLinkCtaClicked(link, "workshop_cta"),
+    };
+
     link.setAttribute(
       "href",
-      createWorkshopHref({
-        originPage: link.dataset.trackOrigin || getOriginPage(),
-        source: link.dataset.trackSource || getSourceContext(),
-        ctaClicked: getLinkCtaClicked(link, "workshop_cta"),
-      }),
+      createWorkshopHref(context),
     );
+
+    link.addEventListener("click", () => {
+      persistRouteContext(buildRouteContext(context, link.href));
+    });
   });
 
   document.querySelectorAll("[data-toolkit-link]").forEach((link) => {
+    const context = {
+      originPage: link.dataset.trackOrigin || getOriginPage(),
+      source: link.dataset.trackSource || getSourceContext(),
+      ctaClicked: getLinkCtaClicked(link, "toolkit_cta"),
+    };
+
     link.setAttribute(
       "href",
-      createToolkitHref({
-        originPage: link.dataset.trackOrigin || getOriginPage(),
-        source: link.dataset.trackSource || getSourceContext(),
-        ctaClicked: getLinkCtaClicked(link, "toolkit_cta"),
-      }),
+      createToolkitHref(context),
     );
+
+    link.addEventListener("click", () => {
+      persistRouteContext(buildRouteContext(context, link.href));
+    });
   });
 
   document.querySelectorAll("[data-get-started-link]").forEach((link) => {
+    const context = {
+      originPage: link.dataset.trackOrigin || getOriginPage(),
+      source: link.dataset.trackSource || getSourceContext(),
+      ctaClicked: getLinkCtaClicked(link, "paid_support_cta"),
+    };
+
     link.setAttribute(
       "href",
-      createGetStartedHref({
-        originPage: link.dataset.trackOrigin || getOriginPage(),
-        source: link.dataset.trackSource || getSourceContext(),
-        ctaClicked: getLinkCtaClicked(link, "paid_support_cta"),
-      }),
+      createGetStartedHref(context),
     );
+
+    link.addEventListener("click", () => {
+      persistRouteContext(buildRouteContext(context, link.href));
+    });
   });
 }
 
 function resolvePageContext() {
+  const stored = readRouteContextFromStorage();
+  const currentPathname = normalizePathname(window.location.pathname);
   const params = new URLSearchParams(window.location.search);
+
+  const legacyContext = {
+    source: params.get("source") || "",
+    originPage: params.get("originPage") || "",
+    ctaClicked: params.get("cta_clicked") || "",
+  };
+
+  if (legacyContext.source || legacyContext.originPage || legacyContext.ctaClicked) {
+    persistRouteContext(buildRouteContext({
+      source: legacyContext.source || getSourceContext(),
+      originPage: legacyContext.originPage || getOriginPage(),
+      ctaClicked: legacyContext.ctaClicked || "direct_route",
+    }, window.location.pathname));
+  }
+
+  const storedContextMatchesCurrentPath = stored && stored.targetPathname === currentPathname;
+
   return {
-    source: params.get("source") || getSourceContext(),
-    originPage: params.get("originPage") || getOriginPage(),
-    ctaClicked: params.get("cta_clicked") || "direct_route",
+    source: legacyContext.source || (storedContextMatchesCurrentPath ? stored.source : "") || getSourceContext(),
+    originPage: legacyContext.originPage || (storedContextMatchesCurrentPath ? stored.originPage : "") || getOriginPage(),
+    ctaClicked: legacyContext.ctaClicked || (storedContextMatchesCurrentPath ? stored.ctaClicked : "") || "direct_route",
   };
 }
 
@@ -990,6 +1086,7 @@ function emitPageConversion() {
 }
 
 if (!maybeApplyLanguageRedirect()) {
+  stripInternalTrackingParamsFromUrl();
   renderHeader();
   renderFooter();
   hydrateRouteLinks();

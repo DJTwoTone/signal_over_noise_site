@@ -12,7 +12,8 @@
     "finalize:heads": "node scripts/finalize-head-metadata.mjs",
     "check:search": "node scripts/check-search-readiness.mjs",
     "report:indexing-safety": "node scripts/report-indexing-safety.mjs",
-    "check:i18n-routing": "node scripts/i18n-routing-qa.js"
+    "check:i18n-routing": "node scripts/i18n-routing-qa.js",
+    "crawl:seo": "node scripts/manual-seo-crawl.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
