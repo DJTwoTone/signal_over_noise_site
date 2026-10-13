@@ -16,14 +16,44 @@ try {
 }
 
 const usd = (krw) => Math.round((krw / rate) / 10) * 10;
+
+function updateOfferPrice(html, prefixPattern, replacement) {
+  return html.replace(prefixPattern, replacement);
+}
+
 for (const relative of ["services/index.html", "ko/services/index.html"]) {
   const file = path.join(root, relative);
   let html = await fs.readFile(file, "utf8");
+  const isKo = relative.startsWith("ko/");
+
   html = html.replace(/(Focused Coaching \/ Review Session: &#8361;150,000|집중 코칭\/리뷰 세션: ₩150,000)[^<]*/g, (m) => m.replace(/\(about \$\d+\)|\(약 \$\d+\)/, relative.startsWith("ko/") ? `(약 $${usd(150000)})` : `(about $${usd(150000)})`));
   html = html.replace(/(Presentation Sprint: from &#8361;375,000|프레젠테이션 스프린트: ₩375,000부터)[^<]*/g, (m) => m.replace(/\(about \$\d+\)|\(약 \$\d+\)/, relative.startsWith("ko/") ? `(약 $${usd(375000)})` : `(about $${usd(375000)})`));
   html = html.replace(/(Deck Building: from &#8361;1,200,000|덱 제작: ₩1,200,000부터)[^<]*/g, (m) => m.replace(/\(about \$\d+\)|\(약 \$\d+\)/, relative.startsWith("ko/") ? `(약 $${usd(1200000)})` : `(about $${usd(1200000)})`));
-  html = html.replace(/(<span class="price-approx">\(about \$)\d+(\)<\/span>)/, `$1${usd(150000)}$2`);
-  html = html.replace(/(<span class="price-approx">\(약 \$)\d+(\)<\/span>)/, `$1${usd(150000)}$2`);
+
+  if (isKo) {
+    html = updateOfferPrice(
+      html,
+      /(<p class="offer-price">₩150,000부터)(?:\s*<span class="price-approx">\([^<]*\)<\/span>)?(<\/p>)/,
+      `$1 <span class="price-approx">(약 $${usd(150000)})</span>$2`,
+    );
+    html = updateOfferPrice(
+      html,
+      /(<p class="offer-price">₩1,000,000부터)(?:\s*<span class="price-approx">\([^<]*\)<\/span>)?(<\/p>)/,
+      `$1 <span class="price-approx">(약 $${usd(1000000)})</span>$2`,
+    );
+  } else {
+    html = updateOfferPrice(
+      html,
+      /(<p class="offer-price">From &#8361;150,000)(?:\s*<span class="price-approx">\([^<]*\)<\/span>)?(<\/p>)/,
+      `$1 <span class="price-approx">(about $${usd(150000)})</span>$2`,
+    );
+    html = updateOfferPrice(
+      html,
+      /(<p class="offer-price">From &#8361;1,000,000)(?:\s*<span class="price-approx">\([^<]*\)<\/span>)?(<\/p>)/,
+      `$1 <span class="price-approx">(about $${usd(1000000)})</span>$2`,
+    );
+  }
+
   await fs.writeFile(file, html);
 }
 console.log(`USD equivalents updated using ${rate.toFixed(2)} KRW/USD.`);

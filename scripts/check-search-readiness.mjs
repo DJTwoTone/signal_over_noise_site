@@ -32,6 +32,7 @@ const importantRoutes = [
 
 const routeFiles = [
   "index.html",
+  "about/index.html",
   "services/index.html",
   "diagnostic/index.html",
   "toolkit/index.html",
@@ -39,6 +40,7 @@ const routeFiles = [
   "proof/index.html",
   "contact/index.html",
   "get-started/index.html",
+  "terms/index.html",
   "thanks/index.html",
   "thanks-diagnostic/index.html",
   "thanks-get-started/index.html",
@@ -48,6 +50,7 @@ const routeFiles = [
   "process/index.html",
   "packages/index.html",
   "ko/index.html",
+  "ko/about/index.html",
   "ko/services/index.html",
   "ko/diagnostic/index.html",
   "ko/toolkit/index.html",
@@ -55,6 +58,7 @@ const routeFiles = [
   "ko/proof/index.html",
   "ko/contact/index.html",
   "ko/get-started/index.html",
+  "ko/terms/index.html",
   "ko/thanks/index.html",
   "ko/thanks-diagnostic/index.html",
   "ko/thanks-get-started/index.html",
@@ -373,6 +377,138 @@ function checkGeneratedInsightsNoindex() {
   }
 }
 
+function getInsightHrefMap(html) {
+  const matches = [...html.matchAll(/<link\s+rel="alternate"\s+hreflang="(en|ko|x-default)"\s+href="([^"]+)"/gi)];
+  const map = new Map();
+  for (const match of matches) {
+    map.set(match[1].toLowerCase(), match[2]);
+  }
+  return map;
+}
+
+function checkGeneratedInsightsHreflangPolicy() {
+  const buildTargets = [
+    ".insights-build/insights",
+    "dist/insights",
+  ];
+
+  for (const buildTarget of buildTargets) {
+    if (!fs.existsSync(buildTarget)) {
+      continue;
+    }
+
+    const htmlFiles = listHtmlFiles(buildTarget);
+    for (const htmlFile of htmlFiles) {
+      const html = fs.readFileSync(htmlFile, "utf8");
+      const rel = path.relative(buildTarget, htmlFile).replaceAll("\\", "/");
+      const canonical = getTagContent(html, /<link\s+rel="canonical"\s+href="([^"]+)"/i);
+      const alternates = getInsightHrefMap(html);
+      const isInsightsIndex = rel === "index.html";
+
+      if (!canonical) {
+        errors.push(`${htmlFile}: missing canonical link`);
+        continue;
+      }
+
+      const expectedEn = canonical;
+      const expectedDefault = canonical;
+
+      if (alternates.get("en") !== expectedEn) {
+        errors.push(`${htmlFile}: missing or incorrect hreflang=en for canonical URL`);
+      }
+
+      if (alternates.get("x-default") !== expectedDefault) {
+        errors.push(`${htmlFile}: missing or incorrect hreflang=x-default for canonical URL`);
+      }
+
+      if (isInsightsIndex) {
+        const koExpected = `${SITE_URL}/ko/insights/`;
+        if (alternates.get("ko") !== koExpected) {
+          errors.push(`${htmlFile}: insights index must publish hreflang=ko to ${koExpected}`);
+        }
+      } else if (alternates.has("ko")) {
+        errors.push(`${htmlFile}: article pages must not publish hreflang=ko until Korean counterparts exist`);
+      }
+    }
+  }
+}
+
+function checkInsightsSitemapAlternates() {
+  const sitemapTargets = [
+    ".insights-build/insights-sitemap.xml",
+    "insights-sitemap.xml",
+  ];
+
+  for (const sitemapTarget of sitemapTargets) {
+    if (!fs.existsSync(sitemapTarget)) {
+      continue;
+    }
+
+    const xml = fs.readFileSync(sitemapTarget, "utf8");
+    const urlBlocks = [...xml.matchAll(/<url>[\s\S]*?<\/url>/g)].map((match) => match[0]);
+
+    for (const block of urlBlocks) {
+      const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+      if (!loc || !loc.startsWith(`${SITE_URL}/insights/`)) {
+        continue;
+      }
+
+      const enHref = block.match(/hreflang="en"\s+href="([^"]+)"/)?.[1];
+      const koHref = block.match(/hreflang="ko"\s+href="([^"]+)"/)?.[1];
+      const defaultHref = block.match(/hreflang="x-default"\s+href="([^"]+)"/)?.[1];
+      const isInsightsIndex = loc === `${SITE_URL}/insights/`;
+
+      if (enHref !== loc) {
+        errors.push(`${sitemapTarget}: ${loc} is missing hreflang=en to itself`);
+      }
+
+      if (defaultHref !== loc) {
+        errors.push(`${sitemapTarget}: ${loc} is missing hreflang=x-default to itself`);
+      }
+
+      if (isInsightsIndex) {
+        const expectedKo = `${SITE_URL}/ko/insights/`;
+        if (koHref !== expectedKo) {
+          errors.push(`${sitemapTarget}: insights index must include hreflang=ko to ${expectedKo}`);
+        }
+      } else if (koHref) {
+        errors.push(`${sitemapTarget}: ${loc} must not include hreflang=ko until Korean article routes exist`);
+      }
+    }
+  }
+
+  const rootSitemap = readIfExists("sitemap.xml");
+  if (!rootSitemap) {
+    return;
+  }
+
+  const rootBlocks = [...rootSitemap.matchAll(/<url>[\s\S]*?<\/url>/g)].map((match) => match[0]);
+  for (const block of rootBlocks) {
+    const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    if (!loc || !loc.startsWith(`${SITE_URL}/insights/`)) {
+      continue;
+    }
+
+    const enHref = block.match(/hreflang="en"\s+href="([^"]+)"/)?.[1];
+    const koHref = block.match(/hreflang="ko"\s+href="([^"]+)"/)?.[1];
+    const defaultHref = block.match(/hreflang="x-default"\s+href="([^"]+)"/)?.[1];
+    const isInsightsIndex = loc === `${SITE_URL}/insights/`;
+
+    if (enHref !== loc || defaultHref !== loc) {
+      errors.push(`sitemap.xml: ${loc} insights entry must include hreflang=en and hreflang=x-default to itself`);
+    }
+
+    if (isInsightsIndex) {
+      const expectedKo = `${SITE_URL}/ko/insights/`;
+      if (koHref !== expectedKo) {
+        errors.push(`sitemap.xml: insights index must include hreflang=ko to ${expectedKo}`);
+      }
+    } else if (koHref) {
+      errors.push(`sitemap.xml: ${loc} must not include hreflang=ko while Korean article routes are unavailable`);
+    }
+  }
+}
+
 function report() {
   if (warnings.length > 0) {
     console.log("Warnings:");
@@ -403,4 +539,6 @@ checkSitemap();
 checkCanonicalConfusion();
 checkInsightsTemplateSafety();
 checkGeneratedInsightsNoindex();
+checkGeneratedInsightsHreflangPolicy();
+checkInsightsSitemapAlternates();
 report();
