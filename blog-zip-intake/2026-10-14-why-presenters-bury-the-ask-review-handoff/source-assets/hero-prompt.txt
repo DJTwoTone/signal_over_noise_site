@@ -1,0 +1,14 @@
+Use case: photorealistic-natural
+Asset type: Insight Desk article hero background, 16:9
+Primary request: Create a warm, premium editorial visual for an article about telling a presentation room whether it should decide, advise, or receive an update.
+Scene/backdrop: The quiet moment just before an important meeting begins, at a cream-colored table in a bright, understated meeting room.
+Subject: On the right half, natural adult hands arranging three simple blank agenda cards with distinct abstract marks (a selected check, a speech bubble, and an information dot) beside a printed presentation outline and a dark navy pen. No visible faces.
+Style/medium: Believable editorial still-life photography with subtle tactile paper grain, natural skin texture, not glossy stock photography.
+Composition/framing: Wide 16:9 landscape. Keep the left 55 percent calm and uncluttered in warm ivory with gentle light falloff, suitable for a large dark headline overlay. Focus the hand, cards, and papers on the right third. Slight top-down three-quarter angle. No excessive props.
+Lighting/mood: Soft morning window light, thoughtful and calm, practical rather than staged.
+Color palette: Warm ivory, deep navy, pale blue, muted gold, natural wood.
+Materials/textures: Matte paper, restrained shadows, a small amount of pencil annotation made only of abstract lines.
+Constraints: No readable text, no letters, no numbers, no logos, no fake brand names, no computer screen, no handshake, no cheering, no robot/AI imagery, no flags or cultural stereotypes, no artificial looking hands, no exaggerated expressions, no visual clutter, no implied client case or measured result.
+Avoid: Generic boardroom stock photo, decorative coffee-cup scene, glossy SaaS gradient blobs.
+Text (verbatim): none; background only, final title and branding will be added as a deterministic overlay.
+Aspect ratio: 16:9
