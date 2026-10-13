@@ -63,9 +63,9 @@ primaryCTA:
   type: "diagnostic"
 
 secondaryCTA:
-  label:
-  url:
-  type:
+  label: "Five Questions Every Data Slide Should Answer"
+  url: "/insights/five-questions-data-slide/"
+  type: "article"
 
 proofNeeded:
   - "The onboarding example is synthetic and must be identified as such."

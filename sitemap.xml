@@ -166,49 +166,94 @@
 
   <!-- insights:start -->
   <url>
-    <loc>https://signal-over-noise.coach/insights/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/" />
+      <xhtml:link rel="alternate" hreflang="ko" href="https://signal-over-noise.coach/ko/insights/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/five-questions-data-slide/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/five-questions-data-slide/</loc>
+      <lastmod>2026-10-05T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/five-questions-data-slide/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/five-questions-data-slide/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/accurate-chart-overstates-case/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/accurate-chart-overstates-case/</loc>
+      <lastmod>2026-09-28T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/accurate-chart-overstates-case/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/accurate-chart-overstates-case/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/ai-presentation-decision-visible/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/ai-presentation-decision-visible/</loc>
+      <lastmod>2026-09-21T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/ai-presentation-decision-visible/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/ai-presentation-decision-visible/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/build-recovery-points-into-spoken-language/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/build-recovery-points-into-spoken-language/</loc>
+      <lastmod>2026-09-18T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/build-recovery-points-into-spoken-language/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/build-recovery-points-into-spoken-language/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/repeat-key-words-when-clarity-matters/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/repeat-key-words-when-clarity-matters/</loc>
+      <lastmod>2026-09-14T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/repeat-key-words-when-clarity-matters/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/repeat-key-words-when-clarity-matters/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/make-the-actor-obvious/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/make-the-actor-obvious/</loc>
+      <lastmod>2026-09-08T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/make-the-actor-obvious/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/make-the-actor-obvious/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/unpack-dense-noun-stacks/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/unpack-dense-noun-stacks/</loc>
+      <lastmod>2026-09-04T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/unpack-dense-noun-stacks/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/unpack-dense-noun-stacks/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/turn-abstract-nouns-back-into-actions/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/turn-abstract-nouns-back-into-actions/</loc>
+      <lastmod>2026-09-01T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/turn-abstract-nouns-back-into-actions/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/turn-abstract-nouns-back-into-actions/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/international-presentation-assumptions/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/international-presentation-assumptions/</loc>
+      <lastmod>2026-08-25T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/international-presentation-assumptions/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/international-presentation-assumptions/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/presentation-needs-rehearsal-or-rewrite/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/presentation-needs-rehearsal-or-rewrite/</loc>
+      <lastmod>2026-08-18T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/presentation-needs-rehearsal-or-rewrite/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/presentation-needs-rehearsal-or-rewrite/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/editing-script-vs-fixing-presentation/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/editing-script-vs-fixing-presentation/</loc>
+      <lastmod>2026-08-05T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/editing-script-vs-fixing-presentation/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/editing-script-vs-fixing-presentation/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/international-audience-presentation-checklist/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/international-audience-presentation-checklist/</loc>
+      <lastmod>2026-08-05T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/international-audience-presentation-checklist/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/international-audience-presentation-checklist/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/english-presentation-clear-but-not-persuasive/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/english-presentation-clear-but-not-persuasive/</loc>
+      <lastmod>2026-07-02T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/english-presentation-clear-but-not-persuasive/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/english-presentation-clear-but-not-persuasive/" />
+    </url>
   <url>
-    <loc>https://signal-over-noise.coach/insights/ai-made-presentation-human-review/</loc>
-  </url>
+      <loc>https://signal-over-noise.coach/insights/ai-made-presentation-human-review/</loc>
+      <lastmod>2026-07-01T00:00:00.000Z</lastmod>
+      <xhtml:link rel="alternate" hreflang="en" href="https://signal-over-noise.coach/insights/ai-made-presentation-human-review/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://signal-over-noise.coach/insights/ai-made-presentation-human-review/" />
+    </url>
   <!-- insights:end -->
 </urlset>

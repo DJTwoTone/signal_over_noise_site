@@ -13,7 +13,9 @@ const SOCIAL_OVERRIDES = new Map([
 
 const routeFiles = [
   "index.html",
+  "about/index.html",
   "services/index.html",
+  "terms/index.html",
   "process/index.html",
   "proof/index.html",
   "workshops/index.html",
@@ -25,7 +27,9 @@ const routeFiles = [
   "privacy/index.html",
   "packages/index.html",
   "ko/index.html",
+  "ko/about/index.html",
   "ko/services/index.html",
+  "ko/terms/index.html",
   "ko/process/index.html",
   "ko/proof/index.html",
   "ko/workshops/index.html",
@@ -132,12 +136,30 @@ function updateRoute(filePath) {
     socialImageAlt,
   });
 
-  const insertPoint = /(\s*<(?:meta name="robots"|link rel="alternate" hreflang="x-default")[^\n]*>\r?\n)/;
-  if (!insertPoint.test(html)) {
+  const insertPoints = [
+    /(<meta\s+name="robots"\s+content="[^"]*">)/i,
+    /(<link\s+rel="alternate"\s+hreflang="x-default"\s+href="[^"]*">)/i,
+    /(<link\s+rel="alternate"\s+hreflang="ko"\s+href="[^"]*">)/i,
+    /(<link\s+rel="canonical"\s+href="[^"]*">)/i,
+  ];
+
+  let updated = html;
+  let inserted = false;
+  for (const insertPoint of insertPoints) {
+    if (!insertPoint.test(updated)) {
+      continue;
+    }
+
+    updated = updated.replace(insertPoint, `$1\n${block}`);
+    inserted = true;
+    break;
+  }
+
+  if (!inserted) {
     throw new Error(`${filePath}: could not find metadata insertion point`);
   }
 
-  fs.writeFileSync(filePath, html.replace(insertPoint, `$1${block}\n`), "utf8");
+  fs.writeFileSync(filePath, updated, "utf8");
 }
 
 function removeNoindexRoutesFromSitemap() {

@@ -9,14 +9,23 @@ const insightsSitemapPath = path.join(root, ".insights-build", "insights-sitemap
 const SITE = "https://signal-over-noise.coach";
 
 function parseLocEntries(xml) {
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
-    .map((match) => match[1].trim())
-    .filter((loc) => loc.startsWith(`${SITE}/insights/`));
+  return [...xml.matchAll(/<url>[\s\S]*?<\/url>/g)]
+    .map((match) => match[0])
+    .filter((urlBlock) => {
+      const loc = urlBlock.match(/<loc>([^<]+)<\/loc>/)?.[1]?.trim();
+      return Boolean(loc && loc.startsWith(`${SITE}/insights/`));
+    });
 }
 
-function buildInsightUrlBlock(locs) {
-  return locs
-    .map((loc) => `  <url>\n    <loc>${loc}</loc>\n  </url>`)
+function buildInsightUrlBlock(urlBlocks) {
+  return urlBlocks
+    .map((block) => block
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "")
+      .trim()
+      .split("\n")
+      .map((line) => `  ${line}`)
+      .join("\n"))
     .join("\n");
 }
 
@@ -32,12 +41,12 @@ function syncRootSitemap() {
   const rootSitemap = fs.readFileSync(rootSitemapPath, "utf8");
   const insightsSitemap = fs.readFileSync(insightsSitemapPath, "utf8");
 
-  const insightLocs = parseLocEntries(insightsSitemap);
-  if (insightLocs.length === 0) {
+  const insightUrlBlocks = parseLocEntries(insightsSitemap);
+  if (insightUrlBlocks.length === 0) {
     throw new Error("No insight routes found in .insights-build/insights-sitemap.xml");
   }
 
-  const freshInsightBlock = buildInsightUrlBlock(insightLocs);
+  const freshInsightBlock = buildInsightUrlBlock(insightUrlBlocks);
 
   let next = rootSitemap;
 
@@ -61,7 +70,7 @@ function syncRootSitemap() {
   }
 
   fs.writeFileSync(rootSitemapPath, next, "utf8");
-  console.log(`Updated sitemap.xml with ${insightLocs.length} insights route(s).`);
+  console.log(`Updated sitemap.xml with ${insightUrlBlocks.length} insights route(s).`);
 }
 
 syncRootSitemap();
