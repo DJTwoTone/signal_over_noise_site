@@ -67,11 +67,11 @@ function getRequired(html, filePath, pattern, label) {
 
 function removeGeneratedHeadMetadata(html) {
   return html
-    .replace(/^\s*<meta\s+property="og:[^\n]*\n/gim, "")
-    .replace(/^\s*<meta\s+name="twitter:[^\n]*\n/gim, "")
-    .replace(/^\s*<meta\s+name="theme-color"[^\n]*\n/gim, "")
-    .replace(/^\s*<link\s+rel="apple-touch-icon"[^\n]*\n/gim, "")
-    .replace(/^\s*<link\s+rel="manifest"[^\n]*\n/gim, "");
+    .replace(/<meta\b[^>]*\bproperty="og:[^"]+"[^>]*>\s*/gi, "")
+    .replace(/<meta\b[^>]*\bname="twitter:[^"]+"[^>]*>\s*/gi, "")
+    .replace(/<meta\b[^>]*\bname="theme-color"[^>]*>\s*/gi, "")
+    .replace(/<link\b[^>]*\brel="apple-touch-icon"[^>]*>\s*/gi, "")
+    .replace(/<link\b[^>]*\brel="manifest"[^>]*>\s*/gi, "");
 }
 
 function alignDeprecatedPackageAlternates(html) {
@@ -87,7 +87,7 @@ function ensureThanksNoindex(html) {
   }
 
   return html.replace(
-    /(\s*<link rel="alternate" hreflang="x-default"[^\n]*>\r?\n)/,
+    /(\s*<link\b[^>]*\bhreflang="x-default"[^>]*>\s*)/i,
     `$1    <meta name="robots" content="noindex, follow">\n`,
   );
 }
@@ -113,8 +113,8 @@ function buildMetadataBlock({ title, description, canonical, rootPrefix, socialI
 function updateRoute(filePath) {
   let html = fs.readFileSync(filePath, "utf8");
   const title = getRequired(html, filePath, /<title>([^<]*)<\/title>/i, "title");
-  const description = getRequired(html, filePath, /<meta\s+name="description"\s+content="([^"]*)"/i, "description");
-  const canonical = getRequired(html, filePath, /<link\s+rel="canonical"\s+href="([^"]*)"/i, "canonical");
+  const description = getRequired(html, filePath, /<meta\b[^>]*\bname="description"[^>]*\bcontent="([^"]*)"[^>]*>/i, "description");
+  const canonical = getRequired(html, filePath, /<link\b[^>]*\brel="canonical"[^>]*\bhref="([^"]*)"[^>]*>/i, "canonical");
   const [socialImage, socialImageAlt] = SOCIAL_OVERRIDES.get(filePath) || [SOCIAL_IMAGE, "Signal over Noise logo"];
 
   html = removeGeneratedHeadMetadata(html);
@@ -137,10 +137,13 @@ function updateRoute(filePath) {
   });
 
   const insertPoints = [
-    /(<meta\s+name="robots"\s+content="[^"]*">)/i,
-    /(<link\s+rel="alternate"\s+hreflang="x-default"\s+href="[^"]*">)/i,
-    /(<link\s+rel="alternate"\s+hreflang="ko"\s+href="[^"]*">)/i,
-    /(<link\s+rel="canonical"\s+href="[^"]*">)/i,
+    /(<meta\b[^>]*\bname="robots"[^>]*\bcontent="[^"]*"[^>]*>)/i,
+    /(<meta\b[^>]*\bcontent="[^"]*"[^>]*\bname="robots"[^>]*>)/i,
+    /(<link\b[^>]*\brel="alternate"[^>]*\bhreflang="x-default"[^>]*>)/i,
+    /(<link\b[^>]*\bhreflang="x-default"[^>]*\brel="alternate"[^>]*>)/i,
+    /(<link\b[^>]*\brel="alternate"[^>]*\bhreflang="ko"[^>]*>)/i,
+    /(<link\b[^>]*\bhreflang="ko"[^>]*\brel="alternate"[^>]*>)/i,
+    /(<link\b[^>]*\brel="canonical"[^>]*>)/i,
   ];
 
   let updated = html;
