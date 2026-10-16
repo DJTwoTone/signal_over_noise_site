@@ -313,6 +313,33 @@ function checkCanonicalConfusion() {
   }
 }
 
+function checkGeneratedMetadataIntegrity() {
+  const generatedPatterns = [
+    ["og:title", /<meta\b[^>]*\bproperty="og:title"[^>]*>/gi],
+    ["og:description", /<meta\b[^>]*\bproperty="og:description"[^>]*>/gi],
+    ["og:url", /<meta\b[^>]*\bproperty="og:url"[^>]*>/gi],
+    ["twitter:title", /<meta\b[^>]*\bname="twitter:title"[^>]*>/gi],
+    ["twitter:description", /<meta\b[^>]*\bname="twitter:description"[^>]*>/gi],
+    ["theme-color", /<meta\b[^>]*\bname="theme-color"[^>]*>/gi],
+    ["apple-touch-icon", /<link\b[^>]*\brel="apple-touch-icon"[^>]*>/gi],
+    ["manifest", /<link\b[^>]*\brel="manifest"[^>]*>/gi],
+  ];
+
+  for (const relPath of routeFiles) {
+    const html = readIfExists(relPath);
+    if (!html) {
+      continue;
+    }
+
+    for (const [tagName, pattern] of generatedPatterns) {
+      const matches = [...html.matchAll(pattern)];
+      if (matches.length > 1) {
+        errors.push(`${relPath}: duplicate generated ${tagName} metadata tag found (${matches.length} occurrences)`);
+      }
+    }
+  }
+}
+
 function listHtmlFiles(dir) {
   const htmlFiles = [];
 
@@ -537,6 +564,7 @@ checkImportantRoutes();
 checkRobots();
 checkSitemap();
 checkCanonicalConfusion();
+checkGeneratedMetadataIntegrity();
 checkInsightsTemplateSafety();
 checkGeneratedInsightsNoindex();
 checkGeneratedInsightsHreflangPolicy();
