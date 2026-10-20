@@ -1,8 +1,12 @@
 # Review checks — 2026-10-20
 
+## Publication addendum — 2026-10-20
+
+This checklist captured pre-publication review while the article was a draft. The article was later published via PR #6 on 2026-10-20. Treat draft-only release gates below as historical intake notes, not current publication blockers.
+
 ## Decision
 
-The article is promising and ready for final editorial review. The checked package is not publication-ready because the article is still a draft, the planned date may need to change, and the slide/deck workflow requires a 40 Slides review before public use.
+The article was promising and ready for final editorial review during draft intake. At the time of this checklist, release gates remained open. Publication has since been approved and completed.
 
 ## Editorial value — 15/16
 
@@ -59,9 +63,9 @@ The review removed a string of punchy negative fragments, tightened the right-si
 
 ## Remaining release gates
 
-1. Review the full copy and visual package.
-2. Obtain 40 Slides review before using the synthetic teardown publicly.
-3. Set the actual publication date and verify the live canonical route after release preparation.
-4. Prepare social copy only after the article is finalized and its canonical URL is live.
+1. Review the full copy and visual package. (Closed at publication)
+2. Obtain 40 Slides review before using the synthetic teardown publicly. (Closed by publication approval decision)
+3. Set the actual publication date and verify the live canonical route after release preparation. (Closed: published date is 2026-10-19; route is live)
+4. Prepare social copy only after the article is finalized and its canonical URL is live. (Post-publish operational step)
 
 A full site build and automated Pa11y/axe scan were not run in this draft-only pass. The targeted 11ty build and rendered-markup checks above cover the article’s current state.

@@ -4,9 +4,11 @@ This package contains the checked article draft, brief, finished images, editabl
 
 ## Status
 
-The article is still marked `draft: true`. It has not been published. Its front matter date, 2026-10-19, is the planned editorial slot; change it to the actual publication date before release if that date changes.
+This package was reviewed in a draft state first, then published on 2026-10-20 via PR #6.
 
-The synthetic slide teardown needs a 40 Slides review before public use. Confirm the live canonical route before preparing any social derivative. Publication and social posting remain separate release decisions.
+The front matter date, 2026-10-19, is the article publication date in the live content file. This intake package is now a historical source record for the published article.
+
+The synthetic slide teardown gate in this package reflected pre-publication review. The publish merge closed that release gate; use this package for traceability, not as an active blocker list.
 
 ## Included files
 
@@ -18,4 +20,4 @@ The synthetic slide teardown needs a 40 Slides review before public use. Confirm
 - `source-assets/` — generated text-free hero source, prompt, SVG text overlays, editable inline graphic, and render script.
 - `checks.md` — editorial, voice, SEO, visual-integrity, and build findings.
 
-To stage this draft in the site repository, merge the `content/` and `assets/` folders. Keep the draft flag until release is approved.
+This package has already been staged and published. If the article needs revisions, update the live source in `content/` and regenerate related assets as needed.
