@@ -959,8 +959,8 @@ function ensureProofModal() {
         <button class="button button--ghost button--compact" type="button" data-proof-modal-close>${copy.modal.close}</button>
       </div>
       <div class="proof-modal__actions">
-        <a class="button button--secondary" href="#" target="_blank" rel="noopener" data-proof-modal-open>${copy.modal.openInNewTab}</a>
-        <a class="button button--primary" href="#" download data-proof-modal-download>${copy.modal.downloadPdf}</a>
+        <a class="button button--secondary" href="#" target="_blank" rel="noopener" data-proof-modal-open><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" focusable="false" class="proof-modal__action-icon"><g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M35 12h17v17M52 12 31 33M47 35v14H12V14h14"/><path d="M41 12h11v11" stroke="currentColor"/></g></svg>${copy.modal.openInNewTab}</a>
+        <a class="button button--primary" href="#" download data-proof-modal-download><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" focusable="false" class="proof-modal__action-icon"><g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10v29M13 42v11h38V42M23 53v-5h18v5"/><path d="m21 28 11 11 11-11" stroke="currentColor"/></g></svg>${copy.modal.downloadPdf}</a>
       </div>
       <div class="proof-modal__viewer">
         <iframe class="proof-modal__iframe" title="${copy.modal.iframeTitle}" loading="lazy"></iframe>
