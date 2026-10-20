@@ -1,0 +1,14 @@
+Use case: photorealistic-natural
+Asset type: Signal over Noise Insight Desk article hero background, later cropped to 16:9 and 1.91:1
+Primary request: Create a human, credible editorial image for an article about checking whether a proposal asks for a larger commitment than its evidence supports.
+Scene/backdrop: A real-feeling presentation review workspace at a warm ivory table near a window.
+Subject: On the right half, a reviewer’s natural adult hands examine two separate matte paper handoff sheets and a small blank note card placed at the end of the sequence. Use simple abstract rules and empty boxes only to suggest process steps; no writing or interface copy. One hand holds a dark navy pen near the late-stage reviewer note, as if questioning the timing.
+Composition/framing: Wide landscape. Keep the left 54 percent mostly open and light for a large headline overlay. Group the paper sequence and hands on the right third. Three-quarter overhead angle, gentle asymmetry, realistic breathing room around every object.
+Style/medium: Believable editorial photography, tactile paper grain, natural skin and material texture, not glossy stock photography and not a digital illustration.
+Lighting/mood: Soft window light, calm and attentive, practical rather than staged.
+Color palette: Warm cream, deep navy, muted gold, pale blue, natural wood.
+Material details: Matte cream paper, subtle blue-gray ruled lines, a small gold paper tab, restrained natural shadows.
+Constraints: This is an illustrative editorial scene, not client material. No visible faces, no readable text or handwriting, no letters, no numbers, no logos, no watermark, no screen, no laptop, no coffee cup, no meeting-room scene, no handshake, no cheering, no robot or AI brain, no flags, no stereotypes, no clutter, no overly perfect symmetry, no distorted or extra fingers.
+Avoid: Generic corporate stock photo, posed pointing, glossy SaaS gradients, fake screenshot styling, visually implying measured time savings or proven outcomes.
+Text (verbatim): none; background only. Add all approved headline and brand text as a separate deterministic overlay.
+Aspect ratio: 16:9
