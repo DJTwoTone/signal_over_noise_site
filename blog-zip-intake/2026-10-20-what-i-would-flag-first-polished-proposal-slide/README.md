@@ -20,4 +20,4 @@ The synthetic slide teardown gate in this package reflected pre-publication revi
 - `source-assets/` — generated text-free hero source, prompt, SVG text overlays, editable inline graphic, and render script.
 - `checks.md` — editorial, voice, SEO, visual-integrity, and build findings.
 
-This package has already been staged and published. If the article needs revisions, update the live source in `content/` and regenerate related assets as needed.
+This package has already been staged and published. If the article needs revisions, update the repo-root live source at `content/insights/what-i-would-flag-first-polished-proposal-slide.md` (not this package snapshot), then regenerate related assets as needed.
