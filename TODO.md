@@ -55,9 +55,9 @@ Last updated: 2026-05-04
   - Final CTA band
   - Services/process/workshops CTAs
   - Get Started CTAs
-- [ ] Choose and install the analytics setup.
-  - Current site has `data-track` hooks.
-  - Need: decide analytics provider and verify events are actually captured.
+- [x] Install GA4 tracking and page-level event hooks.
+  - GA4 Measurement ID: `G-VWSJGBW70Y`.
+  - Remaining: verify Realtime and event receipt in the GA4 property, then mark `generate_lead` as a key event.
 
 ## Copy And Content
 

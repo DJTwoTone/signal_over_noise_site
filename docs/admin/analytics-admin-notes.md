@@ -5,8 +5,8 @@
 - GA4 property name: Signal over Noise Website
 - Measurement ID: G-VWSJGBW70Y
 - Data stream URL: https://signal-over-noise.coach
-- Install method: Manual gtag.js snippet in static HTML pages
-- Install status: Installed in repo / Manual verification required
+- Install method: Manual gtag.js snippets, with a shared fallback in `assets/site.js` for public pages without an inline tag
+- Install status: Site-side tracking implemented; property-side receipt still needs verification
 - Realtime verification: Manual check required
 - Enhanced Measurement: Manual check required in GA4
 - Search Console linked to GA4: Manual check required
@@ -25,6 +25,9 @@
 - /privacy/
 - /process/
 - /packages/
+- /about/
+- /insights/
+- /terms/
 - /ko/
 - /ko/services/
 - /ko/diagnostic/
@@ -37,6 +40,9 @@
 - /ko/privacy/
 - /ko/process/
 - /ko/packages/
+- /ko/about/
+- /ko/insights/
+- /ko/terms/
 
 ## Verification Steps for Owner
 
@@ -57,19 +63,16 @@
 7. Confirm page_view events are appearing.
 8. Mark verification as complete in this document.
 
-## Temporary Key Event Plan
+## Site event plan
 
-Until dedicated thank-you pages exist, use the existing generic thank-you page:
+- `page_view`: standard GA4 page measurement.
+- `select_content`: primary route CTA clicks, tagged with `route_type`, `item_id`, `source`, and `origin_page`.
+- `form_view`: Tally iframe loads, tagged with `form_type`, `route_type`, `source`, and `origin_page`. This is a form-view proxy, not an interaction-start event.
+- `select_content` with `content_type=proof_sample`: diagnostic sample opens.
+- `proof_compare` with `content_type=before_after_comparison`: first interaction with each comparison.
+- `generate_lead`: dedicated diagnostic, paid-support, and workshop confirmation pages; `form_type` distinguishes each route.
 
-- Event name: lead_thank_you_view
-- Based on: page_view
-- Condition: page_location contains /thanks/
-
-Later, create dedicated thank-you pages:
-
-- /thanks-diagnostic/ -> diagnostic_submit
-- /thanks-toolkit/ -> toolkit_signup
-- /thanks-workshop/ -> workshop_inquiry_submit
+In GA4, mark `generate_lead` as a key event and build a simple funnel from `select_content` (route CTA) through `form_view` to `generate_lead`. True Tally form starts/submission events require Tally's form-event integration with Google Tag Manager or a Tally custom domain; this site currently uses direct gtag.js and dedicated thank-you redirects instead.
 
 ## Green / Yellow / Red Checklist
 
@@ -83,17 +86,16 @@ Later, create dedicated thank-you pages:
 - [ ] GA4 Realtime shows traffic
 - [ ] Enhanced Measurement enabled
 - [ ] Search Console linked to GA4
-- [ ] At least one key event created
+- [ ] `generate_lead` marked as a key event in GA4
 - [x] Analytics notes documented
 
 ### Yellow
 
 - [ ] GA4 installed but not yet showing Realtime data
-- [x] Generic /thanks/ page is the only conversion page
-- [ ] Form submissions are not clearly separated by form type
-- [ ] CTA click events are not yet custom-tracked
+- [x] Dedicated confirmation pages emit a form-typed `generate_lead` event
+- [x] Primary route CTA, form-view, proof sample, and comparison events are sent through gtag.js
 - [ ] Search Console is not linked yet
-- [x] Dedicated thank-you pages do not exist yet
+- [x] Dedicated thank-you pages are in use for diagnostic, paid support, and workshop inquiries
 
 ### Red
 
@@ -108,6 +110,7 @@ Later, create dedicated thank-you pages:
 ## Manual Verification Still Required
 
 - Confirm GA4 Realtime receives visits after deployment.
+- Confirm `select_content`, `form_view`, and `generate_lead` appear with the expected route parameters.
 - Confirm Enhanced Measurement is enabled in GA4.
 - Confirm Search Console is linked to GA4.
-- Create and verify the planned key event in GA4.
+- Mark `generate_lead` as a key event in GA4.

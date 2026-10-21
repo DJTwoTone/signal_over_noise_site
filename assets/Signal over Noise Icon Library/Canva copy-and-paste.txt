@@ -1,0 +1,21 @@
+ICONS
+
+Use icons to help people scan a route, material, action, or decision. The Signal over Noise icon family is clear, geometric, and restrained. Keep each symbol easy to recognize at a glance and consistent in line weight, proportions, and spacing.
+
+DRAWING STYLE
+Use simple outline shapes with rounded line ends and joins. Draw on a 64 × 64 grid with a consistent 2.8 px stroke. Keep interior detail sparse so icons remain clear when reduced. Do not stretch, distort, or combine unrelated icon styles.
+
+COLOR
+Use Brand Blue (#0B2D53) or Deep Navy (#132033) for the main outline. Use Warm Gold (#8A641F) for one small, purposeful accent and Light Gold (#F2E5C8) for occasional fills. Use Soft White (#FAF7F2) for reversed icons on deep navy. Do not rely on gold alone to communicate meaning.
+
+SIZE AND SPACE
+Use 20–24 px for compact interface icons, 32–40 px for cards, and 48–64 px for larger callouts. Keep the icon proportional and leave an even margin around it. A circle or rounded-square frame is optional; add one only when it helps group or distinguish the icon.
+
+PAIRING AND ACCESSIBILITY
+Pair unfamiliar symbols with a short label. Use one icon to clarify each route or action; do not use icons as decoration or as the only way to communicate important information. Give functional icons an accessible name. Hide purely decorative icons from screen readers.
+
+MOTION
+Icons are static by default. If motion clarifies an action, use one brief, purposeful reveal. Avoid continuous loops, bouncing, and spinning, and respect reduced-motion settings.
+
+BRAND APPLICATION
+Keep the larger Request, Context, Review, and Recommendation illustrations in their own category; they explain process steps and are not interface icons. Reserve the flower-burst emblem for the Signal over Noise logo.

@@ -355,6 +355,16 @@ function getLinkCtaClicked(link, fallback) {
   return link.dataset.ctaClicked || link.dataset.track || link.dataset.trackSource || fallback;
 }
 
+function trackRouteLinkClick(link, routeType) {
+  emitTrack("select_content", {
+    content_type: "cta",
+    item_id: getLinkCtaClicked(link, `${routeType}_cta`),
+    source: link.dataset.trackSource || getSourceContext(),
+    originPage: link.dataset.trackOrigin || getOriginPage(),
+    route_type: routeType,
+  });
+}
+
 function buildRouteContext(options = {}, targetHref = "") {
   let targetPathname = "";
   try {
@@ -613,7 +623,47 @@ function emitTrack(eventName, detail = {}) {
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(payload);
+  if (typeof window.gtag === "function") {
+    const analyticsDetail = Object.fromEntries(
+      Object.entries(detail)
+        .filter(([key]) => key !== "href")
+        .map(([key, value]) => [
+          key === "source"
+            ? "source_page"
+            : key.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
+          value,
+        ]),
+    );
+    window.gtag("event", eventName, analyticsDetail);
+  }
   document.dispatchEvent(new CustomEvent("son:track", { detail: payload }));
+}
+
+function ensureAnalytics() {
+  const measurementId = "G-VWSJGBW70Y";
+  if (window.location.hostname !== "signal-over-noise.coach") {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  const analyticsScriptExists = Array.from(document.scripts).some((script) =>
+    script.src.includes("googletagmanager.com/gtag/js"),
+  );
+  if (analyticsScriptExists) {
+    return;
+  }
+
+  window.gtag("js", new Date());
+  window.gtag("config", measurementId);
+  window.__sonAnalyticsLoaded = true;
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  document.head.appendChild(script);
 }
 
 function wireTrackedLinks() {
@@ -645,6 +695,7 @@ function hydrateRouteLinks() {
     );
 
     link.addEventListener("click", () => {
+      trackRouteLinkClick(link, "diagnostic");
       persistRouteContext(buildRouteContext(context, link.href));
     });
   });
@@ -662,6 +713,7 @@ function hydrateRouteLinks() {
     );
 
     link.addEventListener("click", () => {
+      trackRouteLinkClick(link, "workshop");
       persistRouteContext(buildRouteContext(context, link.href));
     });
   });
@@ -679,6 +731,7 @@ function hydrateRouteLinks() {
     );
 
     link.addEventListener("click", () => {
+      trackRouteLinkClick(link, "toolkit");
       persistRouteContext(buildRouteContext(context, link.href));
     });
   });
@@ -696,6 +749,7 @@ function hydrateRouteLinks() {
     );
 
     link.addEventListener("click", () => {
+      trackRouteLinkClick(link, "paid_support");
       persistRouteContext(buildRouteContext(context, link.href));
     });
   });
@@ -775,20 +829,19 @@ function mountAllTallyEmbeds() {
     iframe.setAttribute("loading", "eager");
     iframe.title = config.title;
     iframe.className = "tally-embed";
-    mount.appendChild(iframe);
-
-    let started = false;
-    const trackStart = () => {
-      if (started) return;
-      started = true;
-      emitTrack(`${key}_form_started`, {
+    let formViewed = false;
+    iframe.addEventListener("load", () => {
+      if (formViewed) return;
+      formViewed = true;
+      emitTrack("form_view", {
+        form_type: key === "getStarted" ? "paid_support" : key,
         source: context.source,
         originPage: context.originPage,
         route_type: routeContext.route_type || key,
       });
-    };
-    mount.addEventListener("pointerdown", trackStart, { once: true });
-    mount.addEventListener("focusin", trackStart, { once: true });
+    }, { once: true });
+
+    mount.appendChild(iframe);
 
     const fallback = document.createElement("p");
     fallback.className = "tally-embed-fallback";
@@ -819,7 +872,15 @@ function syncComparePosition(compare, value) {
 
   compare.style.setProperty("--compare-position", `${position}%`);
   if (handle) {
-    handle.setAttribute("aria-valuenow", String(Math.round(position)));
+    const beforeVisible = Math.round(position);
+    const afterVisible = 100 - beforeVisible;
+    handle.setAttribute("aria-valuenow", String(beforeVisible));
+    handle.setAttribute(
+      "aria-valuetext",
+      document.documentElement.lang.startsWith("ko")
+        ? `수정 전 ${beforeVisible}% 표시, 수정 후 ${afterVisible}% 표시`
+        : `${beforeVisible}% of the before slide visible, ${afterVisible}% of the after slide visible`,
+    );
   }
   syncCompareLabelVisibility(compare);
 }
@@ -877,6 +938,15 @@ function initProofComparisons() {
 
     handle.addEventListener("pointerdown", (event) => {
       event.preventDefault();
+      if (!compare.dataset.tracked) {
+        compare.dataset.tracked = "true";
+        emitTrack("proof_compare", {
+          content_type: "before_after_comparison",
+          item_id: compare.closest(".proof-case-card")?.id || "proof_comparison",
+          source: getSourceContext(),
+          originPage: getOriginPage(),
+        });
+      }
       handle.setPointerCapture(event.pointerId);
       syncComparePosition(compare, getComparePositionFromPointer(frame, event));
     });
@@ -906,6 +976,15 @@ function initProofComparisons() {
       }
 
       event.preventDefault();
+      if (!compare.dataset.tracked) {
+        compare.dataset.tracked = "true";
+        emitTrack("proof_compare", {
+          content_type: "before_after_comparison",
+          item_id: compare.closest(".proof-case-card")?.id || "proof_comparison",
+          source: getSourceContext(),
+          originPage: getOriginPage(),
+        });
+      }
       syncComparePosition(compare, nextPosition);
     });
   });
@@ -1055,6 +1134,12 @@ function initProofPdfViewer() {
     }
 
     event.preventDefault();
+    emitTrack("select_content", {
+      content_type: "proof_sample",
+      item_id: trigger.dataset.pdfTitle || "diagnostic_sample",
+      source: getSourceContext(),
+      originPage: getOriginPage(),
+    });
     openProofModal(trigger.dataset.pdfSrc, trigger.dataset.pdfTitle, trigger);
   });
 
@@ -1069,6 +1154,12 @@ function initProofPdfViewer() {
     }
 
     event.preventDefault();
+    emitTrack("select_content", {
+      content_type: "proof_sample",
+      item_id: trigger.dataset.pdfTitle || "diagnostic_sample",
+      source: getSourceContext(),
+      originPage: getOriginPage(),
+    });
     openProofModal(trigger.dataset.pdfSrc, trigger.dataset.pdfTitle, trigger);
   });
 }
@@ -1082,10 +1173,12 @@ function emitPageConversion() {
     source: getSourceContext(),
     originPage: getOriginPage(),
     route_type: getPageKey(),
+    form_type: document.body.dataset.conversionType || getPageKey(),
   });
 }
 
 if (!maybeApplyLanguageRedirect()) {
+  ensureAnalytics();
   stripInternalTrackingParamsFromUrl();
   renderHeader();
   renderFooter();

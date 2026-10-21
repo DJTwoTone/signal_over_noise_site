@@ -1,0 +1,23 @@
+SIGNAL OVER NOISE — WEBSITE ICON AUDIT
+
+CURRENT ICONS
+• Older icon files in img/icons/: message, deck, delivery, high-stakes, skill-building, and team-training.
+• Newer service icons in img/pricing/: individual presentation support, team workshops, and partner classes.
+• Larger step illustrations in img/process/: request, context, review, and recommendation. These explain the diagnostic sequence and should remain distinct from the small icon family.
+• The mobile menu is drawn with CSS bars, FAQ toggles use plus/minus characters, and some lists use CSS bullets or checks.
+
+WHERE ICONS ARE USED
+• Message, deck, and delivery icons repeat across Contact themes and Toolkit resources. Message is used for the first several resources; delivery is repeated for multiple delivery resources.
+• The Thanks page also uses message, deck, and high-stakes icons.
+• Skill-building and team-training icon files appear to be unused.
+• The three current service-route icons cover individual support, team workshops, and partner classes.
+• The Free Diagnostic route reuses the older message icon instead of having its own review or clarity symbol.
+
+WHAT IS MISSING
+• A distinct diagnostic/review symbol, plus separate icons for deck, script, and video reviews.
+• Clear symbols for evidence/source, markup or feedback, prioritization, recommendation, and decision.
+• Distinct, semantically matched Toolkit symbols so unrelated resources are not represented by the same message or delivery icon.
+• A unified style for small navigation and action icons, if those interface marks are expanded.
+
+RECOMMENDATION
+Use the new outline family for small, reusable icons. Keep existing step illustrations for the diagnostic process, and keep photography and bespoke data graphics separate. Replace an existing icon only when the new symbol makes the route or action easier to recognize; do not add icons to every card by default.

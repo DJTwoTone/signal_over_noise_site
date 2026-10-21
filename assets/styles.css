@@ -2580,6 +2580,12 @@
     gap: 14px;
   }
 
+  .proof-compare-instruction {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
   .proof-compare__frame {
     position: relative;
     overflow: hidden;
