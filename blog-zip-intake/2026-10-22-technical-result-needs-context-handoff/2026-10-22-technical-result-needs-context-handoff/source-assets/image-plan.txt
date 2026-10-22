@@ -1,0 +1,5 @@
+Use case: editorial hero and OG background for the technical evidence article.
+Scene: warm review workspace; hands review a printed abstract technical slide; a blank card and a muted-gold tab suggest context and decision.
+Composition: keep the left half open for a deterministic title overlay, subject on the right third; 16:9 master, separate 1.91:1 OG crop.
+Constraints: illustrative only; not NASA or historical evidence. No text, numbers, logos, flags, visible face, or fake data claims.
+Alt text: A reviewer checks an abstract technical slide with a pen beside a pale-blue note card.
