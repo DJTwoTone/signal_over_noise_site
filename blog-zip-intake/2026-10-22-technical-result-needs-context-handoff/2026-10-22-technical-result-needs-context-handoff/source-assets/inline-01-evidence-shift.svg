@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+ <title id="title">How the evidence changed in the review summary</title>
+ <desc id="desc">A reconstruction from the Rogers Commission report compares the temperature and O-ring evidence in an 18-page analysis with a one-page Level I summary that omitted temperature and called the risk acceptable. This is not the original NASA slide.</desc>
+ <rect width="1600" height="900" fill="#f5f0e8"/>
+ <text x="72" y="72" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="3">A RECONSTRUCTION FROM THE COMMISSION REPORT</text>
+ <text x="72" y="140" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="45" font-weight="700">A key condition fell out of the summary.</text>
+ <text x="72" y="184" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="19">The report shows what the Level I review carried forward — and what it left out.</text>
+ <rect x="72" y="226" width="690" height="526" rx="14" fill="#fffdf8" stroke="#d9d2c7" stroke-width="2"/>
+ <rect x="838" y="226" width="690" height="526" rx="14" fill="#f8fbfc" stroke="#c9d7df" stroke-width="2"/>
+ <rect x="104" y="254" width="270" height="34" rx="17" fill="#38556b"/>
+ <text x="239" y="277" text-anchor="middle" fill="#fffdf8" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1.7">SHUTTLE PROJECTS OFFICE</text>
+ <text x="104" y="344" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">18-page analysis</text>
+ <text x="104" y="396" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.6">EVIDENCE INCLUDED</text>
+ <circle cx="115" cy="438" r="5" fill="#b99743"/><text x="137" y="446" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="21">STS 51-C: O-rings at 53°F; erosion and blow-by</text>
+ <circle cx="115" cy="492" r="5" fill="#b99743"/><text x="137" y="500" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="21">Low temperature raised blow-by concern</text>
+ <circle cx="115" cy="546" r="5" fill="#b99743"/><text x="137" y="554" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="21">Next flight could show the same behavior</text>
+ <rect x="104" y="608" width="626" height="104" rx="9" fill="#f4eee4"/>
+ <text x="128" y="649" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1.4">TEMPERATURE WAS EXPLICIT</text>
+ <text x="128" y="681" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="18">The condition was part of the risk argument.</text>
+ <rect x="870" y="254" width="214" height="34" rx="17" fill="#8a641f"/>
+ <text x="977" y="277" text-anchor="middle" fill="#fffdf8" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">LEVEL I · FEB 21, 1985</text>
+ <text x="870" y="344" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">One-page chart</text>
+ <text x="870" y="396" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.6">SUMMARY LANGUAGE</text>
+ <text x="870" y="443" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="21">“Acceptable risk” based on limited</text>
+ <text x="870" y="473" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="21">exposure and redundancy.</text>
+ <rect x="870" y="510" width="626" height="92" rx="9" fill="#f5e8cc" stroke="#e6cf9b"/>
+ <text x="894" y="547" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1.4">OMITTED</text>
+ <text x="894" y="579" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">No mention of temperature in the Level I report.</text>
+ <text x="870" y="650" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="17">The Commission noted the primary seal was classified</text>
+ <text x="870" y="678" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="17">as a single-point failure, despite the redundancy rationale.</text>
+ <path d="M780 472 L816 472 M805 460 L817 472 L805 484" fill="none" stroke="#b99743" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+ <line x1="72" y1="794" x2="1528" y2="794" stroke="#d9d2c7" stroke-width="2"/>
+ <text x="72" y="838" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="16">Based on the Rogers Commission report, Vol. I, ch. VI. Reconstructed summary — not the original NASA slide.</text>
+</svg>
+
+

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A Technical Result Needs Context Before a Decision</title>
+  <desc id="desc">A quiet review scene sits beside the headline. The image is illustrative and does not depict NASA materials.</desc>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5f0e8" stop-opacity=".94"/>
+      <stop offset=".42" stop-color="#f5f0e8" stop-opacity=".76"/>
+      <stop offset=".72" stop-color="#f5f0e8" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#f5f0e8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#wash)"/>
+  <text x="112" y="221" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3.5">TECHNICAL EVIDENCE</text>
+  <text x="112" y="328" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" letter-spacing="-1.2">A Technical Result</text>
+  <text x="112" y="398" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" letter-spacing="-1.2">Needs Context Before</text>
+  <text x="112" y="468" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" letter-spacing="-1.2">a Decision</text>
+  <line x1="112" y1="525" x2="196" y2="525" stroke="#b99743" stroke-width="4"/>
+  <text x="112" y="585" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500">Show what the evidence can support.</text>
+  <text x="112" y="820" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700">SoN Insights</text>
+  <line x1="112" y1="842" x2="186" y2="842" stroke="#b99743" stroke-width="2"/>
+</svg>

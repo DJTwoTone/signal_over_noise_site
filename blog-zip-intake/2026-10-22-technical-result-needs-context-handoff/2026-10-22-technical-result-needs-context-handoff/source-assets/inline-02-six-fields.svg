@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+ <title id="title">A six-field template for presenting technical results</title>
+ <desc id="desc">A practical slide template with claim, test, conditions, result, limit, and decision fields, plus an optional comparison or threshold. All fields are prompts; no test data is shown.</desc>
+ <rect width="1600" height="900" fill="#f5f0e8"/>
+ <text x="72" y="72" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="3">A REUSABLE SLIDE TEMPLATE</text>
+ <text x="72" y="140" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700">Give the result enough context to be judged.</text>
+ <text x="72" y="186" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="19">Keep the decision-relevant fields visible. Use the bracketed prompts to build your own slide.</text>
+ <g font-family="Arial, Helvetica, sans-serif">
+  <rect x="72" y="238" width="456" height="222" rx="14" fill="#fffdf8" stroke="#d9d2c7" stroke-width="2"/>
+  <circle cx="112" cy="280" r="19" fill="#8a641f"/><text x="112" y="287" text-anchor="middle" fill="#fffdf8" font-size="17" font-weight="700">1</text>
+  <text x="148" y="288" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Claim</text>
+  <text x="104" y="348" fill="#253349" font-size="20">[What does this result support?</text><text x="104" y="378" fill="#253349" font-size="20">What are you asking us to consider?]</text>
+  <rect x="572" y="238" width="456" height="222" rx="14" fill="#fffdf8" stroke="#d9d2c7" stroke-width="2"/>
+  <circle cx="612" cy="280" r="19" fill="#38556b"/><text x="612" y="287" text-anchor="middle" fill="#fffdf8" font-size="17" font-weight="700">2</text>
+  <text x="648" y="288" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Test</text>
+  <text x="604" y="348" fill="#253349" font-size="20">[What did you measure, inspect,</text><text x="604" y="378" fill="#253349" font-size="20">or compare, and how?]</text>
+  <rect x="1072" y="238" width="456" height="222" rx="14" fill="#fffdf8" stroke="#d9d2c7" stroke-width="2"/>
+  <circle cx="1112" cy="280" r="19" fill="#38556b"/><text x="1112" y="287" text-anchor="middle" fill="#fffdf8" font-size="17" font-weight="700">3</text>
+  <text x="1148" y="288" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Conditions</text>
+  <text x="1104" y="348" fill="#253349" font-size="20">[Which setup, sample, environment,</text><text x="1104" y="378" fill="#253349" font-size="20">or constraint matters?]</text>
+  <rect x="72" y="486" width="456" height="222" rx="14" fill="#f8fbfc" stroke="#c9d7df" stroke-width="2"/>
+  <circle cx="112" cy="528" r="19" fill="#38556b"/><text x="112" y="535" text-anchor="middle" fill="#fffdf8" font-size="17" font-weight="700">4</text>
+  <text x="148" y="536" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Observed result</text>
+  <text x="104" y="596" fill="#253349" font-size="20">[What did you observe? Include</text><text x="104" y="626" fill="#253349" font-size="20">a verified value and unit, if relevant.]</text>
+  <rect x="572" y="486" width="456" height="222" rx="14" fill="#f8fbfc" stroke="#c9d7df" stroke-width="2"/>
+  <circle cx="612" cy="528" r="19" fill="#38556b"/><text x="612" y="535" text-anchor="middle" fill="#fffdf8" font-size="17" font-weight="700">5</text>
+  <text x="648" y="536" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Limit</text>
+  <text x="604" y="596" fill="#253349" font-size="20">[What does this test leave open?</text><text x="604" y="626" fill="#253349" font-size="20">What should the audience not infer?]</text>
+  <rect x="1072" y="486" width="456" height="222" rx="14" fill="#e8f0f4" stroke="#c9d7df" stroke-width="2"/>
+  <circle cx="1112" cy="528" r="19" fill="#132033"/><text x="1112" y="535" text-anchor="middle" fill="#fffdf8" font-size="17" font-weight="700">6</text>
+  <text x="1148" y="536" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Decision</text>
+  <text x="1104" y="596" fill="#253349" font-size="20">[What next step is proportionate</text><text x="1104" y="626" fill="#253349" font-size="20">to this evidence?]</text>
+ </g>
+ <rect x="72" y="746" width="1456" height="60" rx="10" fill="#f4eee4"/>
+ <text x="98" y="783" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.2">OPTIONAL</text>
+ <text x="222" y="783" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="18">Add a comparison or threshold when it is relevant and clearly defined.</text>
+ <text x="72" y="854" fill="#536276" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">ILLUSTRATIVE TEMPLATE — NO TEST DATA</text>
+</svg>
