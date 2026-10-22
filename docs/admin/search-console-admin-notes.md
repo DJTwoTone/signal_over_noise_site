@@ -27,6 +27,15 @@
 - Submitted in Search Console: Manual check required
 - Search Console sitemap status: Manual check required
 
+## Insights Language Policy
+
+- Direction confirmed 2026-10-22: keep the blog English-first; do not start a broad Korean translation project.
+- `/ko/insights/` remains a Korean-language entry point and explains that detailed articles are currently in English.
+- English articles keep their English canonical URLs and `hreflang` values for English and `x-default` only. Add a Korean alternate only when a real Korean counterpart is published.
+- Keep the Insights sitemap limited to published English articles, with the Korean Insights index as the alternate for the index page.
+- Consider translating an individual article if Korean Search Console queries or lead conversations show specific demand.
+- The Korean URL reported by Search Console for `ai-made-presentation-human-review` is redirected to its English article in the repo. Deploy the change, then request fresh validation in Search Console.
+
 ## Homepage URL Inspection
 
 - URL: https://signal-over-noise.coach/
