@@ -2,6 +2,7 @@ dist/
 .insights-build/
 .codex-temp/
 node_modules/
+blog-zip-intake/
 
 # Local QA output
 .qa-screenshots/
