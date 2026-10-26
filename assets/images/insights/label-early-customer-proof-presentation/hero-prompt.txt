@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: text-free background for a 16:9 Signal over Noise Insight Desk article hero.
+Primary request: Create a premium editorial photograph showing a presentation reviewer sorting early customer evidence into the stage it actually supports.
+Scene/backdrop: Warm ivory tabletop in a calm presentation-review workspace, seen from a high three-quarter angle. Keep the left third spacious and quiet for later deterministic title text. On the right, a reviewer’s hand in a deep navy sleeve uses a muted-gold pen to arrange three small paper evidence cards beside a printed draft slide.
+Subject anchors: A simple conversation-bubble mark on one card, an evaluation checklist with empty boxes on the second, and a small pilot-calendar outline on the third. The printed slide has only blank lines and neutral layout blocks. No card has readable words, customer identities, numbers, charts, or results.
+Style/medium: Natural high-end editorial business photography with believable paper texture and soft window light, consistent with an existing warm, human consulting article cover. Keep the hand natural and secondary; no face.
+Composition/framing: Wide 16:9 horizontal composition. Subject and evidence cards on the right half; generous uncluttered cream negative space on the left for title overlay. Keep the important materials inside the central safe area so a slightly wider social crop will still work.
+Lighting/mood: Soft daylight, calm, precise, thoughtful, quietly confident.
+Color palette: Warm cream and ivory, deep navy sleeve, pale-blue card accents, restrained muted-gold pen and details.
+Constraints: This is an illustrative editorial scene, not client work or documentary evidence. No readable text, no real or fake company marks, no logos, no brand words, no metrics, no outcome claims, no flags, no stereotypes, no handshake, no cheering team, no staged boardroom, no laptop, no coffee cup, no AI motifs, no watermark.
