@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Label Early Customer Proof Before It Goes on the Slide</title>
+  <desc id="desc">The article title sits beside a reviewer sorting conversation, evaluation, and pilot evidence cards.</desc>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5f0e8" stop-opacity=".94"/>
+      <stop offset=".43" stop-color="#f5f0e8" stop-opacity=".78"/>
+      <stop offset=".69" stop-color="#f5f0e8" stop-opacity=".25"/>
+      <stop offset=".88" stop-color="#f5f0e8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#wash)"/>
+  <text x="120" y="216" fill="#8a641f" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="4">CUSTOMER EVIDENCE</text>
+  <text x="120" y="322" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" letter-spacing="-1.4">Label Early Customer</text>
+  <text x="120" y="391" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" letter-spacing="-1.4">Proof Before It Goes</text>
+  <text x="120" y="460" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" letter-spacing="-1.4">on the Slide</text>
+  <line x1="120" y1="520" x2="214" y2="520" stroke="#b99743" stroke-width="4"/>
+  <text x="120" y="580" fill="#253349" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500">Show what has happened and what comes next.</text>
+  <text x="120" y="815" fill="#132033" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="700">SoN Insights</text>
+  <line x1="120" y1="838" x2="198" y2="838" stroke="#b99743" stroke-width="2"/>
+</svg>
